@@ -1,0 +1,2 @@
+# damage functions
+ damages functions 
