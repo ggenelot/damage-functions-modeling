@@ -1,6 +1,6 @@
 1:current.vdfx
 4:Time
-5:Time
+5:"FUND: A.4: gamma parameter"
 6:A EXP CURVE
 6:A LINEAR LOG FIT
 6:A S CURVE
@@ -80,7 +80,7 @@
 6:year1995
 6:ZERO ORDER FIT
 9:current
-19:100,0
+19:100,126
 24:2005
 25:2006
 26:2006
