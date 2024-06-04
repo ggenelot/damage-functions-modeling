@@ -1,6 +1,6 @@
 1:current.vdfx
 4:Time
-5:"FUND: A.2: alpha parameter"[REGIONS 36 I]
+5:"FUND: A.2: agricultural impact of the rate of climate change"[REGIONS 36 I]
 6:A EXP CURVE
 6:A LINEAR LOG FIT
 6:A S CURVE
