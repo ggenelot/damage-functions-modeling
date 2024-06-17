@@ -6,7 +6,9 @@ import warnings
 import pandas as pd
 
 # Load model
-model = pysd.read_vensim('WILIAM_v1.3/WILIAM.mdl')
+model = pysd.read_vensim('WILIAM_v1.3/WILIAM.mdl',
+                         split_views=True, 
+                         subview_sep=["."])
 
 
 # Choose FUND variables 
@@ -16,7 +18,7 @@ variables_FUND = variables[variables['Real Name'].str.contains('FUND')]
 variables_FUND_names = variables_FUND['Py Name'].values
 
 initial_time = 2005
-final_time = 2048
+final_time = 2049
 
 # Suppress specific warnings to avoid cluttering the output
 warnings.filterwarnings('ignore', category=RuntimeWarning)
