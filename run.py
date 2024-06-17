@@ -3,6 +3,7 @@ import xarray as xr
 import seaborn as sns
 import matplotlib.pyplot as plt
 import warnings
+import pandas as pd
 
 # Load model
 model = pysd.read_vensim('WILIAM_v1.3/WILIAM.mdl')
@@ -10,9 +11,9 @@ model = pysd.read_vensim('WILIAM_v1.3/WILIAM.mdl')
 
 # Choose FUND variables 
 variables = model.doc
+variables.to_csv('variables.csv')
 variables_FUND = variables[variables['Real Name'].str.contains('FUND')]
 variables_FUND_names = variables_FUND['Py Name'].values
-variables_FUND_names
 
 initial_time = 2005
 final_time = 2040
