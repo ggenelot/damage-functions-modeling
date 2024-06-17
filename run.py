@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import warnings
 
 # Load model
-model = pysd.load('WILIAM_v1.3/WILIAM.py')
+model = pysd.read_vensim('WILIAM_v1.3/WILIAM.mdl')
 
 
 # Choose FUND variables 
@@ -15,7 +15,7 @@ variables_FUND_names = variables_FUND['Py Name'].values
 variables_FUND_names
 
 initial_time = 2005
-final_time = 2100
+final_time = 2040
 
 # Suppress specific warnings to avoid cluttering the output
 warnings.filterwarnings('ignore', category=RuntimeWarning)
