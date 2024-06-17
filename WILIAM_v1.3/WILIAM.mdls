@@ -1,5 +1,5 @@
 4:Time
-5:"FUND: HV: alpha malaria parameter"[REGIONS 36 I]
+5:"FUND: E.2: number of species delayed"[REGIONS 36 I]
 6:A EXP CURVE
 6:A LINEAR LOG FIT
 6:A S CURVE
