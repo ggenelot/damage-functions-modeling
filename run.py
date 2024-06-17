@@ -16,7 +16,7 @@ variables_FUND = variables[variables['Real Name'].str.contains('FUND')]
 variables_FUND_names = variables_FUND['Py Name'].values
 
 initial_time = 2005
-final_time = 2045
+final_time = 2048
 
 # Suppress specific warnings to avoid cluttering the output
 warnings.filterwarnings('ignore', category=RuntimeWarning)
