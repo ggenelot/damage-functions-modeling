@@ -1,36 +1,36 @@
-Regions,WILIAM,FUND,Name,Countries
-Austria,AUSTRIA,WEU,Western Europe,Austria
-Belgium,BELGIUM,WEU,Western Europe,Belgium
-Bulgaria,BULGARIA,CEE,Central and Eastern Europe,Bulgaria
-Croatia,CROATIA,CEE,Central and Eastern Europe,Croatia
-Cyprus,CYPRUS,WEU,Western Europe,Cyprus
-Czechia,CZECHIA,,,
-Denmark,DENMARK,WEU,Western Europe,Denmark
-Estonia,ESTONIA,FSU,Former Soviet Union,Estonia
-Finland,FINLAND,WEU,Western Europe,Finland
-France,FRANCE,WEU,Western Europe,France
-Germany,GERMANY,WEU,Western Europe,Germany
-Greece,GREECE,WEU,Western Europe,Greece
-Hungary,HUNGARY,CEE,Central and Eastern Europe,Hungary
-Ireland,IRELAND,WEU,Western Europe,Ireland
-Italy,ITALY,WEU,Western Europe,Italy
-Latvia,LATVIA,FSU,Former Soviet Union,Latvia
-Lithuania,LITHUANIA,FSU,Former Soviet Union,Lithuania
-Luxembourg,LUXEMBOURG,WEU,Western Europe,Luxembourg
-Malta,MALTA,WEU,Western Europe,Malta
-Netherlands,NETHERLANDS,WEU,Western Europe,Netherlands
-Poland,POLAND,CEE,Central and Eastern Europe,Poland
-Portugal,PORTUGAL,WEU,Western Europe,Portugal
-Romania,ROMANIA,CEE,Central and Eastern Europe,Romania
-Slovakia,SLOVAKIA,CEE,Central and Eastern Europe,Slovakia
-Slovenia,SLOVENIA,CEE,Central and Eastern Europe,Slovenia
-Spain,SPAIN,WEU,Western Europe,Spain
-Sweden,SWEDEN,WEU,Western Europe,Sweden
-UK,UK,,,
-CHINA,CHINA,,,
-EASOC,EASOC,,,
-INDIA,INDIA,,,
-LATAM,LATAM,,,
-RUSSIA,RUSSIA,,,
-USMCA,USMCA,,,
-LROW,LROW,,,
+Regions,WILIAM,FUND,Name,Countries,ISO
+Austria,AUSTRIA,WEU,Western Europe,Austria,AUT
+Belgium,BELGIUM,WEU,Western Europe,Belgium,BEL
+Bulgaria,BULGARIA,CEE,Central and Eastern Europe,Bulgaria,BGR
+Croatia,CROATIA,CEE,Central and Eastern Europe,Croatia,HRV
+Cyprus,CYPRUS,WEU,Western Europe,Cyprus,CYP
+Czechia,CZECHIA,,,,
+Denmark,DENMARK,WEU,Western Europe,Denmark,DNK
+Estonia,ESTONIA,FSU,Former Soviet Union,Estonia,EST
+Finland,FINLAND,WEU,Western Europe,Finland,FIN
+France,FRANCE,WEU,Western Europe,France,FRA
+Germany,GERMANY,WEU,Western Europe,Germany,DEU
+Greece,GREECE,WEU,Western Europe,Greece,GRC
+Hungary,HUNGARY,CEE,Central and Eastern Europe,Hungary,HUN
+Ireland,IRELAND,WEU,Western Europe,Ireland,IRL
+Italy,ITALY,WEU,Western Europe,Italy,ITA
+Latvia,LATVIA,FSU,Former Soviet Union,Latvia,LVA
+Lithuania,LITHUANIA,FSU,Former Soviet Union,Lithuania,LTU
+Luxembourg,LUXEMBOURG,WEU,Western Europe,Luxembourg,LUX
+Malta,MALTA,WEU,Western Europe,Malta,MLT
+Netherlands,NETHERLANDS,WEU,Western Europe,Netherlands,NLD
+Poland,POLAND,CEE,Central and Eastern Europe,Poland,POL
+Portugal,PORTUGAL,WEU,Western Europe,Portugal,PRT
+Romania,ROMANIA,CEE,Central and Eastern Europe,Romania,ROU
+Slovakia,SLOVAKIA,CEE,Central and Eastern Europe,Slovakia,SVK
+Slovenia,SLOVENIA,CEE,Central and Eastern Europe,Slovenia,SVN
+Spain,SPAIN,WEU,Western Europe,Spain,ESP
+Sweden,SWEDEN,WEU,Western Europe,Sweden,SWE
+UK,UK,,,,
+CHINA,CHINA,,,,
+EASOC,EASOC,,,,
+INDIA,INDIA,,,,
+LATAM,LATAM,,,,
+RUSSIA,RUSSIA,,,,
+USMCA,USMCA,,,,
+LROW,LROW,,,,
