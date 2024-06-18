@@ -1,36 +1,217 @@
-Regions,WILIAM,FUND,Name,Countries,ISO
-Austria,AUSTRIA,WEU,Western Europe,Austria,AUT
-Belgium,BELGIUM,WEU,Western Europe,Belgium,BEL
-Bulgaria,BULGARIA,CEE,Central and Eastern Europe,Bulgaria,BGR
-Croatia,CROATIA,CEE,Central and Eastern Europe,Croatia,HRV
-Cyprus,CYPRUS,WEU,Western Europe,Cyprus,CYP
-Czechia,CZECHIA,,,,
-Denmark,DENMARK,WEU,Western Europe,Denmark,DNK
-Estonia,ESTONIA,FSU,Former Soviet Union,Estonia,EST
-Finland,FINLAND,WEU,Western Europe,Finland,FIN
-France,FRANCE,WEU,Western Europe,France,FRA
-Germany,GERMANY,WEU,Western Europe,Germany,DEU
-Greece,GREECE,WEU,Western Europe,Greece,GRC
-Hungary,HUNGARY,CEE,Central and Eastern Europe,Hungary,HUN
-Ireland,IRELAND,WEU,Western Europe,Ireland,IRL
-Italy,ITALY,WEU,Western Europe,Italy,ITA
-Latvia,LATVIA,FSU,Former Soviet Union,Latvia,LVA
-Lithuania,LITHUANIA,FSU,Former Soviet Union,Lithuania,LTU
-Luxembourg,LUXEMBOURG,WEU,Western Europe,Luxembourg,LUX
-Malta,MALTA,WEU,Western Europe,Malta,MLT
-Netherlands,NETHERLANDS,WEU,Western Europe,Netherlands,NLD
-Poland,POLAND,CEE,Central and Eastern Europe,Poland,POL
-Portugal,PORTUGAL,WEU,Western Europe,Portugal,PRT
-Romania,ROMANIA,CEE,Central and Eastern Europe,Romania,ROU
-Slovakia,SLOVAKIA,CEE,Central and Eastern Europe,Slovakia,SVK
-Slovenia,SLOVENIA,CEE,Central and Eastern Europe,Slovenia,SVN
-Spain,SPAIN,WEU,Western Europe,Spain,ESP
-Sweden,SWEDEN,WEU,Western Europe,Sweden,SWE
-UK,UK,,,,
-CHINA,CHINA,,,,
-EASOC,EASOC,,,,
-INDIA,INDIA,,,,
-LATAM,LATAM,,,,
-RUSSIA,RUSSIA,,,,
-USMCA,USMCA,,,,
-LROW,LROW,,,,
+Region_WILIAM,Region_FUND_code,Region_FUND_name,Countries,ISO
+,SAS,South Asia,Afghanistan,AFG
+,CEE,Central and Eastern Europe,Albania,ALB
+,NAF,North Africa,Algeria,DZA
+,WEU,Western Europe,Andorra,AND
+,SSA,Sub-Saharan Africa,Angola,AGO
+,SIS,Small Island States,Antigua and Barbuda,ATG
+,SAM,South America,Argentina,ARG
+,FSU,Former Soviet Union,Armenia,ARM
+,SIS,Small Island States,Aruba,ABW
+,ANZ,Australia and New Zealand,Australia,AUS
+AUSTRIA,WEU,Western Europe,Austria,AUT
+,FSU,Former Soviet Union,Azerbaijan,AZE
+,SIS,Small Island States,Bahamas,BHS
+,MDE,Middle East,Bahrain,BHR
+,SAS,South Asia,Bangladesh,BGD
+,SIS,Small Island States,Barbados,BRB
+,FSU,Former Soviet Union,Belarus,BLR
+BELGIUM,WEU,Western Europe,Belgium,BEL
+,CAM,Central America,Belize,BLZ
+,SSA,Sub-Saharan Africa,Benin,BEN
+,SIS,Small Island States,Bermuda,BMU
+,SAS,South Asia,Bhutan,BTN
+,SAM,South America,Bolivia,BOL
+,CEE,Central and Eastern Europe,Bosnia and Herzegovina,BIH
+,SSA,Sub-Saharan Africa,Botswana,BWA
+,SAM,South America,Brazil,BRA
+,SEA,Southeast Asia,Brunei,BRN
+BULGARIA,CEE,Central and Eastern Europe,Bulgaria,BGR
+,SSA,Sub-Saharan Africa,Burkina Faso,BFA
+,SSA,Sub-Saharan Africa,Burundi,BDI
+CHINA,,,,
+,SEA,Southeast Asia,Cambodia,KHM
+,SSA,Sub-Saharan Africa,Cameroon,CMR
+,CAN,Canada,Canada,CAN
+,SSA,Sub-Saharan Africa,Cape Verde,
+,SSA,Sub-Saharan Africa,Central African Republic,CAF
+,SSA,Sub-Saharan Africa,Chad,TCD
+,SAM,South America,Chile,CHL
+,CHI,China plus,China,CHN
+,SAM,South America,Colombia,COL
+,SIS,Small Island States,Comoros,COM
+,SSA,Sub-Saharan Africa,Congo-Brazzaville,COG
+,SSA,Sub-Saharan Africa,Congo-Kinshasa,COD
+,CAM,Central America,Costa Rica,CRI
+,SSA,Sub-Saharan Africa,Cote d’Ivoire,CIV
+CROATIA,CEE,Central and Eastern Europe,Croatia,HRV
+,SIS,Small Island States,Cuba,CUB
+CYPRUS,WEU,Western Europe,Cyprus,CYP
+,CEE,Central and Eastern Europe,Czech Republic,CZE
+CZECHIA,,,,
+DENMARK,WEU,Western Europe,Denmark,DNK
+,SSA,Sub-Saharan Africa,Djibouti,DJI
+,SIS,Small Island States,Dominica,DMA
+,SIS,Small Island States,Dominican Republic,DOM
+EASOC,,,,
+,SEA,Southeast Asia,East Timor,TLS
+,SAM,South America,Ecuador,ECU
+,NAF,North Africa,Egypt,EGY
+,CAM,Central America,El Salvador,SLV
+,SSA,Sub-Saharan Africa,Equatorial Guinea,GNQ
+,SSA,Sub-Saharan Africa,Eritrea,ERI
+ESTONIA,FSU,Former Soviet Union,Estonia,EST
+,SSA,Sub-Saharan Africa,Ethiopia,ETH
+,CEE,Central and Eastern Europe,FYR Macedonia,
+,SIS,Small Island States,Fiji,FJI
+FINLAND,WEU,Western Europe,Finland,FIN
+FRANCE,WEU,Western Europe,France,FRA
+,SAM,South America,French Guiana,GUF
+,SIS,Small Island States,French Polynesia,PYF
+,SSA,Sub-Saharan Africa,Gabon,GAB
+,SSA,Sub-Saharan Africa,Gambia,GMB
+,FSU,Former Soviet Union,Georgia,GEO
+GERMANY,WEU,Western Europe,Germany,DEU
+,SSA,Sub-Saharan Africa,Ghana,GHA
+GREECE,WEU,Western Europe,Greece,GRC
+,SIS,Small Island States,Grenada,GRD
+,SIS,Small Island States,Guadeloupe,GLP
+,CAM,Central America,Guatemala,GTM
+,SSA,Sub-Saharan Africa,Guinea,GIN
+,SSA,Sub-Saharan Africa,Guinea- Bissau,GNB
+,SAM,South America,Guyana,GUY
+,SIS,Small Island States,Haiti,HTI
+,CAM,Central America,Honduras,HND
+,CHI,China plus,Hong Kong,HKG
+HUNGARY,CEE,Central and Eastern Europe,Hungary,HUN
+INDIA,,,,
+,WEU,Western Europe,Iceland,ISL
+,SAS,South Asia,India,IND
+,SEA,Southeast Asia,Indonesia,IDN
+,MDE,Middle East,Iran,IRN
+,MDE,Middle East,Iraq,IRQ
+IRELAND,WEU,Western Europe,Ireland,IRL
+,MDE,Middle East,Israel,ISR
+ITALY,WEU,Western Europe,Italy,ITA
+,SIS,Small Island States,Jamaica,JAM
+,JPK,Japan and South Korea,Japan,JPN
+,MDE,Middle East,Jordan,JOR
+,FSU,Former Soviet Union,Kazakhstan,KAZ
+,SSA,Sub-Saharan Africa,Kenya,KEN
+,SIS,Small Island States,Kiribati,KIR
+,MDE,Middle East,Kuwait,KWT
+,FSU,Former Soviet Union,Kyrgyzstan,KGZ
+LATAM,,,,
+LROW,,,,
+,SEA,Southeast Asia,Laos,LAO
+LATVIA,FSU,Former Soviet Union,Latvia,LVA
+,MDE,Middle East,Lebanon,LBN
+,SSA,Sub-Saharan Africa,Lesotho,LSO
+,SSA,Sub-Saharan Africa,Liberia,LBR
+,NAF,North Africa,Libya,LBY
+,WEU,Western Europe,Liechtenstein,LIE
+LITHUANIA,FSU,Former Soviet Union,Lithuania,LTU
+LUXEMBOURG,WEU,Western Europe,Luxembourg,LUX
+,CHI,China plus,Macau,
+,SSA,Sub-Saharan Africa,Madagascar,MDG
+,SSA,Sub-Saharan Africa,Malawi,MWI
+,SEA,Southeast Asia,Malaysia,MYS
+,SIS,Small Island States,Maldives,MDV
+,SSA,Sub-Saharan Africa,Mali,MLI
+MALTA,WEU,Western Europe,Malta,MLT
+,SIS,Small Island States,Marshall Islands,MHL
+,SIS,Small Island States,Martinique,MTQ
+,SSA,Sub-Saharan Africa,Mauritania,MRT
+,SIS,Small Island States,Mauritius,MUS
+,CAM,Central America,Mexico,MEX
+,SIS,Small Island States,Micronesia,FSM
+,FSU,Former Soviet Union,Moldova,MDA
+,WEU,Western Europe,Monaco,MCO
+,CHI,China plus,Mongolia,MNG
+,NAF,North Africa,Morocco,MAR
+,SSA,Sub-Saharan Africa,Mozambique,MOZ
+,SEA,Southeast Asia,Myanmar,MMR
+,SSA,Sub-Saharan Africa,Namibia,NAM
+,SIS,Small Island States,Nauru,NRU
+,SAS,South Asia,Nepal,NPL
+NETHERLANDS,WEU,Western Europe,Netherlands,NLD
+,SIS,Small Island States,Netherlands Antilles,NLD
+,SIS,Small Island States,New Caledonia,NCL
+,ANZ,Australia and New Zealand,New Zealand,NZL
+,CAM,Central America,Nicaragua,NIC
+,SSA,Sub-Saharan Africa,Niger,NER
+,SSA,Sub-Saharan Africa,Nigeria,NGA
+,CHI,China plus,North Korea,PRK
+,WEU,Western Europe,Norway,NOR
+,MDE,Middle East,Oman,OMN
+,SAS,South Asia,Pakistan,PAK
+,SIS,Small Island States,Palau,PLW
+,CAM,Central America,Panama,PAN
+,SEA,Southeast Asia,Papua New Guinea,PNG
+,SAM,South America,Paraguay,PRY
+,SAM,South America,Peru,PER
+,SEA,Southeast Asia,Philippines,PHL
+POLAND,CEE,Central and Eastern Europe,Poland,POL
+PORTUGAL,WEU,Western Europe,Portugal,PRT
+,SIS,Small Island States,Puerto Rico,PRI
+,MDE,Middle East,Qatar,QAT
+RUSSIA,,,,
+,SIS,Small Island States,Reunion,REU
+ROMANIA,CEE,Central and Eastern Europe,Romania,ROU
+,FSU,Former Soviet Union,Russia,RUS
+,SSA,Sub-Saharan Africa,Rwanda,RWA
+,SIS,Small Island States,Samoa,WSM
+,WEU,Western Europe,San Marino,SMR
+,SIS,Small Island States,Sao Tome and Principe,STP
+,MDE,Middle East,Saudi Arabia,SAU
+,SSA,Sub-Saharan Africa,Senegal,SEN
+,SIS,Small Island States,Seychelles,SYC
+,SSA,Sub-Saharan Africa,Sierra Leone,SLE
+,SEA,Southeast Asia,Singapore,SGP
+SLOVAKIA,CEE,Central and Eastern Europe,Slovakia,SVK
+SLOVENIA,CEE,Central and Eastern Europe,Slovenia,SVN
+,SIS,Small Island States,Solomon Islands,SLB
+,SSA,Sub-Saharan Africa,Somalia,SOM
+,SSA,Sub-Saharan Africa,South Africa,ZAF
+,JPK,Japan and South Korea,South Korea,KOR
+SPAIN,WEU,Western Europe,Spain,ESP
+,SAS,South Asia,Sri Lanka,LKA
+,SIS,Small Island States,St Kitts and Nevis,KNA
+,SIS,Small Island States,St Lucia,LCA
+,SIS,Small Island States,St Vincent and Grenadines,VCT
+,SSA,Sub-Saharan Africa,Sudan,SDN
+,SAM,South America,Suriname,SUR
+,SSA,Sub-Saharan Africa,Swaziland,SWZ
+SWEDEN,WEU,Western Europe,Sweden,SWE
+,WEU,Western Europe,Switzerland,CHE
+,MDE,Middle East,Syria,SYR
+,SEA,Southeast Asia,Taiwan,TWN
+,FSU,Former Soviet Union,Tajikistan,TJK
+,SSA,Sub-Saharan Africa,Tanzania,TZA
+,SEA,Southeast Asia,Thailand,THA
+,SSA,Sub-Saharan Africa,Togo,TGO
+,SIS,Small Island States,Tonga,TON
+,SIS,Small Island States,Trinidad and Tobago,TTO
+,NAF,North Africa,Tunisia,TUN
+,MDE,Middle East,Turkey,TUR
+,FSU,Former Soviet Union,Turkmenistan,TKM
+,SIS,Small Island States,Tuvalu,TUV
+UK,,,,
+USMCA,,,,
+,SSA,Sub-Saharan Africa,Uganda,UGA
+,FSU,Former Soviet Union,Ukraine,UKR
+,MDE,Middle East,United Arab Emirates,ARE
+,WEU,Western Europe,United Kingdom,GBR
+,USA,USA,United States of America,USA
+,SAM,South America,Uruguay,URY
+,FSU,Former Soviet Union,Uzbekistan,UZB
+,SIS,Small Island States,Vanuatu,VUT
+,SAM,South America,Venezuela,VEN
+,SEA,Southeast Asia,Vietnam,VNM
+,SIS,Small Island States,Virgin Islands,VIR
+,MDE,Middle East,West Bank and Gaza,BES
+,NAF,North Africa,Western Sahara,ESH
+,MDE,Middle East,Yemen,YEM
+,CEE,Central and Eastern Europe,Yugoslavia,LVA
+,SSA,Sub-Saharan Africa,Zambia,ZMB
+,SSA,Sub-Saharan Africa,Zimbabwe,ZWE
