@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Damage functions in IAM'
+copyright = '2024, Gabriel Genelot'
+author = 'Gabriel Genelot'
 
 release = '0.1'
 version = '0.1.0'

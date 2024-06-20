@@ -31,3 +31,5 @@ For example:
 >>> import lumache
 >>> lumache.get_random_ingredients()
 ['shells', 'gorgonzola', 'parsley']
+
+.. autofunction:: fund.fund_a2_agricultural_impact_of_the_rate_of_climate_change
