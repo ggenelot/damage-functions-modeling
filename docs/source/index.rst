@@ -15,5 +15,7 @@ Contents
 
 .. toctree::
 
+   context
+   functions
    usage
    api
