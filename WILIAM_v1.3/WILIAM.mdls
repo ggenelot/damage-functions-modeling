@@ -1,5 +1,5 @@
 4:Time
-5:"FUND: ETS.2: benchmark mortality from extratopical cyclones for region r"[REGIONS 36 I]
+5:"DICE: 5: damage function"
 6:A EXP CURVE
 6:A LINEAR LOG FIT
 6:A S CURVE
@@ -79,7 +79,7 @@
 6:year1995
 6:ZERO ORDER FIT
 9:current
-19:24,126
+19:100,127
 24:2005
 25:2006
 26:2006

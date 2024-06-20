@@ -7,6 +7,9 @@ This page provides an overview of the different types of damage functions used i
 FUND 
 ====
 
+.. autofunction:: lumache.get_random_ingredients
+
+.. autofunction:: test.random_function
 IMAGE 
 =====
 
