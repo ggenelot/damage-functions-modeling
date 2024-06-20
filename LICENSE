@@ -2,7 +2,7 @@ MIT License
 
 Copyright (c) 2024 Gabriel Genelot
 
-This work build on previous work from David Anthoff and Richard S.J. Tol. (1994-2019) under MIT license and the WILIAM team in the LOCOMOTION project under MIT license.
+This work build on previous work from David Anthoff and Richard S.J. Tol. (1994-2019)(https://github.com/fund-model/MimiFUND.jl) under MIT license and the WILIAM team in the LOCOMOTION project under MIT license (https://github.com/LOCOMOTION-h2020/WILIAM_model_VENSIM).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
