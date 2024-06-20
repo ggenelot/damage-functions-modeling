@@ -36,5 +36,3 @@ Conclusion
 ----------
 
 Damage functions are a critical component of integrated assessment modeling, providing valuable insights into the potential impacts of environmental stressors on various sectors of the economy. By quantifying the damages caused by these stressors, IAM frameworks can inform decision-making processes and help policymakers develop effective strategies for sustainable development.
-
-For more detailed information on specific damage functions and their applications, please refer to the relevant literature and research studies in the field of integrated assessment modeling.
