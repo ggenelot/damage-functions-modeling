@@ -18,6 +18,5 @@ Contents
    context
    impacts
    IAM
-   functions
    usage
    api
