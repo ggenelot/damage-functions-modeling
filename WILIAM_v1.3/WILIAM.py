@@ -8,35 +8,35 @@ import numpy as np
 import xarray as xr
 
 from pysd.py_backend.functions import (
-    step,
-    vector_reorder,
-    integer,
     active_initial,
-    get_time_value,
     vector_select,
+    invert_matrix,
     if_then_else,
-    xidz,
-    modulo,
-    prod,
-    sum,
-    zidz,
     vector_sort_order,
     vmax,
-    ramp,
+    integer,
+    get_time_value,
+    prod,
     vmin,
-    invert_matrix,
+    vector_reorder,
+    sum,
+    xidz,
+    step,
+    ramp,
+    zidz,
+    modulo,
 )
 from pysd.py_backend.statefuls import (
-    Initial,
-    SampleIfTrue,
-    Integ,
-    Delay,
     DelayFixed,
+    Integ,
+    SampleIfTrue,
+    Initial,
+    Delay,
     Smooth,
 )
-from pysd.py_backend.external import ExtConstant, ExtLookup, ExtData
-from pysd.py_backend.utils import load_modules, load_model_data
-from pysd.py_backend.allocation import allocate_by_priority, allocate_available
+from pysd.py_backend.external import ExtConstant, ExtData, ExtLookup
+from pysd.py_backend.utils import load_model_data, load_modules
+from pysd.py_backend.allocation import allocate_available, allocate_by_priority
 from pysd import Component
 
 __pysd_version__ = "3.14.0"
@@ -240,6 +240,14 @@ _delayfixed_delayed_ts_uranium_extraction_rate = DelayFixed(
     time_step,
     "_delayfixed_delayed_ts_uranium_extraction_rate",
 )
+
+
+@component.add(name='"FUND: TS.1: alpha"', comp_type="Constant", comp_subtype="Normal")
+def fund_ts1_alpha():
+    """
+    TODO irrelevant
+    """
+    return 0
 
 
 @component.add(
@@ -725,11 +733,11 @@ _ext_constant_initial_passenger_transport_demand_share_exogenous.add(
         "time": 4,
         "initial_year_model_explorer": 7,
         "initial_passenger_transport_demand_share_exogenous": 7,
-        "final_year_model_explorer": 6,
-        "scenario_passenger_transport_demand_modal_share_option_3_me": 1,
-        "scenario_passenger_transport_demand_modal_share_option_2_me": 1,
         "select_passenger_transport_demand_modal_share_me": 3,
         "scenario_passenger_transport_demand_modal_share_option_1_me": 1,
+        "scenario_passenger_transport_demand_modal_share_option_3_me": 1,
+        "final_year_model_explorer": 6,
+        "scenario_passenger_transport_demand_modal_share_option_2_me": 1,
     },
 )
 def model_explorer_passenger_transport_demand_modal_share():
@@ -810,11 +818,11 @@ def model_explorer_passenger_transport_demand_modal_share():
     depends_on={
         "time": 4,
         "initial_year_model_explorer": 7,
-        "final_year_model_explorer": 6,
         "scenario_passenger_transport_demand_option_1_me": 1,
+        "final_year_model_explorer": 6,
         "select_reduction_passenger_transport_demand_me": 3,
-        "scenario_passenger_transport_demand_option_2_me": 1,
         "scenario_passenger_transport_demand_option_3_me": 1,
+        "scenario_passenger_transport_demand_option_2_me": 1,
     },
 )
 def model_explorer_reduction_passenger_transport_demand():

@@ -3929,8 +3929,8 @@ _ext_data_prosto_capacity_expansion_calculator.add(
     name="PROTRA CAPACITY EXPANSION CALCULATOR",
     units="TW/Year",
     subscripts=["REGIONS 9 I", "NRG PROTRA I"],
-    comp_type="Data, Constant",
-    comp_subtype="External, Normal",
+    comp_type="Constant, Data",
+    comp_subtype="Normal, External",
     depends_on={
         "__external__": "_ext_data_protra_capacity_expansion_calculator",
         "__data__": "_ext_data_protra_capacity_expansion_calculator",
@@ -4369,7 +4369,7 @@ _ext_constant_share_energy_requirements_for_decom_ev_batteries = ExtConstant(
     units="DMNL",
     subscripts=["NRG PROTRA I"],
     comp_type="Constant",
-    comp_subtype="External, Normal",
+    comp_subtype="Normal, External",
     depends_on={
         "__external__": "_ext_constant_share_energy_requirements_for_decomm_protra"
     },
@@ -4502,7 +4502,7 @@ _ext_constant_share_of_cu_price = ExtConstant(
     units="DMNL",
     subscripts=["NRG PROTRA I"],
     comp_type="Constant",
-    comp_subtype="External, Normal",
+    comp_subtype="Normal, External",
     depends_on={
         "__external__": "_ext_constant_share_self_electricity_consumption_protra"
     },
