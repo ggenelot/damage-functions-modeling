@@ -1,3 +1,6 @@
+Damage functions
+===============
+
 Total agriculture impact
 ------------------------
 
@@ -197,7 +200,6 @@ Actual dryland loss in the current year
 ---------------------------------------
 
 .. math::
-
 D_{t,r}=\left(1-P_{t,r}\right)\overline{{{D}}}_{t,r} 
 
 Input variables:
@@ -211,7 +213,8 @@ Output variables:
 Actual cumulative dryland loss
 ------------------------------
 
-:math:`{\cal C}D_{t,r}=C D_{t-1,r}+D_{t,r}`
+.. math::
+{\cal C}D_{t,r}=C D_{t-1,r}+D_{t,r} 
 
 Input variables:
 - Actual cumulative dryland loss 
