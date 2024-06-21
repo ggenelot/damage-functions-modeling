@@ -1,7 +1,8 @@
 Total agriculture impact
 ------------------------
 
-$$A_{t,r}=A_{t,r}^{r}+A_{t,r}^{l}+A_{t,r}^{f}$$ 
+.. math::
+A_{t,r}=A_{t,r}^{r}+A_{t,r}^{l}+A_{t,r}^{f} 
 
 Input variables:
 - Damage in agricultural production
@@ -15,7 +16,8 @@ Output variables:
 Agriculture impact of the rate of climate change
 ------------------------------------------------
 
-$$A_{t,r}^{r}=\alpha_{r}\left(\frac{\Delta T_{t}}{0.04}\right)^{\beta}+\left(1-\frac{1}{\rho}\right)A_{t-1,r}^{r}$$ 
+.. math::
+A_{t,r}^{r}=\alpha_{r}\left(\frac{\Delta T_{t}}{0.04}\right)^{\beta}+\left(1-\frac{1}{\rho}\right)A_{t-1,r}^{r} 
 
 Input variables:
 - Time
@@ -32,14 +34,15 @@ Output variables:
 Agriculture impact of the level of climate change
 -------------------------------------------------
 
-$$A_{t,r}^{l}\,=\,\delta_{r}^{l}T_{t}\,+\,\delta_{r}^{2}T_{t}^{2}$$ 
+.. math::
+A_{t,r}^{l}\,=\,\delta_{r}^{l}T_{t}\,+\,\delta_{r}^{2}T_{t}^{2} 
 
 Input variables:
 - Time
 - Region
 - Change in regional mean temperature
-- Parameter related to warming of 2.5°C 
-- Parameter related to warming of 3.2°C 
+- Parameter related to warming of 2.5ï¿½C 
+- Parameter related to warming of 3.2ï¿½C 
 
 Output variables:
 - Damage in agricultural production level 
@@ -48,7 +51,8 @@ Output variables:
 Agriculture impact of fertilisation
 -----------------------------------
 
-$$A_{t,r}^{f}=\nu_{r}\ln\frac{G O2_{t}}{275}\,,$$ 
+.. math::
+A_{t,r}^{f}=\nu_{r}\ln\frac{G O2_{t}}{275}\,, 
 
 Input variables:
 - Time
@@ -64,7 +68,8 @@ Output variables:
 Agriculture production relative loss
 ------------------------------------
 
-$$\frac{G A P_{t,r}}{Y_{t,r}}=\frac{G A P_{1990,r}}{Y_{1990,r}}\biggl(\frac{y_{1990,r}}{y_{t,r}}\biggr)^{2}$$ 
+.. math::
+\frac{G A P_{t,r}}{Y_{t,r}}=\frac{G A P_{1990,r}}{Y_{1990,r}}\biggl(\frac{y_{1990,r}}{y_{t,r}}\biggr)^{2} 
 
 Input variables:
 - Gross agricultural product
@@ -78,7 +83,8 @@ Output variables:
 Forestry impact
 ---------------
 
-$$F_{t,r}=\alpha_{r}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{s}\left(0.5\left(\frac{T_{t}}{1.0}\right)^{\beta}+0.5\gamma\ln\left(\frac{C O_{2,t}}{275}\right)\right)$$ 
+.. math::
+F_{t,r}=\alpha_{r}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{s}\left(0.5\left(\frac{T_{t}}{1.0}\right)^{\beta}+0.5\gamma\ln\left(\frac{C O_{2,t}}{275}\right)\right) 
 
 Input variables:
 - Time
@@ -97,7 +103,8 @@ Output variables:
 Water resources impact
 ----------------------
 
-$$W_{t,r}=\operatorname*{min}\left\{\alpha_{r}Y_{1990,r}(1-\tau)^{\prime-2000}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\not p}\left(\frac{P_{t,r}}{J_{1990,r}}\right)^{\not p}\left(\frac{T_{t}}{1.0}\right)^{\gamma}\frac{Y_{t,r}}{1.0}\right\}$$ 
+.. math::
+W_{t,r}=\operatorname*{min}\left\{\alpha_{r}Y_{1990,r}(1-\tau)^{\prime-2000}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\not p}\left(\frac{P_{t,r}}{J_{1990,r}}\right)^{\not p}\left(\frac{T_{t}}{1.0}\right)^{\gamma}\frac{Y_{t,r}}{1.0}\right\} 
 
 Input variables:
 - Time
@@ -118,7 +125,8 @@ Output variables:
 Space heating impact
 --------------------
 
-$$B_{t}=\operatorname*{max}\left\{\frac{B_{0}}{100},B_{t-}\left(1-\rho-\gamma\frac{\Delta T^{2}}{\tau^{2}}\right)\right\}$$ 
+.. math::
+B_{t}=\operatorname*{max}\left\{\frac{B_{0}}{100},B_{t-}\left(1-\rho-\gamma\frac{\Delta T^{2}}{\tau^{2}}\right)\right\} 
 
 Input variables:
 - Time
@@ -138,7 +146,8 @@ Output variables:
 Space cooling impact
 --------------------
 
-$$S C_{t,r}=\alpha_{r}Y_{1990,r}\left(\frac{T_{t}}{1.0}\right)^{\beta}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\epsilon}\left(\frac{P_{t,r}}{P_{11990,r}}\right)\right/\prod_{s=1,900}^{t}4E E I_{s,r}$$ 
+.. math::
+S C_{t,r}=\alpha_{r}Y_{1990,r}\left(\frac{T_{t}}{1.0}\right)^{\beta}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\epsilon}\left(\frac{P_{t,r}}{P_{11990,r}}\right)\right/\prod_{s=1,900}^{t}4E E I_{s,r} 
 
 Input variables:
 - Time
@@ -158,7 +167,8 @@ Output variables:
 Potential cumulative dryland impact
 -----------------------------------
 
-$$\overline{{{C D}}}_{t,r}=\operatorname*{min}[\delta_{r}s_{t}^{\gamma_{r}},\zeta_{r}]$$ 
+.. math::
+\overline{{{C D}}}_{t,r}=\operatorname*{min}[\delta_{r}s_{t}^{\gamma_{r}},\zeta_{r}] 
 
 Input variables:
 - Time
@@ -172,7 +182,8 @@ Output variables:
 Potential dryland loss without protection
 -----------------------------------------
 
-$$\overline{{{D}}}_{t,r}=\overline{{{C D}}}_{t,r}-C D_{t-1,r}$$ 
+.. math::
+\overline{{{D}}}_{t,r}=\overline{{{C D}}}_{t,r}-C D_{t-1,r} 
 
 Input variables:
 - Potential cumulative dryland loss without protection 
@@ -185,7 +196,9 @@ Output variables:
 Actual dryland loss in the current year
 ---------------------------------------
 
-$$D_{t,r}=\left(1-P_{t,r}\right)\overline{{{D}}}_{t,r}$$ 
+.. math::
+
+D_{t,r}=\left(1-P_{t,r}\right)\overline{{{D}}}_{t,r} 
 
 Input variables:
 - Fraction of the coastline protected 
@@ -198,7 +211,7 @@ Output variables:
 Actual cumulative dryland loss
 ------------------------------
 
-$${\cal C}D_{t,r}=C D_{t-1,r}+D_{t,r}$$ 
+:math:`{\cal C}D_{t,r}=C D_{t-1,r}+D_{t,r}`
 
 Input variables:
 - Actual cumulative dryland loss 
@@ -211,7 +224,8 @@ Output variables:
 Value of dryland
 ----------------
 
-$$V D_{t,r}=\varphi\!\left({\frac{Y_{t,r}/A_{t,r}}{Y A_{0}}}\right)^{\!\!6}$$ 
+.. math::
+V D_{t,r}=\varphi\!\left({\frac{Y_{t,r}/A_{t,r}}{Y A_{0}}}\right)^{\!\!6} 
 
 Input variables:
 - Time
@@ -230,7 +244,8 @@ Output variables:
 Wetland loss
 ------------
 
-$$\widehat{\mathcal{W}_{t,r^{\prime}}}\longrightarrow C\mathcal{O}_{r^{\prime}}^{S}\triangle\mathsf{A}_{t}\dots C\mathcal{O}_{r^{\prime}}^{M}\mathcal{D}_{t,r^{\prime}}\triangle\mathsf{A}_{t}$$ 
+.. math::
+\widehat{\mathcal{W}_{t,r^{\prime}}}\longrightarrow C\mathcal{O}_{r^{\prime}}^{S}\triangle\mathsf{A}_{t}\dots C\mathcal{O}_{r^{\prime}}^{M}\mathcal{D}_{t,r^{\prime}}\triangle\mathsf{A}_{t} 
 
 Input variables:
 - Time
@@ -247,7 +262,8 @@ Output variables:
 Cumulative wetland loss
 -----------------------
 
-$${\mathcal W}_{t,r}^{C}\ --\left.\mathrm{Im}^{*}\!\right.\left(\left.{\mathcal W}_{t-1,r}^{C}\right.\rightarrow\mathcal W\right._{t-1,r}^{}\left.\!-\frac{}{}_{,r}\right.\mathcal W\right._{r}^{}\frac{\lambda}{\sqrt{}_{r}^{}}\right)$$ 
+.. math::
+{\mathcal W}_{t,r}^{C}\ --\left.\mathrm{Im}^{*}\!\right.\left(\left.{\mathcal W}_{t-1,r}^{C}\right.\rightarrow\mathcal W\right._{t-1,r}^{}\left.\!-\frac{}{}_{,r}\right.\mathcal W\right._{r}^{}\frac{\lambda}{\sqrt{}_{r}^{}}\right) 
 
 Input variables:
 - Cumulative wetland loss 
@@ -261,7 +277,8 @@ Output variables:
 Wetland value
 -------------
 
-$$V W_{t,r}=\alpha\left(\frac{y_{t,r}}{y_{0}}\right)^{\beta}\left(\frac{d_{t,r}}{d_{0}}\right)^{\gamma}\left(\frac{W_{1990,r}-W_{t,r}^{C}}{W_{1990,r}}\right)^{\delta}$$ 
+.. math::
+V W_{t,r}=\alpha\left(\frac{y_{t,r}}{y_{0}}\right)^{\beta}\left(\frac{d_{t,r}}{d_{0}}\right)^{\gamma}\left(\frac{W_{1990,r}-W_{t,r}^{C}}{W_{1990,r}}\right)^{\delta} 
 
 Input variables:
 - Time
@@ -283,7 +300,8 @@ Output variables:
 Level of protection
 -------------------
 
-$$P_{t,r}=\operatorname*{max}\left\{0,1-\frac{1}{2}\left(\frac{\mathrm{NPV}V P_{t,r}+\mathrm{NPV}V W_{t,r}}{\mathrm{NPV}V D_{t,r}}\right)\right\}$$ 
+.. math::
+P_{t,r}=\operatorname*{max}\left\{0,1-\frac{1}{2}\left(\frac{\mathrm{NPV}V P_{t,r}+\mathrm{NPV}V W_{t,r}}{\mathrm{NPV}V D_{t,r}}\right)\right\} 
 
 Input variables:
 - Net present value of protection if whole coast is protected 
@@ -298,7 +316,8 @@ Output variables:
 Net present cost of protection
 ------------------------------
 
-$$\mathrm{NPV}{\cal P}_{t,r}=\sum_{s=t}^{\circ}\Biggl(\frac{1}{1+\rho+\eta g_{t,r}}\Biggr)^{s-t}\pi_{r}\Delta S_{t}=\frac{1+\rho+\eta g_{t,r}}{\rho+\eta g_{t,r}}\pi_{r}\Delta S_{t,s}$$ 
+.. math::
+\mathrm{NPV}{\cal P}_{t,r}=\sum_{s=t}^{\circ}\Biggl(\frac{1}{1+\rho+\eta g_{t,r}}\Biggr)^{s-t}\pi_{r}\Delta S_{t}=\frac{1+\rho+\eta g_{t,r}}{\rho+\eta g_{t,r}}\pi_{r}\Delta S_{t,s} 
 
 Input variables:
 - Time
@@ -316,7 +335,8 @@ Output variables:
 Net present cost of wetland loss
 --------------------------------
 
-$$\left.N P V V W_{t,r}=\sum_{s=t}^{r}W_{t,r}V W_{s,r}\left(\frac{1}{1+\rho+\eta g_{t,r}}\right)^{s-t}=$$ 
+.. math::
+\left.N P V V W_{t,r}=\sum_{s=t}^{r}W_{t,r}V W_{s,r}\left(\frac{1}{1+\rho+\eta g_{t,r}}\right)^{s-t}= 
 
 Input variables:
 - Time
@@ -339,7 +359,8 @@ Output variables:
 Net present cost of dryland loss
 --------------------------------
 
-$${\mathrm{NPV}}U_{t,r}=\sum_{s=t}^{\infty}{\overline{{D}}}_{t,r}V D_{t,r}\left({\frac{1+\epsilon d_{t,r}}{1+\rho+\eta g_{t,r}}}\right)^{s-t}={\overline{{D}}}_{t,r}V D_{t,r}{\frac{1+\rho+\eta g_{t,r}}{\rho+\eta g_{t,r}-\epsilon d_{t,r}}}\ .$$ 
+.. math::
+{\mathrm{NPV}}U_{t,r}=\sum_{s=t}^{\infty}{\overline{{D}}}_{t,r}V D_{t,r}\left({\frac{1+\epsilon d_{t,r}}{1+\rho+\eta g_{t,r}}}\right)^{s-t}={\overline{{D}}}_{t,r}V D_{t,r}{\frac{1+\rho+\eta g_{t,r}}{\rho+\eta g_{t,r}-\epsilon d_{t,r}}}\ . 
 
 Input variables:
 - Time
@@ -359,7 +380,8 @@ Output variables:
 Ecosystem loss
 --------------
 
-$$E_{t,r}=\alpha P_{t,r}{\frac{y_{t,}^{\prime}{\cal Y}_{y}^{b}}{1+{\bf y}_{t,r}{\cal Y}_{y,r}}}{\frac{\Delta{\cal T}_{r}}{1+{\bf\bar{\Delta}}{2}{\cal Y}_{\tau}^{\prime}}}\bigg(1-\sigma+\sigma{\frac{B_{0}}{B_{t}^{\prime}}}\bigg)$$ 
+.. math::
+E_{t,r}=\alpha P_{t,r}{\frac{y_{t,}^{\prime}{\cal Y}_{y}^{b}}{1+{\bf y}_{t,r}{\cal Y}_{y,r}}}{\frac{\Delta{\cal T}_{r}}{1+{\bf\bar{\Delta}}{2}{\cal Y}_{\tau}^{\prime}}}\bigg(1-\sigma+\sigma{\frac{B_{0}}{B_{t}^{\prime}}}\bigg) 
 
 Input variables:
 - Time
@@ -380,7 +402,8 @@ Output variables:
 Number of species
 -----------------
 
-$$S H_{t,r}=\alpha_{r}Y_{1990,r}\frac{\mathrm{atan}\,T_{t}}{\mathrm{atan}\,1.0}\biggl(\frac{y_{t,r}}{y_{1990,r}}\biggr)^{\epsilon}\biggl(\frac{P_{t,r}}{P_{1990,r}}\biggr)^{\epsilon}\biggl\langle\prod_{s=19900}^{t}\biggr\}^{\epsilon}\frac{\ln^{2}{\pi^{2}\pi^{2}\pi^{2}\pi^{2}\pi^{2}\pi^{2}\rangle_{t}}\,\biggl(\frac{y_{t,r}}{p_{t}-\epsilon_{r}^{2}\sqrt{2\pi_{t}\pi_{t}}^{2}\biggr)^{2}}{\epsilon_{t}^{2}-\pi_{t}^{2}\pi_{t}^{2}\pi_{t}^{2}\pi_{t}^{2}\pi_{t}^{2}\pi_{t}^{2}-\biggl)_{t}^{2}}_{t}\,{\epsilon_{t}{t}{t}{\mu}}\,\biggr)\,\,\rho_{\biggr)\,\,\frac{t}\,\biggl(\biggr$$ 
+.. math::
+S H_{t,r}=\alpha_{r}Y_{1990,r}\frac{\mathrm{atan}\,T_{t}}{\mathrm{atan}\,1.0}\biggl(\frac{y_{t,r}}{y_{1990,r}}\biggr)^{\epsilon}\biggl(\frac{P_{t,r}}{P_{1990,r}}\biggr)^{\epsilon}\biggl\langle\prod_{s=19900}^{t}\biggr\}^{\epsilon}\frac{\ln^{2}{\pi^{2}\pi^{2}\pi^{2}\pi^{2}\pi^{2}\pi^{2}\rangle_{t}}\,\biggl(\frac{y_{t,r}}{p_{t}-\epsilon_{r}^{2}\sqrt{2\pi_{t}\pi_{t}}^{2}\biggr)^{2}}{\epsilon_{t}^{2}-\pi_{t}^{2}\pi_{t}^{2}\pi_{t}^{2}\pi_{t}^{2}\pi_{t}^{2}\pi_{t}^{2}-\biggl)_{t}^{2}}_{t}\,{\epsilon_{t}{t}{t}{\mu}}\,\biggr)\,\,\rho_{\biggr)\,\,\frac{t}\,\biggl(\biggr 
 
 Input variables:
 - Number of species 
@@ -395,7 +418,8 @@ Output variables:
 Human health : diarrhoea
 ------------------------
 
-$$D_{t,r}^{d}=\mathcal{A}_{r}^{d}P_{t,r}\left(\frac{\mathcal{V}_{t,r}}{\mathcal{V}_{1990,r}}\right)^{s}\left(\frac{T_{t,r}}{\mathcal{V}_{p r e-i n d u s t r i a l,r}}\right)^{p}$$ 
+.. math::
+D_{t,r}^{d}=\mathcal{A}_{r}^{d}P_{t,r}\left(\frac{\mathcal{V}_{t,r}}{\mathcal{V}_{1990,r}}\right)^{s}\left(\frac{T_{t,r}}{\mathcal{V}_{p r e-i n d u s t r i a l,r}}\right)^{p} 
 
 Input variables:
 - Region
@@ -414,7 +438,8 @@ Output variables:
 Human health : vector-borne diseases
 ------------------------------------
 
-$$D_{t,r}^{\nu}=D_{1990,r}^{\nu}Q_{r}^{\nu}\left(T_{t}-T_{1990}\right)^{\beta}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\gamma}$$ 
+.. math::
+D_{t,r}^{\nu}=D_{1990,r}^{\nu}Q_{r}^{\nu}\left(T_{t}-T_{1990}\right)^{\beta}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\gamma} 
 
 Input variables:
 - Climate-change-induced mortality due to disease c in region r at time t 
@@ -436,7 +461,8 @@ Output variables:
 Human health : cardiovascular and respiratory mortality
 -------------------------------------------------------
 
-$${\cal D}^{c}=\varrho^{c}+\beta^{c}{\cal I}_{\cal B}$$ 
+.. math::
+{\cal D}^{c}=\varrho^{c}+\beta^{c}{\cal I}_{\cal B} 
 
 Input variables:
 - Index for the disease 
@@ -449,7 +475,8 @@ Output variables:
 Human health : regional cardiovascular mortality
 ------------------------------------------------
 
-$$D_{t,r}^{c}=\alpha_{r}^{c}T_{t}^{2}+\beta_{r}^{c}T_{t}^{2}$$ 
+.. math::
+D_{t,r}^{c}=\alpha_{r}^{c}T_{t}^{2}+\beta_{r}^{c}T_{t}^{2} 
 
 Input variables:
 - Region
@@ -463,7 +490,8 @@ Output variables:
 Human health : heat-related mortality
 -------------------------------------
 
-$$U_{t,r}=\frac{\alpha\sqrt{y_{t,r}}+\beta\sqrt{P D_{t,r}}}{1+\alpha\sqrt{y_{t,r}}+\beta\sqrt{P D_{t,r}}}$$ 
+.. math::
+U_{t,r}=\frac{\alpha\sqrt{y_{t,r}}+\beta\sqrt{P D_{t,r}}}{1+\alpha\sqrt{y_{t,r}}+\beta\sqrt{P D_{t,r}}} 
 
 Input variables:
 - Gross domestic product per capita
@@ -478,7 +506,8 @@ Output variables:
 Extreme weather : tropical storms damage
 ----------------------------------------
 
-$$T D_{t,r}=\sigma_{r}Y_{t,r}\left(\frac{\vartheta_{t,r}}{\vartheta_{1990,r}}\right)\left[\left(1+\rlap{\textstyle{\mathcal{D}}}{\mathcal{D}}_{t,r}\right)^{\gamma}-1\right]$$ 
+.. math::
+T D_{t,r}=\sigma_{r}Y_{t,r}\left(\frac{\vartheta_{t,r}}{\vartheta_{1990,r}}\right)\left[\left(1+\rlap{\textstyle{\mathcal{D}}}{\mathcal{D}}_{t,r}\right)^{\gamma}-1\right] 
 
 Input variables:
 - Time
@@ -498,7 +527,8 @@ Output variables:
 Extreme weather : tropical storm mortality
 ------------------------------------------
 
-$$T M_{t,r}=\beta_{r}P_{t,r}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\eta}\left[\left(1+\rlap/\partial T_{t,r}\right)^{\gamma}-1\right]$$ 
+.. math::
+T M_{t,r}=\beta_{r}P_{t,r}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\eta}\left[\left(1+\rlap/\partial T_{t,r}\right)^{\gamma}-1\right] 
 
 Input variables:
 - Time
@@ -518,7 +548,8 @@ Output variables:
 Extratropical storms damage
 ---------------------------
 
-$${\cal E}T\!D_{t,r}={\cal Q}_{r}Y_{t,r}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\varepsilon}\left[\left(\frac{C_{C O2,t}}{C_{C O2,p r e}}\right)^{\gamma}-1\right]$$ 
+.. math::
+{\cal E}T\!D_{t,r}={\cal Q}_{r}Y_{t,r}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\varepsilon}\left[\left(\frac{C_{C O2,t}}{C_{C O2,p r e}}\right)^{\gamma}-1\right] 
 
 Input variables:
 - GDP in region r at time t 
@@ -536,7 +567,8 @@ Output variables:
 Extratropical storms mortality
 ------------------------------
 
-$$E T M_{t,r}=\beta_{r}{\cal P}_{t,r}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\varphi}\widehat{\cal O}_{r}\left[\left(\frac{C_{C O2,t}}{C_{C O2,p r e}}\right)^{\gamma}-1\right]$$ 
+.. math::
+E T M_{t,r}=\beta_{r}{\cal P}_{t,r}\left(\frac{y_{t,r}}{y_{1990,r}}\right)^{\varphi}\widehat{\cal O}_{r}\left[\left(\frac{C_{C O2,t}}{C_{C O2,p r e}}\right)^{\gamma}-1\right] 
 
 Input variables:
 - Population in region r at time t 
@@ -554,7 +586,8 @@ Output variables:
 Value of a statistical life
 ---------------------------
 
-$$V S L_{t,r}=\alpha\left(\frac{y_{t,r}}{y_{0}}\right)^{6}$$ 
+.. math::
+V S L_{t,r}=\alpha\left(\frac{y_{t,r}}{y_{0}}\right)^{6} 
 
 Input variables:
 - Income elasticity of the value of a statistical life 
@@ -568,7 +601,8 @@ Output variables:
 Value of a year of morbidity
 ----------------------------
 
-$$V M_{t,r}=\beta\left(\frac{y_{t,r}}{y_{0}}\right)$$ 
+.. math::
+V M_{t,r}=\beta\left(\frac{y_{t,r}}{y_{0}}\right) 
 
 Input variables:
 - Gross domestic product per capita
@@ -581,7 +615,8 @@ Output variables:
 Damage function
 ---------------
 
-$$\begin{array}{l l}{{\ }}&{{\displaystyle=\psi_{1}T_{A T}(t)+\psi_{2}[T_{A T}(t)]^{2}}}\\ {{}}&{{=[0.0]T_{A T}(t)+[0.003467][T_{A T}(t)]^{2}}}\end{array}$$ 
+.. math::
+\begin{array}{l l}{{\ }}&{{\displaystyle=\psi_{1}T_{A T}(t)+\psi_{2}[T_{A T}(t)]^{2}}}\\ {{}}&{{=[0.0]T_{A T}(t)+[0.003467][T_{A T}(t)]^{2}}}\end{array} 
 
 Input variables:
 - ??1 (psi 1) 
@@ -595,7 +630,8 @@ Output variables:
 Abatement costs
 ---------------
 
-$$\begin{array}{l}{{\Lambda({\bf t})\;=\;\theta_{1}(t)\mu(t)^{\theta_{2}}}}\\ {{\theta_{1}(0)\;=\;0.109062}}\\ {{\theta_{2}=\;2.6}}\end{array}$$ 
+.. math::
+\begin{array}{l}{{\Lambda({\bf t})\;=\;\theta_{1}(t)\mu(t)^{\theta_{2}}}}\\ {{\theta_{1}(0)\;=\;0.109062}}\\ {{\theta_{2}=\;2.6}}\end{array} 
 
 Input variables:
 - ?? (mu) 
@@ -609,7 +645,8 @@ Output variables:
 Tolerable rate of change
 ------------------------
 
-$$T R_{d,r}=\ T R_{d,0}\cdot\ T M_{r}$$ 
+.. math::
+T R_{d,r}=\ T R_{d,0}\cdot\ T M_{r} 
 
 Input variables:
 -  Tolerable rate of change 
@@ -622,7 +659,8 @@ Output variables:
 Tolerable plateau
 -----------------
 
-$$T P_{d,r}\underline{{{\Sigma}}}\underline{{{\Sigma}}}\underline{{{P}}}_{d,0}\cdot\ I=0\L_{r}$$ 
+.. math::
+T P_{d,r}\underline{{{\Sigma}}}\underline{{{\Sigma}}}\underline{{{P}}}_{d,0}\cdot\ I=0\L_{r} 
 
 Input variables:
 -  Tolerable plateau 
@@ -635,7 +673,8 @@ Output variables:
 Adjusted tolerable plateau
 --------------------------
 
-$$A^{\prime}T P_{i,d,r}\underline{{{\bf\Lambda}}}\underline{{{\bf\Lambda}}}\underline{{{\bf\Lambda}}}\underline{{{\Lambda}}}\underline{{{\Lambda}}}\lambda\alpha^{\prime}\underline{{{\cal\Psi}}}_{i,d,r}$$ 
+.. math::
+A^{\prime}T P_{i,d,r}\underline{{{\bf\Lambda}}}\underline{{{\bf\Lambda}}}\underline{{{\bf\Lambda}}}\underline{{{\Lambda}}}\underline{{{\Lambda}}}\lambda\alpha^{\prime}\underline{{{\cal\Psi}}}_{i,d,r} 
 
 Input variables:
 - Plateau nonegative factors characteristic to an adaptive policy
@@ -648,7 +687,8 @@ Output variables:
 Adjusted tolerable rate
 -----------------------
 
-$$A I I\!R_{i,d,r}\underline{{{\longrightarrow}}}\ D\mathsf{)}_{d,r}\i\!\!\slash\k\mathsf{P}_{1,d,r}$$ 
+.. math::
+A I I\!R_{i,d,r}\underline{{{\longrightarrow}}}\ D\mathsf{)}_{d,r}\i\!\!\slash\k\mathsf{P}_{1,d,r} 
 
 Input variables:
 -  Tolerable rate of change 
@@ -661,7 +701,8 @@ Output variables:
 Adjusted tolerable level
 ------------------------
 
-$${\cal L}_{i,d,r}\,=\,\mathrm{In}\mathrm{ax}\left[0,R T_{i,r}\,-\,A\,T L_{i,d,r}\right]$$ 
+.. math::
+{\cal L}_{i,d,r}\,=\,\mathrm{In}\mathrm{ax}\left[0,R T_{i,r}\,-\,A\,T L_{i,d,r}\right] 
 
 Input variables:
 -  Adjusted tolerable plateau 
@@ -676,7 +717,8 @@ Output variables:
 Impact
 ------
 
-$$A T L_{i,d,r}=\operatorname*{min}\left[A T P_{i,d,t},A T L_{i-1,d,r}+A T R_{d,r}\cdot(Y_{i}-Y_{i-1})\right]\frac{array}{a,d,r}{a,r}=\sum_{i=1}^{M}\frac{a}{a,r}>0^{2}.$$ 
+.. math::
+A T L_{i,d,r}=\operatorname*{min}\left[A T P_{i,d,t},A T L_{i-1,d,r}+A T R_{d,r}\cdot(Y_{i}-Y_{i-1})\right]\frac{array}{a,d,r}{a,r}=\sum_{i=1}^{M}\frac{a}{a,r}>0^{2}. 
 
 Input variables:
 - Regional mean temperature in degrees Celsius 
@@ -689,7 +731,8 @@ Output variables:
 Impact of a discontinuity
 -------------------------
 
-$$I D I S_{i}=\operatorname*{max}[0,\,G R T_{i}-\,T D I S]$$ 
+.. math::
+I D I S_{i}=\operatorname*{max}[0,\,G R T_{i}-\,T D I S] 
 
 Input variables:
 - Global mean temperature 
@@ -702,7 +745,8 @@ Output variables:
 Weighting of the impacts
 ------------------------
 
-$$\bar{W}_{d,r}\implies\bar{W}_{d,0}\cdot\frac{W F_{r}}{100}$$ 
+.. math::
+\bar{W}_{d,r}\implies\bar{W}_{d,0}\cdot\frac{W F_{r}}{100} 
 
 Input variables:
 -  Weights for monetizing impacts 
@@ -715,7 +759,8 @@ Output variables:
 Weigthed impacts
 ----------------
 
-$$W I_{i,d,r}=\left(\frac{I_{i,d,r}}{2.5}\right)^{P O W}\cdot W_{d,r}\cdot\left(1-\frac{I M P_{i,d,r}}{100}\right)\cdot G D P_{i,r}$$ 
+.. math::
+W I_{i,d,r}=\left(\frac{I_{i,d,r}}{2.5}\right)^{P O W}\cdot W_{d,r}\cdot\left(1-\frac{I M P_{i,d,r}}{100}\right)\cdot G D P_{i,r} 
 
 Input variables:
 -  Power function exponent 
@@ -731,7 +776,8 @@ Output variables:
 Certainty equivalent of the risk
 --------------------------------
 
-$$W I D I S_{i,r}=I D I S_{i}\cdot(\frac{P D I S}{100})\cdot\,W D I S_{r}\cdot G D P_{i,r}$$ 
+.. math::
+W I D I S_{i,r}=I D I S_{i}\cdot(\frac{P D I S}{100})\cdot\,W D I S_{r}\cdot G D P_{i,r} 
 
 Input variables:
 -  Discontinuity weight 
@@ -745,7 +791,8 @@ Output variables:
 Total weighted impact
 ---------------------
 
-$$W I T_{i,r}\stackrel{_{\textstyle>}}{=}\sum_{d}W I_{i,d,r}+W I D I J J_{i,r}$$ 
+.. math::
+W I T_{i,r}\stackrel{_{\textstyle>}}{=}\sum_{d}W I_{i,d,r}+W I D I J J_{i,r} 
 
 Input variables:
 -  Weighted impact 
@@ -758,7 +805,8 @@ Output variables:
 Adjusted damage
 ---------------
 
-$$\ A\,L\!\!\!\!\slash\,\L_{i,r}\,\longrightarrow\,\ W\!\!\!\!\slash\,J\L^{*}\!\!\!\!\slash\,A\to\nabla\!\!\!\slash\,\L_{i}\,\longrightarrow\,\L^{*}\,\L_{}\,k\,\L_{}\,\L^{}\,\Psi=\,\L^{*}\Psi_{i}\,\L^{}\,$$ 
+.. math::
+\ A\,L\!\!\!\!\slash\,\L_{i,r}\,\longrightarrow\,\ W\!\!\!\!\slash\,J\L^{*}\!\!\!\!\slash\,A\to\nabla\!\!\!\slash\,\L_{i}\,\longrightarrow\,\L^{*}\,\L_{}\,k\,\L_{}\,\L^{}\,\Psi=\,\L^{*}\Psi_{i}\,\L^{}\, 
 
 Input variables:
 -  Total weighted impact 
@@ -771,7 +819,8 @@ Output variables:
 Discounted damages
 ------------------
 
-$$D D=\sum_{i,r}(A D_{i,r})\cdot\prod_{k=1}^{i}\left(1+d r_{k,r}\cdot\frac{r i c}{100}\right)^{-(Y_{k}-Y_{k-1})}$$ 
+.. math::
+D D=\sum_{i,r}(A D_{i,r})\cdot\prod_{k=1}^{i}\left(1+d r_{k,r}\cdot\frac{r i c}{100}\right)^{-(Y_{k}-Y_{k-1})} 
 
 Input variables:
 -  Adjusted damages 
@@ -784,7 +833,8 @@ Output variables:
 Damage function
 ---------------
 
-$$D_{i}(t)=1-\frac{1}{1+a_{1,i}T_{1}(t)+a_{2,i}T_{1}(t)^{2}},$$ 
+.. math::
+D_{i}(t)=1-\frac{1}{1+a_{1,i}T_{1}(t)+a_{2,i}T_{1}(t)^{2}}, 
 
 Input variables:
 -  Climate damage fraction of gross output 
@@ -796,7 +846,8 @@ Output variables:
 Productivity of land in agriculture
 -----------------------------------
 
-$$d X=\alpha d T^{2}+\beta d T+\gamma d P$$ 
+.. math::
+d X=\alpha d T^{2}+\beta d T+\gamma d P 
 
 Input variables:
 - Global mean temperature 
@@ -809,7 +860,8 @@ Output variables:
 Productivity of land in forestry
 --------------------------------
 
-$$d X=\alpha d T^{2}+\beta d T+\gamma d P$$ 
+.. math::
+d X=\alpha d T^{2}+\beta d T+\gamma d P 
 
 Input variables:
 - Global mean temperature 
@@ -822,7 +874,8 @@ Output variables:
 Fish stock
 ----------
 
-$$d X=\alpha d T^{2}+\beta d T+\gamma d P$$ 
+.. math::
+d X=\alpha d T^{2}+\beta d T+\gamma d P 
 
 Input variables:
 - Global mean temperature 
@@ -835,7 +888,8 @@ Output variables:
 Water cooling and run-off
 -------------------------
 
-$$d X=\alpha d T^{2}+\beta d T+\gamma d P$$ 
+.. math::
+d X=\alpha d T^{2}+\beta d T+\gamma d P 
 
 Input variables:
 - Global mean temperature 
@@ -848,7 +902,8 @@ Output variables:
 Run-off
 -------
 
-$$d X=\alpha d T^{2}+\beta d T+\gamma d P$$ 
+.. math::
+d X=\alpha d T^{2}+\beta d T+\gamma d P 
 
 Input variables:
 - Global mean temperature 
@@ -861,7 +916,8 @@ Output variables:
 Energy demand
 -------------
 
-$$d X=\alpha d T^{2}+\beta d T+\gamma d P$$ 
+.. math::
+d X=\alpha d T^{2}+\beta d T+\gamma d P 
 
 Input variables:
 - Global mean temperature 
@@ -874,7 +930,8 @@ Output variables:
 Tourism
 -------
 
-$$d X=\alpha d T^{2}+\beta d T+\gamma d P$$ 
+.. math::
+d X=\alpha d T^{2}+\beta d T+\gamma d P 
 
 Input variables:
 - Global mean temperature 
@@ -887,7 +944,8 @@ Output variables:
 Extreme events
 --------------
 
-$$d X=\alpha d T^{2}+\beta d T+\gamma d P$$ 
+.. math::
+d X=\alpha d T^{2}+\beta d T+\gamma d P 
 
 Input variables:
 - Global mean temperature 
@@ -900,7 +958,8 @@ Output variables:
 Sea-level rise
 --------------
 
-$$d X=\alpha d T^{2}+\beta d T+\gamma d P$$ 
+.. math::
+d X=\alpha d T^{2}+\beta d T+\gamma d P 
 
 Input variables:
 - Global mean temperature 
@@ -913,7 +972,8 @@ Output variables:
 Health
 ------
 
-$$d X=\alpha d T^{2}+\beta d T+\gamma d P$$ 
+.. math::
+d X=\alpha d T^{2}+\beta d T+\gamma d P 
 
 Input variables:
 - Global mean temperature 
@@ -926,6 +986,7 @@ Output variables:
 Dice-like damage
 ----------------
 
+.. math::
 Input variables:
 - Global mean temperature 
 
@@ -936,6 +997,7 @@ Output variables:
 Tipping point damage
 --------------------
 
+.. math::
 Input variables:
 - Global mean temperature 
 
@@ -946,7 +1008,8 @@ Output variables:
 Climate shock
 -------------
 
-$$\text{SHOCKS}~t \sim Beta(\theta_{s1,t}, \theta_{s2,t})$$ 
+.. math::
+\text{SHOCKS}~t \sim Beta(\theta_{s1,t}, \theta_{s2,t}) 
 
 Input variables:
 - Beta 1
@@ -959,7 +1022,8 @@ Output variables:
 Beta 1 parameter
 ----------------
 
-$$\theta_{s1,t} = \theta_{s1,0} (1 + \ln \left( \frac{T_{empt-1}}{T_{empt0}} \right))^{\Upsilon_{s3}}$$ 
+.. math::
+\theta_{s1,t} = \theta_{s1,0} (1 + \ln \left( \frac{T_{empt-1}}{T_{empt0}} \right))^{\Upsilon_{s3}} 
 
 Input variables:
 - Global mean temperature 
@@ -971,7 +1035,8 @@ Output variables:
 Beta 2 parameter
 ----------------
 
-$$\theta_{s2,t} = \theta_{s2,0} \left( \frac{T_{empt0}}{T_{empt-1}} \right)^{\Upsilon_{s4}} $$ 
+.. math::
+\theta_{s2,t} = \theta_{s2,0} \left( \frac{T_{empt0}}{T_{empt-1}} \right)^{\Upsilon_{s4}}  
 
 Input variables:
 - Global mean temperature 
@@ -983,7 +1048,8 @@ Output variables:
 Damage function
 ---------------
 
-$$\Delta T = 1 - \frac{1}{1 + \eta_1 TAT + \eta_2 TAT^2 + \eta_3 TAT}$$ 
+.. math::
+\Delta T = 1 - \frac{1}{1 + \eta_1 TAT + \eta_2 TAT^2 + \eta_3 TAT} 
 
 Input variables:
 - Global mean temperature 
@@ -997,7 +1063,8 @@ Output variables:
 Damage function
 ---------------
 
-$$D = 1 - \frac{1}{1 + \pi_1 T + \pi_2 T^2} $$ 
+.. math::
+D = 1 - \frac{1}{1 + \pi_1 T + \pi_2 T^2}  
 
 Input variables:
 - Global mean temperature 
