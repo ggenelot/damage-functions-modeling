@@ -66,12 +66,12 @@ def decrease_remaining_mineral_resources():
         "demand_projection_materials_roe": 2,
         "one_year": 2,
         "mineral_recycled_roe": 2,
-        "mineral_recycled_bu_techs": 2,
-        "over_recycling_bu_techs": 1,
         "total_global_materials_required_bu_techs": 2,
         "mineral_mined_roe": 1,
-        "mineral_mined_bu_techs": 1,
+        "mineral_recycled_bu_techs": 2,
+        "over_recycling_bu_techs": 1,
         "over_recycling_roe": 1,
+        "mineral_mined_bu_techs": 1,
     },
 )
 def increase_remaining_mineral_reserves():
@@ -107,8 +107,8 @@ def increase_remaining_mineral_reserves():
     depends_on={
         "mineral_recycled_bu_techs": 2,
         "mineral_mined_bu_techs": 2,
-        "mineral_mined_roe": 2,
         "mineral_recycled_roe": 2,
+        "mineral_mined_roe": 2,
     },
 )
 def increase_remaining_mineral_resources():
@@ -139,10 +139,10 @@ def increase_remaining_mineral_resources():
     depends_on={
         "remaining_minerals_reserves": 1,
         "global_mineral_resources_2015": 2,
-        "remaining_mineral_resources": 2,
-        "mineral_recycled_bu_techs": 2,
         "global_mineral_reserves_2015": 2,
         "mineral_recycled_roe": 2,
+        "remaining_mineral_resources": 2,
+        "mineral_recycled_bu_techs": 2,
     },
 )
 def indicator_of_mineral_scarcity():
@@ -189,10 +189,10 @@ def indicator_of_mineral_scarcity():
         "unit_conversion_kg_mt": 1,
         "material_intensity_new_capacity_wind_offshore": 1,
         "protra_capacity_decommissioning_selected": 4,
-        "unit_conversion_mw_tw": 1,
         "material_intensity_weighted_average_new_pv": 1,
-        "material_intensity_new_capacity_wind_onshore": 1,
         "material_intensity_new_capacity_csp": 1,
+        "unit_conversion_mw_tw": 1,
+        "material_intensity_new_capacity_wind_onshore": 1,
     },
 )
 def mineral_end_of_use_bu_techs():

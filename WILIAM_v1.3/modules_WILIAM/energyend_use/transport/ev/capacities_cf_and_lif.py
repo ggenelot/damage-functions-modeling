@@ -18,8 +18,8 @@ Translated using PySD version 3.14.0
         "energy_delivered_by_electrified_vehicles_battery_lifetime": 1,
         "unit_conversion_j_mj": 1,
         "unit_conversion_j_wh": 1,
-        "unit_conversion_hours_year": 1,
         "max_lifetime_ev_batteries": 1,
+        "unit_conversion_hours_year": 1,
     },
 )
 def average_power_electrified_vehicle_used():
@@ -44,8 +44,8 @@ def average_power_electrified_vehicle_used():
         "energy_delivered_by_ev_battery_for_transport": 1,
         "unit_conversion_j_mj": 1,
         "unit_conversion_j_wh": 1,
-        "unit_conversion_hours_year": 1,
         "max_lifetime_ev_batteries": 1,
+        "unit_conversion_hours_year": 1,
     },
 )
 def average_power_ev_vehicle_used_for_transport():
@@ -568,8 +568,8 @@ def hev_vehicles_batteries_power_required():
         "unit_conversion_j_wh": 1,
         "unit_converison_wh_kwh": 1,
         "unit_conversion_hours_year": 1,
-        "vehicle_electric_power": 1,
         "cf_electrified_vehicle": 1,
+        "vehicle_electric_power": 1,
         "max_lifetime_ev_batteries": 1,
     },
 )

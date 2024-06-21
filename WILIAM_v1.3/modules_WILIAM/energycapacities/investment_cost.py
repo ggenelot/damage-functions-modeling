@@ -179,9 +179,9 @@ def capacity_investment_cost_proflex_development():
         "select_capacity_investment_cost_development_sp": 4,
         "protra_capacity_investment_cost_2015": 1,
         "capacity_investment_cost_protra_user_defined_sp": 1,
-        "capacity_investment_cost_protra_medium_development": 1,
         "capacity_investment_cost_protra_low_development": 1,
         "capacity_investment_cost_protra_high_development": 1,
+        "capacity_investment_cost_protra_medium_development": 1,
     },
 )
 def capacity_investment_cost_protra_development():

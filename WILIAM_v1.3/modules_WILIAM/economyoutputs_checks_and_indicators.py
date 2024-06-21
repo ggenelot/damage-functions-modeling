@@ -74,8 +74,8 @@ _delayfixed_delayed_gdp_real_1r = DelayFixed(
         "government_debt": 2,
         "disposable_income_real": 3,
         "consumption_coicop_real": 2,
-        "unit_conversion_dollars_2015_mdollars_2015": 2,
         "population_35_regions": 2,
+        "unit_conversion_dollars_2015_mdollars_2015": 2,
         "consumer_price_index": 1,
         "disposable_income": 2,
         "consumption_coicop": 2,
@@ -728,8 +728,8 @@ def economy_dashboard_9r():
     comp_subtype="Normal",
     depends_on={
         "economy_dashboard": 10,
-        "unit_conversion_dollars_2015_mdollars_2015": 2,
         "population_35_regions": 2,
+        "unit_conversion_dollars_2015_mdollars_2015": 2,
         "weights_consumption_eu27": 1,
     },
 )

@@ -7,7 +7,7 @@ Translated using PySD version 3.14.0
     name="change technical coefficients",
     units="DMNL",
     subscripts=["REGIONS 36 I", "SECTORS I", "SECTORS MAP I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "time": 5,
@@ -171,7 +171,7 @@ _delayfixed_delayed_ts_2_final_energy_intensities_by_sector_and_fe = DelayFixed(
     name="delayed TS final energy intensities by sector and FE",
     units="TJ/million$/Year",
     subscripts=["REGIONS 35 I", "SECTORS I", "NRG FE I"],
-    comp_type="Constant, Stateful",
+    comp_type="Stateful, Constant",
     comp_subtype="DelayFixed, Normal",
     depends_on={"_delayfixed_delayed_ts_final_energy_intensities_by_sector_and_fe": 1},
     other_deps={
@@ -336,7 +336,7 @@ _delayfixed_delayed_ts_total_intermediate_exports_real = DelayFixed(
     name="energy intensities variation economic module classification",
     units="DMNL",
     subscripts=["REGIONS 35 I", "SECTORS FINAL ENERGY I", "SECTORS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"energy_intensity_variation": 6},
 )
@@ -708,9 +708,9 @@ _ext_constant_switch_nrg2eco_a_matrix_energy_intensities = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "technical_coefficients_total": 1,
-        "switch_eco_trade": 1,
         "import_shares_intermediates_constrained": 1,
         "initial_import_shares_intermediates": 1,
+        "switch_eco_trade": 1,
     },
 )
 def technical_coefficients_domestic():
@@ -737,8 +737,8 @@ def technical_coefficients_domestic():
         "switch_eco_trade": 1,
         "initial_import_shares_intermediates": 1,
         "import_shares_intermediates_constrained": 1,
-        "technical_coefficients_total": 1,
         "import_shares_origin_intermediates": 1,
+        "technical_coefficients_total": 1,
     },
 )
 def technical_coefficients_import():

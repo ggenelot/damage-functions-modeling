@@ -70,7 +70,7 @@ _delayfixed_delayed_eroi_system = DelayFixed(
     subscripts=["REGIONS 9 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "eroi_system_until_2015": 2, "delayed_eroi_system": 2},
+    depends_on={"time": 1, "delayed_eroi_system": 2, "eroi_system_until_2015": 2},
 )
 def eroi_fc_system_from_2015():
     """

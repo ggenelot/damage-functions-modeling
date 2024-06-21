@@ -412,8 +412,8 @@ def co2_intensity_to_heat():
     depends_on={
         "ghg_emissions_by_sector": 3,
         "unit_conversion_t_mt": 3,
-        "select_gwp_time_frame_sp": 3,
         "gwp_20_year": 3,
+        "select_gwp_time_frame_sp": 3,
         "gwp_100_year": 3,
         "output_real_9r": 1,
     },
@@ -1132,8 +1132,8 @@ def physical_energy_intensity_tpes_vs_final():
     depends_on={
         "lue_solar_pv_by_technology": 2,
         "cf_protra": 2,
-        "unit_conversion_m2_km2": 2,
         "unit_conversion_w_mw": 2,
+        "unit_conversion_m2_km2": 2,
     },
 )
 def power_density_solar_pv_by_technology():
@@ -1316,8 +1316,8 @@ def share_fe_demand_commodity():
     comp_subtype="Normal",
     depends_on={
         "ti_by_proref_and_commodity": 5,
-        "to_h2_gases_based_fuel": 2,
         "share_to_elec_res_vs_total_elec": 1,
+        "to_h2_gases_based_fuel": 2,
     },
 )
 def share_fe_gas_res_vs_total_gas():
@@ -1678,7 +1678,7 @@ def share_total_prosto_losses_vs_to():
     name="shares RES in FE",
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG FE I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "share_to_elec_res_vs_total_elec": 1,
@@ -1923,8 +1923,8 @@ def total_final_energy_intensities_1r_1s():
     comp_subtype="Normal",
     depends_on={
         "pe_by_commodity": 1,
-        "total_final_energy_demand_by_fe": 1,
         "final_energy_demand_by_fe_9r": 1,
+        "total_final_energy_demand_by_fe": 1,
     },
 )
 def total_pe_energy_uses():
