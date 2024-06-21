@@ -1,5 +1,5 @@
 4:Time
-5:"DICE: 6: abatment function"
+5:Time
 6:A EXP CURVE
 6:A LINEAR LOG FIT
 6:A S CURVE
@@ -79,7 +79,7 @@
 6:year1995
 6:ZERO ORDER FIT
 9:current
-19:68,127
+19:68,130
 24:2005
 25:2006
 26:2006
