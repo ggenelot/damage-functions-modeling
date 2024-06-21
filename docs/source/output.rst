@@ -5,7 +5,7 @@ FUND v.3.8
 ----------
 
 A.1 : Total agriculture impact
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -23,7 +23,7 @@ Output variables:
 
 
 A.2 : Agriculture impact of the rate of climate change
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -44,7 +44,7 @@ Output variables:
 
 
 A.3 : Agriculture impact of the level of climate change
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -55,8 +55,8 @@ Input variables:
 - Time
 - Region
 - Change in regional mean temperature
-- Parameter related to warming of 2.5ï¿½C 
-- Parameter related to warming of 3.2ï¿½C 
+- Parameter related to warming of 2.5°C 
+- Parameter related to warming of 3.2°C 
 
 Output variables:
 
@@ -64,7 +64,7 @@ Output variables:
 
 
 A.4 : Agriculture impact of fertilisation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -84,7 +84,7 @@ Output variables:
 
 
 A.5 : Agriculture production relative loss
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -102,7 +102,7 @@ Input variables:
 Output variables:
 
 F.1 : Forestry impact
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -125,7 +125,7 @@ Output variables:
 
 
 W.1 : Water resources impact
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -150,7 +150,7 @@ Output variables:
 
 
 E.1 : Space heating impact
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -174,7 +174,7 @@ Output variables:
 
 
 E.2 : Space cooling impact
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -198,7 +198,7 @@ Output variables:
 
 
 SLR.1 : Potential cumulative dryland impact
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -216,7 +216,7 @@ Input variables:
 Output variables:
 
 SLR.2 : Potential dryland loss without protection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -233,7 +233,7 @@ Output variables:
 
 
 SLR.3 : Actual dryland loss in the current year
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -250,7 +250,7 @@ Output variables:
 
 
 SLR.4 : Actual cumulative dryland loss
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -267,7 +267,7 @@ Output variables:
 
 
 SLR.5 : Value of dryland
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -290,7 +290,7 @@ Output variables:
 
 
 SLR.6 : Wetland loss
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -311,7 +311,7 @@ Output variables:
 
 
 SLR.7 : Cumulative wetland loss
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -329,7 +329,7 @@ Output variables:
 
 
 SLR.8 : Wetland value
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -355,7 +355,7 @@ Output variables:
 
 
 SLR.9 : Level of protection
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -374,7 +374,7 @@ Output variables:
 
 
 SLR.10 : Net present cost of protection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -396,7 +396,7 @@ Output variables:
 
 
 SLR.11 : Net present cost of wetland loss
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -423,7 +423,7 @@ Output variables:
 
 
 SLR.12 : Net present cost of dryland loss
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -447,7 +447,7 @@ Output variables:
 
 
 E.1 : Ecosystem loss
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -472,7 +472,7 @@ Output variables:
 
 
 E.2 : Number of species
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -491,7 +491,7 @@ Output variables:
 
 
 HD.1 : Human health : diarrhoea
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -514,7 +514,7 @@ Output variables:
 
 
 HV : Human health : vector-borne diseases
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -540,7 +540,7 @@ Output variables:
 
 
 HC.1 : Human health : cardiovascular and respiratory mortality
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -557,7 +557,7 @@ Output variables:
 
 
 HC.2 : Human health : regional cardiovascular mortality
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -575,7 +575,7 @@ Output variables:
 
 
 HC.3 : Human health : heat-related mortality
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -594,7 +594,7 @@ Output variables:
 
 
 TS.1 : Extreme weather : tropical storms damage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -618,7 +618,7 @@ Output variables:
 
 
 TS.2 : Extreme weather : tropical storm mortality
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -642,7 +642,7 @@ Output variables:
 
 
 ETS.1 : Extratropical storms damage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -664,7 +664,7 @@ Output variables:
 
 
 ETS.2 : Extratropical storms mortality
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -686,7 +686,7 @@ Output variables:
 
 
 MM.1 : Value of a statistical life
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -704,7 +704,7 @@ Output variables:
 
 
 MM.2 : Value of a year of morbidity
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -724,7 +724,7 @@ DICE 2023
 ---------
 
 5 : Damage function
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -742,7 +742,7 @@ Output variables:
 
 
 6 : Abatement costs
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -763,7 +763,7 @@ PAGE02
 ------
 
 22 : Tolerable rate of change
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -780,7 +780,7 @@ Output variables:
 
 
 23 : Tolerable plateau
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -797,7 +797,7 @@ Output variables:
 
 
 24 : Adjusted tolerable plateau
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -814,7 +814,7 @@ Output variables:
 
 
 25 : Adjusted tolerable rate
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -831,7 +831,7 @@ Output variables:
 
 
 26 : Adjusted tolerable level
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -850,7 +850,7 @@ Output variables:
 
 
 26 : Impact
-~~~~~~
+~~~~~~~~~~~
 
 .. math:: 
 
@@ -867,7 +867,7 @@ Output variables:
 
 
 27 : Impact of a discontinuity
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -884,7 +884,7 @@ Output variables:
 
 
 29 : Weighting of the impacts
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -901,7 +901,7 @@ Output variables:
 
 
 31 : Weigthed impacts
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -921,7 +921,7 @@ Output variables:
 
 
 32 : Certainty equivalent of the risk
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -939,7 +939,7 @@ Output variables:
 
 
 33 : Total weighted impact
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -956,7 +956,7 @@ Output variables:
 
 
 38 : Adjusted damage
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -973,7 +973,7 @@ Output variables:
 
 
 39 : Discounted damages
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -993,7 +993,7 @@ C3IAM
 -----
 
 12 : Damage function
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1012,7 +1012,7 @@ GRACE
 -----
 
 3.1 : Productivity of land in agriculture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1029,7 +1029,7 @@ Output variables:
 
 
 3.1 : Productivity of land in forestry
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1046,7 +1046,7 @@ Output variables:
 
 
 3.1 : Fish stock
-~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1063,7 +1063,7 @@ Output variables:
 
 
 3.1 : Water cooling and run-off
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1080,7 +1080,7 @@ Output variables:
 
 
 3.1 : Run-off
-~~~~~~~
+~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1097,7 +1097,7 @@ Output variables:
 
 
 3.1 : Energy demand
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1114,7 +1114,7 @@ Output variables:
 
 
 3.1 : Tourism
-~~~~~~~
+~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1131,7 +1131,7 @@ Output variables:
 
 
 3.1 : Extreme events
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1148,7 +1148,7 @@ Output variables:
 
 
 3.1 : Sea-level rise
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1165,7 +1165,7 @@ Output variables:
 
 
 3.1 : Health
-~~~~~~
+~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1185,7 +1185,7 @@ WITNESS
 -------
 
 nan : Dice-like damage
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1199,7 +1199,7 @@ Output variables:
 
 
 nan : Tipping point damage
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1216,7 +1216,7 @@ DSK
 ---
 
 A.128 : Climate shock
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1233,7 +1233,7 @@ Output variables:
 
 
 A.129 : Beta 1 parameter
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1249,7 +1249,7 @@ Output variables:
 
 
 A.129 : Beta 2 parameter
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1268,7 +1268,7 @@ DEFINE
 ------
 
 55 : Damage function
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1289,7 +1289,7 @@ Giraud Stock-Flow model
 -----------------------
 
 3.5 : Damage function
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
