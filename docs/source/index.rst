@@ -16,6 +16,8 @@ Contents
 .. toctree::
 
    context
+   impacts
+   IAM
    functions
    usage
    api
