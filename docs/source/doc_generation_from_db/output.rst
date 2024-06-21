@@ -1,8 +1,11 @@
 Damage functions
 ===============
 
-Total agriculture impact
-------------------------
+FUND v.3.8
+----------
+
+A.1 : Total agriculture impact
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -19,8 +22,8 @@ Output variables:
 - Total agriculture impact
 
 
-Agriculture impact of the rate of climate change
-------------------------------------------------
+A.2 : Agriculture impact of the rate of climate change
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -40,8 +43,8 @@ Output variables:
 - Damage in agricultural production
 
 
-Agriculture impact of the level of climate change
--------------------------------------------------
+A.3 : Agriculture impact of the level of climate change
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -60,8 +63,8 @@ Output variables:
 - Damage in agricultural production level 
 
 
-Agriculture impact of fertilisation
------------------------------------
+A.4 : Agriculture impact of fertilisation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -80,8 +83,8 @@ Output variables:
 - Damage in agricultural production due to CO2 fertilisation
 
 
-Agriculture production relative loss
-------------------------------------
+A.5 : Agriculture production relative loss
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -98,8 +101,8 @@ Input variables:
 
 Output variables:
 
-Forestry impact
----------------
+F.1 : Forestry impact
+~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -121,8 +124,8 @@ Output variables:
 - Change in forestry consumer and producer surplus 
 
 
-Water resources impact
-----------------------
+W.1 : Water resources impact
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -146,8 +149,8 @@ Output variables:
 - Change in water resources 
 
 
-Space heating impact
---------------------
+E.1 : Space heating impact
+~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -170,8 +173,8 @@ Output variables:
 - Decrease in expenditure on space heating 
 
 
-Space cooling impact
---------------------
+E.2 : Space cooling impact
+~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -194,8 +197,8 @@ Output variables:
 - Increase in expenditure on space cooling 
 
 
-Potential cumulative dryland impact
------------------------------------
+SLR.1 : Potential cumulative dryland impact
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -212,8 +215,8 @@ Input variables:
 
 Output variables:
 
-Potential dryland loss without protection
------------------------------------------
+SLR.2 : Potential dryland loss without protection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -229,8 +232,8 @@ Output variables:
 - Potential dryland loss without protection 
 
 
-Actual dryland loss in the current year
----------------------------------------
+SLR.3 : Actual dryland loss in the current year
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -246,8 +249,8 @@ Output variables:
 - Dryland loss in year 
 
 
-Actual cumulative dryland loss
-------------------------------
+SLR.4 : Actual cumulative dryland loss
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -263,8 +266,8 @@ Output variables:
 - Actual cumulative dryland loss 
 
 
-Value of dryland
-----------------
+SLR.5 : Value of dryland
+~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -286,8 +289,8 @@ Output variables:
 - Unit value of dryland 
 
 
-Wetland loss
-------------
+SLR.6 : Wetland loss
+~~~~~~~~~~~~
 
 .. math:: 
 
@@ -307,8 +310,8 @@ Output variables:
 - Wetland loss at time 
 
 
-Cumulative wetland loss
------------------------
+SLR.7 : Cumulative wetland loss
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -325,8 +328,8 @@ Output variables:
 - Cumulative wetland loss at time 
 
 
-Wetland value
--------------
+SLR.8 : Wetland value
+~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -351,8 +354,8 @@ Output variables:
 - Wetland value at time 
 
 
-Level of protection
--------------------
+SLR.9 : Level of protection
+~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -370,8 +373,8 @@ Output variables:
 - Fraction of coastline to be protected 
 
 
-Net present cost of protection
-------------------------------
+SLR.10 : Net present cost of protection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -392,8 +395,8 @@ Output variables:
 - Net present costs of coastal protection at time 
 
 
-Net present cost of wetland loss
---------------------------------
+SLR.11 : Net present cost of wetland loss
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -419,8 +422,8 @@ Output variables:
 - Net present value of wetland loss at time 
 
 
-Net present cost of dryland loss
---------------------------------
+SLR.12 : Net present cost of dryland loss
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -443,8 +446,8 @@ Output variables:
 - Net present value of dryland loss at time 
 
 
-Ecosystem loss
---------------
+E.1 : Ecosystem loss
+~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -468,8 +471,8 @@ Output variables:
 - Value of the loss of ecosystems at time 
 
 
-Number of species
------------------
+E.2 : Number of species
+~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -487,8 +490,8 @@ Output variables:
 - Number of species 
 
 
-Human health : diarrhoea
-------------------------
+HD.1 : Human health : diarrhoea
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -510,8 +513,8 @@ Output variables:
 - Number of additional diarrhoea deaths 
 
 
-Human health : vector-borne diseases
-------------------------------------
+HV : Human health : vector-borne diseases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -536,8 +539,8 @@ Output variables:
 - Number of additional deaths from vector-borne diseases 
 
 
-Human health : cardiovascular and respiratory mortality
--------------------------------------------------------
+HC.1 : Human health : cardiovascular and respiratory mortality
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -553,8 +556,8 @@ Output variables:
 - Change in mortality due to one degree global warming 
 
 
-Human health : regional cardiovascular mortality
-------------------------------------------------
+HC.2 : Human health : regional cardiovascular mortality
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -571,8 +574,8 @@ Output variables:
 - Climate-change-induced mortality due to disease c in region r at time t 
 
 
-Human health : heat-related mortality
--------------------------------------
+HC.3 : Human health : heat-related mortality
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -590,8 +593,8 @@ Output variables:
 - Fraction of people living in cities 
 
 
-Extreme weather : tropical storms damage
-----------------------------------------
+TS.1 : Extreme weather : tropical storms damage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -614,8 +617,8 @@ Output variables:
 - Damage due to tropical storms in region r at time t 
 
 
-Extreme weather : tropical storm mortality
-------------------------------------------
+TS.2 : Extreme weather : tropical storm mortality
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -638,8 +641,8 @@ Output variables:
 - Mortality due to tropical storms in region r at time t 
 
 
-Extratropical storms damage
----------------------------
+ETS.1 : Extratropical storms damage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -660,8 +663,8 @@ Output variables:
 - Damage from extratropical cyclones at time t in region r 
 
 
-Extratropical storms mortality
-------------------------------
+ETS.2 : Extratropical storms mortality
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -682,8 +685,8 @@ Output variables:
 - Mortality from extratropical cyclones at time t in region r 
 
 
-Value of a statistical life
----------------------------
+MM.1 : Value of a statistical life
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -700,8 +703,8 @@ Output variables:
 - Value of a statistical life at time t in region r 
 
 
-Value of a year of morbidity
-----------------------------
+MM.2 : Value of a year of morbidity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -717,8 +720,11 @@ Output variables:
 - Value of a year of morbidity at time t in region r 
 
 
-Damage function
----------------
+DICE 2023
+---------
+
+5 : Damage function
+~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -735,8 +741,8 @@ Output variables:
 - ?? (omega) 
 
 
-Abatement costs
----------------
+6 : Abatement costs
+~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -753,8 +759,11 @@ Output variables:
 - ? (lambda) 
 
 
-Tolerable rate of change
-------------------------
+PAGE02
+------
+
+22 : Tolerable rate of change
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -770,8 +779,8 @@ Output variables:
 -  Tolerable rate of change 
 
 
-Tolerable plateau
------------------
+23 : Tolerable plateau
+~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -787,8 +796,8 @@ Output variables:
 -  Tolerable plateau 
 
 
-Adjusted tolerable plateau
---------------------------
+24 : Adjusted tolerable plateau
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -804,8 +813,8 @@ Output variables:
 -  Adjusted tolerable plateau 
 
 
-Adjusted tolerable rate
------------------------
+25 : Adjusted tolerable rate
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -821,8 +830,8 @@ Output variables:
 -  Adjusted tolerable rate 
 
 
-Adjusted tolerable level
-------------------------
+26 : Adjusted tolerable level
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -840,8 +849,8 @@ Output variables:
 -  Adjusted tolerable level 
 
 
-Impact
-------
+26 : Impact
+~~~~~~
 
 .. math:: 
 
@@ -857,8 +866,8 @@ Output variables:
 -  Regional impact of global warming 
 
 
-Impact of a discontinuity
--------------------------
+27 : Impact of a discontinuity
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -874,8 +883,8 @@ Output variables:
 -  Discontinuity impact 
 
 
-Weighting of the impacts
-------------------------
+29 : Weighting of the impacts
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -891,8 +900,8 @@ Output variables:
 -  Weights for monetizing impacts 
 
 
-Weigthed impacts
-----------------
+31 : Weigthed impacts
+~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -911,8 +920,8 @@ Output variables:
 -  Weighted impact 
 
 
-Certainty equivalent of the risk
---------------------------------
+32 : Certainty equivalent of the risk
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -929,8 +938,8 @@ Output variables:
 -  Weighted impact of discontinuity 
 
 
-Total weighted impact
----------------------
+33 : Total weighted impact
+~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -946,8 +955,8 @@ Output variables:
 -  Total weighted impact 
 
 
-Adjusted damage
----------------
+38 : Adjusted damage
+~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -963,8 +972,8 @@ Output variables:
 -  Adjusted damages 
 
 
-Discounted damages
-------------------
+39 : Discounted damages
+~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -980,8 +989,11 @@ Output variables:
 -  Net present value of global warming impacts 
 
 
-Damage function
----------------
+C3IAM
+-----
+
+12 : Damage function
+~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -996,8 +1008,11 @@ Output variables:
 - Change in regional mean temperature 
 
 
-Productivity of land in agriculture
------------------------------------
+GRACE
+-----
+
+3.1 : Productivity of land in agriculture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1013,8 +1028,8 @@ Output variables:
 - Productivity of land in agriculture
 
 
-Productivity of land in forestry
---------------------------------
+3.1 : Productivity of land in forestry
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1030,8 +1045,8 @@ Output variables:
 - Productivity of land in forestry
 
 
-Fish stock
-----------
+3.1 : Fish stock
+~~~~~~~~~~
 
 .. math:: 
 
@@ -1047,8 +1062,8 @@ Output variables:
 - Fish stock
 
 
-Water cooling and run-off
--------------------------
+3.1 : Water cooling and run-off
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1064,8 +1079,8 @@ Output variables:
 - Natural resources in thermal power
 
 
-Run-off
--------
+3.1 : Run-off
+~~~~~~~
 
 .. math:: 
 
@@ -1081,8 +1096,8 @@ Output variables:
 - Natural resources in hydro power
 
 
-Energy demand
--------------
+3.1 : Energy demand
+~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1098,8 +1113,8 @@ Output variables:
 - Energy demand
 
 
-Tourism
--------
+3.1 : Tourism
+~~~~~~~
 
 .. math:: 
 
@@ -1115,8 +1130,8 @@ Output variables:
 - Final demand for transport and services
 
 
-Extreme events
---------------
+3.1 : Extreme events
+~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1132,8 +1147,8 @@ Output variables:
 - Real capital
 
 
-Sea-level rise
---------------
+3.1 : Sea-level rise
+~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1149,8 +1164,8 @@ Output variables:
 - Real capital
 
 
-Health
-------
+3.1 : Health
+~~~~~~
 
 .. math:: 
 
@@ -1166,8 +1181,11 @@ Output variables:
 - Labour
 
 
-Dice-like damage
-----------------
+WITNESS
+-------
+
+nan : Dice-like damage
+~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1180,8 +1198,8 @@ Output variables:
 -  Climate damage fraction of gross output 
 
 
-Tipping point damage
---------------------
+nan : Tipping point damage
+~~~~~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1194,8 +1212,11 @@ Output variables:
 -  Abatement cost fraction of gross output 
 
 
-Climate shock
--------------
+DSK
+---
+
+A.128 : Climate shock
+~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1211,8 +1232,8 @@ Output variables:
 - Propbability of occurence of a shock
 
 
-Beta 1 parameter
-----------------
+A.129 : Beta 1 parameter
+~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1227,8 +1248,8 @@ Output variables:
 - Beta 1
 
 
-Beta 2 parameter
-----------------
+A.129 : Beta 2 parameter
+~~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1243,8 +1264,11 @@ Output variables:
 - Beta 2
 
 
-Damage function
----------------
+DEFINE
+------
+
+55 : Damage function
+~~~~~~~~~~~~~~~
 
 .. math:: 
 
@@ -1261,8 +1285,11 @@ Output variables:
 - Investment
 
 
-Damage function
----------------
+Giraud Stock-Flow model
+-----------------------
+
+3.5 : Damage function
+~~~~~~~~~~~~~~~
 
 .. math:: 
 
