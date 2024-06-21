@@ -9,11 +9,10 @@ FUND
 
 .. autofunction:: lumache.get_random_ingredients
 
-.. autofunction:: test.random_function
 IMAGE 
 -----
 
-.. autofunction:: fund.fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change
+.. autofunction:: WILIAM.fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change
 
 DICE
 -----
