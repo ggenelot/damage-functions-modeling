@@ -10,7 +10,7 @@ from datetime import datetime
 
 # Prepare the API to store the results in the database
 
-api_token = api_token
+api_token = "API-TOKEN"
 
 conn = http.client.HTTPSConnection("app.nocodb.com")
 
