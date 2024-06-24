@@ -19,6 +19,7 @@ Contents
    impacts
    IAM
    functions
+   pySD_analysis
    output
    usage
    api
