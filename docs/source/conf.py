@@ -18,7 +18,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
-    'nbshinx',
+    'nbsphinx',
 ]
 
 intersphinx_mapping = {
