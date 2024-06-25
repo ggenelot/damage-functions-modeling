@@ -1,6 +1,14 @@
 Damage functions
 ===============
 
+This is an inline equation: :math:`E = mc^2`.
+
+.. math::
+
+   E = mc^2
+
+
+
 FUND v.3.8
 ----------
 
@@ -9,7 +17,7 @@ A.1 : Total agriculture impact
 
 .. math:: 
 
-A_{t,r}=A_{t,r}^{r}+A_{t,r}^{l}+A_{t,r}^{f} 
+   A_{t,r}=A_{t,r}^{r}+A_{t,r}^{l}+A_{t,r}^{f} 
 
 Input variables:
 
@@ -55,8 +63,8 @@ Input variables:
 - Time
 - Region
 - Change in regional mean temperature
-- Parameter related to warming of 2.5°C 
-- Parameter related to warming of 3.2°C 
+- Parameter related to warming of 2.5ï¿½C 
+- Parameter related to warming of 3.2ï¿½C 
 
 Output variables:
 
