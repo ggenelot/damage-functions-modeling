@@ -19,7 +19,6 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.pngmath',
-    'nbsphinx',
 ]
 
 intersphinx_mapping = {
