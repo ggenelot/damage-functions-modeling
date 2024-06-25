@@ -7,4 +7,6 @@ Welcome to the Introduction section of the documentation!
     :maxdepth: 2
 
     context
+    IAM
+    impacts
     functions

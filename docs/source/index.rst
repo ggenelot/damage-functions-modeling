@@ -17,7 +17,8 @@ Contents
    maxdepth: 2
    caption: Introduction:
 
-   section1/index
-   notebooks/index
+   1_introduction/index
+   3_notebooks/index
+   4_API/index
 
 
