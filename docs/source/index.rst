@@ -14,11 +14,23 @@ Contents
 --------
 
 .. toctree::
+   maxdepth: 2
+   caption: Introduction:
 
    context
-   notebooks/test
    impacts
    IAM
+
+.. toctree::
+   maxdepth: 2
+   caption: Notebooks:
+   
+   notebooks/test
+   
+.. toctree::
+   maxdepth: 2
+   caption: Functions:
+
    functions
    output
    usage
