@@ -16,6 +16,7 @@ Contents
 .. toctree::
 
    context
+   notebooks/test
    impacts
    IAM
    functions
