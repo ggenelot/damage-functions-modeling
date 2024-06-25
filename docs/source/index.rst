@@ -17,21 +17,7 @@ Contents
    maxdepth: 2
    caption: Introduction:
 
-   context
-   impacts
-   IAM
+   section1/index
+   notebooks/index
 
-.. toctree::
-   maxdepth: 2
-   caption: Notebooks:
-   
-   notebooks/test
-   
-.. toctree::
-   maxdepth: 2
-   caption: Functions:
 
-   functions
-   output
-   usage
-   api
