@@ -943,10 +943,10 @@ _ext_constant_c_heat_stress_damage_function = ExtConstant(
     depends_on={
         "switch_economy": 1,
         "c_capital_stock_damage_function": 2,
-        "temperature_change_2015": 5,
-        "b_capital_stock_damage_function": 8,
         "a_capital_stock_damage_function": 10,
+        "temperature_change_2015": 5,
         "correspondence_matrix_damage_function": 14,
+        "b_capital_stock_damage_function": 8,
         "temperature_change_in_35regions": 5,
     },
 )
@@ -1593,9 +1593,9 @@ def global_temperature_change_2015():
     depends_on={
         "switch_economy": 1,
         "a_heat_stress_damage_function": 2,
-        "global_temperature_change_2015": 2,
         "c_heat_stress_damage_function": 2,
         "b_heat_stress_damage_function": 2,
+        "global_temperature_change_2015": 2,
         "temperature_change": 2,
     },
 )
@@ -1957,8 +1957,8 @@ def total_hazards_capital_stock_damage_function():
     depends_on={
         "a_vector_borne_diseases_damage_function": 1,
         "switch_economy": 1,
-        "temperature_change": 1,
         "global_temperature_change_2015": 1,
+        "temperature_change": 1,
     },
 )
 def vector_borne_diseases_damage_function():
@@ -2003,8 +2003,8 @@ def vector_borne_diseases_damage_function_until_2015():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "vector_borne_diseases_damage_function_until_2015": 1,
         "vector_borne_diseases_damage_function": 1,
+        "vector_borne_diseases_damage_function_until_2015": 1,
     },
 )
 def vector_borne_diseases_incremental_damage_function():

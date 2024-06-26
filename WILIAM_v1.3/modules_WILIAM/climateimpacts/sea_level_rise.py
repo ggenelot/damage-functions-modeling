@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     depends_on={
         "sensitivity_of_sea_level_rise_to_temperature": 1,
         "time": 1,
-        "slr_ice_sheet_melting_year": 1,
         "sea_level_sensitivity_from_ice_sheet_melting": 1,
+        "slr_ice_sheet_melting_year": 1,
     },
 )
 def adjusted_sensitivity_of_sea_level_rise_to_temperature():

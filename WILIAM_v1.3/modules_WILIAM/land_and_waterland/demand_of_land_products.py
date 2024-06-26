@@ -101,8 +101,8 @@ def crops_demanded_for_energy_world():
         "time": 1,
         "time_historical_data_land_module": 1,
         "exo_pe_by_commodity_agriculture_products": 2,
-        "switch_landwater": 1,
         "adjustment_pe_by_commodity_agricultural": 1,
+        "switch_landwater": 1,
         "pe_by_commodity_dem": 1,
     },
 )

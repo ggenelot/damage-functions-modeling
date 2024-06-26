@@ -93,9 +93,9 @@ def cum_prob_amaz_tp_c1():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
+        "prob_amoc_weakening_tp_2010_2100_c1": 2,
         "final_time": 2,
         "temperature_change": 2,
-        "prob_amoc_weakening_tp_2010_2100_c1": 2,
     },
 )
 def cum_prob_amoc_weakening_tp_c1():
@@ -152,8 +152,8 @@ def cum_prob_dais_tp_c1():
     depends_on={
         "time": 2,
         "final_time": 2,
-        "temperature_change": 2,
         "prob_mgis_tp_2010_2200_c1": 2,
+        "temperature_change": 2,
     },
 )
 def cum_prob_mgis_tp_c1():

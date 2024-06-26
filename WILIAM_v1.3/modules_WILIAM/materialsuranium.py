@@ -124,11 +124,11 @@ def initial_urr_uranium():
     depends_on={
         "switch_model_explorer": 1,
         "rurr_uranium": 8,
-        "table_max_extraction_uranium_zittel2012": 2,
         "table_maximum_extraction_uranium_ewg2013": 2,
-        "model_explorer_uranium_maximum_supply_curve": 3,
-        "table_max_extraction_uranium_user_defined_sp": 2,
         "table_max_extraction_ewg2006": 2,
+        "table_max_extraction_uranium_user_defined_sp": 2,
+        "model_explorer_uranium_maximum_supply_curve": 3,
+        "table_max_extraction_uranium_zittel2012": 2,
         "select_uranium_maximum_supply_curve_sp": 3,
     },
 )
@@ -250,11 +250,11 @@ _ext_constant_unlimited_urr_nre_parameter = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
-        "initial_pe_global_demand_uranium": 2,
-        "pe_global_demand_uranium": 4,
-        "model_explorer_uranium_maximum_supply_curve": 1,
         "switch_materials": 2,
+        "pe_global_demand_uranium": 4,
+        "initial_pe_global_demand_uranium": 2,
         "maximum_uranium_extraction_rate": 2,
+        "model_explorer_uranium_maximum_supply_curve": 1,
         "select_uranium_maximum_supply_curve_sp": 1,
     },
 )
@@ -316,11 +316,11 @@ def uranium_extraction_rate_weight():
     depends_on={
         "switch_model_explorer": 1,
         "urr_uranium_user_defined": 2,
-        "urr_uranium_ewg2013": 2,
-        "urr_uranium_zittel2012": 2,
+        "unlimited_urr_nre_parameter": 2,
         "urr_uranium_ewg2006": 2,
         "model_explorer_uranium_maximum_supply_curve": 4,
-        "unlimited_urr_nre_parameter": 2,
+        "urr_uranium_zittel2012": 2,
+        "urr_uranium_ewg2013": 2,
         "select_uranium_maximum_supply_curve_sp": 4,
     },
 )
