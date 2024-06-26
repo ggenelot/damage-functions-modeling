@@ -7,3 +7,6 @@ Welcome to the Notebooks section of the documentation. This section contains a c
     :maxdepth: 2
 
     test
+    spatial_temporal_equity
+    parametrization
+    variable_choice
