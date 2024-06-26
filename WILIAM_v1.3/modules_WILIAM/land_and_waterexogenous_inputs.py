@@ -2657,7 +2657,7 @@ _ext_lookup_historical_roundwood_harvested = ExtLookup(
     units="DMNL",
     subscripts=["REGIONS 9 I", "LANDS I", "LANDS MAP I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_historical_share_of_land_use_changes_from_others"
     },
@@ -3896,8 +3896,8 @@ _ext_lookup_initial_share_of_irrigation.add(
     name="INITIAL SHARE OF LAND USE CHANGES FROM OTHERS DOWN",
     units="DMNL",
     subscripts=["REGIONS 9 I", "LANDS I", "LANDS MAP I"],
-    comp_type="Auxiliary, Constant",
-    comp_subtype="Normal, External",
+    comp_type="Constant, Auxiliary",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_initial_share_of_land_use_changes_from_others_down",
         "initial_share_of_land_use_changes_from_others_up": 8,
@@ -4042,7 +4042,7 @@ _ext_constant_initial_share_of_land_use_changes_from_others_down.add(
     units="DMNL",
     subscripts=["REGIONS 9 I", "LANDS I", "LANDS MAP I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_initial_share_of_land_use_changes_from_others_up"
     },
@@ -4288,7 +4288,7 @@ _ext_constant_initial_share_of_traditional_agriculture = ExtConstant(
     units="DMNL",
     subscripts=["REGIONS 36 I", "LANDS I", "LANDS MAP I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_initial_share_of_urban_and_solar_from_other_lands_by_region"
     },
@@ -4705,7 +4705,7 @@ _ext_constant_land_area_adjust_coefficient = ExtConstant(
     units="t/Year",
     subscripts=["REGIONS 9 I", "LAND PRODUCTS I"],
     comp_type="Data",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_data_land_products_historical_consumption",
         "__data__": "_ext_data_land_products_historical_consumption",
@@ -6413,7 +6413,7 @@ _ext_constant_priorities_of_land_products_distribution_among_regions_sp = ExtCon
     units="DMNL",
     subscripts=["REGIONS 9 I", "LANDS I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={"__external__": "_ext_constant_priorities_of_land_use_change_sp"},
 )
 def priorities_of_land_use_change_sp():
@@ -7417,7 +7417,7 @@ _ext_constant_time_of_transition_to_regenerative_agriculture = ExtConstant(
     name="TRANSFORMATION MATRICES REGIONS TO ZONES",
     subscripts=["REGIONS 9 I", "CLIMATIC ZONES I", "LANDS I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_transformation_matrices_regions_to_zones"
     },
@@ -7587,7 +7587,7 @@ _ext_constant_transformation_matrices_regions_to_zones.add(
     name="TRANSFORMATION MATRICES ZONES TO REGIONS",
     subscripts=["CLIMATIC ZONES I", "REGIONS 9 I", "LANDS I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_transformation_matrices_zones_to_regions"
     },

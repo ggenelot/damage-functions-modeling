@@ -142,8 +142,8 @@ _ext_data_capacity_investment_cost_pro_flexopt_user_defined_sp = ExtData(
         "pro_flexopt_capacity_investment_cost_2015": 1,
         "capacity_investment_cost_pro_flexopt_user_defined_sp": 1,
         "capacity_investment_cost_pro_flexopt_medium_development": 1,
-        "capacity_investment_cost_pro_flexopt_high_development": 1,
         "capacity_investment_cost_pro_flexopt_low_development": 1,
+        "capacity_investment_cost_pro_flexopt_high_development": 1,
     },
 )
 def capacity_investment_cost_proflex_development():
@@ -180,8 +180,8 @@ def capacity_investment_cost_proflex_development():
         "protra_capacity_investment_cost_2015": 1,
         "capacity_investment_cost_protra_user_defined_sp": 1,
         "capacity_investment_cost_protra_low_development": 1,
-        "capacity_investment_cost_protra_high_development": 1,
         "capacity_investment_cost_protra_medium_development": 1,
+        "capacity_investment_cost_protra_high_development": 1,
     },
 )
 def capacity_investment_cost_protra_development():

@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     depends_on={
         "share_of_grasslands_under_unsaturated_regenerative_management": 1,
         "land_use_area_by_region": 1,
-        "factor_of_carbon_capture_of_regenerative_grasslands": 1,
         "factor_of_carbon_capture_of_grasslands": 1,
+        "factor_of_carbon_capture_of_regenerative_grasslands": 1,
     },
 )
 def carbon_capture_due_to_change_to_regenerative_grasslands():
@@ -38,8 +38,8 @@ def carbon_capture_due_to_change_to_regenerative_grasslands():
     comp_subtype="Normal",
     depends_on={
         "factor_of_gain_regenerative_grazing": 1,
-        "share_of_grasslands_under_unsaturated_regenerative_management": 1,
         "share_of_grasslands_under_saturated_regenerative_management": 1,
+        "share_of_grasslands_under_unsaturated_regenerative_management": 1,
     },
 )
 def factor_of_grassland_production():

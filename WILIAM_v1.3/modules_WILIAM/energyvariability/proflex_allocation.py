@@ -7,7 +7,7 @@ Translated using PySD version 3.14.0
     name="CF PROSUP FLEXOPT",
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "cf_prosup_elec2heat": 1,
@@ -62,8 +62,8 @@ def cf_prosup_flexopt():
     comp_subtype="Normal",
     depends_on={
         "protra_operative_capacity_stock_selected": 4,
-        "protra_max_full_load_hours": 4,
         "protra_max_full_load_hours_curtailed": 4,
+        "protra_max_full_load_hours": 4,
     },
 )
 def curtailement_to_elec_power_system():
@@ -240,8 +240,8 @@ _ext_constant_objective_flex_elec_demand_sp = ExtConstant(
         "switch_materials_calculator": 1,
         "prosto_dedicated_capacity_expansion": 1,
         "prosto_capacity_expansion_calculator": 1,
-        "delayed_proflex_dsm_capacity": 1,
         "proflex_dsm_capacity": 1,
+        "delayed_proflex_dsm_capacity": 1,
     },
 )
 def proflex_capacity_expansion():
@@ -289,9 +289,9 @@ def proflex_capacity_expansion():
     depends_on={
         "switch_flex_elec_demand_sp": 3,
         "time": 3,
+        "objective_flex_elec_demand_sp": 2,
         "initial_year_flex_elec_demand_sp": 3,
         "year_final_flex_elec_demand_sp": 3,
-        "objective_flex_elec_demand_sp": 2,
         "unit_conversion_hours_year": 1,
     },
 )
@@ -340,19 +340,19 @@ def proflex_dsm_capacity():
     name="PROFLEX potential capacity expansion",
     units="TW/Year",
     subscripts=["REGIONS 9 I", "NRG COMMODITIES I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "maximum_capacity_expansion_p2h": 1,
         "prosup_p2h_capacity_decomissioning": 1,
-        "ratio_maximum_proflex_expansion_sp": 3,
-        "flexible_electrolysers_capacity_decommissioning": 1,
-        "select_availability_unmature_energy_technologies_sp": 2,
         "minimum_proflex_capacity_expansion_sp": 1,
         "electrolytic_h2_required_to_satisfy_h2_demand": 1,
         "flexible_electrolysers_capacity_stock": 1,
-        "prosto_dedicated_capacity_stock": 2,
+        "ratio_maximum_proflex_expansion_sp": 3,
+        "select_availability_unmature_energy_technologies_sp": 2,
+        "flexible_electrolysers_capacity_decommissioning": 1,
         "prosto_dedicated_capacity_decomissioning": 2,
+        "prosto_dedicated_capacity_stock": 2,
         "maximum_prosto_dedicated": 2,
     },
 )
@@ -542,7 +542,7 @@ def prosup_flexopt_elec_capacity_expansion():
     name="PROSUP FLEXOPT elec curtailment allocation",
     units="TW/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "proflex_potential_capacity_expansion": 1,
@@ -585,7 +585,7 @@ def prosup_flexopt_elec_curtailment_allocation():
 @component.add(
     name="PROSUP FLEXOPT priority vector",
     subscripts=["REGIONS 9 I", "NRG PRO I", "pprofile"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "prosup_flexopt_capacity_expansion_policy_priorities_sp": 1,

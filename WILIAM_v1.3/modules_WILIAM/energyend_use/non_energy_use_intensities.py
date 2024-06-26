@@ -120,8 +120,8 @@ def final_non_energy_demand_by_fe_eu27():
         "switch_energy": 1,
         "base_output_real": 2,
         "non_energy_use_intensities_by_sector_and_fe": 3,
-        "switch_eco2nrg_output_real": 1,
         "output_real": 1,
+        "switch_eco2nrg_output_real": 1,
     },
 )
 def final_non_energy_demand_by_sectors_and_fe():

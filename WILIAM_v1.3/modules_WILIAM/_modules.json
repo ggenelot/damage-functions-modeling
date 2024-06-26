@@ -566,6 +566,27 @@
         "wh_per_mwh_units"
     ],
     "damage_functions": {
+        "define": [
+            "define_46_damage_function",
+            "define_46_eta1",
+            "define_46_eta2",
+            "define_46_eta3",
+            "define_46_exponent"
+        ],
+        "dice": [
+            "dice_5_damage_function",
+            "dice_5_damage_function_phi2",
+            "dice_5_damage_function_phi_1",
+            "dice_6_abatment_function",
+            "dice_6_abatment_theta_1",
+            "dice_6_abatment_theta_2",
+            "dice_6_emissions_control_rate"
+        ],
+        "dsk": [
+            "dsk_a128_shock_from_climate_change",
+            "dsk_a1291_shock_from_climate_change_param_1",
+            "dsk_a1292_shock_from_climate_change_param_2"
+        ],
         "fund": [
             "fund_a2_agricultural_impact_of_the_rate_of_climate_change",
             "fund_a2_alpha_parameter",
@@ -699,6 +720,12 @@
             "fund_w1_gamma_parameter",
             "fund_w1_mu_parameter",
             "fund_w1_tau_parameter"
+        ],
+        "witness": [
+            "witness_dicelike_damage",
+            "witness_epsilon",
+            "witness_omega",
+            "witness_tipping_point_damage"
         ]
     },
     "demographyauxiliary_outputs_and_indicators": [
