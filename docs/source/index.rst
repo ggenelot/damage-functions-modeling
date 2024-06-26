@@ -22,3 +22,12 @@ Contents
    4_API/index
 
 
+<<<<<<< HEAD
+=======
+   context
+   impacts
+   IAM
+   functions
+   usage
+   api
+>>>>>>> parent of 4f1fa87 (Added page functions)
