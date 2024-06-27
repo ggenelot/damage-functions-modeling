@@ -412,9 +412,9 @@ def co2_intensity_to_heat():
     depends_on={
         "ghg_emissions_by_sector": 3,
         "unit_conversion_t_mt": 3,
-        "gwp_20_year": 3,
-        "gwp_100_year": 3,
         "select_gwp_time_frame_sp": 3,
+        "gwp_100_year": 3,
+        "gwp_20_year": 3,
         "output_real_9r": 1,
     },
 )
@@ -485,7 +485,7 @@ def co2e_intensity_of_final_energy_1r():
     subscripts=["REGIONS 9 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "fe_gdp_intensity_until_2015": 1, "fe_gdp_intensity": 1},
+    depends_on={"time": 1, "fe_gdp_intensity": 1, "fe_gdp_intensity_until_2015": 1},
 )
 def cumulative_fe_gdp_intensity_change_from_2015():
     """
@@ -506,7 +506,7 @@ def cumulative_fe_gdp_intensity_change_from_2015():
     subscripts=["REGIONS 9 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "pe_gdp_intensity_until_2015": 1, "pe_gdp_intensity": 1},
+    depends_on={"time": 1, "pe_gdp_intensity": 1, "pe_gdp_intensity_until_2015": 1},
 )
 def cumulative_pe_gdp_intensity_change_from_2015():
     """
@@ -751,8 +751,8 @@ def ghg_emissions_all_sectors():
     comp_subtype="Normal",
     depends_on={
         "ghg_emissions_all_sectors": 1,
-        "unit_conversion_mt_gt": 1,
         "households_end_use_energy_emissions_9r": 1,
+        "unit_conversion_mt_gt": 1,
     },
 )
 def ghg_emissions_sectors_and_households():
@@ -1678,7 +1678,7 @@ def share_total_prosto_losses_vs_to():
     name="shares RES in FE",
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG FE I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "share_to_elec_res_vs_total_elec": 1,

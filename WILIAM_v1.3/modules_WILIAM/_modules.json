@@ -722,6 +722,11 @@
             "fund_w1_mu_parameter",
             "fund_w1_tau_parameter"
         ],
+        "general": [
+            "fund_tot_eq_fund_total_impact",
+            "fund_tot_eq_moneraty_impact",
+            "fund_tot_eq_total_deaths"
+        ],
         "witness": [
             "witness_dicelike_damage_eq_dicelike_damage",
             "witness_epsilon",
