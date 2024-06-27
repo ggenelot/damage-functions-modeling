@@ -171,8 +171,8 @@ _delayfixed_delayed_ts_2_final_energy_intensities_by_sector_and_fe = DelayFixed(
     name="delayed TS final energy intensities by sector and FE",
     units="TJ/million$/Year",
     subscripts=["REGIONS 35 I", "SECTORS I", "NRG FE I"],
-    comp_type="Stateful, Constant",
-    comp_subtype="Normal, DelayFixed",
+    comp_type="Constant, Stateful",
+    comp_subtype="DelayFixed, Normal",
     depends_on={"_delayfixed_delayed_ts_final_energy_intensities_by_sector_and_fe": 1},
     other_deps={
         "_delayfixed_delayed_ts_final_energy_intensities_by_sector_and_fe": {
@@ -709,8 +709,8 @@ _ext_constant_switch_nrg2eco_a_matrix_energy_intensities = ExtConstant(
     depends_on={
         "technical_coefficients_total": 1,
         "initial_import_shares_intermediates": 1,
-        "import_shares_intermediates_constrained": 1,
         "switch_eco_trade": 1,
+        "import_shares_intermediates_constrained": 1,
     },
 )
 def technical_coefficients_domestic():
@@ -737,8 +737,8 @@ def technical_coefficients_domestic():
         "switch_eco_trade": 1,
         "initial_import_shares_intermediates": 1,
         "import_shares_intermediates_constrained": 1,
-        "technical_coefficients_total": 1,
         "import_shares_origin_intermediates": 1,
+        "technical_coefficients_total": 1,
     },
 )
 def technical_coefficients_import():

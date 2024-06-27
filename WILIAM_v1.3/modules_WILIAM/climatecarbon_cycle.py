@@ -57,9 +57,9 @@ _initial_biostimulation_coeff = Initial(
             "initial": {"ref_buffer_factor": 1},
             "step": {
                 "ref_buffer_factor": 1,
-                "preind_c_in_mixed_layer": 1,
-                "c_in_mixed_layer": 1,
                 "buff_c_coeff": 1,
+                "c_in_mixed_layer": 1,
+                "preind_c_in_mixed_layer": 1,
             },
         }
     },
@@ -457,9 +457,9 @@ def effect_of_warming_on_ch4_release_from_biological_activity():
     depends_on={
         "preind_c_in_mixed_layer": 1,
         "effect_of_temp_on_dic_p_co2": 1,
-        "buffer_factor": 1,
-        "c_in_atmosphere": 1,
         "preindustrial_c": 1,
+        "c_in_atmosphere": 1,
+        "buffer_factor": 1,
     },
 )
 def equil_c_in_mixed_layer():
@@ -494,9 +494,9 @@ def equilibrium_c_per_meter_in_mixed_layer():
     comp_subtype="Normal",
     depends_on={
         "init_npp": 1,
+        "preindustrial_c": 1,
         "biostimulation_coeff": 1,
         "c_in_atmosphere": 1,
-        "preindustrial_c": 1,
         "effect_of_warming_on_c_flux_to_biomass": 1,
     },
 )
@@ -661,16 +661,16 @@ def init_c_in_atmosphere():
         "_initial_layer_time_constant": {
             "initial": {
                 "layer_depth": 1,
-                "eddy_diff_coeff": 1,
                 "mean_depth_of_adjacent_layers": 1,
+                "eddy_diff_coeff": 1,
             },
             "step": {},
         },
         "_initial_layer_time_constant_1": {
             "initial": {
                 "layer_depth": 1,
-                "eddy_diff_coeff": 1,
                 "mean_depth_of_adjacent_layers": 1,
+                "eddy_diff_coeff": 1,
             },
             "step": {},
         },
@@ -715,7 +715,7 @@ _initial_layer_time_constant_1 = Initial(
     units="m",
     subscripts=["LAYERS I"],
     comp_type="Auxiliary, Stateful",
-    comp_subtype="Normal, Initial",
+    comp_subtype="Initial, Normal",
     depends_on={"_initial_mean_depth_of_adjacent_layers": 1, "layer_depth": 2},
     other_deps={
         "_initial_mean_depth_of_adjacent_layers": {

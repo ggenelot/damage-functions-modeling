@@ -42,8 +42,8 @@ _initial_atm_and_upper_ocean_heat_cap = Initial(
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "nvs_1975_1995_temp_change_lt": 1,
         "temperature_change": 2,
+        "nvs_1975_1995_temp_change_lt": 1,
         "delayed_20_temperature_change_from_2015": 1,
     },
 )
@@ -167,10 +167,10 @@ _initial_double_co2_forcing = Initial(
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_climate_sensitivity": 1,
-        "time": 1,
-        "climate_sensitivity_sp": 1,
         "probabilistic_ecs": 1,
+        "time": 1,
         "selection_ecs_input_method": 1,
+        "climate_sensitivity_sp": 1,
     },
 )
 def ecs():
@@ -388,8 +388,8 @@ def heat_transfer():
             "initial": {
                 "heat_transfer_rate": 1,
                 "mean_depth_of_adjacent_layers": 1,
-                "heat_diffusion_covar": 2,
                 "eddy_diff_coeff": 1,
+                "heat_diffusion_covar": 2,
                 "eddy_diff_mean": 1,
             },
             "step": {},
@@ -532,8 +532,8 @@ def temperature_change():
             "initial": {
                 "global_surface_area": 1,
                 "mixed_depth": 1,
-                "land_thickness": 1,
                 "land_area_fraction": 2,
+                "land_thickness": 1,
             },
             "step": {},
         }

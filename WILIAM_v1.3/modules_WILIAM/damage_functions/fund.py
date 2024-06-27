@@ -4,24 +4,21 @@ Translated using PySD version 3.14.0
 """
 
 @component.add(
-    name='"FUND: A.2: agricultural impact of the rate of climate change"',
+    name='"FUND: A.1: EQ Total agricultural impact"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
-        "fund_a2_alpha_parameter": 1,
-        "fund_a2_beta_parameter": 1,
-        "fund_a2_rate_of_temperature_change": 1,
-        "fund_a2_rho_parameter": 1,
-        "fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change": 1,
+        "fund_a4_eq_agricultural_imact_of_the_fertilisation": 1,
+        "fund_a3_eq_agricultural_impact_of_the_level_of_climate_change": 1,
+        "fund_a2_eq_agricultural_impact_of_the_rate_of_climate_change": 1,
     },
 )
-def fund_a2_agricultural_impact_of_the_rate_of_climate_change():
+def fund_a1_eq_total_agricultural_impact():
     return (
-        fund_a2_alpha_parameter()
-        * (fund_a2_rate_of_temperature_change() / 0.04) ** fund_a2_beta_parameter()
-        + (1 - 1 / fund_a2_rho_parameter())
-        * fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change()
+        fund_a4_eq_agricultural_imact_of_the_fertilisation()
+        + fund_a3_eq_agricultural_impact_of_the_level_of_climate_change()
+        + fund_a2_eq_agricultural_impact_of_the_rate_of_climate_change()
     )
 
 
@@ -65,7 +62,7 @@ def fund_a2_beta_parameter():
     other_deps={
         "_delayfixed_fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change": {
             "initial": {},
-            "step": {"fund_a2_agricultural_impact_of_the_rate_of_climate_change": 1},
+            "step": {"fund_a2_eq_agricultural_impact_of_the_rate_of_climate_change": 1},
         }
     },
 )
@@ -77,7 +74,7 @@ def fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change():
 
 _delayfixed_fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change = (
     DelayFixed(
-        lambda: fund_a2_agricultural_impact_of_the_rate_of_climate_change(),
+        lambda: fund_a2_eq_agricultural_impact_of_the_rate_of_climate_change(),
         lambda: 1,
         lambda: xr.DataArray(
             0, {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]}, ["REGIONS 35 I"]
@@ -86,6 +83,28 @@ _delayfixed_fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change = 
         "_delayfixed_fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change",
     )
 )
+
+
+@component.add(
+    name='"FUND: A.2: EQ agricultural impact of the rate of climate change"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_a2_alpha_parameter": 1,
+        "fund_a2_rate_of_temperature_change": 1,
+        "fund_a2_beta_parameter": 1,
+        "fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change": 1,
+        "fund_a2_rho_parameter": 1,
+    },
+)
+def fund_a2_eq_agricultural_impact_of_the_rate_of_climate_change():
+    return (
+        fund_a2_alpha_parameter()
+        * (fund_a2_rate_of_temperature_change() / 0.04) ** fund_a2_beta_parameter()
+        + (1 - 1 / fund_a2_rho_parameter())
+        * fund_a2_delayed_agricultural_impact_of_the_rate_of_climate_change()
+    )
 
 
 @component.add(
@@ -138,26 +157,6 @@ _delayfixed_fund_a2_temperature_change_delayed = DelayFixed(
 
 
 @component.add(
-    name='"FUND: A.3: agricultural impact of the level of climate change"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_a3_delta_l_parameter": 1,
-        "temperature_change_in_35regions": 3,
-        "fund_a4_delta_q_parameter": 1,
-    },
-)
-def fund_a3_agricultural_impact_of_the_level_of_climate_change():
-    return (
-        fund_a3_delta_l_parameter() * temperature_change_in_35regions()
-        + fund_a4_delta_q_parameter()
-        * temperature_change_in_35regions()
-        * temperature_change_in_35regions()
-    )
-
-
-@component.add(
     name='"FUND: A.3: delta l parameter"',
     subscripts=["REGIONS 35 I"],
     comp_type="Constant",
@@ -177,6 +176,26 @@ _ext_constant_fund_a3_delta_l_parameter = ExtConstant(
     {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]},
     "_ext_constant_fund_a3_delta_l_parameter",
 )
+
+
+@component.add(
+    name='"FUND: A.3: EQ agricultural impact of the level of climate change"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_a3_delta_l_parameter": 1,
+        "temperature_change_in_35regions": 3,
+        "fund_a4_delta_q_parameter": 1,
+    },
+)
+def fund_a3_eq_agricultural_impact_of_the_level_of_climate_change():
+    return (
+        fund_a3_delta_l_parameter() * temperature_change_in_35regions()
+        + fund_a4_delta_q_parameter()
+        * temperature_change_in_35regions()
+        * temperature_change_in_35regions()
+    )
 
 
 @component.add(
@@ -202,6 +221,21 @@ _ext_constant_fund_a4_delta_q_parameter = ExtConstant(
 
 
 @component.add(
+    name='"FUND: A.4: EQ agricultural imact of the fertilisation"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={"fund_a4_gamma_parameter": 1, "atmospheric_concentrations_co2": 1},
+)
+def fund_a4_eq_agricultural_imact_of_the_fertilisation():
+    return (
+        fund_a4_gamma_parameter()
+        / np.log(2)
+        * np.log(atmospheric_concentrations_co2() / 275)
+    )
+
+
+@component.add(
     name='"FUND: A.4: gamma parameter"',
     subscripts=["REGIONS 35 I"],
     comp_type="Constant",
@@ -221,21 +255,6 @@ _ext_constant_fund_a4_gamma_parameter = ExtConstant(
     {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]},
     "_ext_constant_fund_a4_gamma_parameter",
 )
-
-
-@component.add(
-    name='"FUND: agricultural imact of the fertilisation"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={"fund_a4_gamma_parameter": 1, "atmospheric_concentrations_co2": 1},
-)
-def fund_agricultural_imact_of_the_fertilisation():
-    return (
-        fund_a4_gamma_parameter()
-        / np.log(2)
-        * np.log(atmospheric_concentrations_co2() / 275)
-    )
 
 
 @component.add(
@@ -296,17 +315,7 @@ def fund_e1_epsilon_parameter():
 
 
 @component.add(
-    name='"FUND: E.1: sigma parameter"', comp_type="Constant", comp_subtype="Normal"
-)
-def fund_e1_sigma_parameter():
-    """
-    σ=0.05 (triangular distribution,&gt;0,&lt;1) is a parameter, based on an expert guess; and
-    """
-    return 0.05
-
-
-@component.add(
-    name='"FUND: E.1: Space heating"',
+    name='"FUND: E.1: EQ Space heating"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
@@ -322,7 +331,7 @@ def fund_e1_sigma_parameter():
         "fund_e2_autonomous_energy_efficiency_improvement": 1,
     },
 )
-def fund_e1_space_heating():
+def fund_e1_eq_space_heating():
     """
     SH denotes the decrease in expenditure on space heating (in 1995 US dollar) at time tt in region rr
     """
@@ -337,17 +346,7 @@ def fund_e1_space_heating():
 
 
 @component.add(
-    name='"FUND: E.1: tau parameter"', comp_type="Constant", comp_subtype="Normal"
-)
-def fund_e1_tau_parameter():
-    """
-    τ=0.025ºC is a parameter;
-    """
-    return 0.025
-
-
-@component.add(
-    name='"FUND: E.1: value of the loss of the ecosystems"',
+    name='"FUND: E.1: EQ value of the loss of the ecosystems"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
@@ -356,14 +355,14 @@ def fund_e1_tau_parameter():
         "population_35_regions": 1,
         "average_disposable_income_per_capita": 2,
         "fund_e1_yb_parameter": 2,
-        "temperature_change_in_35regions": 2,
         "fund_e1_tau_parameter": 2,
+        "temperature_change_in_35regions": 2,
+        "fund_e2_eq_number_of_species": 1,
         "fund_e1_sigma_parameter": 2,
-        "fund_e2_number_of_species": 1,
         "fund_e1_b0_parameter": 1,
     },
 )
-def fund_e1_value_of_the_loss_of_the_ecosystems():
+def fund_e1_eq_value_of_the_loss_of_the_ecosystems():
     return (
         fund_e1_alpha_parameter_species_value()
         * population_35_regions()
@@ -376,9 +375,29 @@ def fund_e1_value_of_the_loss_of_the_ecosystems():
             - fund_e1_sigma_parameter()
             + fund_e1_sigma_parameter()
             * fund_e1_b0_parameter()
-            / fund_e2_number_of_species()
+            / fund_e2_eq_number_of_species()
         )
     )
+
+
+@component.add(
+    name='"FUND: E.1: sigma parameter"', comp_type="Constant", comp_subtype="Normal"
+)
+def fund_e1_sigma_parameter():
+    """
+    σ=0.05 (triangular distribution,&gt;0,&lt;1) is a parameter, based on an expert guess; and
+    """
+    return 0.05
+
+
+@component.add(
+    name='"FUND: E.1: tau parameter"', comp_type="Constant", comp_subtype="Normal"
+)
+def fund_e1_tau_parameter():
+    """
+    τ=0.025ºC is a parameter;
+    """
+    return 0.025
 
 
 @component.add(
@@ -439,30 +458,20 @@ def fund_e2_beta_parameter():
 
 
 @component.add(
-    name='"FUND: E.2: gamma parameter"', comp_type="Constant", comp_subtype="Normal"
-)
-def fund_e2_gamma_parameter():
-    """
-    γ = 0.001 (0.0-0.002, &gt;0.0) is a parameter; and
-    """
-    return 0.001
-
-
-@component.add(
-    name='"FUND: E.2: number of species"',
+    name='"FUND: E.2: EQ number of species"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "fund_e1_b0_parameter": 1,
         "fund_e2_rho_parameter": 1,
+        "fund_e1_tau_parameter": 1,
         "fund_e2_number_of_species_delayed": 1,
         "fund_e2_gamma_parameter": 1,
         "temperature_change_in_35regions": 1,
-        "fund_e1_tau_parameter": 1,
     },
 )
-def fund_e2_number_of_species():
+def fund_e2_eq_number_of_species():
     return np.maximum(
         fund_e1_b0_parameter() / 100,
         fund_e2_number_of_species_delayed()
@@ -476,6 +485,48 @@ def fund_e2_number_of_species():
 
 
 @component.add(
+    name='"FUND: E.2: EQ Space cooling"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_e2_alpha_parameter": 1,
+        "fund_extra_initial_gdp": 1,
+        "fund_e2_beta_parameter": 1,
+        "temperature_change_in_35regions": 1,
+        "fund_extra_initial_revenue": 1,
+        "average_disposable_income_per_capita": 1,
+        "fund_e1_epsilon_parameter": 1,
+        "population_35_regions": 1,
+        "fund_extra_initial_population": 1,
+        "fund_e2_autonomous_energy_efficiency_improvement": 1,
+    },
+)
+def fund_e2_eq_space_cooling():
+    """
+    SC denotes the increase in expenditure on space cooling (1995 US dollar) at time tt in region rr;
+    """
+    return (
+        fund_e2_alpha_parameter()
+        * fund_extra_initial_gdp()
+        * (temperature_change_in_35regions() / 1) ** fund_e2_beta_parameter()
+        * (average_disposable_income_per_capita() / fund_extra_initial_revenue())
+        ** fund_e1_epsilon_parameter()
+        * (population_35_regions() / fund_extra_initial_population())
+    ) / fund_e2_autonomous_energy_efficiency_improvement()
+
+
+@component.add(
+    name='"FUND: E.2: gamma parameter"', comp_type="Constant", comp_subtype="Normal"
+)
+def fund_e2_gamma_parameter():
+    """
+    γ = 0.001 (0.0-0.002, &gt;0.0) is a parameter; and
+    """
+    return 0.001
+
+
+@component.add(
     name='"FUND: E.2: number of species delayed"',
     subscripts=["REGIONS 35 I"],
     comp_type="Stateful",
@@ -484,7 +535,7 @@ def fund_e2_number_of_species():
     other_deps={
         "_delayfixed_fund_e2_number_of_species_delayed": {
             "initial": {"time_step": 1},
-            "step": {"fund_e2_number_of_species": 1},
+            "step": {"fund_e2_eq_number_of_species": 1},
         }
     },
 )
@@ -493,7 +544,7 @@ def fund_e2_number_of_species_delayed():
 
 
 _delayfixed_fund_e2_number_of_species_delayed = DelayFixed(
-    lambda: fund_e2_number_of_species(),
+    lambda: fund_e2_eq_number_of_species(),
     lambda: time_step(),
     lambda: xr.DataArray(
         0, {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]}, ["REGIONS 35 I"]
@@ -511,38 +562,6 @@ def fund_e2_rho_parameter():
     ρ = 0.003 (0.001-0.005, &gt;0.0) is a parameter;
     """
     return 0.003
-
-
-@component.add(
-    name='"FUND: E.2: Space cooling"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_e2_alpha_parameter": 1,
-        "fund_extra_initial_gdp": 1,
-        "temperature_change_in_35regions": 1,
-        "fund_e2_beta_parameter": 1,
-        "fund_extra_initial_revenue": 1,
-        "average_disposable_income_per_capita": 1,
-        "fund_e1_epsilon_parameter": 1,
-        "population_35_regions": 1,
-        "fund_extra_initial_population": 1,
-        "fund_e2_autonomous_energy_efficiency_improvement": 1,
-    },
-)
-def fund_e2_space_cooling():
-    """
-    SC denotes the increase in expenditure on space cooling (1995 US dollar) at time tt in region rr;
-    """
-    return (
-        fund_e2_alpha_parameter()
-        * fund_extra_initial_gdp()
-        * (temperature_change_in_35regions() / 1) ** fund_e2_beta_parameter()
-        * (average_disposable_income_per_capita() / fund_extra_initial_revenue())
-        ** fund_e1_epsilon_parameter()
-        * (population_35_regions() / fund_extra_initial_population())
-    ) / fund_e2_autonomous_energy_efficiency_improvement()
 
 
 @component.add(
@@ -588,7 +607,7 @@ def fund_ets1_epsilon_income_elasticity_of_extratropical_storm_damages():
 
 
 @component.add(
-    name='"FUND: ETS.1: extratropical storms"',
+    name='"FUND: ETS.1: EQ extratropical storms"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
@@ -599,11 +618,11 @@ def fund_ets1_epsilon_income_elasticity_of_extratropical_storm_damages():
         "fund_extra_initial_revenue": 1,
         "average_disposable_income_per_capita": 1,
         "fund_ets1_delta_storm_sensitivity_to_atmospheric_concentrations": 1,
-        "atmospheric_concentrations_co2": 1,
         "fund_ets1_gamma_parameter": 1,
+        "atmospheric_concentrations_co2": 1,
     },
 )
-def fund_ets1_extratropical_storms():
+def fund_ets1_eq_extratropical_storms():
     return (
         fund_ets1_benchmark_damage_from_extratropical_cyclones()
         * gross_domestic_product_nominal()
@@ -637,7 +656,7 @@ def fund_ets2_benchmark_mortality_from_extratopical_cyclones_for_region_r():
 
 
 @component.add(
-    name='"FUND: ETS.2: mortality from extratropical storm"',
+    name='"FUND: ETS.2: EQ mortality from extratropical storm"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
@@ -645,14 +664,14 @@ def fund_ets2_benchmark_mortality_from_extratopical_cyclones_for_region_r():
         "fund_ets2_benchmark_mortality_from_extratopical_cyclones_for_region_r": 1,
         "population_35_regions": 1,
         "fund_extra_initial_revenue": 1,
-        "fund_ets2_phi_income_elasticity_of_extratropical_storm_mortality": 1,
         "average_disposable_income_per_capita": 1,
+        "fund_ets2_phi_income_elasticity_of_extratropical_storm_mortality": 1,
         "fund_ets1_delta_storm_sensitivity_to_atmospheric_concentrations": 1,
-        "atmospheric_concentrations_co2": 1,
         "fund_ets1_gamma_parameter": 1,
+        "atmospheric_concentrations_co2": 1,
     },
 )
-def fund_ets2_mortality_from_extratropical_storm():
+def fund_ets2_eq_mortality_from_extratropical_storm():
     return (
         fund_ets2_benchmark_mortality_from_extratopical_cyclones_for_region_r()
         * population_35_regions()
@@ -790,22 +809,22 @@ def fund_f1_epsilon_parameter():
 
 
 @component.add(
-    name='"FUND: F.1: Forestry change in consumer and producer surplus"',
+    name='"FUND: F.1: EQ Forestry change in consumer and producer surplus"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "fund_f1_alpha_parameter_on_global_warming_economic_impact": 1,
-        "fund_f1_epsilon_parameter": 1,
         "fund_extra_initial_revenue": 1,
         "average_disposable_income_per_capita": 1,
-        "temperature_change_in_35regions": 1,
+        "fund_f1_epsilon_parameter": 1,
         "fund_f1_beta_parameter": 1,
-        "atmospheric_concentrations_co2": 1,
         "fund_f1_gamma_parameter": 1,
+        "temperature_change_in_35regions": 1,
+        "atmospheric_concentrations_co2": 1,
     },
 )
-def fund_f1_forestry_change_in_consumer_and_producer_surplus():
+def fund_f1_eq_forestry_change_in_consumer_and_producer_surplus():
     """
     FF denotes the change in forestry consumer and producer surplus (as a share of total income);
     """
@@ -833,31 +852,6 @@ def fund_f1_gamma_parameter():
 
 
 @component.add(
-    name='"FUND: HD.1: additional diarrhoea deaths"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_hd1_mu_mortality_rate": 1,
-        "population_35_regions": 1,
-        "fund_extra_initial_revenue": 1,
-        "fund_hd1_epsilon_income_elasticity_of_diarrhoea": 1,
-        "average_disposable_income_per_capita": 1,
-        "temperature_change_in_35regions": 1,
-        "fund_hd1_eta_linearity_of_the_response": 1,
-    },
-)
-def fund_hd1_additional_diarrhoea_deaths():
-    return (
-        fund_hd1_mu_mortality_rate()
-        * population_35_regions()
-        * (average_disposable_income_per_capita() / fund_extra_initial_revenue())
-        ** fund_hd1_epsilon_income_elasticity_of_diarrhoea()
-        * temperature_change_in_35regions() ** fund_hd1_eta_linearity_of_the_response()
-    )
-
-
-@component.add(
     name='"FUND: HD.1: epsilon income elasticity of diarrhoea"',
     comp_type="Constant",
     comp_subtype="Normal",
@@ -867,6 +861,31 @@ def fund_hd1_epsilon_income_elasticity_of_diarrhoea():
     ϵϵ = -1.58 (0.23)is the income elasticity of diarrhoea mortality
     """
     return -1.58
+
+
+@component.add(
+    name='"FUND: HD.1: EQ additional diarrhoea deaths"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_hd1_mu_mortality_rate": 1,
+        "population_35_regions": 1,
+        "fund_extra_initial_revenue": 1,
+        "average_disposable_income_per_capita": 1,
+        "fund_hd1_epsilon_income_elasticity_of_diarrhoea": 1,
+        "fund_hd1_eta_linearity_of_the_response": 1,
+        "temperature_change_in_35regions": 1,
+    },
+)
+def fund_hd1_eq_additional_diarrhoea_deaths():
+    return (
+        fund_hd1_mu_mortality_rate()
+        * population_35_regions()
+        * (average_disposable_income_per_capita() / fund_extra_initial_revenue())
+        ** fund_hd1_epsilon_income_elasticity_of_diarrhoea()
+        * temperature_change_in_35regions() ** fund_hd1_eta_linearity_of_the_response()
+    )
 
 
 @component.add(
@@ -1053,6 +1072,38 @@ def fund_hv_dengue_deaths():
 
 
 @component.add(
+    name='"FUND: HV: EQ vector-born diseases"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_hv_dengue_deaths": 1,
+        "fund_hv_malaria_deaths": 1,
+        "fund_hv_schistomisais_deaths": 1,
+        "fund_hv_non_linearity_parameter": 1,
+        "temperature_change": 1,
+        "fund_hv_gamma_parameter": 1,
+        "fund_extra_initial_revenue": 1,
+        "average_disposable_income_per_capita": 1,
+    },
+)
+def fund_hv_eq_vectorborn_diseases():
+    """
+    TODO watch the different significations of "mean temperature / temperature change"
+    """
+    return (
+        (
+            fund_hv_dengue_deaths()
+            + fund_hv_malaria_deaths()
+            + fund_hv_schistomisais_deaths()
+        )
+        * temperature_change() ** fund_hv_non_linearity_parameter()
+        * (average_disposable_income_per_capita() / fund_extra_initial_revenue())
+        ** fund_hv_gamma_parameter()
+    )
+
+
+@component.add(
     name='"FUND: HV: gamma parameter"', comp_type="Constant", comp_subtype="Normal"
 )
 def fund_hv_gamma_parameter():
@@ -1105,38 +1156,6 @@ def fund_hv_schistomisais_deaths():
 
 
 @component.add(
-    name='"FUND: HV: vector-born diseases"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_hv_dengue_deaths": 1,
-        "fund_hv_malaria_deaths": 1,
-        "fund_hv_schistomisais_deaths": 1,
-        "fund_hv_non_linearity_parameter": 1,
-        "temperature_change": 1,
-        "fund_extra_initial_revenue": 1,
-        "fund_hv_gamma_parameter": 1,
-        "average_disposable_income_per_capita": 1,
-    },
-)
-def fund_hv_vectorborn_diseases():
-    """
-    TODO watch the different significations of "mean temperature / temperature change"
-    """
-    return (
-        (
-            fund_hv_dengue_deaths()
-            + fund_hv_malaria_deaths()
-            + fund_hv_schistomisais_deaths()
-        )
-        * temperature_change() ** fund_hv_non_linearity_parameter()
-        * (average_disposable_income_per_capita() / fund_extra_initial_revenue())
-        ** fund_hv_gamma_parameter()
-    )
-
-
-@component.add(
     name='"FUND: MM.1: alpha parameter"', comp_type="Constant", comp_subtype="Normal"
 )
 def fund_mm1_alpha_parameter():
@@ -1159,18 +1178,18 @@ def fund_mm1_epsilon_income_elasticity_of_the_value_of_a_statistical_life():
 
 
 @component.add(
-    name='"FUND: MM.1: Value of a statistical life"',
+    name='"FUND: MM.1: EQ Value of a statistical life"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "fund_mm1_alpha_parameter": 1,
-        "fund_mm1_epsilon_income_elasticity_of_the_value_of_a_statistical_life": 1,
-        "average_disposable_income_per_capita": 1,
         "fund_mm1_y0_normalisation_constant": 1,
+        "average_disposable_income_per_capita": 1,
+        "fund_mm1_epsilon_income_elasticity_of_the_value_of_a_statistical_life": 1,
     },
 )
-def fund_mm1_value_of_a_statistical_life():
+def fund_mm1_eq_value_of_a_statistical_life():
     return (
         fund_mm1_alpha_parameter()
         * (
@@ -1204,6 +1223,29 @@ def fund_mm2_beta_parameter():
 
 
 @component.add(
+    name='"FUND: MM.2: EQ value of a year of morbidity"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_mm2_beta_parameter": 1,
+        "fund_mm2_y0_normalisation_constant": 1,
+        "average_disposable_income_per_capita": 1,
+        "fund_mm2_eta_income_elasticity_of_the_value_of_a_year_of_morbidity": 1,
+    },
+)
+def fund_mm2_eq_value_of_a_year_of_morbidity():
+    return (
+        fund_mm2_beta_parameter()
+        * (
+            average_disposable_income_per_capita()
+            / fund_mm2_y0_normalisation_constant()
+        )
+        ** fund_mm2_eta_income_elasticity_of_the_value_of_a_year_of_morbidity()
+    )
+
+
+@component.add(
     name='"FUND: MM.2: eta income elasticity of the value of a year of morbidity"',
     comp_type="Constant",
     comp_subtype="Normal",
@@ -1213,29 +1255,6 @@ def fund_mm2_eta_income_elasticity_of_the_value_of_a_year_of_morbidity():
     η=1 (0.2,&gt;0) is the income elasticity of the value of a year of morbidity;
     """
     return 1
-
-
-@component.add(
-    name='"FUND: MM.2: value of a year of morbidity"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_mm2_beta_parameter": 1,
-        "fund_mm2_eta_income_elasticity_of_the_value_of_a_year_of_morbidity": 1,
-        "fund_mm2_y0_normalisation_constant": 1,
-        "average_disposable_income_per_capita": 1,
-    },
-)
-def fund_mm2_value_of_a_year_of_morbidity():
-    return (
-        fund_mm2_beta_parameter()
-        * (
-            average_disposable_income_per_capita()
-            / fund_mm2_y0_normalisation_constant()
-        )
-        ** fund_mm2_eta_income_elasticity_of_the_value_of_a_year_of_morbidity()
-    )
 
 
 @component.add(
@@ -1300,6 +1319,38 @@ def fund_slr10_epsilon_parameter():
 
 
 @component.add(
+    name='"FUND: SLR.10: EQ NPVVP"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_slr10_rho_parameter": 2,
+        "fund_slr10_eta_parameter": 2,
+        "fund_slr10_growth_rate_of_per_capita_income": 2,
+        "fund_slr10_annual_unit_cost_of_coastal_protection": 1,
+        "fund_slr10_delta_slr": 1,
+    },
+)
+def fund_slr10_eq_npvvp():
+    """
+    NPVVPNPVVP is the net present costs of coastal protection at time tt in region rr; NPVVP is calculated assuming annual costs to be constant. This is based on the following. Firstly, the coastal protection decision makers anticipate a linear sea level rise. Secondly, coastal protection entails large infrastructural works which last for decades. Thirdly, the considered costs are direct investments only, and technologies for coastal protection are mature. Throughout the analysis, a pure rate of time preference, ρρ, of 1% per year is used. The actual discount rate lies thus 1% above the growth rate of the economy, gg. The net present costs of protection PCPC equal
+    """
+    return (
+        (
+            1
+            + fund_slr10_rho_parameter()
+            + fund_slr10_eta_parameter() * fund_slr10_growth_rate_of_per_capita_income()
+        )
+        * fund_slr10_annual_unit_cost_of_coastal_protection()
+        * fund_slr10_delta_slr()
+        / (
+            fund_slr10_rho_parameter()
+            + fund_slr10_eta_parameter() * fund_slr10_growth_rate_of_per_capita_income()
+        )
+    )
+
+
+@component.add(
     name='"FUND: SLR.10: eta parameter"', comp_type="Constant", comp_subtype="Normal"
 )
 def fund_slr10_eta_parameter():
@@ -1323,38 +1374,6 @@ def fund_slr10_growth_rate_of_per_capita_income():
     return (
         average_disposable_income_per_capita()
         - delayed_ts_average_disposable_income_per_capita()
-    )
-
-
-@component.add(
-    name='"FUND: SLR.10: NPVVP"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_slr10_rho_parameter": 2,
-        "fund_slr10_growth_rate_of_per_capita_income": 2,
-        "fund_slr10_eta_parameter": 2,
-        "fund_slr10_annual_unit_cost_of_coastal_protection": 1,
-        "fund_slr10_delta_slr": 1,
-    },
-)
-def fund_slr10_npvvp():
-    """
-    NPVVPNPVVP is the net present costs of coastal protection at time tt in region rr; NPVVP is calculated assuming annual costs to be constant. This is based on the following. Firstly, the coastal protection decision makers anticipate a linear sea level rise. Secondly, coastal protection entails large infrastructural works which last for decades. Thirdly, the considered costs are direct investments only, and technologies for coastal protection are mature. Throughout the analysis, a pure rate of time preference, ρρ, of 1% per year is used. The actual discount rate lies thus 1% above the growth rate of the economy, gg. The net present costs of protection PCPC equal
-    """
-    return (
-        (
-            1
-            + fund_slr10_rho_parameter()
-            + fund_slr10_eta_parameter() * fund_slr10_growth_rate_of_per_capita_income()
-        )
-        * fund_slr10_annual_unit_cost_of_coastal_protection()
-        * fund_slr10_delta_slr()
-        / (
-            fund_slr10_rho_parameter()
-            + fund_slr10_eta_parameter() * fund_slr10_growth_rate_of_per_capita_income()
-        )
     )
 
 
@@ -1442,40 +1461,30 @@ def fund_slr11_delta_parameter():
 
 
 @component.add(
-    name='"FUND: SLR.11: gamma parameter"', comp_type="Constant", comp_subtype="Normal"
-)
-def fund_slr11_gamma_parameter():
-    """
-    γ is a parameter, the population density elasticity of wetland value; γγ = 0.47 (0.12,&gt;0,&lt;1); this value is taken from Brander et al. (2006);
-    """
-    return 0.47
-
-
-@component.add(
-    name='"FUND: SLR.11: NPVVW"',
+    name='"FUND: SLR.11: EQ NPVVW"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
-        "fund_slr6_wetland_loss": 1,
-        "fund_slr8_wetland_value": 1,
+        "fund_slr6_eq_wetland_loss": 1,
+        "fund_slr8_eq_wetland_value": 1,
         "fund_slr10_rho_parameter": 2,
-        "fund_slr10_growth_rate_of_per_capita_income": 3,
         "fund_slr10_eta_parameter": 2,
+        "fund_slr10_growth_rate_of_per_capita_income": 3,
+        "annual_population_growth_rate": 1,
         "fund_slr11_gamma_parameter": 1,
         "fund_slr11_delta_parameter": 1,
-        "fund_slr11_beta_paramater": 1,
         "fund_slr11_annual_unit_wetland_loss_due_to_coastal_protection": 1,
-        "annual_population_growth_rate": 1,
+        "fund_slr11_beta_paramater": 1,
     },
 )
-def fund_slr11_npvvw():
+def fund_slr11_eq_npvvw():
     """
     NPVVW denotes the net present value of wetland loss. at time tt in region rr;
     """
     return (
-        fund_slr6_wetland_loss()
-        * fund_slr8_wetland_value()
+        fund_slr6_eq_wetland_loss()
+        * fund_slr8_eq_wetland_value()
         * (
             1
             + fund_slr10_rho_parameter()
@@ -1494,6 +1503,16 @@ def fund_slr11_npvvw():
 
 
 @component.add(
+    name='"FUND: SLR.11: gamma parameter"', comp_type="Constant", comp_subtype="Normal"
+)
+def fund_slr11_gamma_parameter():
+    """
+    γ is a parameter, the population density elasticity of wetland value; γγ = 0.47 (0.12,&gt;0,&lt;1); this value is taken from Brander et al. (2006);
+    """
+    return 0.47
+
+
+@component.add(
     name='"FUND: SLR.11: SLR.11 delayed"',
     subscripts=["REGIONS 35 I"],
     comp_type="Stateful",
@@ -1502,7 +1521,7 @@ def fund_slr11_npvvw():
     other_deps={
         "_delayfixed_fund_slr11_slr11_delayed": {
             "initial": {"time_step": 1},
-            "step": {"fund_slr11_npvvw": 1},
+            "step": {"fund_slr11_eq_npvvw": 1},
         }
     },
 )
@@ -1511,7 +1530,7 @@ def fund_slr11_slr11_delayed():
 
 
 _delayfixed_fund_slr11_slr11_delayed = DelayFixed(
-    lambda: fund_slr11_npvvw(),
+    lambda: fund_slr11_eq_npvvw(),
     lambda: time_step(),
     lambda: xr.DataArray(
         0, {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]}, ["REGIONS 35 I"]
@@ -1519,6 +1538,35 @@ _delayfixed_fund_slr11_slr11_delayed = DelayFixed(
     time_step,
     "_delayfixed_fund_slr11_slr11_delayed",
 )
+
+
+@component.add(
+    name='"FUND: SLR.12: EQ NPVVD"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_slr3_eq_actual_dryland_loss": 1,
+        "fund_slr5_eq_dryland_value": 1,
+        "fund_slr10_eta_parameter": 2,
+        "fund_slr10_growth_rate_of_per_capita_income": 2,
+        "fund_slr10_rho_parameter": 1,
+        "fund_slr10_epsilon_parameter": 1,
+        "fund_slr12_income_density_growth_rate": 1,
+    },
+)
+def fund_slr12_eq_npvvd():
+    return (
+        fund_slr3_eq_actual_dryland_loss()
+        * fund_slr5_eq_dryland_value()
+        * fund_slr10_eta_parameter()
+        * fund_slr10_growth_rate_of_per_capita_income()
+        / (
+            fund_slr10_rho_parameter()
+            + fund_slr10_eta_parameter() * fund_slr10_growth_rate_of_per_capita_income()
+            - fund_slr10_epsilon_parameter() * fund_slr12_income_density_growth_rate()
+        )
+    )
 
 
 @component.add(
@@ -1531,35 +1579,6 @@ def fund_slr12_income_density_growth_rate():
 
 
 @component.add(
-    name='"FUND: SLR.12: NPVVD"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_slr3_actual_dryland_loss": 1,
-        "fund_slr5_dryland_value": 1,
-        "fund_slr10_eta_parameter": 2,
-        "fund_slr10_growth_rate_of_per_capita_income": 2,
-        "fund_slr12_income_density_growth_rate": 1,
-        "fund_slr10_rho_parameter": 1,
-        "fund_slr10_epsilon_parameter": 1,
-    },
-)
-def fund_slr12_npvvd():
-    return (
-        fund_slr3_actual_dryland_loss()
-        * fund_slr5_dryland_value()
-        * fund_slr10_eta_parameter()
-        * fund_slr10_growth_rate_of_per_capita_income()
-        / (
-            fund_slr10_rho_parameter()
-            + fund_slr10_eta_parameter() * fund_slr10_growth_rate_of_per_capita_income()
-            - fund_slr10_epsilon_parameter() * fund_slr12_income_density_growth_rate()
-        )
-    )
-
-
-@component.add(
     name='"FUND: SLR.12: SLR.12 delayed"',
     subscripts=["REGIONS 35 I"],
     comp_type="Stateful",
@@ -1568,7 +1587,7 @@ def fund_slr12_npvvd():
     other_deps={
         "_delayfixed_fund_slr12_slr12_delayed": {
             "initial": {"time_step": 1},
-            "step": {"fund_slr12_npvvd": 1},
+            "step": {"fund_slr12_eq_npvvd": 1},
         }
     },
 )
@@ -1577,7 +1596,7 @@ def fund_slr12_slr12_delayed():
 
 
 _delayfixed_fund_slr12_slr12_delayed = DelayFixed(
-    lambda: fund_slr12_npvvd(),
+    lambda: fund_slr12_eq_npvvd(),
     lambda: time_step(),
     lambda: xr.DataArray(
         0, {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]}, ["REGIONS 35 I"]
@@ -1613,6 +1632,28 @@ _ext_constant_fund_slr1_delta_parameter = ExtConstant(
 
 
 @component.add(
+    name='"FUND: SLR.1: EQ SLR dryland loss"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_slr1_delta_parameter": 1,
+        "sea_level_rise": 1,
+        "fund_slr1_gamma_parameter": 1,
+        "fund_slr1_zeta_parameter": 1,
+    },
+)
+def fund_slr1_eq_slr_dryland_loss():
+    """
+    CDt,r​ is the potential cumulative dryland lost at time tt in region rr that would occur without protection;
+    """
+    return np.minimum(
+        fund_slr1_delta_parameter() * sea_level_rise() ** fund_slr1_gamma_parameter(),
+        fund_slr1_zeta_parameter(),
+    )
+
+
+@component.add(
     name='"FUND: SLR.1: gamma parameter"',
     subscripts=["REGIONS 35 I"],
     comp_type="Constant",
@@ -1635,28 +1676,6 @@ _ext_constant_fund_slr1_gamma_parameter = ExtConstant(
     {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]},
     "_ext_constant_fund_slr1_gamma_parameter",
 )
-
-
-@component.add(
-    name='"FUND: SLR.1: SLR dryland loss"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_slr1_delta_parameter": 1,
-        "fund_slr1_gamma_parameter": 1,
-        "sea_level_rise": 1,
-        "fund_slr1_zeta_parameter": 1,
-    },
-)
-def fund_slr1_slr_dryland_loss():
-    """
-    CDt,r​ is the potential cumulative dryland lost at time tt in region rr that would occur without protection;
-    """
-    return np.minimum(
-        fund_slr1_delta_parameter() * sea_level_rise() ** fund_slr1_gamma_parameter(),
-        fund_slr1_zeta_parameter(),
-    )
 
 
 @component.add(
@@ -1693,7 +1712,7 @@ _ext_constant_fund_slr1_zeta_parameter = ExtConstant(
     other_deps={
         "_delayfixed_fund_slr2_cd_delayed": {
             "initial": {},
-            "step": {"fund_slr4_actual_cumulative_dryland_lost": 1},
+            "step": {"fund_slr4_eq_actual_cumulative_dryland_lost": 1},
         }
     },
 )
@@ -1702,7 +1721,7 @@ def fund_slr2_cd_delayed():
 
 
 _delayfixed_fund_slr2_cd_delayed = DelayFixed(
-    lambda: fund_slr4_actual_cumulative_dryland_lost(),
+    lambda: fund_slr4_eq_actual_cumulative_dryland_lost(),
     lambda: 1,
     lambda: xr.DataArray(
         0, {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]}, ["REGIONS 35 I"]
@@ -1713,56 +1732,36 @@ _delayfixed_fund_slr2_cd_delayed = DelayFixed(
 
 
 @component.add(
-    name='"FUND: SLR.2: Potential dryland loss"',
+    name='"FUND: SLR.2: EQ Potential dryland loss"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"fund_slr1_slr_dryland_loss": 1, "fund_slr2_cd_delayed": 1},
+    depends_on={"fund_slr1_eq_slr_dryland_loss": 1, "fund_slr2_cd_delayed": 1},
 )
-def fund_slr2_potential_dryland_loss():
+def fund_slr2_eq_potential_dryland_loss():
     """
     Dt,r​ is potential dryland loss in year tt and region rr without protection;
     """
-    return fund_slr1_slr_dryland_loss() - fund_slr2_cd_delayed()
+    return fund_slr1_eq_slr_dryland_loss() - fund_slr2_cd_delayed()
 
 
 @component.add(
-    name='"FUND: SLR.3: Actual dryland loss"',
+    name='"FUND: SLR.3: EQ Actual dryland loss"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "fund_slr9_fraction_of_the_coastline_protectd": 1,
-        "fund_slr2_potential_dryland_loss": 1,
+        "fund_slr2_eq_potential_dryland_loss": 1,
     },
 )
-def fund_slr3_actual_dryland_loss():
+def fund_slr3_eq_actual_dryland_loss():
     """
     Dt,r​ is dryland loss in year tt and region rr;
     """
     return (
         1 - fund_slr9_fraction_of_the_coastline_protectd()
-    ) * fund_slr2_potential_dryland_loss()
-
-
-@component.add(
-    name='"FUND: SLR.4: Actual cumulative dryland lost"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_slr3_actual_dryland_loss": 1,
-        "fund_slr4_actual_cumulative_dryland_lost_delayed": 1,
-    },
-)
-def fund_slr4_actual_cumulative_dryland_lost():
-    """
-    CDt,r​ is the actual cumulative dryland lost at time tt in region rr;
-    """
-    return (
-        fund_slr3_actual_dryland_loss()
-        + fund_slr4_actual_cumulative_dryland_lost_delayed()
-    )
+    ) * fund_slr2_eq_potential_dryland_loss()
 
 
 @component.add(
@@ -1774,7 +1773,7 @@ def fund_slr4_actual_cumulative_dryland_lost():
     other_deps={
         "_delayfixed_fund_slr4_actual_cumulative_dryland_lost_delayed": {
             "initial": {"time_step": 1},
-            "step": {"fund_slr4_actual_cumulative_dryland_lost": 1},
+            "step": {"fund_slr4_eq_actual_cumulative_dryland_lost": 1},
         }
     },
 )
@@ -1786,7 +1785,7 @@ def fund_slr4_actual_cumulative_dryland_lost_delayed():
 
 
 _delayfixed_fund_slr4_actual_cumulative_dryland_lost_delayed = DelayFixed(
-    lambda: fund_slr4_actual_cumulative_dryland_lost(),
+    lambda: fund_slr4_eq_actual_cumulative_dryland_lost(),
     lambda: time_step(),
     lambda: xr.DataArray(
         0, {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]}, ["REGIONS 35 I"]
@@ -1796,33 +1795,32 @@ _delayfixed_fund_slr4_actual_cumulative_dryland_lost_delayed = DelayFixed(
 )
 
 
+@component.add(
+    name='"FUND: SLR.4: EQ Actual cumulative dryland lost"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_slr3_eq_actual_dryland_loss": 1,
+        "fund_slr4_actual_cumulative_dryland_lost_delayed": 1,
+    },
+)
+def fund_slr4_eq_actual_cumulative_dryland_lost():
+    """
+    CDt,r​ is the actual cumulative dryland lost at time tt in region rr;
+    """
+    return (
+        fund_slr3_eq_actual_dryland_loss()
+        + fund_slr4_actual_cumulative_dryland_lost_delayed()
+    )
+
+
 @component.add(name='"FUND: SLR.5: area"', comp_type="Constant", comp_subtype="Normal")
 def fund_slr5_area():
     """
     AA is the area (in square kilometre) at time tt of region rr;
     """
     return 500000
-
-
-@component.add(
-    name='"FUND: SLR.5: Dryland value"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_slr5_phi_parameter": 1,
-        "fund_slr5_epsilon_income_density_elasticity_of_land_value": 1,
-        "gross_domestic_product_nominal": 1,
-        "fund_slr5_ya0": 1,
-        "fund_slr5_area": 1,
-    },
-)
-def fund_slr5_dryland_value():
-    return (
-        fund_slr5_phi_parameter()
-        * ((gross_domestic_product_nominal() / fund_slr5_area()) / fund_slr5_ya0())
-        ** fund_slr5_epsilon_income_density_elasticity_of_land_value()
-    )
 
 
 @component.add(
@@ -1835,6 +1833,27 @@ def fund_slr5_epsilon_income_density_elasticity_of_land_value():
     ϵ is a parameter, the income density elasticity of land value; ϵϵ = 1 (0.25).
     """
     return 1
+
+
+@component.add(
+    name='"FUND: SLR.5: EQ Dryland value"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_slr5_phi_parameter": 1,
+        "fund_slr5_ya0": 1,
+        "gross_domestic_product_nominal": 1,
+        "fund_slr5_area": 1,
+        "fund_slr5_epsilon_income_density_elasticity_of_land_value": 1,
+    },
+)
+def fund_slr5_eq_dryland_value():
+    return (
+        fund_slr5_phi_parameter()
+        * ((gross_domestic_product_nominal() / fund_slr5_area()) / fund_slr5_ya0())
+        ** fund_slr5_epsilon_income_density_elasticity_of_land_value()
+    )
 
 
 @component.add(
@@ -1853,6 +1872,27 @@ def fund_slr5_ya0():
     YA0​ =0.635 (million dollar per square kilometre) is a normalisation constant, the average incomde density of the OECD in 1990;
     """
     return 0.635
+
+
+@component.add(
+    name='"FUND: SLR.6: EQ Wetland loss"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_slr6_omega_s_parameter": 2,
+        "fund_slr10_delta_slr": 1,
+        "fund_slr9_fraction_of_the_coastline_protectd": 1,
+        "fund_slr6_omega_m_parameter": 1,
+    },
+)
+def fund_slr6_eq_wetland_loss():
+    return (
+        fund_slr6_omega_s_parameter() * fund_slr10_delta_slr()
+        + fund_slr6_omega_m_parameter()
+        * fund_slr9_fraction_of_the_coastline_protectd()
+        * fund_slr6_omega_s_parameter()
+    )
 
 
 @component.add(
@@ -1906,28 +1946,35 @@ _ext_constant_fund_slr6_omega_s_parameter = ExtConstant(
 
 
 @component.add(
-    name='"FUND: SLR.6: Wetland loss"',
+    name='"FUND: SLR.7: cumulative wetland loss delayed"',
     subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_slr6_omega_s_parameter": 2,
-        "fund_slr10_delta_slr": 1,
-        "fund_slr6_omega_m_parameter": 1,
-        "fund_slr9_fraction_of_the_coastline_protectd": 1,
+    comp_type="Stateful",
+    comp_subtype="DelayFixed",
+    depends_on={"_delayfixed_fund_slr7_cumulative_wetland_loss_delayed": 1},
+    other_deps={
+        "_delayfixed_fund_slr7_cumulative_wetland_loss_delayed": {
+            "initial": {"time_step": 1},
+            "step": {"fund_slr7_eq_cumulative_wetland_loss": 1},
+        }
     },
 )
-def fund_slr6_wetland_loss():
-    return (
-        fund_slr6_omega_s_parameter() * fund_slr10_delta_slr()
-        + fund_slr6_omega_m_parameter()
-        * fund_slr9_fraction_of_the_coastline_protectd()
-        * fund_slr6_omega_s_parameter()
-    )
+def fund_slr7_cumulative_wetland_loss_delayed():
+    return _delayfixed_fund_slr7_cumulative_wetland_loss_delayed()
+
+
+_delayfixed_fund_slr7_cumulative_wetland_loss_delayed = DelayFixed(
+    lambda: fund_slr7_eq_cumulative_wetland_loss(),
+    lambda: time_step(),
+    lambda: xr.DataArray(
+        0, {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]}, ["REGIONS 35 I"]
+    ),
+    time_step,
+    "_delayfixed_fund_slr7_cumulative_wetland_loss_delayed",
+)
 
 
 @component.add(
-    name='"FUND: SLR.7: Cumulative wetland loss"',
+    name='"FUND: SLR.7: EQ Cumulative wetland loss"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
@@ -1937,39 +1984,11 @@ def fund_slr6_wetland_loss():
         "fund_slr7_wm_parameter": 1,
     },
 )
-def fund_slr7_cumulative_wetland_loss():
+def fund_slr7_eq_cumulative_wetland_loss():
     return np.minimum(
         fund_slr7_cumulative_wetland_loss_delayed() + fund_slr7_wetland_loss_delayed(),
         fund_slr7_wm_parameter(),
     )
-
-
-@component.add(
-    name='"FUND: SLR.7: cumulative wetland loss delayed"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Stateful",
-    comp_subtype="DelayFixed",
-    depends_on={"_delayfixed_fund_slr7_cumulative_wetland_loss_delayed": 1},
-    other_deps={
-        "_delayfixed_fund_slr7_cumulative_wetland_loss_delayed": {
-            "initial": {"time_step": 1},
-            "step": {"fund_slr7_cumulative_wetland_loss": 1},
-        }
-    },
-)
-def fund_slr7_cumulative_wetland_loss_delayed():
-    return _delayfixed_fund_slr7_cumulative_wetland_loss_delayed()
-
-
-_delayfixed_fund_slr7_cumulative_wetland_loss_delayed = DelayFixed(
-    lambda: fund_slr7_cumulative_wetland_loss(),
-    lambda: time_step(),
-    lambda: xr.DataArray(
-        0, {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]}, ["REGIONS 35 I"]
-    ),
-    time_step,
-    "_delayfixed_fund_slr7_cumulative_wetland_loss_delayed",
-)
 
 
 @component.add(
@@ -1981,7 +2000,7 @@ _delayfixed_fund_slr7_cumulative_wetland_loss_delayed = DelayFixed(
     other_deps={
         "_delayfixed_fund_slr7_wetland_loss_delayed": {
             "initial": {"time_step": 1},
-            "step": {"fund_slr6_wetland_loss": 1},
+            "step": {"fund_slr6_eq_wetland_loss": 1},
         }
     },
 )
@@ -1990,7 +2009,7 @@ def fund_slr7_wetland_loss_delayed():
 
 
 _delayfixed_fund_slr7_wetland_loss_delayed = DelayFixed(
-    lambda: fund_slr6_wetland_loss(),
+    lambda: fund_slr6_eq_wetland_loss(),
     lambda: time_step(),
     lambda: xr.DataArray(
         0, {"REGIONS 35 I": _subscript_dict["REGIONS 35 I"]}, ["REGIONS 35 I"]
@@ -2070,6 +2089,42 @@ def fund_slr8_delta_parameter():
 
 
 @component.add(
+    name='"FUND: SLR.8: EQ Wetland value"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "fund_slr8_alpha_parameter": 1,
+        "fund_slr8_y0_normalisation_constant": 1,
+        "average_disposable_income_per_capita": 1,
+        "fund_slr8_beta_income_elasticity_of_wetland_value": 1,
+        "fund_slr8_population_density": 1,
+        "fund_slr8_gamme_parameter": 1,
+        "fund_slr8_d0_normalisation_constant": 1,
+        "fund_slr8_w1990_parameter": 2,
+        "fund_slr7_eq_cumulative_wetland_loss": 1,
+        "fund_slr8_delta_parameter": 1,
+    },
+)
+def fund_slr8_eq_wetland_value():
+    return (
+        fund_slr8_alpha_parameter()
+        * (
+            average_disposable_income_per_capita()
+            / fund_slr8_y0_normalisation_constant()
+        )
+        ** fund_slr8_beta_income_elasticity_of_wetland_value()
+        * (fund_slr8_population_density() / fund_slr8_d0_normalisation_constant())
+        ** fund_slr8_gamme_parameter()
+        * (
+            (fund_slr8_w1990_parameter() - fund_slr7_eq_cumulative_wetland_loss())
+            / fund_slr8_w1990_parameter()
+        )
+        ** fund_slr8_delta_parameter()
+    )
+
+
+@component.add(
     name='"FUND: SLR.8: gamme parameter"', comp_type="Constant", comp_subtype="Normal"
 )
 def fund_slr8_gamme_parameter():
@@ -2107,42 +2162,6 @@ _ext_constant_fund_slr8_w1990_parameter = ExtConstant(
 
 
 @component.add(
-    name='"FUND: SLR.8: Wetland value"',
-    subscripts=["REGIONS 35 I"],
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "fund_slr8_alpha_parameter": 1,
-        "fund_slr8_y0_normalisation_constant": 1,
-        "fund_slr8_beta_income_elasticity_of_wetland_value": 1,
-        "average_disposable_income_per_capita": 1,
-        "fund_slr8_population_density": 1,
-        "fund_slr8_gamme_parameter": 1,
-        "fund_slr8_d0_normalisation_constant": 1,
-        "fund_slr7_cumulative_wetland_loss": 1,
-        "fund_slr8_delta_parameter": 1,
-        "fund_slr8_w1990_parameter": 2,
-    },
-)
-def fund_slr8_wetland_value():
-    return (
-        fund_slr8_alpha_parameter()
-        * (
-            average_disposable_income_per_capita()
-            / fund_slr8_y0_normalisation_constant()
-        )
-        ** fund_slr8_beta_income_elasticity_of_wetland_value()
-        * (fund_slr8_population_density() / fund_slr8_d0_normalisation_constant())
-        ** fund_slr8_gamme_parameter()
-        * (
-            (fund_slr8_w1990_parameter() - fund_slr7_cumulative_wetland_loss())
-            / fund_slr8_w1990_parameter()
-        )
-        ** fund_slr8_delta_parameter()
-    )
-
-
-@component.add(
     name='"FUND: SLR.8: y0 normalisation constant"',
     comp_type="Constant",
     comp_subtype="Normal",
@@ -2157,7 +2176,7 @@ def fund_slr8_y0_normalisation_constant():
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
-        "fund_slr10_npvvp": 1,
+        "fund_slr10_eq_npvvp": 1,
         "fund_slr11_slr11_delayed": 1,
         "fund_slr12_slr12_delayed": 1,
     },
@@ -2171,28 +2190,34 @@ def fund_slr9_fraction_of_the_coastline_protectd():
         1
         - 0.5
         * (
-            (fund_slr10_npvvp() + fund_slr11_slr11_delayed())
+            (fund_slr10_eq_npvvp() + fund_slr11_slr11_delayed())
             / fund_slr12_slr12_delayed()
         ),
     )
 
 
 @component.add(
-    name='"FUND: Total agricultural impact"',
+    name='"FUND: TOT: total damage"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
-        "fund_agricultural_imact_of_the_fertilisation": 1,
-        "fund_a3_agricultural_impact_of_the_level_of_climate_change": 1,
-        "fund_a2_agricultural_impact_of_the_rate_of_climate_change": 1,
+        "fund_ets1_eq_extratropical_storms": 1,
+        "fund_ets2_eq_mortality_from_extratropical_storm": 1,
+        "fund_mm2_eq_value_of_a_year_of_morbidity": 1,
+        "fund_mm1_eq_value_of_a_statistical_life": 1,
+        "fund_ts1_eq_tropical_storms_damages": 1,
+        "fund_ts2_eq_tropical_storms_mortality": 1,
     },
 )
-def fund_total_agricultural_impact():
+def fund_tot_total_damage():
     return (
-        fund_agricultural_imact_of_the_fertilisation()
-        + fund_a3_agricultural_impact_of_the_level_of_climate_change()
-        + fund_a2_agricultural_impact_of_the_rate_of_climate_change()
+        fund_ets1_eq_extratropical_storms()
+        + fund_ets2_eq_mortality_from_extratropical_storm()
+        + fund_mm2_eq_value_of_a_year_of_morbidity()
+        + fund_mm1_eq_value_of_a_statistical_life()
+        + fund_ts1_eq_tropical_storms_damages()
+        + fund_ts2_eq_tropical_storms_mortality()
     )
 
 
@@ -2209,32 +2234,22 @@ def fund_ts1_epsilon_income_elsasticity_of_storm_damage():
 
 
 @component.add(
-    name='"FUND: TS.1: gamma parameter"', comp_type="Constant", comp_subtype="Normal"
-)
-def fund_ts1_gamma_parameter():
-    """
-    γ is a parameter; γγ=3 because the power of the wind in the cube of its speed.
-    """
-    return 3
-
-
-@component.add(
-    name='"FUND: TS.1: Tropical storms damages"',
+    name='"FUND: TS.1: EQ Tropical storms damages"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "fund_ts1_alpha": 1,
         "gross_domestic_product_nominal": 1,
-        "fund_ts1_epsilon_income_elsasticity_of_storm_damage": 1,
         "fund_extra_initial_revenue": 1,
         "average_disposable_income_per_capita": 1,
-        "temperature_change_in_35regions": 1,
+        "fund_ts1_epsilon_income_elsasticity_of_storm_damage": 1,
         "fund_ts1_wind_increase": 1,
         "fund_ts1_gamma_parameter": 1,
+        "temperature_change_in_35regions": 1,
     },
 )
-def fund_ts1_tropical_storms_damages():
+def fund_ts1_eq_tropical_storms_damages():
     return (
         fund_ts1_alpha()
         * gross_domestic_product_nominal()
@@ -2246,6 +2261,16 @@ def fund_ts1_tropical_storms_damages():
             - 1
         )
     )
+
+
+@component.add(
+    name='"FUND: TS.1: gamma parameter"', comp_type="Constant", comp_subtype="Normal"
+)
+def fund_ts1_gamma_parameter():
+    """
+    γ is a parameter; γγ=3 because the power of the wind in the cube of its speed.
+    """
+    return 3
 
 
 @component.add(
@@ -2271,19 +2296,7 @@ def fund_ts2_beta_current_mortality():
 
 
 @component.add(
-    name='"FUND: TS.2: eta income elasticity of storm damage"',
-    comp_type="Constant",
-    comp_subtype="Normal",
-)
-def fund_ts2_eta_income_elasticity_of_storm_damage():
-    """
-    η is the income elasticity of storm damage; ηη = -0.501 (0.051;&lt;0) after Toya and Skidmore (2007);
-    """
-    return -0.501
-
-
-@component.add(
-    name='"FUND: TS.2: tropical storms mortality"',
+    name='"FUND: TS.2: EQ tropical storms mortality"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
@@ -2291,14 +2304,14 @@ def fund_ts2_eta_income_elasticity_of_storm_damage():
         "fund_ts2_beta_current_mortality": 1,
         "population_35_regions": 1,
         "fund_extra_initial_revenue": 1,
-        "fund_ts2_eta_income_elasticity_of_storm_damage": 1,
         "average_disposable_income_per_capita": 1,
-        "temperature_change_in_35regions": 1,
+        "fund_ts2_eta_income_elasticity_of_storm_damage": 1,
         "fund_ts1_wind_increase": 1,
         "fund_ts1_gamma_parameter": 1,
+        "temperature_change_in_35regions": 1,
     },
 )
-def fund_ts2_tropical_storms_mortality():
+def fund_ts2_eq_tropical_storms_mortality():
     return (
         fund_ts2_beta_current_mortality()
         * population_35_regions()
@@ -2310,6 +2323,18 @@ def fund_ts2_tropical_storms_mortality():
             - 1
         )
     )
+
+
+@component.add(
+    name='"FUND: TS.2: eta income elasticity of storm damage"',
+    comp_type="Constant",
+    comp_subtype="Normal",
+)
+def fund_ts2_eta_income_elasticity_of_storm_damage():
+    """
+    η is the income elasticity of storm damage; ηη = -0.501 (0.051;&lt;0) after Toya and Skidmore (2007);
+    """
+    return -0.501
 
 
 @component.add(
@@ -2348,18 +2373,18 @@ def fund_w1_beta_parameter():
 
 
 @component.add(
-    name='"FUND: W.1: Change in water resources"',
+    name='"FUND: W.1: EQ Change in water resources"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "fund_w1_alpha_parameter": 1,
         "fund_extra_initial_gdp": 1,
-        "time": 1,
         "fund_w1_tau_parameter": 1,
-        "fund_w1_beta_parameter": 1,
+        "time": 1,
         "fund_extra_initial_revenue": 1,
         "average_disposable_income_per_capita": 1,
+        "fund_w1_beta_parameter": 1,
         "population_35_regions": 1,
         "fund_extra_initial_population": 1,
         "fund_w1_mu_parameter": 1,
@@ -2368,7 +2393,7 @@ def fund_w1_beta_parameter():
         "gross_domestic_product_nominal": 1,
     },
 )
-def fund_w1_change_in_water_resources():
+def fund_w1_eq_change_in_water_resources():
     """
     W denotes the change in water resources (in 1995 US dollar) at time tt in region rr; TODO même problème avec le revenue de reference 1990
     """

@@ -8,35 +8,35 @@ import numpy as np
 import xarray as xr
 
 from pysd.py_backend.functions import (
-    ramp,
-    zidz,
-    integer,
-    get_time_value,
-    modulo,
-    active_initial,
-    xidz,
-    vector_reorder,
-    invert_matrix,
-    prod,
-    step,
-    vector_select,
     vector_sort_order,
-    sum,
-    if_then_else,
-    vmax,
     vmin,
+    step,
+    if_then_else,
+    ramp,
+    xidz,
+    vector_select,
+    zidz,
+    sum,
+    active_initial,
+    integer,
+    vector_reorder,
+    prod,
+    modulo,
+    vmax,
+    get_time_value,
+    invert_matrix,
 )
 from pysd.py_backend.statefuls import (
-    Integ,
-    Initial,
-    Delay,
     SampleIfTrue,
-    DelayFixed,
     Smooth,
+    Delay,
+    Integ,
+    DelayFixed,
+    Initial,
 )
-from pysd.py_backend.external import ExtConstant, ExtData, ExtLookup
+from pysd.py_backend.external import ExtData, ExtConstant, ExtLookup
 from pysd.py_backend.utils import load_modules, load_model_data
-from pysd.py_backend.allocation import allocate_available, allocate_by_priority
+from pysd.py_backend.allocation import allocate_by_priority, allocate_available
 from pysd import Component
 
 __pysd_version__ = "3.14.0"
@@ -733,10 +733,10 @@ _ext_constant_initial_passenger_transport_demand_share_exogenous.add(
         "time": 4,
         "initial_year_model_explorer": 7,
         "initial_passenger_transport_demand_share_exogenous": 7,
-        "select_passenger_transport_demand_modal_share_me": 3,
         "scenario_passenger_transport_demand_modal_share_option_1_me": 1,
-        "final_year_model_explorer": 6,
+        "select_passenger_transport_demand_modal_share_me": 3,
         "scenario_passenger_transport_demand_modal_share_option_3_me": 1,
+        "final_year_model_explorer": 6,
         "scenario_passenger_transport_demand_modal_share_option_2_me": 1,
     },
 )
@@ -818,9 +818,9 @@ def model_explorer_passenger_transport_demand_modal_share():
     depends_on={
         "time": 4,
         "initial_year_model_explorer": 7,
+        "scenario_passenger_transport_demand_option_2_me": 1,
         "scenario_passenger_transport_demand_option_3_me": 1,
         "final_year_model_explorer": 6,
-        "scenario_passenger_transport_demand_option_2_me": 1,
         "scenario_passenger_transport_demand_option_1_me": 1,
         "select_reduction_passenger_transport_demand_me": 3,
     },

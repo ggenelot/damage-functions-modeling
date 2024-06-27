@@ -4,17 +4,17 @@ Translated using PySD version 3.14.0
 """
 
 @component.add(
-    name='"WITNESS: dice-like damage"',
+    name='"WITNESS: dice-like damage : EQ dice-like damage"',
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "dice_5_damage_function_phi_1": 1,
         "temperature_change": 2,
-        "witness_epsilon": 1,
         "dice_5_damage_function_phi2": 1,
+        "witness_epsilon": 1,
     },
 )
-def witness_dicelike_damage():
+def witness_dicelike_damage_eq_dicelike_damage():
     return (
         dice_5_damage_function_phi_1() * temperature_change()
         + dice_5_damage_function_phi2() * temperature_change() ** witness_epsilon()
@@ -30,17 +30,19 @@ def witness_epsilon():
     name='"WITNESS: omega"',
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"witness_tipping_point_damage": 2},
+    depends_on={"witness_tipping_point_damage_eq_tipping_point_damge": 2},
 )
 def witness_omega():
-    return witness_tipping_point_damage() / (1 + witness_tipping_point_damage())
+    return witness_tipping_point_damage_eq_tipping_point_damge() / (
+        1 + witness_tipping_point_damage_eq_tipping_point_damge()
+    )
 
 
 @component.add(
-    name='"WITNESS: tipping point damage"',
+    name='"WITNESS: tipping point damage: EQ tipping point damge"',
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={"temperature_change": 2},
 )
-def witness_tipping_point_damage():
+def witness_tipping_point_damage_eq_tipping_point_damge():
     return (temperature_change() / 20.46) ** 2 + (temperature_change() / 6.081) ** 6.754

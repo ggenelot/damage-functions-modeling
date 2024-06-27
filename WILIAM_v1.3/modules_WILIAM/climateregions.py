@@ -141,8 +141,8 @@ def temperature_change_by_region_and_climate():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "weighted_temperature_change_by_region_and_climate": 2,
         "temperature_change_amoc_weakening": 1,
+        "weighted_temperature_change_by_region_and_climate": 2,
     },
 )
 def temperature_change_in9regions():

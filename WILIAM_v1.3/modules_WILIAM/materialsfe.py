@@ -738,9 +738,9 @@ _ext_constant_fe_demand_shares = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "world_population": 1,
-        "fe_demand_shares": 2,
         "global_steel_demand": 1,
         "imv_iron_demand_per_person": 1,
+        "fe_demand_shares": 2,
         "unit_conversion_billion_to_million": 2,
         "imv_fe_demand_for_reinforcment_bars": 1,
     },
@@ -1485,8 +1485,8 @@ def fe_market_sales():
     comp_subtype="Normal",
     depends_on={
         "fe_sent_to_recycling": 1,
-        "fe_total_mining": 1,
         "smelting_loss_yield": 1,
+        "fe_total_mining": 1,
         "imv_stainless_steel_lost_to_iron_scrap": 1,
     },
 )
@@ -1933,9 +1933,9 @@ def fe_price_in():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_fe_price": 1,
-        "price_transformation": 1,
-        "fe_base_price_2015": 1,
         "estimated_price_with_tax_metals": 1,
+        "fe_base_price_2015": 1,
+        "price_transformation": 1,
     },
 )
 def fe_price_index_economy():
@@ -1973,8 +1973,8 @@ def fe_price_per_ton():
     comp_subtype="Normal",
     depends_on={
         "coefficients_fe_production_price": 3,
-        "imv_energy_price": 1,
         "fe_extraction_cost": 1,
+        "imv_energy_price": 1,
     },
 )
 def fe_production_price():

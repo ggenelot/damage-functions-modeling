@@ -136,12 +136,12 @@ def diet_according_to_food_shortage():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_diets": 1,
-        "flexitariana_diet_patterns_of_policy_diets_sp": 1,
+        "select_policy_diet_patterns_sp": 5,
+        "plant_based_100_diet_pattern_of_policy_diets_sp": 1,
         "willett_diet_patterns_of_policy_diets_sp": 1,
         "baseline_diet_pattern_of_policy_diets_sp": 1,
-        "plant_based_100_diet_pattern_of_policy_diets_sp": 1,
+        "flexitariana_diet_patterns_of_policy_diets_sp": 1,
         "plant_based_50_percent_diet_pattern_of_policy_diets_sp": 1,
-        "select_policy_diet_patterns_sp": 5,
     },
 )
 def diet_according_to_policies_sp():
@@ -192,13 +192,13 @@ def diet_according_to_policies_sp():
         "time": 1,
         "time_historical_data_land_module": 1,
         "diet_demanded": 1,
-        "select_policy_diet_patterns_sp": 1,
         "diet_according_to_policies_sp": 1,
-        "select_tipe_diets_me": 1,
-        "diet_according_to_food_shortage": 3,
-        "efect_shortage_of_policy_diet": 1,
-        "switch_model_explorer": 2,
         "share_of_change_to_policy_diet": 2,
+        "select_policy_diet_patterns_sp": 1,
+        "select_tipe_diets_me": 1,
+        "switch_model_explorer": 2,
+        "efect_shortage_of_policy_diet": 1,
+        "diet_according_to_food_shortage": 3,
     },
 )
 def diet_available():
@@ -237,8 +237,8 @@ def diet_available():
         "select_tipe_diets_me": 1,
         "diet_demanded_according_to_gdppc": 3,
         "share_of_change_to_policy_diet": 2,
-        "select_policy_diet_patterns_sp": 1,
         "diet_according_to_policies_sp": 1,
+        "select_policy_diet_patterns_sp": 1,
     },
 )
 def diet_demanded():
@@ -770,10 +770,10 @@ def gdppc_per_share_of_available_food():
         "switch_model_explorer": 1,
         "model_explorer_objective_diets": 1,
         "time": 2,
-        "switch_diet_change_sp": 2,
-        "objective_diet_change_sp": 1,
         "year_initial_diet_change_sp": 2,
+        "objective_diet_change_sp": 1,
         "year_final_diet_change_sp": 2,
+        "switch_diet_change_sp": 2,
     },
 )
 def increase_of_share_of_change_to_policy_diet():
@@ -1065,8 +1065,8 @@ _ext_constant_select_policy_diet_patterns_sp = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "mask_essential_foods": 1,
-        "land_products_demanded_for_food_delayed": 1,
         "crops_available_for_food": 1,
+        "land_products_demanded_for_food_delayed": 1,
     },
 )
 def share_of_available_crops_for_food():

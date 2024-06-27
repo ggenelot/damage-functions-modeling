@@ -31,8 +31,8 @@ def dynesoist_prosto_elec_dedicated():
     comp_subtype="Normal",
     depends_on={
         "eroist_ini_hydro_2015": 1,
-        "cf_prosto": 1,
         "cf_protra_full_load_hours": 1,
+        "cf_prosto": 1,
     },
 )
 def esoist_initial_phs():
@@ -117,8 +117,8 @@ def fenust_intensity_phs_exogenous():
     depends_on={
         "materials_per_new_capacity_installed_ev_batteries_lfp": 1,
         "embodied_fe_intensity_materials_36r": 1,
-        "unit_conversion_mw_tw": 1,
         "unit_conversion_mj_ej": 1,
+        "unit_conversion_mw_tw": 1,
     },
 )
 def fenust_intensity_stationary_batteries():

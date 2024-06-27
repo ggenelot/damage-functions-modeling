@@ -1168,11 +1168,11 @@ def roundtrip_and_transmission_losses_by_prosto():
     comp_subtype="Normal",
     depends_on={
         "v2g_share_ev_vehicles": 1,
-        "time": 4,
-        "objective_sc_sp": 2,
-        "initial_sc_sp": 4,
-        "year_final_sc_sp": 2,
         "year_initial_sc_sp": 3,
+        "year_final_sc_sp": 2,
+        "time": 4,
+        "initial_sc_sp": 4,
+        "objective_sc_sp": 2,
         "switch_sc_sp": 1,
     },
 )
@@ -1256,8 +1256,8 @@ def stored_energy_input_by_prosto():
     comp_subtype="Normal",
     depends_on={
         "stored_energy_output_by_prosto": 2,
-        "charging_losses_share_by_prosto_elec": 1,
         "discharging_losses_share_by_prosto_elec": 1,
+        "charging_losses_share_by_prosto_elec": 1,
     },
 )
 def stored_energy_losses_roundtrip_by_prosto():

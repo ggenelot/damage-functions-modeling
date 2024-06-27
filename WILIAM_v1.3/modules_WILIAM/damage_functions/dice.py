@@ -4,23 +4,6 @@ Translated using PySD version 3.14.0
 """
 
 @component.add(
-    name='"DICE: 5: damage function"',
-    comp_type="Auxiliary",
-    comp_subtype="Normal",
-    depends_on={
-        "dice_5_damage_function_phi_1": 1,
-        "temperature_change": 2,
-        "dice_5_damage_function_phi2": 1,
-    },
-)
-def dice_5_damage_function():
-    return (
-        dice_5_damage_function_phi_1() * temperature_change()
-        + dice_5_damage_function_phi2() * temperature_change() ** 2
-    )
-
-
-@component.add(
     name='"DICE: 5: damage function phi2"', comp_type="Constant", comp_subtype="Normal"
 )
 def dice_5_damage_function_phi2():
@@ -35,19 +18,19 @@ def dice_5_damage_function_phi_1():
 
 
 @component.add(
-    name='"DICE: 6: abatment function"',
+    name='"DICE: 5: EQ damage function"',
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
-        "dice_6_abatment_theta_1": 1,
-        "dice_6_emissions_control_rate": 1,
-        "dice_6_abatment_theta_2": 1,
+        "dice_5_damage_function_phi_1": 1,
+        "temperature_change": 2,
+        "dice_5_damage_function_phi2": 1,
     },
 )
-def dice_6_abatment_function():
+def dice_5_eq_damage_function():
     return (
-        dice_6_abatment_theta_1()
-        * dice_6_emissions_control_rate() ** dice_6_abatment_theta_2()
+        dice_5_damage_function_phi_1() * temperature_change()
+        + dice_5_damage_function_phi2() * temperature_change() ** 2
     )
 
 
@@ -75,3 +58,20 @@ def dice_6_emissions_control_rate():
     TODO: checker cette valeur là
     """
     return 0
+
+
+@component.add(
+    name='"DICE: 6: EQ abatment function"',
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "dice_6_abatment_theta_1": 1,
+        "dice_6_emissions_control_rate": 1,
+        "dice_6_abatment_theta_2": 1,
+    },
+)
+def dice_6_eq_abatment_function():
+    return (
+        dice_6_abatment_theta_1()
+        * dice_6_emissions_control_rate() ** dice_6_abatment_theta_2()
+    )

@@ -4,11 +4,11 @@ Translated using PySD version 3.14.0
 """
 
 @component.add(
-    name='"DSK: A.128: shock from climate change"',
+    name='"DSK: A.128: EQ shock from climate change"',
     comp_type="Constant",
     comp_subtype="Normal",
 )
-def dsk_a128_shock_from_climate_change():
+def dsk_a128_eq_shock_from_climate_change():
     """
     TODO
     """

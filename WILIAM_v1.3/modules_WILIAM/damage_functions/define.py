@@ -4,18 +4,18 @@ Translated using PySD version 3.14.0
 """
 
 @component.add(
-    name='"DEFINE: 46: damage function"',
+    name='"DEFINE: 46: EQ damage function"',
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "define_46_eta1": 1,
         "temperature_change": 3,
         "define_46_eta2": 1,
-        "define_46_eta3": 1,
         "define_46_exponent": 1,
+        "define_46_eta3": 1,
     },
 )
-def define_46_damage_function():
+def define_46_eq_damage_function():
     return 1 - 1 / (
         1
         + define_46_eta1() * temperature_change()

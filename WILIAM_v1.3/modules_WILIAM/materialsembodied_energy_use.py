@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "embodied_fe_intensity_materials_36r": 4,
         "final_to_primary_energy_by_region_until_2015": 2,
+        "embodied_fe_intensity_materials_36r": 4,
         "final_to_primary_energy_by_region": 2,
     },
 )

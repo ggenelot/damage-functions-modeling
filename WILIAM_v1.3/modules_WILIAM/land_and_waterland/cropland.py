@@ -101,9 +101,9 @@ def aux_shortage_crops():
     depends_on={
         "time": 1,
         "time_historical_data_land_module": 1,
-        "land_products_demanded_world": 2,
-        "mask_crops": 2,
         "land_products_available_all_regions": 2,
+        "mask_crops": 2,
+        "land_products_demanded_world": 2,
     },
 )
 def availability_of_crops():
@@ -359,9 +359,9 @@ def factor_of_minimum_crops():
     depends_on={
         "time": 1,
         "time_historical_data_land_module": 1,
-        "land_products_demanded_world": 4,
-        "mask_crops": 2,
         "land_products_available_all_regions": 2,
+        "mask_crops": 2,
+        "land_products_demanded_world": 4,
     },
 )
 def gap_availability_of_crops():
@@ -1974,8 +1974,8 @@ def land_products_available_from_croplands():
     comp_subtype="Normal",
     depends_on={
         "ratio_shortage_of_crops": 4,
-        "factor_of_maximum_crops": 1,
         "factor_of_minimum_crops": 1,
+        "factor_of_maximum_crops": 1,
         "parameter_of_crop_share_change": 1,
     },
 )
@@ -2021,9 +2021,9 @@ def matrix_of_changes_of_crops_all_managements():
     comp_subtype="Normal",
     depends_on={
         "ratio_shortage_of_crops": 4,
+        "factor_maximum_irrigated": 1,
         "factor_minimum_irrigated": 1,
         "parameter_of_crop_share_change": 1,
-        "factor_maximum_irrigated": 1,
     },
 )
 def matrix_of_changes_of_irrigated_crops():
