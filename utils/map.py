@@ -48,3 +48,20 @@ def map_variable(data, year, europe=True, cmap="cividis", shapefile_location='..
 
     # Show the plot
     plt.show()
+
+    def load_variable(variable, dataset_name='results_run_2060.nc'):
+        """
+        Load variable data from a NetCDF dataset.
+
+        Parameters:
+        variable (str): The name of the variable to load.
+
+        Returns:
+        pandas.DataFrame: The loaded variable data as a DataFrame.
+        """
+
+        ds = xr.open_dataset(f'../../../results/{dataset_name}')
+        data = ds[variable].to_dataframe().reset_index()
+        ds.close()
+
+        return data
