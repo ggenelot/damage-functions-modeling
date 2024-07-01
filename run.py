@@ -48,19 +48,21 @@ interest_variables = [
 
 output_variables = np.concatenate([variables_modelled_names, interest_variables])
 
-initial_time = 2005
-final_time = 2031
+
+runs = pd.read_csv('run_manager.csv')
+
+for index, run in runs.iterows():
 
 
+    # Run the model
+    print(f'Running model : {run['name']}')
+    run = model.run(progress=True, 
+                    return_columns=output_variables,
+                    final_time=run['final_time'],  
+                    output_file=f'results/results_run_{run['name']}.nc'
+                    )
 
-# Run the model
-print('Running model...')
-run = model.run(progress=True, 
-                return_columns=output_variables,
-                final_time=final_time,  
-                output_file=f'results/results_run_{final_time}.nc'
-                )
-
+    print(f'Model run {run['name']} done')
 warnings.resetwarnings()
 
-print('Model run')
+print('Done every run')
