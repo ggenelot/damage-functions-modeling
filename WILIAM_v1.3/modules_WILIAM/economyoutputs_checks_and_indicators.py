@@ -58,10 +58,10 @@ _delayfixed_delayed_gdp_real_1r = DelayFixed(
         "consumption_fixed_capital_real": 1,
         "taxes_production_real": 1,
         "gross_value_added_real": 5,
-        "taxes_products_final_demand_real": 5,
         "taxes_products_by_sector_real": 1,
-        "final_demand_imports_in_basic_prices_real_by_component": 4,
+        "taxes_products_final_demand_real": 5,
         "final_demand_dometic_in_basic_prices_real_by_component": 4,
+        "final_demand_imports_in_basic_prices_real_by_component": 4,
         "total_exports_real_by_product": 2,
         "total_imports_real_by_product": 2,
         "employment_total": 1,
@@ -74,8 +74,8 @@ _delayfixed_delayed_gdp_real_1r = DelayFixed(
         "government_debt": 2,
         "disposable_income_real": 3,
         "consumption_coicop_real": 2,
-        "population_35_regions": 2,
         "unit_conversion_dollars_2015_mdollars_2015": 2,
+        "population_35_regions": 2,
         "consumer_price_index": 1,
         "disposable_income": 2,
         "consumption_coicop": 2,
@@ -568,8 +568,8 @@ def economy_dashboard():
     comp_subtype="Normal",
     depends_on={
         "economy_dashboard_9r": 10,
-        "population_9_regions": 2,
         "unit_conversion_dollars_2015_mdollars_2015": 2,
+        "population_9_regions": 2,
         "weights_consumption_9r": 1,
     },
 )
@@ -728,8 +728,8 @@ def economy_dashboard_9r():
     comp_subtype="Normal",
     depends_on={
         "economy_dashboard": 10,
-        "population_35_regions": 2,
         "unit_conversion_dollars_2015_mdollars_2015": 2,
+        "population_35_regions": 2,
         "weights_consumption_eu27": 1,
     },
 )

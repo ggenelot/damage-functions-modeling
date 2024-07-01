@@ -7,7 +7,7 @@ Translated using PySD version 3.14.0
     name="LCOE by PROTRA priority signal",
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG PROTRA I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"lcoe_protra": 1, "min_lcoe": 1, "max_lcoe": 1},
 )
@@ -46,8 +46,8 @@ def lcoe_by_protra_priority_signal():
         "dynamic_capacity_investment_cost_protra_development_36r": 1,
         "unit_conversion_dollars_mdollars": 1,
         "protra_max_full_load_hours_after_constraints": 2,
-        "opex_in_usd_per_mwh": 1,
         "protra_lifetime": 2,
+        "opex_in_usd_per_mwh": 1,
     },
 )
 def lcoe_protra():

@@ -177,10 +177,10 @@ def deaths():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "emigrations": 3,
         "historical_shares_migration": 2,
-        "shares_emigration_sp": 1,
+        "emigrations": 3,
         "switch_migration_sp": 1,
+        "shares_emigration_sp": 1,
         "start_year_migrations_sp": 1,
     },
 )
@@ -220,11 +220,11 @@ def emigration_distribution():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "historic_emigrations_rate": 1,
         "population_by_cohorts": 2,
+        "historic_emigrations_rate": 1,
+        "percentage_emigrations_sp": 1,
         "switch_migration_sp": 1,
         "start_year_migrations_sp": 1,
-        "percentage_emigrations_sp": 1,
     },
 )
 def emigrations():
@@ -335,8 +335,8 @@ def fertility_rates():
     depends_on={
         "time": 2,
         "historical_gender_birth_ratio_2005_2010": 1,
-        "historical_gender_birth_ratio_2015_2020": 1,
         "historical_gender_birth_ratio_2010_2015": 1,
+        "historical_gender_birth_ratio_2015_2020": 1,
     },
 )
 def gender_birth():
@@ -714,8 +714,8 @@ def population_variation():
     depends_on={
         "switch_model_explorer": 1,
         "slope_scenario_fertility_rates": 2,
-        "target_year_fertility_rates_sp": 2,
         "time": 2,
+        "target_year_fertility_rates_sp": 2,
     },
 )
 def ramp_scenario_fertility_rates():
@@ -772,9 +772,9 @@ def retired_population():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_fertility_rates": 1,
-        "target_year_fertility_rates_sp": 1,
         "target_scenario_fertility_rates": 1,
         "historical_fertility_rates_2015_2020": 1,
+        "target_year_fertility_rates_sp": 1,
     },
 )
 def slope_scenario_fertility_rates():
@@ -832,8 +832,8 @@ _ext_constant_switch_migration_sp = ExtConstant(
     depends_on={
         "objective_fertility_rates_sp": 2,
         "scenario_fertility_rate_minimum_sp": 1,
-        "scenario_fertility_rate_average_sp": 1,
         "scenario_fertility_rate_maximum_sp": 1,
+        "scenario_fertility_rate_average_sp": 1,
     },
 )
 def target_scenario_fertility_rates():
