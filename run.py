@@ -34,15 +34,29 @@ variables.to_csv('variables.csv')
 variables_modelled = variables[variables['Model'].notna()]
 variables_modelled_names = variables_modelled['Py Name'].values
 
+
+# Adding other variables of interest
+
+interest_variables = [
+    "gini_gdppc_regions", 
+    "gini_gdppc_eu27", 
+    "temperature_change", 
+    "temperature_change_in_35regions", 
+    "total_population", 
+    "population_35_regions"
+]
+
+output_variables = np.concatenate([variables_modelled_names, interest_variables])
+
 initial_time = 2005
-final_time = 2030
+final_time = 2031
 
 
 
 # Run the model
 print('Running model...')
 run = model.run(progress=True, 
-                return_columns=variables_modelled_names,
+                return_columns=output_variables,
                 final_time=final_time,  
                 output_file=f'results/results_run_{final_time}.nc'
                 )
