@@ -39,11 +39,11 @@ _ext_constant_annual_growth_government_expenditure_default = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "switch_eco_government": 1,
-        "people_per_household_by_income_and_type": 2,
         "households_disposable_income_until_2015": 1,
+        "people_per_household_by_income_and_type": 2,
         "number_of_households_by_income_and_type_until_2015": 2,
-        "number_of_households_by_income_and_type": 2,
         "households_disposable_income": 1,
+        "number_of_households_by_income_and_type": 2,
     },
 )
 def average_disposable_income_per_capita():
@@ -150,13 +150,13 @@ def base_delayed_gdp():
     depends_on={
         "switch_eco_government": 1,
         "initial_year_basic_income_sp": 4,
-        "delayed_ts_average_disposable_income_per_capita": 2,
-        "delayed_ts_basic_income_per_capita": 2,
-        "ratio_basic_income_to_average_disposable_income_sp": 2,
         "initial_delayed_2_consumer_price_index": 1,
+        "delayed_ts_basic_income_per_capita": 2,
         "time": 4,
-        "switch_policy_basic_income_sp": 4,
+        "ratio_basic_income_to_average_disposable_income_sp": 2,
         "initial_delayed_consumer_price_index": 1,
+        "delayed_ts_average_disposable_income_per_capita": 2,
+        "switch_policy_basic_income_sp": 4,
         "delayed_2_ts_consumer_price_index": 1,
         "delayed_ts_consumer_price_index": 1,
     },
@@ -323,8 +323,8 @@ def basic_income_per_capita():
     depends_on={
         "time": 1,
         "statistical_difference_government_debt": 1,
-        "government_budget_balance": 2,
         "initial_government_assets_net_adquisition": 1,
+        "government_budget_balance": 2,
         "ghg_tax_revenues_to_reduce_government_debt": 1,
     },
 )
@@ -366,11 +366,11 @@ def debt_interest():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_debt_interest_rate_target": 1,
-        "select_debt_interest_rate_sp": 1,
-        "debt_interest_rate_sp": 1,
+        "initial_year_debt_interest_rate_sp": 1,
         "debt_interest_rate_default": 1,
         "time": 1,
-        "initial_year_debt_interest_rate_sp": 1,
+        "select_debt_interest_rate_sp": 1,
+        "debt_interest_rate_sp": 1,
     },
 )
 def debt_interest_rate():
@@ -1129,12 +1129,12 @@ def government_budget_balance_to_gdp():
     depends_on={
         "time": 2,
         "initial_government_budget_balance_to_gdp_objective": 1,
-        "government_budget_balance_to_gdp_objective_default_sp": 1,
-        "initial_year_government_budget_balance_to_gdp_objective_sp": 1,
-        "switch_model_explorer": 1,
-        "select_government_budget_balance_to_gdp_objective_sp": 1,
-        "model_explorer_government_to_gdp_objetive": 1,
         "government_budget_balance_to_gdp_objective_sp": 2,
+        "select_government_budget_balance_to_gdp_objective_sp": 1,
+        "switch_model_explorer": 1,
+        "government_budget_balance_to_gdp_objective_default_sp": 1,
+        "model_explorer_government_to_gdp_objetive": 1,
+        "initial_year_government_budget_balance_to_gdp_objective_sp": 1,
     },
 )
 def government_budget_balance_to_gdp_objective():
@@ -1399,10 +1399,10 @@ def government_expenditure_objective():
     depends_on={
         "time": 1,
         "non_adjusted_government_expenditure_objective_rest": 1,
-        "limit_annual_growth_government_expenditure_sp": 1,
-        "growth_government_expenditure_objective_rest": 2,
-        "delayed_ts_government_expenditure_rest": 2,
         "maximun_growth_government_expenditure_rest": 2,
+        "growth_government_expenditure_objective_rest": 2,
+        "limit_annual_growth_government_expenditure_sp": 1,
+        "delayed_ts_government_expenditure_rest": 2,
     },
 )
 def government_expenditure_rest():
@@ -1502,8 +1502,8 @@ def government_other_expenditures():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_government": 1,
-        "initial_gross_value_added": 1,
         "rate_government_other_revenue_to_value_added_default": 2,
+        "initial_gross_value_added": 1,
         "delayed_ts_gross_value_added": 1,
     },
 )
@@ -1625,9 +1625,9 @@ def government_revenue_objective():
         "government_basic_income_expenditure": 1,
         "ghg_tax_revenues_to_reduce_government_debt": 1,
         "ghg_tax_revenues_used_to_increase_social_benefits": 1,
-        "gross_domestic_product_nominal": 1,
-        "switch_eco_government": 1,
         "initial_gross_domestic_product": 1,
+        "switch_eco_government": 1,
+        "gross_domestic_product_nominal": 1,
     },
 )
 def government_revenue_to_gdp():
@@ -2123,11 +2123,11 @@ _sampleiftrue_number_of_households_by_income_and_type_until_2015 = SampleIfTrue(
     depends_on={
         "switch_economy": 2,
         "switch_eco_government": 1,
-        "households_correspondance_12_to_60": 2,
         "eu_persons_by_household_2015": 1,
+        "households_correspondance_12_to_60": 2,
         "eu_persons_by_household": 1,
-        "average_people_per_household_noneu_regions_until_2015": 1,
         "average_people_per_household_noneu_regions": 1,
+        "average_people_per_household_noneu_regions_until_2015": 1,
     },
 )
 def people_per_household_by_income_and_type():
@@ -2246,8 +2246,8 @@ _ext_constant_ratio_basic_income_to_average_disposable_income_sp = ExtConstant(
         "switch_eco_government": 1,
         "tax_ghg_sectors_until_2015": 1,
         "tax_ghg_households_until_2015": 1,
-        "tax_ghg_sectors": 1,
         "tax_ghg_households": 1,
+        "tax_ghg_sectors": 1,
     },
 )
 def revenues_ghg_taxes():
@@ -2588,11 +2588,11 @@ def social_benefits():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_government": 1,
-        "initial_labour_compensation": 1,
         "tax_rate_social_security_default": 1,
+        "initial_labour_compensation": 1,
         "number_of_households_by_income_and_type": 1,
-        "unit_conversion_dollars_mdollars": 1,
         "households_social_security": 1,
+        "unit_conversion_dollars_mdollars": 1,
     },
 )
 def social_security():
@@ -2626,8 +2626,8 @@ def social_security():
     depends_on={
         "time": 2,
         "structure_government_consumption_default": 2,
-        "initial_year_structure_government_consumption_sp": 1,
         "structure_government_consumption_sp": 1,
+        "initial_year_structure_government_consumption_sp": 1,
         "select_structure_government_consumption_sp": 1,
     },
 )
@@ -2690,8 +2690,8 @@ _ext_constant_structure_government_consumption_sp = ExtConstant(
     depends_on={
         "time": 10,
         "share_government_expenditure_consumption_default": 2,
-        "initial_year_structure_government_expenditure_sp": 5,
         "select_structure_government_expenditure_sp": 5,
+        "initial_year_structure_government_expenditure_sp": 5,
         "structure_government_expenditure_sp": 5,
         "share_government_expenditure_investment_default": 2,
         "share_government_expenditure_social_benefits_default": 2,
@@ -2845,9 +2845,9 @@ _ext_constant_structure_government_expenditure_sp = ExtConstant(
     depends_on={
         "time": 2,
         "structure_government_investment_default": 2,
+        "initial_year_structure_government_investment_sp": 1,
         "select_structure_government_investment_sp": 1,
         "structure_government_investment_sp": 1,
-        "initial_year_structure_government_investment_sp": 1,
     },
 )
 def structure_government_investment():
@@ -2930,7 +2930,7 @@ _ext_constant_switch_eco_government = ExtConstant(
     units="DMNL",
     subscripts=["REGIONS 35 I"],
     comp_type="Constant",
-    comp_subtype="External, Normal",
+    comp_subtype="Normal, External",
     depends_on={"__external__": "_ext_constant_switch_policy_basic_income_sp"},
 )
 def switch_policy_basic_income_sp():
@@ -3058,12 +3058,12 @@ _sampleiftrue_tax_ghg_sectors_until_2015 = SampleIfTrue(
     comp_subtype="Normal",
     depends_on={
         "switch_eco_government": 1,
-        "initial_delayed_net_operating_surplus": 1,
         "tax_rate_on_profits_default": 1,
-        "tax_income_corportations_to_finance_basic_income": 1,
-        "delayed_ts_net_operating_surplus_total": 2,
-        "select_policy_finance_basic_income_sp": 1,
+        "initial_delayed_net_operating_surplus": 1,
         "tax_rate_on_profits": 2,
+        "tax_income_corportations_to_finance_basic_income": 1,
+        "select_policy_finance_basic_income_sp": 1,
+        "delayed_ts_net_operating_surplus_total": 2,
     },
 )
 def tax_income_corporations():
@@ -3110,9 +3110,9 @@ def tax_income_corportations_to_finance_basic_income():
     depends_on={
         "time": 2,
         "tax_rate_on_profits_default": 2,
-        "tax_rate_profits_sp": 1,
-        "select_tax_rate_profits_sp": 1,
         "initial_year_tax_rate_profits_sp": 1,
+        "select_tax_rate_profits_sp": 1,
+        "tax_rate_profits_sp": 1,
     },
 )
 def tax_rate_on_profits():
@@ -3168,9 +3168,9 @@ _ext_constant_tax_rate_profits_sp = ExtConstant(
     depends_on={
         "switch_eco_government": 1,
         "initial_taxes_on_income_hh": 1,
+        "households_income_tax": 1,
         "number_of_households_by_income_and_type": 1,
         "unit_conversion_dollars_mdollars": 1,
-        "households_income_tax": 1,
     },
 )
 def taxes_on_income():
@@ -3219,8 +3219,8 @@ def taxes_on_income_and_wealth():
     depends_on={
         "time": 1,
         "switch_eco_government": 1,
-        "statistical_difference_net_taxes_production": 1,
         "initial_taxes_production": 1,
+        "statistical_difference_net_taxes_production": 1,
         "delayed_ts_taxes_production": 1,
     },
 )
@@ -3250,10 +3250,10 @@ def taxes_on_production():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_government": 7,
-        "delayed_ts_taxes_on_resources_until_2015": 7,
         "delayed_ts_output_real_until_2015": 14,
-        "delayed_ts_output_real": 14,
+        "delayed_ts_taxes_on_resources_until_2015": 7,
         "delayed_ts_taxes_on_resources": 7,
+        "delayed_ts_output_real": 14,
     },
 )
 def taxes_on_resources_paid_by_extraction_sectors():
@@ -3486,9 +3486,9 @@ def taxes_on_resources_paid_by_extraction_sectors():
     depends_on={
         "switch_eco_government": 1,
         "initial_taxes_on_wealth": 1,
+        "number_of_households_by_income_and_type": 1,
         "households_wealth_tax": 1,
         "unit_conversion_dollars_mdollars": 1,
-        "number_of_households_by_income_and_type": 1,
     },
 )
 def taxes_on_wealth():
@@ -3518,9 +3518,9 @@ def taxes_on_wealth():
     depends_on={
         "time": 1,
         "switch_eco_government": 1,
+        "initial_taxes_products_final_demand": 1,
         "statistical_difference_net_taxes_products": 2,
         "initial_taxes_products_by_sector": 1,
-        "initial_taxes_products_final_demand": 1,
         "delayed_ts_taxes_products_by_sector": 1,
         "delayed_ts_taxes_products_final_demand": 1,
     },

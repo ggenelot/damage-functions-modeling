@@ -64,8 +64,8 @@ def availability_of_crops_for_food():
     depends_on={
         "time": 1,
         "time_historical_data_land_module": 1,
-        "forestry_products_available_for_energy": 1,
         "wood_demanded_for_energy_converted_to_tonnes": 1,
+        "forestry_products_available_for_energy": 1,
     },
 )
 def availability_of_forestry_products_for_energy():
@@ -159,11 +159,11 @@ def average_availability_of_crops_for_food_world():
     comp_subtype="Normal",
     depends_on={
         "switch_land_products_global_pool_sp": 1,
-        "time": 2,
         "year_initial_land_products_global_pool_sp": 2,
+        "time": 2,
         "year_final_land_products_global_pool_sp": 2,
-        "initial_share_of_production_from_smallholders": 1,
         "objective_land_products_global_pool_sp": 1,
+        "initial_share_of_production_from_smallholders": 1,
     },
 )
 def change_of_the_share_of_land_products_from_smallholders():

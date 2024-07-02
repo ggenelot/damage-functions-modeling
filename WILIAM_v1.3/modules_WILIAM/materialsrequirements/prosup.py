@@ -196,9 +196,9 @@ def materials_extracted_for_prosup_from_2015():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 5,
-        "material_intensity_new_capacity_overgrids": 10,
         "unit_conversion_kg_mt": 10,
         "unit_conversion_mw_tw": 10,
+        "material_intensity_new_capacity_overgrids": 10,
         "initial_protra_capacity_expansion": 5,
         "protra_capacity_expansion_selected": 5,
     },
@@ -369,10 +369,10 @@ def materials_required_for_new_grids_by_protra():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "unit_conversion_kg_mt": 2,
-        "materials_per_new_capacity_installed_ev_batteries_lfp": 2,
-        "unit_conversion_mw_tw": 2,
         "initial_prosto_dedicated_capacity_expansion": 1,
+        "materials_per_new_capacity_installed_ev_batteries_lfp": 2,
+        "unit_conversion_kg_mt": 2,
+        "unit_conversion_mw_tw": 2,
         "prosto_dedicated_capacity_expansion": 1,
     },
 )

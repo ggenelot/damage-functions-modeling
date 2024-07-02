@@ -52,18 +52,18 @@ output_variables = np.concatenate([variables_modelled_names, interest_variables]
 runs = pd.read_csv('run_manager.csv')
 
 # Iterate over the rows of the run manager
-for index, run in runs.iterows():
+for index, run in runs.iterrows():
 
     # Run the model
-    print(f'Running model : {run['name']}')
+    print(f'Running model : {run["name"]}')
     run = model.run(progress=True,
                     params={'SWITCH CLIMATE CHANGE DAMAGE': run['wiliam'],},
                     return_columns=output_variables,
                     final_time=run['final_time'],  
-                    output_file=f'results/results_run_{run['name']}.nc'
+                    output_file=f'results/results_run_{run["name"]}.nc'
                     )
 
-    print(f'Model run {run['name']} done')
+    print(f'Done running model : {run["name"]}')
 warnings.resetwarnings()
 
 print('Done every run')

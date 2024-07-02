@@ -48,8 +48,8 @@ _delayfixed_aux_land_uses_2015 = DelayFixed(
     comp_subtype="Normal",
     depends_on={
         "switch_climate_change_damage": 1,
-        "sea_level_rise_by_region": 1,
         "unit_conversion_km2_ha": 1,
+        "sea_level_rise_by_region": 1,
         "effective_percent_of_land_change_per_meter_of_sea_level_rise": 1,
     },
 )
@@ -78,10 +78,10 @@ def cropland_loss_due_to_sea_level_rise_by_region():
         "matrix_of_accumulated_land_use_changes": 2,
         "matrix_of_maximum_land_changes": 2,
         "land_use_changes_demanded": 2,
-        "select_limits_land_uses_by_source_sp": 1,
         "initial_land_use_by_region_2015": 1,
         "land_use_area_by_region": 1,
         "maximum_land_uses_by_source": 1,
+        "select_limits_land_uses_by_source_sp": 1,
     },
 )
 def factor_of_maximum_land_limit():
@@ -231,8 +231,8 @@ def factor_of_minimum_land_limit():
     comp_subtype="Normal",
     depends_on={
         "switch_policy_land_protection_from_solar_pv_sp": 1,
-        "time": 2,
         "year_initial_land_protection_from_solar_pv_sp": 1,
+        "time": 2,
         "year_final_land_protection_from_solar_pv_sp": 1,
         "policy_land_protection_from_solar_pv_sp": 1,
     },
@@ -303,7 +303,7 @@ def global_loss_of_agricultural_land_by_sea_level_rise():
     subscripts=["REGIONS 9 I", "LANDS I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "land_uses_until_2015": 1, "land_use_area_by_region": 1},
+    depends_on={"time": 1, "land_use_area_by_region": 1, "land_uses_until_2015": 1},
 )
 def growth_land_uses_vs_2015():
     """
@@ -361,8 +361,8 @@ def increase_of_matrix_of_land_use_changes():
     comp_subtype="Normal",
     depends_on={
         "switch_land_production_policy": 1,
-        "time": 2,
         "year_initial_land_protecion_policy": 1,
+        "time": 2,
         "year_final_land_protection_policy": 1,
         "objective_land_protection_policy": 1,
     },
@@ -399,9 +399,9 @@ def land_protection_by_policy():
     comp_subtype="Normal",
     depends_on={
         "land_use_area_productive_uses": 10,
-        "snow_ice_and_waterbodies_area": 3,
-        "share_of_shrubland": 2,
         "wetland_area": 3,
+        "share_of_shrubland": 2,
+        "snow_ice_and_waterbodies_area": 3,
     },
 )
 def land_use_area_by_region():
@@ -1358,10 +1358,10 @@ def land_uses_until_2015():
         "select_eroi_min_potential_wind_solar_sp": 5,
         "limits_to_solar_land_expansion_eroi_min_0": 1,
         "limits_to_solar_land_expansion_eroi_min_2": 1,
-        "limits_to_solar_land_expansion_eroi_min_3": 1,
-        "limits_to_solar_land_expansion_eroi_min_5": 1,
         "limits_to_solar_land_expansion_eroi_min_10": 1,
+        "limits_to_solar_land_expansion_eroi_min_3": 1,
         "limits_to_solar_land_expansion_eroi_min_8": 1,
+        "limits_to_solar_land_expansion_eroi_min_5": 1,
     },
 )
 def limits_to_solar_land_expansion_eroi_min():
@@ -1435,9 +1435,9 @@ _integ_matrix_of_accumulated_land_use_changes = Integ(
     comp_subtype="Normal",
     depends_on={
         "matrix_of_land_use_change_demands": 3,
+        "factor_of_minimum_land_limit": 2,
         "factor_of_maximum_land_limit": 2,
         "factor_of_solar_land_limit": 2,
-        "factor_of_minimum_land_limit": 2,
     },
 )
 def matrix_of_land_use_changes():
@@ -1511,8 +1511,8 @@ def matrix_of_maximum_land_changes():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
-        "model_explorer_land_protection": 1,
         "initial_land_use_by_region_2015": 2,
+        "model_explorer_land_protection": 1,
         "land_protection_by_policy": 1,
     },
 )

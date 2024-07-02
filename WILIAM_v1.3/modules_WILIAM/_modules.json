@@ -386,6 +386,7 @@
         "random_uniform_function_dais",
         "random_uniform_function_mgis",
         "random_uniform_function_nino",
+        "switch_wiliam_amoc_change",
         "temperature_change_amoc_weakening",
         "values_temperature_amoc_change"
     ],

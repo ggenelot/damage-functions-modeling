@@ -41,11 +41,11 @@ _integ_accumulated_error_in_solar_land = Integ(
     comp_subtype="Normal",
     depends_on={
         "switch_afforestation_sp": 1,
-        "time": 2,
         "year_initial_afforestation_sp": 2,
+        "time": 2,
         "year_final_afforestation_sp": 2,
-        "initial_land_use_by_region": 1,
         "objective_afforestation_sp": 1,
+        "initial_land_use_by_region": 1,
     },
 )
 def afforestation_due_to_policies():
@@ -140,8 +140,8 @@ def changes_of_share_of_solar_land():
     depends_on={
         "time": 1,
         "time_historical_data_land_module": 1,
-        "land_use_area_by_region": 1,
         "land_for_solar_demanded": 1,
+        "land_use_area_by_region": 1,
     },
 )
 def difference_solar_land():
@@ -168,8 +168,8 @@ def difference_solar_land():
         "switch_landwater": 9,
         "deaths": 9,
         "births": 9,
-        "time": 9,
         "imv_exogenous_population_variation": 9,
+        "time": 9,
     },
 )
 def exo_population_variation_exogenous():
@@ -360,8 +360,8 @@ def exo_population_variation_exogenous():
         "year_initial_forest_plantations_sp": 2,
         "time": 2,
         "year_final_forest_plantations_sp": 2,
-        "initial_land_use_by_region": 1,
         "objective_forest_plantations_sp": 1,
+        "initial_land_use_by_region": 1,
     },
 )
 def forest_plantations_growth_due_to_policies():
@@ -400,9 +400,9 @@ def forest_plantations_growth_due_to_policies():
         "priorities_of_land_use_change_sp": 2,
         "initial_land_use_by_region": 2,
         "control_parameter_of_land_use_changes": 2,
-        "accumulated_error_in_solar_land": 1,
-        "difference_solar_land": 1,
         "ki_solar_feedback": 1,
+        "difference_solar_land": 1,
+        "accumulated_error_in_solar_land": 1,
         "kp_solar_feedback": 1,
     },
 )
@@ -1005,9 +1005,9 @@ def matrix_of_land_use_change_demands():
         "time": 9,
         "time_historical_data_land_module": 9,
         "historical_share_of_land_use_changes_from_others": 9,
-        "share_of_land_use_changes_from_others_up": 9,
         "initial_share_of_land_use_changes_from_others_down": 9,
         "land_use_changes_demanded": 9,
+        "share_of_land_use_changes_from_others_up": 9,
     },
 )
 def share_of_land_use_change_from_others():
@@ -1278,9 +1278,9 @@ def share_of_land_use_change_from_others():
     depends_on={
         "initial_share_of_land_use_changes_from_others_up": 12,
         "objective_solar_land_from_others_sp": 1,
+        "year_initial_solar_land_from_others_sp": 1,
         "switch_solar_land_from_others_sp": 1,
         "time": 1,
-        "year_initial_solar_land_from_others_sp": 1,
     },
 )
 def share_of_land_use_changes_from_others_up():

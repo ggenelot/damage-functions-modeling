@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     depends_on={
         "time": 1,
         "final_time": 1,
-        "cum_prob_amaz_tp_c1": 1,
         "random_uniform_function_amaz": 1,
+        "cum_prob_amaz_tp_c1": 1,
     },
 )
 def amaz_tipping_point_in_simulation_period():
@@ -38,8 +38,8 @@ def amaz_tipping_point_in_simulation_period():
     depends_on={
         "time": 1,
         "final_time": 1,
-        "random_uniform_function_amoc_weakening": 1,
         "cum_prob_amoc_weakening_tp_c1": 1,
+        "random_uniform_function_amoc_weakening": 1,
     },
 )
 def amoc_weakening_tipping_point_in_simulation_period():
@@ -64,8 +64,8 @@ def amoc_weakening_tipping_point_in_simulation_period():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "temperature_change": 2,
         "prob_amaz_tp_2010_2200_c1": 2,
+        "temperature_change": 2,
         "final_time": 2,
     },
 )
@@ -94,8 +94,8 @@ def cum_prob_amaz_tp_c1():
     depends_on={
         "time": 2,
         "temperature_change": 2,
-        "prob_amoc_weakening_tp_2010_2100_c1": 2,
         "final_time": 2,
+        "prob_amoc_weakening_tp_2010_2100_c1": 2,
     },
 )
 def cum_prob_amoc_weakening_tp_c1():
@@ -122,8 +122,8 @@ def cum_prob_amoc_weakening_tp_c1():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "temperature_change": 2,
         "prob_dais_tp_2010_2200_c1": 2,
+        "temperature_change": 2,
         "final_time": 2,
     },
 )
@@ -152,8 +152,8 @@ def cum_prob_dais_tp_c1():
     depends_on={
         "time": 2,
         "temperature_change": 2,
-        "prob_mgis_tp_2010_2200_c1": 2,
         "final_time": 2,
+        "prob_mgis_tp_2010_2200_c1": 2,
     },
 )
 def cum_prob_mgis_tp_c1():
@@ -180,9 +180,9 @@ def cum_prob_mgis_tp_c1():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
+        "prob_nino_tp_2010_2200_c1": 2,
         "temperature_change": 2,
         "final_time": 2,
-        "prob_nino_tp_2010_2200_c1": 2,
     },
 )
 def cum_prob_nino_tp_c1():
@@ -210,8 +210,8 @@ def cum_prob_nino_tp_c1():
     depends_on={
         "time": 1,
         "final_time": 1,
-        "cum_prob_dais_tp_c1": 1,
         "random_uniform_function_dais": 1,
+        "cum_prob_dais_tp_c1": 1,
     },
 )
 def dais_tipping_point_in_simulation_period():
@@ -264,8 +264,8 @@ def mgis_tipping_point_in_simulation_period():
     depends_on={
         "time": 1,
         "final_time": 1,
-        "random_uniform_function_nino": 1,
         "cum_prob_nino_tp_c1": 1,
+        "random_uniform_function_nino": 1,
     },
 )
 def nino_tipping_point_in_simulation_period():
@@ -374,12 +374,20 @@ def random_uniform_function_nino():
 
 
 @component.add(
+    name='"SWITCH: WILIAM: AMOC change"', comp_type="Constant", comp_subtype="Normal"
+)
+def switch_wiliam_amoc_change():
+    return 0
+
+
+@component.add(
     name="temperature change AMOC weakening",
     units="DegreesC",
     subscripts=["REGIONS 9 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
+        "switch_wiliam_amoc_change": 1,
         "amoc_weakening_tipping_point_in_simulation_period": 1,
         "time": 1,
         "values_temperature_amoc_change": 1,
@@ -390,12 +398,18 @@ def temperature_change_amoc_weakening():
     Temperature will change in some LOCOMOTION regions (in UE27, UK and USMCA), if tipping point is activated. Values source is Liu et al.,2020: Liu, W., Fedorov, A. V., Xie, S.-P. & Hu, S. Climate impacts of a weakened Atlantic meridional overturning circulation in a warming climate. Sci. Adv. 6, https://doi.org/10.1126/sciadv.aaz4876 (2020).
     """
     return if_then_else(
-        np.logical_and(
-            amoc_weakening_tipping_point_in_simulation_period() == 1, time() > 2080
-        ),
-        lambda: values_temperature_amoc_change(),
+        switch_wiliam_amoc_change() == 0,
         lambda: xr.DataArray(
             0, {"REGIONS 9 I": _subscript_dict["REGIONS 9 I"]}, ["REGIONS 9 I"]
+        ),
+        lambda: if_then_else(
+            np.logical_and(
+                amoc_weakening_tipping_point_in_simulation_period() == 1, time() > 2080
+            ),
+            lambda: values_temperature_amoc_change(),
+            lambda: xr.DataArray(
+                0, {"REGIONS 9 I": _subscript_dict["REGIONS 9 I"]}, ["REGIONS 9 I"]
+            ),
         ),
     )
 

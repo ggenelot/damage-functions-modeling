@@ -177,11 +177,11 @@ def deaths():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "historical_shares_migration": 2,
         "emigrations": 3,
+        "historical_shares_migration": 2,
+        "start_year_migrations_sp": 1,
         "switch_migration_sp": 1,
         "shares_emigration_sp": 1,
-        "start_year_migrations_sp": 1,
     },
 )
 def emigration_distribution():
@@ -414,8 +414,8 @@ def immigrations():
     comp_subtype="Normal",
     depends_on={
         "a_exponential_leab_to_mr": 2,
-        "b_exponential_leab_to_mr": 2,
         "life_expectancy_at_birth": 2,
+        "b_exponential_leab_to_mr": 2,
         "min_historical_mortality_rate": 2,
     },
 )
@@ -713,9 +713,9 @@ def population_variation():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
+        "target_year_fertility_rates_sp": 2,
         "slope_scenario_fertility_rates": 2,
         "time": 2,
-        "target_year_fertility_rates_sp": 2,
     },
 )
 def ramp_scenario_fertility_rates():

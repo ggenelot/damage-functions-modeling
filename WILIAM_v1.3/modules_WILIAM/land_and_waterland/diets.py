@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     comp_subtype="Normal",
     depends_on={
         "initial_dairy_obtained_from_grasslands": 1,
-        "initial_land_use_by_region": 1,
         "land_use_area_by_region": 1,
+        "initial_land_use_by_region": 1,
         "factor_of_grassland_production": 1,
     },
 )
@@ -136,12 +136,12 @@ def diet_according_to_food_shortage():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_diets": 1,
-        "plant_based_100_diet_pattern_of_policy_diets_sp": 1,
         "select_policy_diet_patterns_sp": 5,
-        "flexitariana_diet_patterns_of_policy_diets_sp": 1,
         "baseline_diet_pattern_of_policy_diets_sp": 1,
-        "plant_based_50_percent_diet_pattern_of_policy_diets_sp": 1,
+        "plant_based_100_diet_pattern_of_policy_diets_sp": 1,
         "willett_diet_patterns_of_policy_diets_sp": 1,
+        "flexitariana_diet_patterns_of_policy_diets_sp": 1,
+        "plant_based_50_percent_diet_pattern_of_policy_diets_sp": 1,
     },
 )
 def diet_according_to_policies_sp():
@@ -193,12 +193,12 @@ def diet_according_to_policies_sp():
         "time_historical_data_land_module": 1,
         "diet_demanded": 1,
         "select_policy_diet_patterns_sp": 1,
+        "diet_according_to_policies_sp": 1,
+        "diet_according_to_food_shortage": 3,
         "select_tipe_diets_me": 1,
         "switch_model_explorer": 2,
-        "diet_according_to_policies_sp": 1,
-        "efect_shortage_of_policy_diet": 1,
-        "diet_according_to_food_shortage": 3,
         "share_of_change_to_policy_diet": 2,
+        "efect_shortage_of_policy_diet": 1,
     },
 )
 def diet_available():
@@ -236,8 +236,8 @@ def diet_available():
         "switch_model_explorer": 2,
         "select_tipe_diets_me": 1,
         "diet_demanded_according_to_gdppc": 3,
-        "diet_according_to_policies_sp": 1,
         "select_policy_diet_patterns_sp": 1,
+        "diet_according_to_policies_sp": 1,
         "share_of_change_to_policy_diet": 2,
     },
 )
@@ -769,11 +769,11 @@ def gdppc_per_share_of_available_food():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_objective_diets": 1,
+        "switch_diet_change_sp": 2,
         "year_final_diet_change_sp": 2,
+        "objective_diet_change_sp": 1,
         "time": 2,
         "year_initial_diet_change_sp": 2,
-        "switch_diet_change_sp": 2,
-        "objective_diet_change_sp": 1,
     },
 )
 def increase_of_share_of_change_to_policy_diet():
@@ -955,8 +955,8 @@ def land_products_demanded_for_food_world():
     comp_subtype="Normal",
     depends_on={
         "initial_meat_obtained_from_grasslands": 1,
-        "initial_land_use_by_region": 1,
         "land_use_area_by_region": 1,
+        "initial_land_use_by_region": 1,
         "factor_of_grassland_production": 1,
     },
 )
@@ -1016,8 +1016,8 @@ _ext_constant_plant_based_50_percent_diet_pattern_of_policy_diets_sp = ExtConsta
     comp_subtype="Normal",
     depends_on={
         "switch_landwater": 1,
-        "time": 1,
         "exogenous_population_9r": 1,
+        "time": 1,
         "population_9_regions": 1,
     },
 )

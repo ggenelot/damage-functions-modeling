@@ -190,8 +190,8 @@ _integ_blue_water_demand_trends = Integ(
     depends_on={
         "blue_water_demand_for_agriculture_by_gdp": 2,
         "blue_water_demand_by_industries": 2,
-        "blue_water_used_for_households": 2,
         "water_available_by_region": 2,
+        "blue_water_used_for_households": 2,
     },
 )
 def blue_water_used_by_industries():
@@ -257,8 +257,8 @@ def effective_blue_water_demanded_for_agriculture():
     depends_on={
         "switch_landwater": 1,
         "gdp_for_water": 1,
-        "gdp_by_oekstra_for_water": 1,
         "gdp_oekstra_2019": 1,
+        "gdp_by_oekstra_for_water": 1,
         "gdp_real_35r_until_2019": 1,
     },
 )
@@ -403,8 +403,8 @@ def historical_blue_water_growth_trends():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "initial_green_water_region_sect": 1,
         "variation_linear_green_water_region_sect": 1,
+        "initial_green_water_region_sect": 1,
     },
 )
 def historical_green_water_of_sectors_by_region():
@@ -444,8 +444,8 @@ def historical_green_water_of_sectors_by_region():
     depends_on={
         "switch_water_efficiency_sp": 2,
         "year_initial_water_efficiency_sp": 2,
-        "time": 2,
         "objective_water_efficiency_sp": 1,
+        "time": 2,
         "year_final_water_efficiency_sp": 2,
     },
 )
@@ -562,8 +562,8 @@ def initial_water_per_sector_fao():
     depends_on={
         "switch_landwater": 1,
         "base_output_real": 2,
-        "green_water_region_sector": 2,
         "output_real": 2,
+        "green_water_region_sector": 2,
     },
 )
 def intensity_green_water_region_sector():
@@ -629,8 +629,8 @@ def irrigated_land_changes_due_water_availability():
     depends_on={
         "switch_landwater": 1,
         "population_35_regions": 1,
-        "time": 1,
         "exo_population_35r": 1,
+        "time": 1,
     },
 )
 def population_35r_for_water():

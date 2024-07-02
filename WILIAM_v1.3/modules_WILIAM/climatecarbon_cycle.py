@@ -57,8 +57,8 @@ _initial_biostimulation_coeff = Initial(
             "initial": {"ref_buffer_factor": 1},
             "step": {
                 "ref_buffer_factor": 1,
-                "c_in_mixed_layer": 1,
                 "preind_c_in_mixed_layer": 1,
+                "c_in_mixed_layer": 1,
                 "buff_c_coeff": 1,
             },
         }
@@ -494,8 +494,8 @@ def equilibrium_c_per_meter_in_mixed_layer():
     comp_subtype="Normal",
     depends_on={
         "init_npp": 1,
-        "biostimulation_coeff": 1,
         "c_in_atmosphere": 1,
+        "biostimulation_coeff": 1,
         "preindustrial_c": 1,
         "effect_of_warming_on_c_flux_to_biomass": 1,
     },
@@ -661,16 +661,16 @@ def init_c_in_atmosphere():
         "_initial_layer_time_constant": {
             "initial": {
                 "layer_depth": 1,
-                "eddy_diff_coeff": 1,
                 "mean_depth_of_adjacent_layers": 1,
+                "eddy_diff_coeff": 1,
             },
             "step": {},
         },
         "_initial_layer_time_constant_1": {
             "initial": {
                 "layer_depth": 1,
-                "eddy_diff_coeff": 1,
                 "mean_depth_of_adjacent_layers": 1,
+                "eddy_diff_coeff": 1,
             },
             "step": {},
         },
@@ -714,7 +714,7 @@ _initial_layer_time_constant_1 = Initial(
     name="MEAN DEPTH OF ADJACENT LAYERS",
     units="m",
     subscripts=["LAYERS I"],
-    comp_type="Auxiliary, Stateful",
+    comp_type="Stateful, Auxiliary",
     comp_subtype="Normal, Initial",
     depends_on={"_initial_mean_depth_of_adjacent_layers": 1, "layer_depth": 2},
     other_deps={

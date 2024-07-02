@@ -10,8 +10,8 @@ Translated using PySD version 3.14.0
     comp_subtype="Normal",
     depends_on={
         "fund_tot_eq_moneraty_impact": 1,
-        "fund_mm1_eq_value_of_a_statistical_life": 1,
         "fund_tot_eq_total_deaths": 1,
+        "fund_mm1_eq_value_of_a_statistical_life": 1,
     },
 )
 def fund_tot_eq_fund_total_impact():
