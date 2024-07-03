@@ -1,0 +1,73 @@
+ Parameter                                                , Distribution   , -                       , -                      , -          
+ Methane emissions                                        , Normal         , Î¼ = Table CH4           , Ïƒ = 6.83/yr            ,            
+ Nitrous oxide emissions                                  , Normal         , Î¼ = Table N2O           , Ïƒ = 0.0059/yr          ,            
+ Climate sensitivity                                      , Gamma          , M = 2.85                , Ïƒ = 1.00               ,            
+ Sea level sensitivity                                    , Gamma          , M = 0.31                , Ïƒ = 0.15               ,            
+ Life time methane                                        , Triangular     , L = 8.00                , M = 8.60               , U = 16.00  
+ Life time nitrous oxide                                  , Triangular     , L = 100                 , M = 120                , U = 170    
+ Response time temperature                                , Triangular     , L = 25                  , M = 50                 , U = 100    
+ Response time sea level                                  , Triangular     , L = 25                  , M = 50                 , U = 100    
+ Life time carbon dioxide                                 , Trunc. normal  , Î¼ = 363.00              , Ïƒ = 90.75              , L = 0.00   
+ Life time carbon dioxide                                 , Trunc. normal  , Î¼ = 74.00               , Ïƒ = 18.50              , L = 0.00   
+ Life time carbon dioxide                                 , Trunc. normal  , Î¼ = 17.00               , Ïƒ = 4.25               , L = 0.00   
+ Life time carbon dioxide                                 , Trunc. normal  , Î¼ = 2.00                , Ïƒ = 0.50               , L = 0.00   
+ Baseline loss biodiversity                               , Trunc. normal  , Î¼ = 0.003               , Ïƒ = 0.002              , L = 0.000  
+ Sensitivity biodiversity                                 , Trunc. normal  , Î¼ = 0.001               , Ïƒ = 0.001              , L = 0.000  
+ Share biodiversity                                       , Triangular     , L = 0.00                , M = 0.05               , U = 1.00   
+ Water technology rate                                    , Trunc. normal  , Î¼ = 0.005               , Ïƒ = 0.005              , L = 0.000  
+ Population growth                                        , Normal         , Î¼ = Table P             , Ïƒ = 0.0048/yr          ,            
+ Income growth                                            , Normal         , Î¼ = Table Y             , Ïƒ = 0.0026/yr          ,            
+ Energy efficiency                                        , Normal         , Î¼ = Table AEEI          , Ïƒ = 0.0005/yr          ,            
+ Decarbonisation                                          , Normal         , Î¼ = Table ACEI          , Ïƒ = 0.0009/yr          ,            
+ Land use emissions                                       , Normal         , Î¼ = Table CO2F          , Ïƒ = 0.20/yr            ,            
+ Ecosystem value                                          , Trunc. normal  , Î¼ = 50                  , Ïƒ = 50                 , L = 0      
+ Anchor income                                            , Trunc. normal  ," Î¼ = 30,000              "," Ïƒ = 10,000             ", L = 0      
+ Value of a statistical life                              , Trunc. normal  , Î¼ = 200                 , Ïƒ = 100                , L = 0      
+ Value of a year diseased                                 , Trunc. normal  , Î¼ = 0.8                 , Ïƒ = 1.2                , L = 0      
+ Sensitivity malaria                                      , Trunc. normal  , Î¼ = 0.0794              , Ïƒ = 0.0575             , L = 0.0000 
+ Non-linearity malaria                                    , Trunc. normal  , Î¼ = 1.0                 , Ïƒ = 0.5                , L = 0.0    
+ Sensitivity dengue fever                                 , Trunc. normal  , Î¼ = 0.3534              , Ïƒ = 0.0614             , L = 0.0000 
+ Non-linearity dengue fever                               , Trunc. normal  , Î¼ = 1.0                 , Ïƒ = 0.5                , L = 0.0    
+ Sensitivity schistosomiasis                              , Trunc. normal  , Î¼ = -0.1149             , Ïƒ = 0.0614             , U = 0.0000 
+ Non-linearity schistosomiasis                            , Trunc. normal  , Î¼ = 1.0                 , Ïƒ = 0.5                , L = 0.0    
+ Income elasticity vector-borne diseases                  , Trunc. normal  , Î¼ = -2.65               , Ïƒ = 0.69               , U = 0.00   
+ Income elasticity diarrhoea mortality                    , Trunc. normal  , Î¼ = -1.58               , Ïƒ = 0.23               , U = 0.00   
+ Income elasticity diarrhoea morbidity                    , Trunc. normal  , Î¼ = -0.42               , Ïƒ = 0.12               , U = 0.00   
+ Non-linearity diarrhoea mortality                        , Trunc. normal  , Î¼ = 1.14                , Ïƒ = 0.51               , L = 0.00   
+ Non-linearity diarrhoea morbidity                        , Trunc. normal  , Î¼ = 0.70                , Ïƒ = 0.26               , L = 0.00   
+ Cardiovascular and respiratory mortality                 , Normal         , Table HC                , Table HC               ,            
+ Change in baseline cardiovascular disease                , Trunc. normal  , Î¼ = 0.0259              , Ïƒ = 0.0096             , L = 0.0000 
+ Change in baseline respiratory disease                   , Trunc. normal  , Î¼ = 0.0016              , Ïƒ = 0.0005             , L = 0.0000 
+ Change in population above 65                            , Trunc. normal  , Î¼ = 0.25                , Ïƒ = 0.08               , L = 0.00   
+ Maximum increase cardiovascular and respiratory disease  , Trunc. normal  , Î¼ = 0.05                , Ïƒ = 0.02               , L = 0.00   
+ Sensitivity water                                        , Normal         , Table EFW               , Table EFW              ,            
+ Income elasticity water                                  , Trunc. normal  , Î¼ = 0.85                , Ïƒ = 0.15               , U = 0.00   
+ Non-linearity water                                      , Trunc. normal  , Î¼ = 1.00                , Ïƒ = 0.50               , U = 0.00   
+ Sensitivity forestry                                     , Normal         , Table EFW               , Table EFW              ,            
+ Income elasticity forestry                               , Trunc. normal  , Î¼ = 0.31                , Ïƒ = 0.20               , U = 0.00   
+ Non-linearity forestry                                   , Trunc. normal  , Î¼ = 1.00                , Ïƒ = 0.50               , U = 0.00   
+ Sensitivity heating                                      , Trunc. normal  , Table EFW               , Table EFW              , L = 0.00   
+ Non-linearity heating                                    , Trunc. normal  , Î¼ = 1.00                , Ïƒ = 0.50               , U = 0.00   
+ Income elasticity heating                                , Trunc. normal  , Î¼ = 0.80                , Ïƒ = 0.20               , L = 0.00   
+ Sensitivity cooling                                      , Trunc. normal  , Table EFW               , Table EFW              , U = 0.00   
+ Non-linearity cooling                                    , Trunc. normal  , Î¼ = 1.00                , Ïƒ = 0.50               , U = 0.00   
+ Income elasticity cooling                                , Trunc. normal  , Î¼ = 0.80                , Ïƒ = 0.20               , L = 0.00   
+" Agriculture, rate                                        ", Trunc. normal  , Î¼ =Table A              , Ïƒ = Table A            , U = 0.00   
+ Adaptation time                                          , Trunc. normal  , Î¼ = 10.0                , Ïƒ = 5.0                , U = 0.0    
+ Non-linearity                                            , Trunc. normal  , Î¼ = 2.0                 , Ïƒ = 0.5                , U = 0.0    
+" Agriculture, level                                       ", Normal         , Î¼ =Table A              , Ïƒ = Table A            ,            
+" Agriculture, optimum                                     ", Normal         , Î¼ =Table A              , Ïƒ = Table A            ,            
+" Agriculture, CO2                                         ", Trunc. normal  , Î¼ =Table A              , Ïƒ = Table A            , U = 0.00   
+ Income elasticity agriculture                            , Trunc. normal  , Î¼ = 0.31                , Ïƒ = 0.15               , U = 0.00   
+ Dryland value                                            , Trunc. normal  , Î¼ = 4.0                 , Ïƒ = 2.0                , U = 0.0    
+ Adaptation time                                          , Exponential    ,                         , Ïƒ = 0.1                ,            
+ Wetland value                                            , Trunc. normal  , Î¼ = 5.0                 , Ïƒ = 2.5                , U = 0.0    
+ Adaptation time                                          , Exponential    ,                         , Ïƒ = 0.1                ,            
+ Dryland loss                                             , Trunc. normal  , Î¼ = Table SLR           , Ïƒ = Table SLR          , U = 0.0    
+ Protection cost                                          , Trunc. normal  , Î¼ = Table SLR           , Ïƒ = Table SLR          , U = 0.0    
+ Dryland value                                            , Trunc. normal  , Î¼ = Table SLR           , Ïƒ = Table SLR          , U = 0.0    
+ Wetland value                                            , Trunc. normal  , Î¼ = Table SLR           , Ïƒ = Table SLR          , U = 0.0    
+ Immigration                                              , Trunc. normal  , Î¼ = Table I             , Ïƒ = Table I            , U = 0.0    
+ Immigration cost                                         , Trunc. normal  , Î¼ = 0.4                 , Ïƒ = 0.2                , U = 0.0    
+ Adaptation time                                          , Trunc. normal  , Î¼ = 3.0                 , Ïƒ = 1.0                , U = 0.0    
+ Emigration cost                                          , Trunc. normal  , Î¼ = 3.0                 , Ïƒ = 1.5                , U = 0.0    
