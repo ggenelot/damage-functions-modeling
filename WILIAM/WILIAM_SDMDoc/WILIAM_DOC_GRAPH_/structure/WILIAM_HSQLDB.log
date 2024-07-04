@@ -1,0 +1,36 @@
+/*C1*/SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+COMMIT
+/*C2*/SET SCHEMA PUBLIC
+drop table Uses If Exists
+CREATE Cached TABLE Uses ( id INTEGER IDENTITY, str_col VARCHAR(256), num_col INTEGER)
+drop table UsedBy If Exists
+CREATE Cached TABLE UsedBy ( id INTEGER IDENTITY, VariableID INTEGER, UsesID INTEGER)
+drop table Variables If Exists
+CREATE Cached TABLE Variables ( id INTEGER IDENTITY, VariableID INTEGER, Variable VARCHAR(256), Comment VARCHAR(1024), Units VARCHAR(256), Type VARCHAR(3))
+drop table LoopsNoIVV If Exists
+CREATE Cached TABLE LoopsNoIVV ( id INTEGER IDENTITY, LoopIdent VARCHAR(32), Length INTEGER, Polarity VARCHAR(2))
+drop table LoopsNoIVVLinks If Exists
+CREATE Cached TABLE LoopsNoIVVLinks ( id INTEGER IDENTITY, LoopID INTEGER, INDEX INTEGER, VariableID INTEGER)
+drop table LoopsWithIVV If Exists
+CREATE Cached TABLE LoopsWithIVV ( id INTEGER IDENTITY, LoopIdent VARCHAR(32), Length INTEGER, Polarity VARCHAR(2))
+drop table LoopsWithIVVLinks If Exists
+CREATE Cached TABLE LoopsWithIVVLinks ( id INTEGER IDENTITY, LoopID INTEGER, INDEX INTEGER, VariableID INTEGER)
+drop table Arrows If Exists
+CREATE Cached TABLE Arrows ( id INTEGER IDENTITY, TailID INTEGER, HeadID INTEGER)
+drop table ArrowPolarity If Exists
+CREATE Cached TABLE ArrowPolarity ( id INTEGER IDENTITY, ArrowID INTEGER, Polarity VARCHAR(2))
+drop table SubscriptDefinition If Exists
+CREATE Cached TABLE SubscriptDefinition ( id INTEGER IDENTITY, Subscript VARCHAR(256))
+drop table SubscriptValues If Exists
+CREATE Cached TABLE SubscriptValues ( id INTEGER IDENTITY, SubscriptID INTEGER, Index INTEGER, SubscriptValue VARCHAR(256))
+drop table SubscriptUse If Exists
+CREATE Cached TABLE SubscriptUse ( id INTEGER IDENTITY, SubscriptID INTEGER, VariableID INTEGER, DimensionIndex INTEGER)
+drop table ModelMeta If Exists
+CREATE Cached TABLE ModelMeta ( id INTEGER IDENTITY, MdlFile VARCHAR(256), IsMap VARCHAR(2), Runnable VARCHAR(2), InitialTime VARCHAR(256), FinalTime VARCHAR(256), TimeStep VARCHAR(256), SavePer VARCHAR(256), TimeUnits VARCHAR(256))
+drop table Views If Exists
+CREATE Cached TABLE Views ( id INTEGER IDENTITY, ViewName VARCHAR(256))
+drop table ViewVariables If Exists
+CREATE Cached TABLE ViewVariables ( id INTEGER IDENTITY, ViewID INTEGER, VariableID INTEGER)
+drop table VariableCharacteristics If Exists
+CREATE Cached TABLE VariableCharacteristics ( id INTEGER IDENTITY, VariableID INTEGER, UsesMacro VARCHAR(2), SourceInformation VARCHAR(2), DmlsUnits VARCHAR(2), MinMaxValues VARCHAR(2), FunctionSensitivityParameters VARCHAR(2), DataLookup VARCHAR(2), Undocumented VARCHAR(2), EmbeddedData VARCHAR(2), InView VARCHAR(2), NonmonotonicLookup VARCHAR(2), CascadingLookup VARCHAR(2), NonZeroEndSlopedLookup VARCHAR(2), IfThenElse VARCHAR(2), MinMax VARCHAR(2), StepPulseRelated VARCHAR(2), UnitErrorsOrWarnings VARCHAR(2), Used VARCHAR(2), Supplementary VARCHAR(2), SupplementaryUsed VARCHAR(2), ComplexVariable VARCHAR(2), ComplexStock VARCHAR(2))
