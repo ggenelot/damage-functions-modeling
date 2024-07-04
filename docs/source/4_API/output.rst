@@ -13,8 +13,14 @@ DICE 2023
 
 Input variables:
 
+- ??1 (psi 1) 
+- ??2 (psi 2) 
+- ?? (T) 
 
 Output variables:
+
+- ?? (omega) 
+
 
 .. autofunction:: WILIAM.WILIAM.dice_5_eq_damage_function 
 
@@ -27,8 +33,14 @@ Output variables:
 
 Input variables:
 
+- ?? (mu) 
+- ??1 (theta 1) 
+- ??2 (theta 2) 
 
 Output variables:
+
+- ? (lambda) 
+
 
 .. autofunction:: WILIAM.WILIAM.dice_6_eq_abatment_function 
 
@@ -44,8 +56,13 @@ A.128 : Climate shock
 
 Input variables:
 
+- Beta 1
+- Beta 2
 
 Output variables:
+
+- Propbability of occurence of a shock
+
 
 .. autofunction:: WILIAM.WILIAM.dsk_a128_eq_shock_from_climate_change 
 
@@ -61,8 +78,14 @@ A.1 : Total agriculture impact
 
 Input variables:
 
+- Damage in agricultural production
+- Damage in agricultural production level 
+- Damage in agricultural production due to CO2 fertilisation
 
 Output variables:
+
+- Total agriculture impact
+
 
 .. autofunction:: WILIAM.WILIAM.fund_a1_eq_total_agricultural_impact 
 
@@ -75,8 +98,17 @@ A.2 : Agriculture impact of the rate of climate change
 
 Input variables:
 
+- Time
+- Region
+- Change in regional mean temperature
+- Parameter for impact of climate change on economic welfare 
+- Non-linearity parameter
+- Speed of adaptation parameter
 
 Output variables:
+
+- Damage in agricultural production
+
 
 .. autofunction:: WILIAM.WILIAM.fund_a2_eq_agricultural_impact_of_the_rate_of_climate_change 
 
@@ -89,8 +121,16 @@ A.3 : Agriculture impact of the level of climate change
 
 Input variables:
 
+- Time
+- Region
+- Change in regional mean temperature
+- Parameter related to warming of 2.5°C 
+- Parameter related to warming of 3.2°C 
 
 Output variables:
+
+- Damage in agricultural production level 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_a3_eq_agricultural_impact_of_the_level_of_climate_change 
 
@@ -103,8 +143,16 @@ A.4 : Agriculture impact of fertilisation
 
 Input variables:
 
+- Time
+- Region
+- Pre-industrial concentration of CO2
+- Atmospheric CO2 concentrations 
+- Parameter related to CO2 fertilisation
 
 Output variables:
+
+- Damage in agricultural production due to CO2 fertilisation
+
 
 .. autofunction:: WILIAM.WILIAM.fund_a4_eq_agricultural_imact_of_the_fertilisation 
 
@@ -117,8 +165,20 @@ E.1 : Space heating impact
 
 Input variables:
 
+- Time
+- Region
+- GDP in region r at time t 
+- Change in regional mean temperature
+- Gross domestic product per capita
+- Population in region r at time t 
+- Parameter for benchmark impact 
+- Income elasticity of space heating demand 
+- Autonomous Energy Efficiency Improvement 
 
 Output variables:
+
+- Decrease in expenditure on space heating 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_e1_eq_space_heating 
 
@@ -131,8 +191,21 @@ E.1 : Ecosystem loss
 
 Input variables:
 
+- Time
+- Region
+- Gross domestic product per capita
+- Population in region r at time t 
+- Change in regional mean temperature 
+- Number of species 
+- Parameter 
+- Parameter 
+- Parameter 
+- Parameter for number of species 
 
 Output variables:
+
+- Value of the loss of ecosystems at time 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_e1_eq_space_heating 
 
@@ -145,8 +218,20 @@ E.1 : Space heating impact
 
 Input variables:
 
+- Time
+- Region
+- GDP in region r at time t 
+- Change in regional mean temperature
+- Gross domestic product per capita
+- Population in region r at time t 
+- Parameter for benchmark impact 
+- Income elasticity of space heating demand 
+- Autonomous Energy Efficiency Improvement 
 
 Output variables:
+
+- Decrease in expenditure on space heating 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_e1_eq_value_of_the_loss_of_the_ecosystems 
 
@@ -159,8 +244,21 @@ E.1 : Ecosystem loss
 
 Input variables:
 
+- Time
+- Region
+- Gross domestic product per capita
+- Population in region r at time t 
+- Change in regional mean temperature 
+- Number of species 
+- Parameter 
+- Parameter 
+- Parameter 
+- Parameter for number of species 
 
 Output variables:
+
+- Value of the loss of ecosystems at time 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_e1_eq_value_of_the_loss_of_the_ecosystems 
 
@@ -173,8 +271,20 @@ E.2 : Space cooling impact
 
 Input variables:
 
+- Time
+- Region
+- GDP in region r at time t 
+- Change in regional mean temperature
+- Gross domestic product per capita
+- Population in region r at time t 
+- Parameter for economic growth response 
+- Income elasticity of space heating demand 
+- Autonomous Energy Efficiency Improvement 
 
 Output variables:
+
+- Increase in expenditure on space cooling 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_e2_eq_space_cooling 
 
@@ -187,8 +297,15 @@ E.2 : Number of species
 
 Input variables:
 
+- Number of species 
+- Parameter 
+- Parameter 
+- Change in regional mean temperature 
 
 Output variables:
+
+- Number of species 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_e2_eq_space_cooling 
 
@@ -201,8 +318,20 @@ E.2 : Space cooling impact
 
 Input variables:
 
+- Time
+- Region
+- GDP in region r at time t 
+- Change in regional mean temperature
+- Gross domestic product per capita
+- Population in region r at time t 
+- Parameter for economic growth response 
+- Income elasticity of space heating demand 
+- Autonomous Energy Efficiency Improvement 
 
 Output variables:
+
+- Increase in expenditure on space cooling 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_e2_eq_number_of_species 
 
@@ -215,8 +344,15 @@ E.2 : Number of species
 
 Input variables:
 
+- Number of species 
+- Parameter 
+- Parameter 
+- Change in regional mean temperature 
 
 Output variables:
+
+- Number of species 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_e2_eq_number_of_species 
 
@@ -229,8 +365,18 @@ ETS.1 : Extratropical storms damage
 
 Input variables:
 
+- GDP in region r at time t 
+- Benchmark damage from extratropical cyclones for region r 
+- Gross domestic product per capita
+- Income elasticity of extratropical storm damages 
+- Storm sensitivity to atmospheric CO2 concentrations for region r 
+- Atmospheric CO2 concentrations 
+- Pre-industrial concentration of CO2
 
 Output variables:
+
+- Damage from extratropical cyclones at time t in region r 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_ets1_eq_extratropical_storms 
 
@@ -243,8 +389,18 @@ ETS.2 : Extratropical storms mortality
 
 Input variables:
 
+- Population in region r at time t 
+- Benchmark mortality from extratropical cyclones for region r 
+- Gross domestic product per capita
+- Income elasticity of extratropical storm mortality 
+- Storm sensitivity to atmospheric CO2 concentrations for region r 
+- Atmospheric CO2 concentrations 
+- Pre-industrial concentration of CO2
 
 Output variables:
+
+- Mortality from extratropical cyclones at time t in region r 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_ets2_eq_mortality_from_extratropical_storm 
 
@@ -257,8 +413,19 @@ F.1 : Forestry impact
 
 Input variables:
 
+- Time
+- Region
+- Gross domestic product per capita
+- Global mean temperature 
+- Parameter for impact of climate change on economic welfare 
+- Income elasticity parameter 
+- Expert guess parameter 
+- Parameter for the effect of doubling atmospheric CO2 concentration on forest value 
 
 Output variables:
+
+- Change in forestry consumer and producer surplus 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_f1_eq_forestry_change_in_consumer_and_producer_surplus 
 
@@ -271,8 +438,19 @@ HD.1 : Human health : diarrhoea
 
 Input variables:
 
+- Region
+- Population in region r at time t 
+- Time
+- Gross domestic product per capita
+- Regional mean temperature in degrees Celsius 
+- Rate of mortality from diarrhoea in 2000 in region r 
+- Income elasticity of diarrhoea mortality 
+- Parameter for non-linearity of response of diarrhoea mortality to regional warming 
 
 Output variables:
+
+- Number of additional diarrhoea deaths 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_hd1_eq_additional_diarrhoea_deaths 
 
@@ -285,8 +463,22 @@ HV : Human health : vector-borne diseases
 
 Input variables:
 
+- Climate-change-induced mortality due to disease c in region r at time t 
+- Mortality from vector-borne diseases in 1990 in region r 
+- Time
+- Region
+- Vector borne disease
+- Parameter indicating benchmark impact of climate change on vector-borne diseases 
+- Regional mean temperature in degrees Celsius 
+- Gross domestic product per capita
+- Change in regional mean temperature
+- Parameter for degree of non-linearity of mortality in warming 
+- Income elasticity of vector-borne mortality 
 
 Output variables:
+
+- Number of additional deaths from vector-borne diseases 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_hv_eq_vectorborn_diseases 
 
@@ -299,8 +491,14 @@ MM.1 : Value of a statistical life
 
 Input variables:
 
+- Income elasticity of the value of a statistical life 
+- Gross domestic product per capita
+- Normalisation constant 
 
 Output variables:
+
+- Value of a statistical life at time t in region r 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_mm1_eq_value_of_a_statistical_life 
 
@@ -313,8 +511,13 @@ MM.2 : Value of a year of morbidity
 
 Input variables:
 
+- Gross domestic product per capita
+- Income elasticity of the value of a year of morbidity 
 
 Output variables:
+
+- Value of a year of morbidity at time t in region r 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_mm2_eq_value_of_a_year_of_morbidity 
 
@@ -327,8 +530,18 @@ SLR.10 : Net present cost of protection
 
 Input variables:
 
+- Time
+- Region
+- Annual unit cost of coastal protection 
+- Sea level rise above pre-industrial levels 
+- Growth rate of per capita income 
+- Rate of pure time preference 
+- Consumption elasticity of marginal utility 
 
 Output variables:
+
+- Net present costs of coastal protection at time 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_slr10_eq_npvvp 
 
@@ -341,8 +554,23 @@ SLR.11 : Net present cost of wetland loss
 
 Input variables:
 
+- Time
+- Region
+- Annual unit wetland loss due to full coastal protection 
+- Sea level rise above pre-industrial levels 
+- Growth rate of per capita income 
+- Population growth rate 
+- Growth rate of wetland 
+- Rate of pure time preference 
+- Consumption elasticity of marginal utility 
+- Income elasticity of wetland value 
+- Population density elasticity of wetland value 
+- Size elasticity of wetland value 
 
 Output variables:
+
+- Net present value of wetland loss at time 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_slr11_eq_npvvw 
 
@@ -355,8 +583,20 @@ SLR.12 : Net present cost of dryland loss
 
 Input variables:
 
+- Time
+- Region
+- Current dryland loss without protection at time 
+- Current dryland value 
+- Growth rate of per capita income 
+- Rate of pure time preference 
+- Consumption elasticity of marginal utility 
+- Income elasticity of dryland value 
+-  Current income density growth rate 
 
 Output variables:
+
+- Net present value of dryland loss at time 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_slr12_eq_npvvd 
 
@@ -369,6 +609,12 @@ SLR.1 : Potential cumulative dryland impact
 
 Input variables:
 
+- Time
+- Region
+- Dryland loss due to one metre sea level rise 
+- Sea level rise above pre-industrial levels 
+- Parameter calibrated to a digital elevation model 
+- Maximum dryland loss in region 
 
 Output variables:
 
@@ -383,8 +629,13 @@ SLR.2 : Potential dryland loss without protection
 
 Input variables:
 
+- Potential cumulative dryland loss without protection 
+- Actual cumulative dryland loss 
 
 Output variables:
+
+- Potential dryland loss without protection 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_slr2_eq_potential_dryland_loss 
 
@@ -397,8 +648,13 @@ SLR.3 : Actual dryland loss in the current year
 
 Input variables:
 
+- Fraction of the coastline protected 
+- Potential dryland loss without protection 
 
 Output variables:
+
+- Dryland loss in year 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_slr3_eq_actual_dryland_loss 
 
@@ -411,8 +667,13 @@ SLR.4 : Actual cumulative dryland loss
 
 Input variables:
 
+- Actual cumulative dryland loss 
+- Dryland loss in year 
 
 Output variables:
+
+- Actual cumulative dryland loss 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_slr4_eq_actual_cumulative_dryland_lost 
 
@@ -425,8 +686,19 @@ SLR.5 : Value of dryland
 
 Input variables:
 
+- Time
+- Region
+- Unit value of dryland 
+- GDP in region r at time t 
+- Area 
+- Parameter 
+- Normalisation constant 
+- Income density 
 
 Output variables:
+
+- Unit value of dryland 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_slr5_eq_dryland_value 
 
@@ -439,8 +711,17 @@ SLR.6 : Wetland loss
 
 Input variables:
 
+- Time
+- Region
+- Fraction of coast protected against sea level rise 
+- Sea level rise above pre-industrial levels 
+- Parameter for annual unit wetland loss due to sea level rise 
+- Parameter for annual unit wetland loss due to coastal squeeze 
 
 Output variables:
+
+- Wetland loss at time 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_slr6_eq_wetland_loss 
 
@@ -453,8 +734,14 @@ SLR.7 : Cumulative wetland loss
 
 Input variables:
 
+- Cumulative wetland loss 
+- Total amount of wetland exposed to sea level rise 
+- Wetland loss at time 
 
 Output variables:
+
+- Cumulative wetland loss at time 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_slr7_eq_cumulative_wetland_loss 
 
@@ -467,8 +754,22 @@ SLR.8 : Wetland value
 
 Input variables:
 
+- Time
+- Region
+- Gross domestic product per capita
+- Population density 
+- Cumulative wetland loss at time 
+- Total amount of wetlands in 1990 
+- Income elasticity of wetland value 
+- Normalisation constant 
+- Normalisation constant 
+- Population density elasticity of wetland value 
+- Size elasticity of wetland value 
 
 Output variables:
+
+- Wetland value at time 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_slr8_eq_wetland_value 
 
@@ -481,8 +782,20 @@ TS.1 : Extreme weather : tropical storms damage
 
 Input variables:
 
+- Time
+- Region
+- GDP in region r at time t 
+- Current damage as a fraction of GDP 
+- Gross domestic product per capita
+- Income elasticity of storm damage 
+- Parameter indicating how much wind speed increases per degree warming 
+- Change in regional mean temperature
+- Parameter for the power of the wind in the cube of its speed 
 
 Output variables:
+
+- Damage due to tropical storms in region r at time t 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_ts1_eq_tropical_storms_damages 
 
@@ -495,8 +808,20 @@ TS.2 : Extreme weather : tropical storm mortality
 
 Input variables:
 
+- Time
+- Region
+- Population in region r at time t 
+- Current mortality as a fraction of population 
+- Gross domestic product per capita
+- Parameter indicating how much wind speed increases per degree warming 
+- Change in regional mean temperature
+- Parameter for the power of the wind in the cube of its speed 
+- Income elasticity of storm damage 
 
 Output variables:
+
+- Mortality due to tropical storms in region r at time t 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_ts2_eq_tropical_storms_mortality 
 
@@ -509,8 +834,21 @@ W.1 : Water resources impact
 
 Input variables:
 
+- Time
+- Region
+- Gross domestic product per capita
+- Population in region r at time t 
+- Global mean temperature 
+- Parameter for benchmark impact 
+- Parameter for economic growth response 
+- Parameter for population growth response 
+- Parameter for impact response to warming 
+- Parameter for technological progress 
 
 Output variables:
+
+- Change in water resources 
+
 
 .. autofunction:: WILIAM.WILIAM.fund_w1_eq_change_in_water_resources 
 
