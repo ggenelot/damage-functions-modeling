@@ -22,7 +22,7 @@ Output variables:
 - ?? (omega) 
 
 
-.. autofunction:: WILIAM.WILIAM.dice_5_eq_damage_function 
+.. autofunction:: WILIAM.output.dice_5_eq_damage_function 
 
 6 : Abatement costs
 ~~~~~~~~~~~~~~~~~~~
@@ -42,7 +42,7 @@ Output variables:
 - ? (lambda) 
 
 
-.. autofunction:: WILIAM.WILIAM.dice_6_eq_abatment_function 
+.. autofunction:: WILIAM.output.dice_6_eq_abatment_function 
 
 DSK
 ---
@@ -64,7 +64,7 @@ Output variables:
 - Propbability of occurence of a shock
 
 
-.. autofunction:: WILIAM.WILIAM.dsk_a128_eq_shock_from_climate_change 
+.. autofunction:: WILIAM.output.dsk_a128_eq_shock_from_climate_change 
 
 FUND v.3.8
 ----------
@@ -87,7 +87,7 @@ Output variables:
 - Total agriculture impact
 
 
-.. autofunction:: WILIAM.WILIAM.fund_a1_eq_total_agricultural_impact 
+.. autofunction:: WILIAM.output.fund_a1_eq_total_agricultural_impact 
 
 A.2 : Agriculture impact of the rate of climate change
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,7 +110,7 @@ Output variables:
 - Damage in agricultural production
 
 
-.. autofunction:: WILIAM.WILIAM.fund_a2_eq_agricultural_impact_of_the_rate_of_climate_change 
+.. autofunction:: WILIAM.output.fund_a2_eq_agricultural_impact_of_the_rate_of_climate_change 
 
 A.3 : Agriculture impact of the level of climate change
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +132,7 @@ Output variables:
 - Damage in agricultural production level 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_a3_eq_agricultural_impact_of_the_level_of_climate_change 
+.. autofunction:: WILIAM.output.fund_a3_eq_agricultural_impact_of_the_level_of_climate_change 
 
 A.4 : Agriculture impact of fertilisation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,7 +154,7 @@ Output variables:
 - Damage in agricultural production due to CO2 fertilisation
 
 
-.. autofunction:: WILIAM.WILIAM.fund_a4_eq_agricultural_imact_of_the_fertilisation 
+.. autofunction:: WILIAM.output.fund_a4_eq_agricultural_imact_of_the_fertilisation 
 
 E.1 : Space heating impact
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,7 +180,7 @@ Output variables:
 - Decrease in expenditure on space heating 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_e1_eq_space_heating 
+.. autofunction:: WILIAM.output.fund_e1_eq_space_heating 
 
 E.1 : Ecosystem loss
 ~~~~~~~~~~~~~~~~~~~~
@@ -207,7 +207,7 @@ Output variables:
 - Value of the loss of ecosystems at time 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_e1_eq_space_heating 
+.. autofunction:: WILIAM.output.fund_e1_eq_space_heating 
 
 E.1 : Space heating impact
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -233,7 +233,7 @@ Output variables:
 - Decrease in expenditure on space heating 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_e1_eq_value_of_the_loss_of_the_ecosystems 
+.. autofunction:: WILIAM.output.fund_e1_eq_value_of_the_loss_of_the_ecosystems 
 
 E.1 : Ecosystem loss
 ~~~~~~~~~~~~~~~~~~~~
@@ -260,7 +260,7 @@ Output variables:
 - Value of the loss of ecosystems at time 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_e1_eq_value_of_the_loss_of_the_ecosystems 
+.. autofunction:: WILIAM.output.fund_e1_eq_value_of_the_loss_of_the_ecosystems 
 
 E.2 : Space cooling impact
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -286,7 +286,7 @@ Output variables:
 - Increase in expenditure on space cooling 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_e2_eq_space_cooling 
+.. autofunction:: WILIAM.output.fund_e2_eq_space_cooling 
 
 E.2 : Number of species
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -307,7 +307,7 @@ Output variables:
 - Number of species 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_e2_eq_space_cooling 
+.. autofunction:: WILIAM.output.fund_e2_eq_space_cooling 
 
 E.2 : Space cooling impact
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -333,7 +333,7 @@ Output variables:
 - Increase in expenditure on space cooling 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_e2_eq_number_of_species 
+.. autofunction:: WILIAM.output.fund_e2_eq_number_of_species 
 
 E.2 : Number of species
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -354,7 +354,7 @@ Output variables:
 - Number of species 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_e2_eq_number_of_species 
+.. autofunction:: WILIAM.output.fund_e2_eq_number_of_species 
 
 ETS.1 : Extratropical storms damage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -378,7 +378,7 @@ Output variables:
 - Damage from extratropical cyclones at time t in region r 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_ets1_eq_extratropical_storms 
+.. autofunction:: WILIAM.output.fund_ets1_eq_extratropical_storms 
 
 ETS.2 : Extratropical storms mortality
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -402,7 +402,7 @@ Output variables:
 - Mortality from extratropical cyclones at time t in region r 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_ets2_eq_mortality_from_extratropical_storm 
+.. autofunction:: WILIAM.output.fund_ets2_eq_mortality_from_extratropical_storm 
 
 F.1 : Forestry impact
 ~~~~~~~~~~~~~~~~~~~~~
@@ -427,7 +427,7 @@ Output variables:
 - Change in forestry consumer and producer surplus 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_f1_eq_forestry_change_in_consumer_and_producer_surplus 
+.. autofunction:: WILIAM.output.fund_f1_eq_forestry_change_in_consumer_and_producer_surplus 
 
 HD.1 : Human health : diarrhoea
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -452,7 +452,7 @@ Output variables:
 - Number of additional diarrhoea deaths 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_hd1_eq_additional_diarrhoea_deaths 
+.. autofunction:: WILIAM.output.fund_hd1_eq_additional_diarrhoea_deaths 
 
 HV : Human health : vector-borne diseases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -480,7 +480,7 @@ Output variables:
 - Number of additional deaths from vector-borne diseases 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_hv_eq_vectorborn_diseases 
+.. autofunction:: WILIAM.output.fund_hv_eq_vectorborn_diseases 
 
 MM.1 : Value of a statistical life
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -500,7 +500,7 @@ Output variables:
 - Value of a statistical life at time t in region r 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_mm1_eq_value_of_a_statistical_life 
+.. autofunction:: WILIAM.output.fund_mm1_eq_value_of_a_statistical_life 
 
 MM.2 : Value of a year of morbidity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -519,7 +519,7 @@ Output variables:
 - Value of a year of morbidity at time t in region r 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_mm2_eq_value_of_a_year_of_morbidity 
+.. autofunction:: WILIAM.output.fund_mm2_eq_value_of_a_year_of_morbidity 
 
 SLR.10 : Net present cost of protection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -543,7 +543,7 @@ Output variables:
 - Net present costs of coastal protection at time 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_slr10_eq_npvvp 
+.. autofunction:: WILIAM.output.fund_slr10_eq_npvvp 
 
 SLR.11 : Net present cost of wetland loss
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -572,7 +572,7 @@ Output variables:
 - Net present value of wetland loss at time 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_slr11_eq_npvvw 
+.. autofunction:: WILIAM.output.fund_slr11_eq_npvvw 
 
 SLR.12 : Net present cost of dryland loss
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -598,7 +598,7 @@ Output variables:
 - Net present value of dryland loss at time 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_slr12_eq_npvvd 
+.. autofunction:: WILIAM.output.fund_slr12_eq_npvvd 
 
 SLR.1 : Potential cumulative dryland impact
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -618,7 +618,7 @@ Input variables:
 
 Output variables:
 
-.. autofunction:: WILIAM.WILIAM.fund_slr1_eq_slr_dryland_loss 
+.. autofunction:: WILIAM.output.fund_slr1_eq_slr_dryland_loss 
 
 SLR.2 : Potential dryland loss without protection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -637,7 +637,7 @@ Output variables:
 - Potential dryland loss without protection 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_slr2_eq_potential_dryland_loss 
+.. autofunction:: WILIAM.output.fund_slr2_eq_potential_dryland_loss 
 
 SLR.3 : Actual dryland loss in the current year
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -656,7 +656,7 @@ Output variables:
 - Dryland loss in year 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_slr3_eq_actual_dryland_loss 
+.. autofunction:: WILIAM.output.fund_slr3_eq_actual_dryland_loss 
 
 SLR.4 : Actual cumulative dryland loss
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -675,7 +675,7 @@ Output variables:
 - Actual cumulative dryland loss 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_slr4_eq_actual_cumulative_dryland_lost 
+.. autofunction:: WILIAM.output.fund_slr4_eq_actual_cumulative_dryland_lost 
 
 SLR.5 : Value of dryland
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -700,7 +700,7 @@ Output variables:
 - Unit value of dryland 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_slr5_eq_dryland_value 
+.. autofunction:: WILIAM.output.fund_slr5_eq_dryland_value 
 
 SLR.6 : Wetland loss
 ~~~~~~~~~~~~~~~~~~~~
@@ -723,7 +723,7 @@ Output variables:
 - Wetland loss at time 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_slr6_eq_wetland_loss 
+.. autofunction:: WILIAM.output.fund_slr6_eq_wetland_loss 
 
 SLR.7 : Cumulative wetland loss
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -743,7 +743,7 @@ Output variables:
 - Cumulative wetland loss at time 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_slr7_eq_cumulative_wetland_loss 
+.. autofunction:: WILIAM.output.fund_slr7_eq_cumulative_wetland_loss 
 
 SLR.8 : Wetland value
 ~~~~~~~~~~~~~~~~~~~~~
@@ -771,7 +771,7 @@ Output variables:
 - Wetland value at time 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_slr8_eq_wetland_value 
+.. autofunction:: WILIAM.output.fund_slr8_eq_wetland_value 
 
 TS.1 : Extreme weather : tropical storms damage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -797,7 +797,7 @@ Output variables:
 - Damage due to tropical storms in region r at time t 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_ts1_eq_tropical_storms_damages 
+.. autofunction:: WILIAM.output.fund_ts1_eq_tropical_storms_damages 
 
 TS.2 : Extreme weather : tropical storm mortality
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -823,7 +823,7 @@ Output variables:
 - Mortality due to tropical storms in region r at time t 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_ts2_eq_tropical_storms_mortality 
+.. autofunction:: WILIAM.output.fund_ts2_eq_tropical_storms_mortality 
 
 W.1 : Water resources impact
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -850,5 +850,5 @@ Output variables:
 - Change in water resources 
 
 
-.. autofunction:: WILIAM.WILIAM.fund_w1_eq_change_in_water_resources 
+.. autofunction:: WILIAM.output.fund_w1_eq_change_in_water_resources 
 
