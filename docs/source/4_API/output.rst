@@ -1,5 +1,5 @@
 Damage functions
-===============
+================
 
 DICE 2023
 ---------
@@ -124,8 +124,8 @@ Input variables:
 - Time
 - Region
 - Change in regional mean temperature
-- Parameter related to warming of 2.5°C 
-- Parameter related to warming of 3.2°C 
+- Parameter related to warming of 2.5ï¿½C 
+- Parameter related to warming of 3.2ï¿½C 
 
 Output variables:
 
