@@ -1485,10 +1485,10 @@ def al_price():
     depends_on={
         "time": 1,
         "initial_al_price": 1,
-        "coefficients_al_price_economy": 3,
         "maximum_al_price": 1,
-        "al_available_delayed": 2,
+        "coefficients_al_price_economy": 3,
         "al_demand": 2,
+        "al_available_delayed": 2,
     },
 )
 def al_price_economy():
@@ -1635,8 +1635,8 @@ def al_price_historical():
     depends_on={
         "switch_mat2eco_al_price": 1,
         "price_transformation": 1,
-        "al_base_price_2006": 1,
         "estimated_price_with_tax_metals": 1,
+        "al_base_price_2006": 1,
     },
 )
 def al_price_index_economy():
@@ -1712,8 +1712,8 @@ _integ_al_profit_delay = Integ(
     comp_subtype="Normal",
     depends_on={
         "al_profit": 5,
-        "coefficients_al_profit_effect_on_mining_s_curve": 3,
         "coefficients_al_profit_effect_on_mining_logistic": 2,
+        "coefficients_al_profit_effect_on_mining_s_curve": 3,
     },
 )
 def al_profit_effect_on_mining():
@@ -2548,8 +2548,8 @@ _ext_data_historical_al_price = ExtData(
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "initial_output_real_materials": 2,
         "al_demand_historical_world_7": 1,
+        "initial_output_real_materials": 2,
         "al_demand_base_year": 1,
     },
 )

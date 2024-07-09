@@ -138,8 +138,8 @@ _delayfixed_auxiliary_pe_gdp_intensity = DelayFixed(
     depends_on={
         "protra_to_allocated": 1,
         "unit_conversion_twh_ej": 1,
-        "protra_operative_capacity_stock_selected": 1,
         "unit_conversion_hours_year": 1,
+        "protra_operative_capacity_stock_selected": 1,
     },
 )
 def cf_power_system():
@@ -485,7 +485,7 @@ def co2e_intensity_of_final_energy_1r():
     subscripts=["REGIONS 9 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "fe_gdp_intensity": 1, "fe_gdp_intensity_until_2015": 1},
+    depends_on={"time": 1, "fe_gdp_intensity_until_2015": 1, "fe_gdp_intensity": 1},
 )
 def cumulative_fe_gdp_intensity_change_from_2015():
     """
@@ -506,7 +506,7 @@ def cumulative_fe_gdp_intensity_change_from_2015():
     subscripts=["REGIONS 9 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "pe_gdp_intensity_until_2015": 1, "pe_gdp_intensity": 1},
+    depends_on={"time": 1, "pe_gdp_intensity": 1, "pe_gdp_intensity_until_2015": 1},
 )
 def cumulative_pe_gdp_intensity_change_from_2015():
     """
@@ -751,8 +751,8 @@ def ghg_emissions_all_sectors():
     comp_subtype="Normal",
     depends_on={
         "ghg_emissions_all_sectors": 1,
-        "households_end_use_energy_emissions_9r": 1,
         "unit_conversion_mt_gt": 1,
+        "households_end_use_energy_emissions_9r": 1,
     },
 )
 def ghg_emissions_sectors_and_households():
@@ -1405,8 +1405,8 @@ def share_fe_heat_res_vs_total_heat():
     comp_subtype="Normal",
     depends_on={
         "ti_by_proref_and_commodity": 4,
-        "share_to_elec_res_vs_total_elec": 1,
         "to_h2_liquids_based_fuel": 2,
+        "share_to_elec_res_vs_total_elec": 1,
     },
 )
 def share_fe_liquid_res_vs_total_liquid():

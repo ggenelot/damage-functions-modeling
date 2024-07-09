@@ -179,9 +179,9 @@ def deaths():
         "time": 2,
         "emigrations": 3,
         "historical_shares_migration": 2,
-        "start_year_migrations_sp": 1,
-        "switch_migration_sp": 1,
         "shares_emigration_sp": 1,
+        "switch_migration_sp": 1,
+        "start_year_migrations_sp": 1,
     },
 )
 def emigration_distribution():
@@ -291,9 +291,9 @@ def european_births():
     depends_on={
         "time": 3,
         "historical_fertility_rates_2005_2010": 1,
-        "historical_fertility_rates_2015_2020": 2,
         "historical_fertility_rates_2010_2015": 1,
         "ramp_scenario_fertility_rates": 1,
+        "historical_fertility_rates_2015_2020": 2,
     },
 )
 def fertility_rates():
@@ -772,9 +772,9 @@ def retired_population():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_fertility_rates": 1,
+        "target_year_fertility_rates_sp": 1,
         "target_scenario_fertility_rates": 1,
         "historical_fertility_rates_2015_2020": 1,
-        "target_year_fertility_rates_sp": 1,
     },
 )
 def slope_scenario_fertility_rates():

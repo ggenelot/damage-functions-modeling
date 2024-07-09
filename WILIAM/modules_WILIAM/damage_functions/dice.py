@@ -66,8 +66,8 @@ def dice_6_emissions_control_rate():
     comp_subtype="Normal",
     depends_on={
         "dice_6_abatment_theta_1": 1,
-        "dice_6_abatment_theta_2": 1,
         "dice_6_emissions_control_rate": 1,
+        "dice_6_abatment_theta_2": 1,
     },
 )
 def dice_6_eq_abatment_function():

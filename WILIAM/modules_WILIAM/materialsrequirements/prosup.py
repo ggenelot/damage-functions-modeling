@@ -196,10 +196,10 @@ def materials_extracted_for_prosup_from_2015():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 5,
-        "unit_conversion_kg_mt": 10,
-        "unit_conversion_mw_tw": 10,
-        "material_intensity_new_capacity_overgrids": 10,
         "initial_protra_capacity_expansion": 5,
+        "unit_conversion_mw_tw": 10,
+        "unit_conversion_kg_mt": 10,
+        "material_intensity_new_capacity_overgrids": 10,
         "protra_capacity_expansion_selected": 5,
     },
 )
