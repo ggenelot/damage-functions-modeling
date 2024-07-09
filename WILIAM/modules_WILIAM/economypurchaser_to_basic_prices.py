@@ -147,9 +147,9 @@ def final_demand_domestic_basic_prices():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
+        "initial_price_of_output": 1,
         "price_transformation": 2,
         "mdollars_per_mdollars_2015": 2,
-        "initial_price_of_output": 1,
         "final_demand_domestic_basic_prices": 2,
         "price_output": 1,
     },
@@ -260,8 +260,8 @@ def final_demand_imports_basic_prices():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
-        "final_demand_imports_in_purchaser_prices": 2,
         "initial_import_shares_origin_final_demand": 1,
+        "final_demand_imports_in_purchaser_prices": 2,
         "import_shares_origin_final_demand": 1,
     },
 )
@@ -290,10 +290,10 @@ def final_demand_imports_by_origin_in_purchaser_prices():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
-        "price_transformation": 2,
-        "mdollars_per_mdollars_2015": 2,
         "initial_price_of_output": 1,
+        "price_transformation": 2,
         "final_demand_imports_basic_prices": 2,
+        "mdollars_per_mdollars_2015": 2,
         "price_output": 1,
     },
 )
@@ -402,14 +402,14 @@ def final_demand_total_in_basic_prices_real():
     depends_on={
         "time": 1,
         "initial_final_demand_at_purchaser_prices_total": 4,
-        "delayed_ts_final_demand_total_in_purchaser_prices": 1,
         "delayed_ts_gross_domestic_product_growth": 1,
+        "delayed_ts_final_demand_total_in_purchaser_prices": 1,
         "government_consumption_purchaser_prices": 1,
         "switch_eco_government": 1,
         "gross_fixed_capital_formation_by_good": 1,
         "switch_eco_investment": 1,
-        "total_households_consumption_purchaser_prices": 1,
         "switch_eco_households": 1,
+        "total_households_consumption_purchaser_prices": 1,
     },
 )
 def final_demand_total_in_purchaser_prices():

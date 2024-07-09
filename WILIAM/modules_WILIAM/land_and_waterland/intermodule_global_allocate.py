@@ -64,8 +64,8 @@ def availability_of_crops_for_food():
     depends_on={
         "time": 1,
         "time_historical_data_land_module": 1,
-        "wood_demanded_for_energy_converted_to_tonnes": 1,
         "forestry_products_available_for_energy": 1,
+        "wood_demanded_for_energy_converted_to_tonnes": 1,
     },
 )
 def availability_of_forestry_products_for_energy():

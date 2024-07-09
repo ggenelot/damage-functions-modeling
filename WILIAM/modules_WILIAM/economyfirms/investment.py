@@ -139,10 +139,10 @@ def change_capital_productivity():
         "switch_climate_change_damage": 1,
         "switch_eco_climate_change_damage_capital": 1,
         "switch_eco_investment": 1,
-        "climate_change_incremental_damage_rate_to_capital_stock": 1,
         "climate_change_incremental_damage_rate_to_capital_stock_extrapolations_included": 1,
         "select_climate_change_impacts_sensitivity_sp": 1,
         "real_capital_stock": 1,
+        "climate_change_incremental_damage_rate_to_capital_stock": 1,
     },
 )
 def climate_change_damage_on_capital_stock():
@@ -226,9 +226,9 @@ def climate_change_incremental_damage_rate_to_capital_stock_extrapolations_inclu
     depends_on={
         "switch_eco_investment": 1,
         "initial_price_gfcf": 1,
+        "consumption_fixed_capital_real": 2,
         "price_transformation": 2,
         "mdollars_per_mdollars_2015": 2,
-        "consumption_fixed_capital_real": 2,
         "price_gfcf": 1,
     },
 )
@@ -306,9 +306,9 @@ _sampleiftrue_delayed_ts_output_real_until_2015 = SampleIfTrue(
     comp_subtype="Smooth",
     depends_on={
         "switch_eco_investment": 1,
-        "inital_private_gfcf_to_total_gfcf": 2,
         "net_fixed_capital_formation_to_desired_real_capital": 2,
         "_smooth_desired_private_net_fixed_capital_formation_real": 1,
+        "inital_private_gfcf_to_total_gfcf": 2,
         "_smooth_desired_private_net_fixed_capital_formation_real_1": 1,
     },
     other_deps={
@@ -449,9 +449,9 @@ _sampleiftrue_government_gross_fixed_capital_formation_real_until_2015 = SampleI
     comp_subtype="Normal",
     depends_on={
         "switch_eco_investment": 1,
-        "gross_fixed_capital_formation_real": 2,
         "price_transformation": 2,
         "mdollars_per_mdollars_2015": 2,
+        "gross_fixed_capital_formation_real": 2,
         "initial_price_of_output": 1,
         "gross_fixed_capital_formation_structure": 2,
         "price_output": 1,
@@ -494,13 +494,13 @@ def gross_fixed_capital_formation_by_good():
         "switch_eco_investment": 2,
         "desired_private_net_fixed_capital_formation_real": 3,
         "capital_depreciation": 3,
-        "inital_private_gfcf_to_total_gfcf": 3,
         "government_gross_fixed_capital_formation_real_until_2015": 1,
+        "inital_private_gfcf_to_total_gfcf": 3,
         "private_gfcf_to_replace_climate_damage": 3,
         "government_gross_fixed_capital_formation_real": 2,
         "delayed_ts_gfcf_protra_sectors_35r": 1,
-        "switch_nrg2eco_investment_costs": 1,
         "switch_economy": 1,
+        "switch_nrg2eco_investment_costs": 1,
     },
 )
 def gross_fixed_capital_formation_real():

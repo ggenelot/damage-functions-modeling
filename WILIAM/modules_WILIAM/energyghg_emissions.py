@@ -171,10 +171,10 @@ def buildings_ghg_emissions_end_use_energy_by_fe_35r():
     comp_subtype="Normal",
     depends_on={
         "passenger_transport_emissions_end_use_energy": 7,
-        "energy_passenger_transport_consumption": 4,
         "ghg_intensity_emissions_by_fe_35r": 4,
         "unit_conversion_mj_ej": 4,
         "unit_conversion_kg_mt": 4,
+        "energy_passenger_transport_consumption": 4,
     },
 )
 def co2_emissions_by_passenger_transport_mode_and_power_train_35r():
@@ -923,7 +923,7 @@ _ext_constant_emission_factors_off_road_transportation = ExtConstant(
     units="kg/TJ",
     subscripts=["TRANSPORT POWER TRAIN I", "PRIVATE TRANSPORT I", "GHG I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={"__external__": "_ext_constant_emission_factors_private_transport"},
 )
 def emission_factors_private_transport():
@@ -1000,7 +1000,7 @@ _ext_constant_emission_factors_private_transport.add(
     units="kg/TJ",
     subscripts=["TRANSPORT POWER TRAIN I", "PUBLIC TRANSPORT I", "GHG I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={"__external__": "_ext_constant_emission_factors_public_transport"},
 )
 def emission_factors_public_transport():
@@ -1123,7 +1123,7 @@ _ext_constant_emission_factors_road_transportation = ExtConstant(
     units="kg/TJ",
     subscripts=["NRG PROTRA I", "NRG TI I", "GHG I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={"__external__": "_ext_constant_emission_factors_stationary_combustion"},
 )
 def emission_factors_stationary_combustion():
@@ -1525,8 +1525,8 @@ def ghg_all_emissions_eu27():
         "unit_conversion_t_mt": 2,
         "unit_conversion_mt_ej": 2,
         "surface_coal_mining_emission_factors": 1,
-        "world_pe_by_commodity": 1,
         "pe_by_commodity": 1,
+        "world_pe_by_commodity": 1,
     },
 )
 def ghg_coal_extraction_emissions():
@@ -1576,7 +1576,7 @@ def ghg_coal_extraction_emissions():
     units="kg/TJ",
     subscripts=["NRG FE I", "GHG I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_ghg_emission_factors_residential_stationary_combustion"
     },
@@ -1622,7 +1622,7 @@ _ext_constant_ghg_emission_factors_residential_stationary_combustion = ExtConsta
     units="kg/TJ",
     subscripts=["NRG FE I", "GHG I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_ghg_emission_factors_stationary_combustion"
     },
@@ -1833,8 +1833,8 @@ def ghg_emissions_all_energy_chain_9r():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 1,
-        "base_output_real": 1,
         "ghg_emissions_all_energy_chain_per_unit_of_sector_output_35r": 2,
+        "base_output_real": 1,
         "unit_conversion_mt_t": 2,
         "output_real": 1,
     },
@@ -1893,9 +1893,9 @@ def ghg_emissions_all_energy_chain_per_unit_of_sector_output_35r():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 2,
-        "base_output_real": 2,
         "unit_conversion_t_mt": 4,
         "ghg_emissions_all_energy_chain_9r": 4,
+        "base_output_real": 2,
         "output_real_9r": 2,
     },
 )
@@ -4069,8 +4069,8 @@ def ghg_extraction_emissions():
         "unit_conversion_g_mt": 2,
         "unit_conversion_j_m3_nat_gas": 1,
         "emission_factors_coal_to_gas_production": 1,
-        "unit_conversion_kg_mt": 1,
         "emission_factors_gas_to_liquid_production": 1,
+        "unit_conversion_kg_mt": 1,
         "unit_conversion_tj_ej": 1,
     },
 )
@@ -4394,8 +4394,8 @@ def ghg_oil_extraction_emissions():
         "private_transport_ghg_emissions_35r": 5,
         "unit_conversion_kg_mt": 10,
         "ghg_emission_factors_stationary_combustion": 5,
-        "final_energy_demand_by_sector_and_fe": 5,
         "buildings_ghg_emissions_end_use_energy_by_fe_35r": 5,
+        "final_energy_demand_by_sector_and_fe": 5,
     },
 )
 def ghg_protra_emissions_by_fe_35r():

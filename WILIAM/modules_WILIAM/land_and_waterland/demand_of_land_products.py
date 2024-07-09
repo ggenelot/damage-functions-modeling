@@ -101,9 +101,9 @@ def crops_demanded_for_energy_world():
         "time": 1,
         "time_historical_data_land_module": 1,
         "exo_pe_by_commodity_agriculture_products": 2,
+        "adjustment_pe_by_commodity_agricultural": 1,
         "switch_landwater": 1,
         "pe_by_commodity_dem": 1,
-        "adjustment_pe_by_commodity_agricultural": 1,
     },
 )
 def energy_demanded_from_agriculture_products():
@@ -252,8 +252,8 @@ def land_products_demanded():
         "crops_demanded_for_energy": 11,
         "land_products_demanded_for_food_before_losses": 10,
         "percent_of_land_products_for_other_uses": 10,
-        "wood_demanded_for_energy_converted_to_tonnes": 1,
         "roundwood_demanded_for_industry": 1,
+        "wood_demanded_for_energy_converted_to_tonnes": 1,
         "residues_of_forests_demanded_for_industry": 1,
     },
 )

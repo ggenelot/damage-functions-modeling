@@ -242,10 +242,10 @@ _ext_constant_switch_nrg_hydrogen_industrial_demand = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "select_non_energy_use_intensities_sector": 1,
-        "non_energy_use_intensities_by_sector_and_fe": 1,
+        "historical_non_energy_use_intensities_by_sector_and_fe": 1,
         "historical_growth_non_energy_use_intensity_by_fe": 3,
         "time": 1,
-        "historical_non_energy_use_intensities_by_sector_and_fe": 1,
+        "non_energy_use_intensities_by_sector_and_fe": 1,
     },
 )
 def variation_non_energy_use_intensity():

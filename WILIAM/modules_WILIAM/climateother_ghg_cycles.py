@@ -970,9 +970,9 @@ def time_const_for_ch4():
             "initial": {},
             "step": {
                 "flux_c_from_permafrost_release": 1,
+                "unit_conversion_mt_gt": 1,
                 "unit_conversion_ch4_c": 1,
                 "ch4_emissions_from_permafrost_and_clathrate": 1,
-                "unit_conversion_mt_gt": 1,
             },
         }
     },

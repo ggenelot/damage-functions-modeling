@@ -12,7 +12,7 @@ warnings.filterwarnings('ignore', category=RuntimeWarning)
 warnings.filterwarnings('ignore', category=UserWarning)
 
 # Load model
-model = pysd.read_vensim('WILIAM_v1.3/WILIAM.mdl',
+model = pysd.read_vensim('WILIAM/WILIAM.mdl',
                          split_views=True, 
                          subview_sep=["."], 
                          errors='ignore')
@@ -63,7 +63,7 @@ for index, run in runs.iterrows():
                     output_file=f'results/results_run_{run["name"]}.nc'
                     )
 
-    print(f'Done running model : {run["name"]}')
+    #print(f'Done running model : {run["name"]}')
 warnings.resetwarnings()
 
 print('Done every run')
