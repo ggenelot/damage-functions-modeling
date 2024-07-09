@@ -242,10 +242,10 @@ def total_recycled_materials_roe():
     depends_on={
         "time": 1,
         "historical_variation_materials_consumption_roe": 1,
-        "annual_gdp_real_1r_growth": 1,
-        "slope_demand_material_roe_per_gdp": 1,
-        "matrix_unit_prefixes": 2,
         "demand_projection_materials_roe": 1,
+        "matrix_unit_prefixes": 2,
+        "slope_demand_material_roe_per_gdp": 1,
+        "annual_gdp_real_1r_growth": 1,
     },
 )
 def variation_demand_materials_roe():

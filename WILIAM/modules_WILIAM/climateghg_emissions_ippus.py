@@ -534,9 +534,9 @@ def co2_ippus_emissions_9r():
         "co2_cement_production_emissions_by_gdp": 1,
         "co2_lime_production_emissions_by_gdp": 1,
         "unit_conversion_kt_gt": 4,
-        "co2_non_energy_products_from_fuels_and_solvent_use_emissions_by_gdp": 1,
         "co2_other_process_uses_of_carbonates_emissions_by_gdp": 1,
         "co2_chemical_industry_emissions_by_gdp": 1,
+        "co2_non_energy_products_from_fuels_and_solvent_use_emissions_by_gdp": 1,
         "co2_metal_industry_emissions_by_gdp": 1,
         "co2_glass_production_emissions_by_gdp": 1,
     },
@@ -1270,9 +1270,9 @@ def rest_of_ghg_ippus_emissions_by_gdp():
     comp_subtype="Normal",
     depends_on={
         "rest_of_ghg_ippus_emissions_historical_data": 1,
-        "select_gwp_time_frame_sp": 1,
         "gwp_20_year": 1,
         "gwp_100_year": 1,
+        "select_gwp_time_frame_sp": 1,
         "unit_conversion_tco2eq_gtco2eq": 1,
     },
 )

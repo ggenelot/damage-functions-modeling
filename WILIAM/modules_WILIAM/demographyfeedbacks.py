@@ -175,13 +175,13 @@ _delay_delayed_historical_life_expectancy_at_birth = Delay(
     comp_subtype="Normal",
     depends_on={
         "historical_life_expectancy_at_birth": 1,
-        "annual_variation_regional_average_schooling_time": 1,
-        "coefficient_feedback_health_expenditure_to_life_expectancy_at_birth": 1,
+        "coefficient_feedback_co2_emissions_to_life_expectancy_at_birth": 1,
         "coefficient_feedback_education_expenditure_to_life_expectancy_at_birth": 1,
-        "maximum_increase_life_expectancy_at_birth_by_health_expenditure": 1,
+        "coefficient_feedback_health_expenditure_to_life_expectancy_at_birth": 1,
+        "annual_variation_regional_average_schooling_time": 1,
         "annual_variation_government_expenditure": 1,
         "annual_variation_co2_emissions": 1,
-        "coefficient_feedback_co2_emissions_to_life_expectancy_at_birth": 1,
+        "maximum_increase_life_expectancy_at_birth_by_health_expenditure": 1,
     },
 )
 def endogenous_feedbacks_to_life_expectancy_at_birth():
@@ -214,8 +214,8 @@ def endogenous_feedbacks_to_life_expectancy_at_birth():
     depends_on={
         "objective_life_expectancy_at_birth_sp": 2,
         "life_expectancy_at_birth_minimums_sp": 1,
-        "life_expectancy_at_birth_maximums_sp": 1,
         "life_expectancy_at_birth_averages_sp": 1,
+        "life_expectancy_at_birth_maximums_sp": 1,
     },
 )
 def final_value_life_expectancy_at_birth():

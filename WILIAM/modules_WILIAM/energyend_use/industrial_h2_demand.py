@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 1,
-        "fertilizers_demanded": 1,
         "fertilizer_to_ammonia_intensity": 1,
+        "fertilizers_demanded": 1,
         "ammonia_demand_2005": 1,
     },
 )

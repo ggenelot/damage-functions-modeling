@@ -162,8 +162,8 @@ def average_availability_of_crops_for_food_world():
         "year_initial_land_products_global_pool_sp": 2,
         "time": 2,
         "year_final_land_products_global_pool_sp": 2,
-        "objective_land_products_global_pool_sp": 1,
         "initial_share_of_production_from_smallholders": 1,
+        "objective_land_products_global_pool_sp": 1,
     },
 )
 def change_of_the_share_of_land_products_from_smallholders():
@@ -683,8 +683,8 @@ def land_products_distributed_from_pool():
     comp_subtype="Normal",
     depends_on={
         "land_products_demanded": 2,
-        "land_products_available": 2,
         "share_of_land_products_from_smallholders": 2,
+        "land_products_available": 2,
     },
 )
 def land_products_protected_from_global_pool():

@@ -8,34 +8,34 @@ import numpy as np
 import xarray as xr
 
 from pysd.py_backend.functions import (
-    integer,
-    vector_sort_order,
-    vector_reorder,
-    ramp,
-    vmax,
-    vmin,
-    get_time_value,
-    modulo,
     active_initial,
-    invert_matrix,
-    zidz,
-    vector_select,
-    xidz,
-    if_then_else,
-    prod,
+    vmax,
     step,
+    integer,
+    vmin,
+    modulo,
+    if_then_else,
     sum,
+    invert_matrix,
+    vector_sort_order,
+    zidz,
+    xidz,
+    vector_select,
+    get_time_value,
+    vector_reorder,
+    prod,
+    ramp,
 )
 from pysd.py_backend.statefuls import (
-    Integ,
-    Delay,
-    Initial,
     Smooth,
     DelayFixed,
+    Delay,
+    Initial,
+    Integ,
     SampleIfTrue,
 )
-from pysd.py_backend.external import ExtLookup, ExtConstant, ExtData
-from pysd.py_backend.utils import load_modules, load_model_data
+from pysd.py_backend.external import ExtData, ExtLookup, ExtConstant
+from pysd.py_backend.utils import load_model_data, load_modules
 from pysd.py_backend.allocation import allocate_available, allocate_by_priority
 from pysd import Component
 
@@ -733,11 +733,11 @@ _ext_constant_initial_passenger_transport_demand_share_exogenous.add(
         "time": 4,
         "initial_year_model_explorer": 7,
         "initial_passenger_transport_demand_share_exogenous": 7,
-        "scenario_passenger_transport_demand_modal_share_option_1_me": 1,
-        "select_passenger_transport_demand_modal_share_me": 3,
-        "final_year_model_explorer": 6,
-        "scenario_passenger_transport_demand_modal_share_option_3_me": 1,
         "scenario_passenger_transport_demand_modal_share_option_2_me": 1,
+        "final_year_model_explorer": 6,
+        "select_passenger_transport_demand_modal_share_me": 3,
+        "scenario_passenger_transport_demand_modal_share_option_1_me": 1,
+        "scenario_passenger_transport_demand_modal_share_option_3_me": 1,
     },
 )
 def model_explorer_passenger_transport_demand_modal_share():
@@ -818,10 +818,10 @@ def model_explorer_passenger_transport_demand_modal_share():
     depends_on={
         "time": 4,
         "initial_year_model_explorer": 7,
-        "scenario_passenger_transport_demand_option_3_me": 1,
-        "scenario_passenger_transport_demand_option_1_me": 1,
         "final_year_model_explorer": 6,
+        "scenario_passenger_transport_demand_option_1_me": 1,
         "scenario_passenger_transport_demand_option_2_me": 1,
+        "scenario_passenger_transport_demand_option_3_me": 1,
         "select_reduction_passenger_transport_demand_me": 3,
     },
 )

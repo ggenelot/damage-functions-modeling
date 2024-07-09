@@ -88,10 +88,10 @@ _delayfixed_delayed_ts_import_shares_intermediates = DelayFixed(
     depends_on={
         "switch_fixed_import_shares": 1,
         "initial_import_shares_final_demand": 2,
+        "delayed_ts_import_shares_final_demand": 4,
+        "beta_import_shares_final_demand": 1,
         "epsilon_import_shares_final_demand": 1,
         "delayed_ts_price_ratio_households": 1,
-        "beta_import_shares_final_demand": 1,
-        "delayed_ts_import_shares_final_demand": 4,
         "constant_import_shares_final_demand": 1,
     },
 )
@@ -231,11 +231,11 @@ def import_shares_final_demand_constrained():
     depends_on={
         "switch_fixed_import_shares": 1,
         "initial_import_shares_intermediates": 4,
-        "delayed_ts_import_shares_intermediates": 4,
-        "delayed_ts_price_ratio_sectors": 1,
-        "epsilon_import_shares_intermediates": 1,
-        "constant_import_shares_intermediates": 1,
         "beta_import_shares_intermediates": 1,
+        "constant_import_shares_intermediates": 1,
+        "epsilon_import_shares_intermediates": 1,
+        "delayed_ts_price_ratio_sectors": 1,
+        "delayed_ts_import_shares_intermediates": 4,
     },
 )
 def import_shares_intermediates():

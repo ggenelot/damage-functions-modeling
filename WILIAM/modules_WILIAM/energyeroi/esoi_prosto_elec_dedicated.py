@@ -86,9 +86,9 @@ def esoist_phs():
     depends_on={
         "cf_prosto": 1,
         "prosto_dedicated_lifetime": 1,
-        "unit_conversion_wh_we": 1,
-        "unit_conversion_j_wh": 1,
         "matrix_unit_prefixes": 1,
+        "unit_conversion_j_wh": 1,
+        "unit_conversion_wh_we": 1,
         "esoist_initial_phs": 1,
     },
 )
@@ -145,8 +145,8 @@ def fenust_intensity_stationary_batteries():
     comp_subtype="Normal",
     depends_on={
         "switch_nrg_dynamic_eroist": 2,
-        "prosto_dedicated_capacity_expansion": 2,
         "fenust_intensity_phs_exogenous": 1,
+        "prosto_dedicated_capacity_expansion": 2,
         "fenust_intensity_stationary_batteries": 1,
     },
 )

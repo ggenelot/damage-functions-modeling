@@ -119,8 +119,8 @@ def check_shares_between_two_methods_of_calculation_of_sea_level_rise():
     comp_subtype="Normal",
     depends_on={
         "adjusted_sensitivity_of_sea_level_rise_to_temperature": 1,
-        "adjusted_temperature_change_from_preindustrial_for_slr_estimation": 1,
         "reference_temperature": 1,
+        "adjusted_temperature_change_from_preindustrial_for_slr_estimation": 1,
     },
 )
 def equilibrium_change_in_sea_level():

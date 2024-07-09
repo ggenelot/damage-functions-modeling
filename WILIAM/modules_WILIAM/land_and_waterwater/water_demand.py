@@ -256,10 +256,10 @@ def effective_blue_water_demanded_for_agriculture():
     comp_subtype="Normal",
     depends_on={
         "switch_landwater": 1,
-        "gdp_real_35r_until_2019": 1,
-        "gdp_for_water": 1,
         "gdp_by_oekstra_for_water": 1,
         "gdp_oekstra_2019": 1,
+        "gdp_for_water": 1,
+        "gdp_real_35r_until_2019": 1,
     },
 )
 def factor_of_economic_output_for_water():
@@ -361,8 +361,8 @@ _integ_green_water_region_sector = Integ(
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "initial_blue_water_region_sect": 1,
         "variation_linear_blue_water_region_sect": 1,
+        "initial_blue_water_region_sect": 1,
     },
 )
 def historical_blue_water_growth_trends():
@@ -403,8 +403,8 @@ def historical_blue_water_growth_trends():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "variation_linear_green_water_region_sect": 1,
         "initial_green_water_region_sect": 1,
+        "variation_linear_green_water_region_sect": 1,
     },
 )
 def historical_green_water_of_sectors_by_region():
@@ -443,8 +443,8 @@ def historical_green_water_of_sectors_by_region():
     comp_subtype="Normal",
     depends_on={
         "switch_water_efficiency_sp": 2,
-        "objective_water_efficiency_sp": 1,
         "year_initial_water_efficiency_sp": 2,
+        "objective_water_efficiency_sp": 1,
         "year_final_water_efficiency_sp": 2,
         "time": 2,
     },
