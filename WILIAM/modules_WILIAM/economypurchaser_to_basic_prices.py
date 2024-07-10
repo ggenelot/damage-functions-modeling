@@ -147,10 +147,10 @@ def final_demand_domestic_basic_prices():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
-        "final_demand_domestic_basic_prices": 2,
         "price_transformation": 2,
         "mdollars_per_mdollars_2015": 2,
         "initial_price_of_output": 1,
+        "final_demand_domestic_basic_prices": 2,
         "price_output": 1,
     },
 )
@@ -187,8 +187,8 @@ def final_demand_domestic_in_basic_prices_real():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
-        "initial_import_shares_final_demand": 1,
         "final_demand_total_in_purchaser_prices_exc_households_ghg_taxes": 2,
+        "initial_import_shares_final_demand": 1,
         "import_shares_final_demand_constrained": 1,
     },
 )
@@ -260,8 +260,8 @@ def final_demand_imports_basic_prices():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
-        "initial_import_shares_origin_final_demand": 1,
         "final_demand_imports_in_purchaser_prices": 2,
+        "initial_import_shares_origin_final_demand": 1,
         "import_shares_origin_final_demand": 1,
     },
 )
@@ -290,9 +290,9 @@ def final_demand_imports_by_origin_in_purchaser_prices():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
-        "final_demand_imports_basic_prices": 2,
         "price_transformation": 2,
         "mdollars_per_mdollars_2015": 2,
+        "final_demand_imports_basic_prices": 2,
         "initial_price_of_output": 1,
         "price_output": 1,
     },
@@ -354,8 +354,8 @@ def final_demand_imports_in_basic_prices_real_by_component():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
-        "initial_import_shares_final_demand": 1,
         "final_demand_total_in_purchaser_prices_exc_households_ghg_taxes": 2,
+        "initial_import_shares_final_demand": 1,
         "import_shares_final_demand_constrained": 1,
     },
 )
@@ -507,8 +507,8 @@ def final_demand_total_in_purchaser_prices():
     comp_subtype="Normal",
     depends_on={
         "final_demand_total_in_purchaser_prices": 2,
-        "ghg_emissions_households_coicop_35_r": 1,
         "consumption_structure_coicop": 1,
+        "ghg_emissions_households_coicop_35_r": 1,
         "co2_tax_rate_households": 1,
     },
 )

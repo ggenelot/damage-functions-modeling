@@ -117,8 +117,8 @@ def length_per_mw_panel_to_inverter():
         "material_intensity_pv_cells": 2,
         "material_intensity_pv_panel_frame": 2,
         "material_intensity_ratio_om_pv_panels": 2,
-        "material_intensity_pv_inverter": 2,
         "inverter_pv_lifetime": 4,
+        "material_intensity_pv_inverter": 2,
         "protra_lifetime": 4,
     },
 )
@@ -222,8 +222,8 @@ _integ_material_intensity_pv_cells = Integ(
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "material_intensity_pv_subtechnology_panel_frame": 2,
         "initial_area_pv_panel_per_power": 1,
+        "material_intensity_pv_subtechnology_panel_frame": 2,
         "area_pv_panel_per_power": 1,
     },
 )
@@ -252,8 +252,8 @@ def material_intensity_pv_panel_frame():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "material_requirements_pv_mounting_structures_baseline": 2,
         "initial_area_pv_panel_per_power": 1,
+        "material_requirements_pv_mounting_structures_baseline": 2,
         "area_pv_panel_per_power": 1,
     },
 )
@@ -279,8 +279,8 @@ def material_intensity_pv_panels_mounting_structures():
     depends_on={
         "length_per_mw_inverter_to_transformer": 1,
         "material_requirements_pv_wiring_land_inverter_to_transformer": 1,
-        "length_per_mw_panel_to_inverter": 1,
         "material_requirements_pv_wiring_land_panel_to_inverter": 1,
+        "length_per_mw_panel_to_inverter": 1,
     },
 )
 def pv_wiring_land_total_intensity():
@@ -305,8 +305,8 @@ def pv_wiring_land_total_intensity():
         "material_requirements_pv_wiring_building": 1,
         "length_per_mw_building_wiring": 1,
         "share_pv_installations_single_family_vs_total_households_buildings_sp": 2,
-        "material_requirements_pv_wiring_house": 1,
         "length_per_mw_house_wiring": 1,
+        "material_requirements_pv_wiring_house": 1,
     },
 )
 def pv_wiring_urban_total_intensity():

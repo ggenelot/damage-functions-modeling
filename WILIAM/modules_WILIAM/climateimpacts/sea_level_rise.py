@@ -227,7 +227,7 @@ def sea_level_rise_for_world():
     units="mm",
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "sea_level_rise": 1, "slr_in_2000": 1},
+    depends_on={"time": 1, "slr_in_2000": 1, "sea_level_rise": 1},
 )
 def sea_level_rise_from_2000():
     """

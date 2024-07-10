@@ -9812,8 +9812,8 @@ def land_use_efficiency_protra():
     depends_on={
         "select_land_use_efficiency_exogenous_protra": 2,
         "land_use_efficiency_wind_farm_area_low": 1,
-        "land_use_efficiency_wind_farm_area_medium": 1,
         "land_use_efficiency_wind_farm_area_high": 1,
+        "land_use_efficiency_wind_farm_area_medium": 1,
     },
 )
 def land_use_efficiency_wind_farm_area():

@@ -575,7 +575,7 @@ def fe_base_price_2015():
     name="Fe change grade",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"coefficients_change_grade": 9, "fe_market_feedback_price": 3},
 )
@@ -738,9 +738,9 @@ _ext_constant_fe_demand_shares = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "world_population": 1,
+        "fe_demand_shares": 2,
         "imv_iron_demand_per_person": 1,
         "global_steel_demand": 1,
-        "fe_demand_shares": 2,
         "unit_conversion_billion_to_million": 2,
         "imv_fe_demand_for_reinforcment_bars": 1,
     },
@@ -822,7 +822,7 @@ _ext_constant_fe_energy_recycling = ExtConstant(
     name="Fe energy use",
     units="(MJ/kg)*(Mt/Years)",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"coefficients_fe_energy_use": 5, "fe_mining": 5},
 )
@@ -1485,8 +1485,8 @@ def fe_market_sales():
     comp_subtype="Normal",
     depends_on={
         "fe_sent_to_recycling": 1,
-        "fe_total_mining": 1,
         "smelting_loss_yield": 1,
+        "fe_total_mining": 1,
         "imv_stainless_steel_lost_to_iron_scrap": 1,
     },
 )
@@ -1505,7 +1505,7 @@ def fe_market_supply():
     name="Fe mining",
     units="Mt/Year",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "mining_rate_drive": 4,
@@ -1933,9 +1933,9 @@ def fe_price_in():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_fe_price": 1,
-        "fe_base_price_2015": 1,
-        "estimated_price_with_tax_metals": 1,
         "price_transformation": 1,
+        "estimated_price_with_tax_metals": 1,
+        "fe_base_price_2015": 1,
     },
 )
 def fe_price_index_economy():
@@ -1973,8 +1973,8 @@ def fe_price_per_ton():
     comp_subtype="Normal",
     depends_on={
         "coefficients_fe_production_price": 3,
-        "fe_extraction_cost": 1,
         "imv_energy_price": 1,
+        "fe_extraction_cost": 1,
     },
 )
 def fe_production_price():
@@ -2364,8 +2364,8 @@ def fe_scrap_losses_aux():
     comp_subtype="Normal",
     depends_on={
         "fe_society_out": 3,
-        "imv_ss_mncrni_fraction_recycled_to_stainless_steel": 1,
         "imv_mncrni_recycled_1": 1,
+        "imv_ss_mncrni_fraction_recycled_to_stainless_steel": 1,
     },
 )
 def fe_scrapping():
@@ -2680,7 +2680,7 @@ def fe_total_mining():
     name="finding Fe",
     units="Mt/Year",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "fe_hidden_resources": 4,
@@ -10395,7 +10395,7 @@ def water_fe_extraction():
     name="water per Fe",
     units="Mt/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"coefficients_water_per_fe_grade": 5},
 )
@@ -10452,7 +10452,7 @@ _ext_constant_water_per_fe_recycled = ExtConstant(
     name="water use Fe",
     units="Mt/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"fe_mining": 5, "water_per_fe": 5},
 )

@@ -59,7 +59,7 @@ runs = pd.read_csv('run_manager.csv')
 
 rcps = ['RCP6.0', 'RCP4.5', 'RCP2.6', 'RCP8.5']
 
-forcing = pd.read_csv('rcp.csv')
+forcing = pd.read_csv('full_rcp.csv')
 
 
 

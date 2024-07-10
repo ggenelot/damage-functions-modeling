@@ -31,8 +31,8 @@ def dynesoist_prosto_elec_dedicated():
     comp_subtype="Normal",
     depends_on={
         "eroist_ini_hydro_2015": 1,
-        "cf_prosto": 1,
         "cf_protra_full_load_hours": 1,
+        "cf_prosto": 1,
     },
 )
 def esoist_initial_phs():
