@@ -55,25 +55,28 @@ runs = pd.read_csv('run_manager.csv')
 
 ## Preparing to vary the radiative forcing
 
-# Load the basic radiative forcing values
+# Load the basic radiative forcing 
 
-# ds = xr.open_dataset('results/results_run_reference.nc')
-# initial_forcing = ds['total_radiative_forcing'].to_dataframe()
-# ds.close()
+rcps = ['RCP6.0', 'RCP4.5', 'RCP2.6', 'RCP8.5']
 
+forcing = pd.read_csv('rcp.csv')
 
 
 
 # Iterate over the rows of the run manager
 for index, run in runs.iterrows():
 
-    # forcing = initial_forcing * run['forcing']
+    print("Initializing forcing...")
+    rcp = run['RCP']
+    total_forcing = forcing[rcp]
+    print("Forcing initialized")
+
 
     # Run the model
     print(f'Running model : {run["name"]}')
     run = model.run(progress=True,
-                    params={'SWITCH CLIMATE CHANGE DAMAGE': run['wiliam']
-                            #, 'total radiative forcing': forcing
+                    params={'SWITCH CLIMATE CHANGE DAMAGE': run['wiliam'], 
+                            'total radiative forcing': total_forcing
                             },
                     return_columns=output_variables,
                     final_time=run['final_time'],  
