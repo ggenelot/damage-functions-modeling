@@ -724,9 +724,13 @@
             "fund_w1_tau_parameter"
         ],
         "general": [
+            "define_tot_define_total_impact",
+            "dice_tot_dice_total_impact",
+            "dsk_tot_dsk_total_impact",
             "fund_tot_eq_fund_total_impact",
             "fund_tot_eq_moneraty_impact",
-            "fund_tot_eq_total_deaths"
+            "fund_tot_eq_total_deaths",
+            "witness_tot_witness_total_impact"
         ],
         "witness": [
             "witness_dicelike_damage_eq_dicelike_damage",

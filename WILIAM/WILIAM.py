@@ -8,35 +8,35 @@ import numpy as np
 import xarray as xr
 
 from pysd.py_backend.functions import (
-    active_initial,
-    vmax,
-    step,
-    integer,
-    vmin,
-    modulo,
     if_then_else,
-    sum,
-    invert_matrix,
-    vector_sort_order,
-    zidz,
-    xidz,
-    vector_select,
     get_time_value,
-    vector_reorder,
+    vmax,
     prod,
+    vector_reorder,
+    vmin,
+    step,
+    active_initial,
     ramp,
+    invert_matrix,
+    modulo,
+    sum,
+    xidz,
+    vector_sort_order,
+    integer,
+    vector_select,
+    zidz,
 )
 from pysd.py_backend.statefuls import (
-    Smooth,
-    DelayFixed,
-    Delay,
     Initial,
+    DelayFixed,
     Integ,
+    Smooth,
     SampleIfTrue,
+    Delay,
 )
 from pysd.py_backend.external import ExtData, ExtLookup, ExtConstant
 from pysd.py_backend.utils import load_model_data, load_modules
-from pysd.py_backend.allocation import allocate_available, allocate_by_priority
+from pysd.py_backend.allocation import allocate_by_priority, allocate_available
 from pysd import Component
 
 __pysd_version__ = "3.14.0"
@@ -733,11 +733,11 @@ _ext_constant_initial_passenger_transport_demand_share_exogenous.add(
         "time": 4,
         "initial_year_model_explorer": 7,
         "initial_passenger_transport_demand_share_exogenous": 7,
+        "select_passenger_transport_demand_modal_share_me": 3,
         "scenario_passenger_transport_demand_modal_share_option_2_me": 1,
         "final_year_model_explorer": 6,
-        "select_passenger_transport_demand_modal_share_me": 3,
-        "scenario_passenger_transport_demand_modal_share_option_1_me": 1,
         "scenario_passenger_transport_demand_modal_share_option_3_me": 1,
+        "scenario_passenger_transport_demand_modal_share_option_1_me": 1,
     },
 )
 def model_explorer_passenger_transport_demand_modal_share():
@@ -818,11 +818,11 @@ def model_explorer_passenger_transport_demand_modal_share():
     depends_on={
         "time": 4,
         "initial_year_model_explorer": 7,
+        "select_reduction_passenger_transport_demand_me": 3,
         "final_year_model_explorer": 6,
         "scenario_passenger_transport_demand_option_1_me": 1,
         "scenario_passenger_transport_demand_option_2_me": 1,
         "scenario_passenger_transport_demand_option_3_me": 1,
-        "select_reduction_passenger_transport_demand_me": 3,
     },
 )
 def model_explorer_reduction_passenger_transport_demand():
