@@ -4,6 +4,42 @@ Translated using PySD version 3.14.0
 """
 
 @component.add(
+    name='"DEFINE: TOT: DEFINE total impact"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={"define_46_eq_damage_function": 1, "gross_domestic_product_nominal": 1},
+)
+def define_tot_define_total_impact():
+    return define_46_eq_damage_function() * gross_domestic_product_nominal()
+
+
+@component.add(
+    name='"DICE: TOT: DICE total impact"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={"gross_domestic_product_nominal": 1, "dice_5_eq_damage_function": 1},
+)
+def dice_tot_dice_total_impact():
+    return gross_domestic_product_nominal() * dice_5_eq_damage_function()
+
+
+@component.add(
+    name='"DSK: TOT: DSK total impact"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "dsk_a128_eq_shock_from_climate_change": 1,
+        "gross_domestic_product_nominal": 1,
+    },
+)
+def dsk_tot_dsk_total_impact():
+    return dsk_a128_eq_shock_from_climate_change() * gross_domestic_product_nominal()
+
+
+@component.add(
     name='"FUND: TOT: EQ: fund total impact"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
@@ -67,3 +103,21 @@ def fund_tot_eq_total_deaths():
         + fund_hv_eq_vectorborn_diseases()
         + fund_ts2_eq_tropical_storms_mortality()
     )
+
+
+@component.add(
+    name='"WITNESS: TOT: WITNESS total impact"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "witness_dicelike_damage_eq_dicelike_damage": 1,
+        "witness_tipping_point_damage_eq_tipping_point_damge": 1,
+        "gross_domestic_product_nominal": 1,
+    },
+)
+def witness_tot_witness_total_impact():
+    return (
+        witness_dicelike_damage_eq_dicelike_damage()
+        + witness_tipping_point_damage_eq_tipping_point_damge()
+    ) * gross_domestic_product_nominal()

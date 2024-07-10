@@ -74,13 +74,13 @@ _ext_constant_initial_year_model_explorer = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "select_change_to_regenerative_agriculture_me": 3,
-        "scenario_select_change_to_regenerative_agriculture_option_1_me": 1,
         "initial_year_model_explorer": 5,
-        "final_year_model_explorer": 5,
         "time": 6,
-        "initial_share_of_regenerative_agriculture": 2,
-        "scenario_select_change_to_regenerative_agriculture_option_2_me": 1,
+        "final_year_model_explorer": 5,
+        "scenario_select_change_to_regenerative_agriculture_option_1_me": 1,
         "scenario_select_change_to_regenerative_agriculture_option_3_me": 1,
+        "scenario_select_change_to_regenerative_agriculture_option_2_me": 1,
+        "initial_share_of_regenerative_agriculture": 2,
     },
 )
 def model_explorer_change_to_regenerative_agriculture():
@@ -162,9 +162,9 @@ def model_explorer_change_to_regenerative_agriculture():
     depends_on={
         "time": 1,
         "scenario_climate_sensitivity_option_2_me": 2,
+        "scenario_climate_sensitivity_option_3_me": 1,
         "scenario_climate_sensitivity_option_1_me": 1,
         "select_climate_sensitivity_me": 3,
-        "scenario_climate_sensitivity_option_3_me": 1,
     },
 )
 def model_explorer_climate_sensitivity():
@@ -200,10 +200,10 @@ def model_explorer_climate_sensitivity():
         "select_debt_interest_rate_target_me": 3,
         "debt_interest_rate_default": 6,
         "initial_year_model_explorer": 3,
-        "scenario_debt_interest_rate_target_option_1_me": 1,
         "time": 3,
-        "scenario_debt_interest_rate_target_option_3_me": 1,
+        "scenario_debt_interest_rate_target_option_1_me": 1,
         "scenario_debt_interest_rate_target_option_2_me": 1,
+        "scenario_debt_interest_rate_target_option_3_me": 1,
     },
 )
 def model_explorer_debt_interest_rate_target():
@@ -294,8 +294,8 @@ def model_explorer_diets():
         "initial_year_model_explorer": 1,
         "historical_energy_efficiency_annual_improvement": 1,
         "scenario_energy_efficiency_option_1_me": 1,
-        "scenario_energy_efficiency_option_3_me": 1,
         "scenario_energy_efficiency_option_2_me": 1,
+        "scenario_energy_efficiency_option_3_me": 1,
         "select_energy_efficiency_annual_improvement_me": 3,
     },
 )
@@ -337,8 +337,8 @@ def model_explorer_energy_efficiency_anual_improvement():
         "final_year_model_explorer": 3,
         "scenario_fertility_rates_option_1_me": 1,
         "historical_fertility_rates_2015_2020": 3,
-        "scenario_fertility_rates_option_3_me": 1,
         "scenario_fertility_rates_option_2_me": 1,
+        "scenario_fertility_rates_option_3_me": 1,
     },
 )
 def model_explorer_fertility_rates():
@@ -399,13 +399,13 @@ def model_explorer_fertility_rates():
     comp_subtype="Normal",
     depends_on={
         "select_final_gender_parity_index_me": 6,
+        "initial_gender_parity_index": 6,
+        "scenario_final_gender_parity_index_option_1_me": 2,
         "final_year_model_explorer": 12,
         "initial_year_model_explorer": 12,
         "time": 12,
-        "scenario_final_gender_parity_index_option_1_me": 2,
-        "initial_gender_parity_index": 6,
-        "scenario_final_gender_parity_index_option_3_me": 2,
         "scenario_final_gender_parity_index_option_2_me": 2,
+        "scenario_final_gender_parity_index_option_3_me": 2,
     },
 )
 def model_explorer_final_gender_parity_index():
@@ -623,8 +623,8 @@ def model_explorer_final_gender_parity_index():
         "time": 6,
         "final_year_model_explorer": 6,
         "scenario_forestry_self_sufficiency_option_1_me": 1,
-        "scenario_forestry_self_sufficiency_option_3_me": 1,
         "scenario_forestry_self_sufficiency_option_2_me": 1,
+        "scenario_forestry_self_sufficiency_option_3_me": 1,
     },
 )
 def model_explorer_forestry_self_sufficiency():
@@ -678,10 +678,10 @@ def model_explorer_forestry_self_sufficiency():
     depends_on={
         "time": 1,
         "initial_year_model_explorer": 1,
-        "select_government_budget_balance_to_gdp_objective_target_me": 3,
-        "scenario_goverment_option_2_me": 1,
-        "scenario_goverment_option_1_me": 1,
         "scenario_goverment_option_3_me": 1,
+        "select_government_budget_balance_to_gdp_objective_target_me": 3,
+        "scenario_goverment_option_1_me": 1,
+        "scenario_goverment_option_2_me": 1,
     },
 )
 def model_explorer_government_to_gdp_objetive():
@@ -781,14 +781,14 @@ def model_explorer_land_protection():
     comp_subtype="Normal",
     depends_on={
         "select_manure_management_system_me": 12,
-        "dairy_cattle_manure_system": 3,
-        "scenario_manure_management_system_option_1_me": 4,
         "final_year_model_explorer": 12,
+        "dairy_cattle_manure_system": 3,
         "methane_conversion_factor_by_system": 24,
         "initial_year_model_explorer": 12,
+        "scenario_manure_management_system_option_1_me": 4,
         "time": 24,
-        "scenario_manure_management_system_option_3_me": 4,
         "scenario_manure_management_system_option_2_me": 4,
+        "scenario_manure_management_system_option_3_me": 4,
         "other_cattle_manure_system": 3,
         "buffalo_manure_system": 3,
         "swine_manure_system": 3,
@@ -1113,8 +1113,8 @@ def model_explorer_oil_resource():
         "scenario_objective_percentage_fe_liquid_substituted_by_h2_synthetic_liquid_option_2_me": 3,
         "final_year_model_explorer": 6,
         "initial_year_model_explorer": 8,
-        "time": 6,
         "scenario_objective_percentage_fe_liquid_substituted_by_h2_synthetic_liquid_option_3_me": 3,
+        "time": 6,
     },
 )
 def model_explorer_percentage_fe_liquid_substituted_by_h2_synthetic_liquid():
@@ -1238,11 +1238,11 @@ def model_explorer_rcp_ghg_emissions():
         "select_target_share_bioenergy_in_fossil_liquids_and_gases_me": 12,
         "scenario_target_share_bioenergy_in_fossil_liquids_and_gases_option_1_me": 4,
         "protra_input_shares_empiric": 8,
+        "scenario_target_share_bioenergy_in_fossil_liquids_and_gases_option_3_me": 4,
         "final_year_model_explorer": 16,
         "initial_year_model_explorer": 16,
-        "scenario_target_share_bioenergy_in_fossil_liquids_and_gases_option_3_me": 4,
-        "time": 16,
         "scenario_target_share_bioenergy_in_fossil_liquids_and_gases_option_2_me": 4,
+        "time": 16,
     },
 )
 def model_explorer_target_share_bioenergy_in_fossil_liquids_and_gases():
@@ -1696,9 +1696,9 @@ def model_explorer_uranium_maximum_supply_curve():
         "time": 4,
         "initial_year_model_explorer": 7,
         "initial_hours_per_worker": 7,
-        "scenario_working_time_option_1_me": 1,
-        "scenario_working_time_option_3_me": 1,
         "scenario_working_time_option_2_me": 1,
+        "scenario_working_time_option_3_me": 1,
+        "scenario_working_time_option_1_me": 1,
         "select_working_time_variation_me": 3,
         "final_year_working_time": 6,
     },
