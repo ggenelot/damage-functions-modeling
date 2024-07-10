@@ -1,4 +1,5 @@
 import pysd
+import xarray as xr
 import warnings
 import pandas as pd
 import numpy as np
@@ -43,7 +44,8 @@ interest_variables = [
     "temperature_change", 
     "temperature_change_in_35regions", 
     "total_population", 
-    "population_35_regions"
+    "population_35_regions", 
+    "total_radiative_forcing"
 ]
 
 output_variables = np.concatenate([variables_modelled_names, interest_variables])
@@ -51,13 +53,28 @@ output_variables = np.concatenate([variables_modelled_names, interest_variables]
 
 runs = pd.read_csv('run_manager.csv')
 
+## Preparing to vary the radiative forcing
+
+# Load the basic radiative forcing values
+
+# ds = xr.open_dataset('results/results_run_reference.nc')
+# initial_forcing = ds['total_radiative_forcing'].to_dataframe()
+# ds.close()
+
+
+
+
 # Iterate over the rows of the run manager
 for index, run in runs.iterrows():
+
+    # forcing = initial_forcing * run['forcing']
 
     # Run the model
     print(f'Running model : {run["name"]}')
     run = model.run(progress=True,
-                    params={'SWITCH CLIMATE CHANGE DAMAGE': run['wiliam'],},
+                    params={'SWITCH CLIMATE CHANGE DAMAGE': run['wiliam']
+                            #, 'total radiative forcing': forcing
+                            },
                     return_columns=output_variables,
                     final_time=run['final_time'],  
                     output_file=f'results/results_run_{run["name"]}.nc'
