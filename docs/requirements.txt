@@ -5,3 +5,6 @@ numpydoc
 numpy
 xarray
 pysd
+seaborn
+matplotlib.pyplot
+pandas
