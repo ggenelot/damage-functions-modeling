@@ -4,39 +4,99 @@ Translated using PySD version 3.14.0
 """
 
 @component.add(
-    name='"DEFINE: TOT: DEFINE total impact"',
+    name='"DEFINE: TOT: EQ DEFINE total impact"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"define_46_eq_damage_function": 1, "gross_domestic_product_nominal": 1},
+    depends_on={
+        "define_46_eq_damage_function": 1,
+        "gross_domestic_product_nominal": 1,
+        "extra_extra_gdp_modifyer": 1,
+    },
 )
-def define_tot_define_total_impact():
-    return define_46_eq_damage_function() * gross_domestic_product_nominal()
+def define_tot_eq_define_total_impact():
+    return (
+        define_46_eq_damage_function()
+        * gross_domestic_product_nominal()
+        * extra_extra_gdp_modifyer()
+    )
 
 
 @component.add(
-    name='"DICE: TOT: DICE total impact"',
+    name='"DICE: TOT: EQ DICE total impact"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"gross_domestic_product_nominal": 1, "dice_5_eq_damage_function": 1},
+    depends_on={
+        "gross_domestic_product_nominal": 1,
+        "dice_5_eq_damage_function": 1,
+        "extra_extra_gdp_modifyer": 1,
+    },
 )
-def dice_tot_dice_total_impact():
-    return gross_domestic_product_nominal() * dice_5_eq_damage_function()
+def dice_tot_eq_dice_total_impact():
+    return (
+        gross_domestic_product_nominal()
+        * dice_5_eq_damage_function()
+        * extra_extra_gdp_modifyer()
+    )
 
 
 @component.add(
-    name='"DSK: TOT: DSK total impact"',
+    name='"DSK: TOT: EQ DSK total impact"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "dsk_a128_eq_shock_from_climate_change": 1,
         "gross_domestic_product_nominal": 1,
+        "extra_extra_gdp_modifyer": 1,
     },
 )
-def dsk_tot_dsk_total_impact():
-    return dsk_a128_eq_shock_from_climate_change() * gross_domestic_product_nominal()
+def dsk_tot_eq_dsk_total_impact():
+    return (
+        dsk_a128_eq_shock_from_climate_change()
+        * gross_domestic_product_nominal()
+        * extra_extra_gdp_modifyer()
+    )
+
+
+@component.add(
+    name='"EXTRA: EXTRA: exponent"', comp_type="Constant", comp_subtype="Normal"
+)
+def extra_extra_exponent():
+    """
+    Same as in FUND
+    """
+    return 1
+
+
+@component.add(
+    name='"EXTRA: EXTRA: GDP modifyer"',
+    subscripts=["REGIONS 35 I"],
+    comp_type="Auxiliary",
+    comp_subtype="Normal",
+    depends_on={
+        "average_disposable_income_per_capita": 1,
+        "extra_extra_normalisation_constant": 1,
+        "extra_extra_exponent": 1,
+    },
+)
+def extra_extra_gdp_modifyer():
+    return (
+        average_disposable_income_per_capita() / extra_extra_normalisation_constant()
+    ) ** extra_extra_exponent()
+
+
+@component.add(
+    name='"EXTRA: EXTRA: normalisation constant"',
+    comp_type="Constant",
+    comp_subtype="Normal",
+)
+def extra_extra_normalisation_constant():
+    """
+    Same as in FUND
+    """
+    return 25000
 
 
 @component.add(
@@ -106,7 +166,7 @@ def fund_tot_eq_total_deaths():
 
 
 @component.add(
-    name='"WITNESS: TOT: WITNESS total impact"',
+    name='"WITNESS: TOT: EQ WITNESS total impact"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
@@ -114,10 +174,15 @@ def fund_tot_eq_total_deaths():
         "witness_dicelike_damage_eq_dicelike_damage": 1,
         "witness_tipping_point_damage_eq_tipping_point_damge": 1,
         "gross_domestic_product_nominal": 1,
+        "extra_extra_gdp_modifyer": 1,
     },
 )
-def witness_tot_witness_total_impact():
+def witness_tot_eq_witness_total_impact():
     return (
-        witness_dicelike_damage_eq_dicelike_damage()
-        + witness_tipping_point_damage_eq_tipping_point_damge()
-    ) * gross_domestic_product_nominal()
+        (
+            witness_dicelike_damage_eq_dicelike_damage()
+            + witness_tipping_point_damage_eq_tipping_point_damge()
+        )
+        * gross_domestic_product_nominal()
+        * extra_extra_gdp_modifyer()
+    )

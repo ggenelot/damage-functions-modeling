@@ -236,12 +236,12 @@ def average_yields_world():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_change_to_regenerative_agriculture": 1,
-        "switch_regenerative_agriculture_sp": 1,
-        "objective_regenerative_agriculture_sp": 1,
         "year_final_regenerative_agriculture_sp": 2,
-        "initial_share_of_regenerative_agriculture": 1,
+        "objective_regenerative_agriculture_sp": 1,
+        "switch_regenerative_agriculture_sp": 1,
         "year_initial_regenerative_agriculture_sp": 2,
         "time": 2,
+        "initial_share_of_regenerative_agriculture": 1,
     },
 )
 def change_to_regenerative_agriculture_sp():
@@ -960,13 +960,13 @@ def crop_yields_impacts_hadgemes_model_85():
     depends_on={
         "switch_cli2law_cc_effects": 1,
         "switch_climate_change_damage": 1,
+        "crop_yields_impacts_gfdl_model_45": 1,
+        "select_climate_model_and_rcp": 6,
+        "crop_yields_impacts_hadgemes_model_85": 1,
+        "crop_yields_impacts_hadgemes_model_45": 1,
+        "crop_yields_impacts_ccsm4_model_45": 1,
         "crop_yields_impacts_gfdl_model_85": 1,
         "crop_yields_impacts_ccsm4_model_85": 1,
-        "select_climate_model_and_rcp": 6,
-        "crop_yields_impacts_gfdl_model_45": 1,
-        "crop_yields_impacts_hadgemes_model_45": 1,
-        "crop_yields_impacts_hadgemes_model_85": 1,
-        "crop_yields_impacts_ccsm4_model_45": 1,
     },
 )
 def effect_of_climate_change_on_crop_yields_by_policy():
@@ -1047,10 +1047,10 @@ def effect_of_irrigation_of_yield():
         "effect_of_soil_degradation_on_yields": 2,
         "share_of_low_input_agriculture": 1,
         "share_of_traditional_agriculture": 1,
-        "share_of_agriculture_in_transition": 1,
         "effect_of_low_input_agriculture": 1,
-        "share_of_regenerative_agriculture": 1,
+        "share_of_agriculture_in_transition": 1,
         "effect_of_regenerative_agriculture": 1,
+        "share_of_regenerative_agriculture": 1,
     },
 )
 def effect_of_management_on_crops():
@@ -1194,8 +1194,8 @@ def from_industrial_to_low_input_agriculture():
     comp_subtype="Normal",
     depends_on={
         "change_to_regenerative_agriculture_sp": 1,
-        "share_of_low_input_agriculture": 1,
         "share_of_industrial_agriculture": 2,
+        "share_of_low_input_agriculture": 1,
         "share_of_traditional_agriculture": 1,
     },
 )
@@ -1221,8 +1221,8 @@ def from_industrial_to_regenerative_agriculture():
     comp_subtype="Normal",
     depends_on={
         "change_to_regenerative_agriculture_sp": 1,
-        "share_of_low_input_agriculture": 2,
         "share_of_industrial_agriculture": 1,
+        "share_of_low_input_agriculture": 2,
         "share_of_traditional_agriculture": 1,
     },
 )
@@ -1248,12 +1248,12 @@ def from_low_input_to_regenerative_agriculture():
     comp_subtype="Normal",
     depends_on={
         "switch_industrial_agriculture_sp": 1,
-        "year_initial_industrial_agriculture_sp": 2,
         "time": 2,
+        "year_initial_industrial_agriculture_sp": 2,
         "year_final_industrial_agriculture_sp": 2,
         "share_of_traditional_agriculture": 1,
-        "initial_share_of_traditional_agriculture": 1,
         "objective_industrial_agriculture_sp": 1,
+        "initial_share_of_traditional_agriculture": 1,
     },
 )
 def from_traditional_to_industrial_agriculture_sp():
@@ -1299,9 +1299,9 @@ def from_traditional_to_industrial_agriculture_sp():
     comp_subtype="Normal",
     depends_on={
         "change_to_regenerative_agriculture_sp": 1,
-        "share_of_traditional_agriculture": 2,
         "share_of_industrial_agriculture": 1,
         "share_of_low_input_agriculture": 1,
+        "share_of_traditional_agriculture": 2,
     },
 )
 def from_traditional_to_regenerative_agriculture():
@@ -1468,10 +1468,10 @@ def initial_share_of_industrial_agriculture_r_and_i():
     comp_subtype="Normal",
     depends_on={
         "initial_yields_all_managements": 1,
+        "effect_of_low_input_agriculture": 1,
         "effect_of_regenerative_agriculture": 1,
         "initial_share_of_traditional_agriculture": 1,
         "initial_share_of_regenerative_agriculture": 1,
-        "effect_of_low_input_agriculture": 1,
         "initial_share_of_industrial_agriculture_r_and_i": 1,
     },
 )
@@ -1494,14 +1494,14 @@ def initial_yields_of_industrial_r_and_i_crops():
     comp_subtype="Normal",
     depends_on={
         "initial_yields_all_managements": 1,
-        "initial_share_of_irrigation": 1,
+        "effect_of_low_input_agriculture": 1,
         "effect_of_regenerative_agriculture": 1,
         "initial_share_of_traditional_agriculture": 1,
+        "initial_share_of_irrigation": 1,
         "effect_of_irrigation_of_yield": 1,
-        "initial_time": 1,
         "initial_share_of_regenerative_agriculture": 1,
-        "effect_of_low_input_agriculture": 1,
         "initial_share_of_industrial_agriculture_r_and_i": 1,
+        "initial_time": 1,
     },
 )
 def initial_yields_of_industrial_rainfed_crops():
@@ -1832,14 +1832,14 @@ _ext_constant_switch_cli2law_cc_effects = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "trends_of_yield_change_r_and_i": 1,
-        "initial_share_of_irrigation": 1,
+        "effect_of_low_input_agriculture": 1,
         "effect_of_regenerative_agriculture": 1,
         "initial_share_of_traditional_agriculture": 1,
+        "initial_share_of_irrigation": 1,
         "effect_of_irrigation_of_yield": 1,
-        "initial_time": 1,
         "initial_share_of_regenerative_agriculture": 1,
-        "effect_of_low_input_agriculture": 1,
         "initial_share_of_industrial_agriculture_r_and_i": 1,
+        "initial_time": 1,
     },
 )
 def trends_of_industrial_rainfed_yields():
@@ -1941,9 +1941,9 @@ _integ_yields_industrial_crops_r_and_i = Integ(
         "time": 1,
         "time_historical_data_land_module": 1,
         "yields_fao": 1,
+        "effect_of_climate_change_on_crop_yields_by_policy": 1,
         "yields_industrial_crops_r_and_i": 1,
         "effect_of_management_on_crops": 1,
-        "effect_of_climate_change_on_crop_yields_by_policy": 1,
     },
 )
 def yields_of_crops_all_managements():

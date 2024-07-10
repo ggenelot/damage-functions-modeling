@@ -57,8 +57,8 @@ def esoist_initial_phs():
         "cf_prosto": 1,
         "prosto_dedicated_lifetime": 1,
         "unit_conversion_j_wh": 1,
-        "matrix_unit_prefixes": 1,
         "unit_conversion_wh_we": 1,
+        "matrix_unit_prefixes": 1,
         "fenust_intensity_phs_exogenous": 1,
     },
 )
@@ -87,8 +87,8 @@ def esoist_phs():
         "cf_prosto": 1,
         "prosto_dedicated_lifetime": 1,
         "unit_conversion_j_wh": 1,
-        "matrix_unit_prefixes": 1,
         "unit_conversion_wh_we": 1,
+        "matrix_unit_prefixes": 1,
         "esoist_initial_phs": 1,
     },
 )

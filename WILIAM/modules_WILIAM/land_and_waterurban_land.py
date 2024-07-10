@@ -15,9 +15,9 @@ Translated using PySD version 3.14.0
         "change_of_urban_land_dispersion_trends": 2,
         "switch_urban_land_density_sp": 1,
         "urban_land_dispersion_trends": 1,
-        "objective_urban_land_density_sp": 1,
-        "year_initial_urban_land_density_sp": 2,
         "year_final_urban_land_density_sp": 2,
+        "year_initial_urban_land_density_sp": 2,
+        "objective_urban_land_density_sp": 1,
     },
 )
 def change_of_urban_land_dispersion():
@@ -98,8 +98,8 @@ _delayfixed_delayed_urban_land_dispersion = DelayFixed(
     comp_subtype="Normal",
     depends_on={
         "switch_landwater": 1,
-        "exogenous_population_9r": 1,
         "time": 1,
+        "exogenous_population_9r": 1,
         "population_9_regions": 1,
     },
 )
@@ -142,9 +142,9 @@ def historical_data_of_urban_land_with_time():
     depends_on={
         "switch_landwater": 1,
         "historical_land_use_by_region": 2,
+        "initial_time": 3,
         "exogenous_population_9r": 1,
         "unit_conversion_m2_km2": 2,
-        "initial_time": 3,
         "population_9_regions": 1,
     },
 )

@@ -192,7 +192,7 @@ def materials_extracted_for_prosup_from_2015():
     name="materials required for new grids by PROTRA",
     units="Mt/Year",
     subscripts=["REGIONS 9 I", "NRG PROTRA I", "MATERIALS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 5,

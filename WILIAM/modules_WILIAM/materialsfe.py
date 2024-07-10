@@ -575,7 +575,7 @@ def fe_base_price_2015():
     name="Fe change grade",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"coefficients_change_grade": 9, "fe_market_feedback_price": 3},
 )
@@ -680,8 +680,8 @@ _integ_fe_cumulative_mining = Integ(
         "switch_eco2mat_fe_demand": 1,
         "switch_materials": 1,
         "imv_fe_mining_historical": 1,
-        "output_real": 1,
         "implicit_price_fe": 1,
+        "output_real": 1,
     },
 )
 def fe_demand():
@@ -822,7 +822,7 @@ _ext_constant_fe_energy_recycling = ExtConstant(
     name="Fe energy use",
     units="(MJ/kg)*(Mt/Years)",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"coefficients_fe_energy_use": 5, "fe_mining": 5},
 )
@@ -1505,7 +1505,7 @@ def fe_market_supply():
     name="Fe mining",
     units="Mt/Year",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "mining_rate_drive": 4,
@@ -2364,8 +2364,8 @@ def fe_scrap_losses_aux():
     comp_subtype="Normal",
     depends_on={
         "fe_society_out": 3,
-        "imv_mncrni_recycled_1": 1,
         "imv_ss_mncrni_fraction_recycled_to_stainless_steel": 1,
+        "imv_mncrni_recycled_1": 1,
     },
 )
 def fe_scrapping():
@@ -2680,7 +2680,7 @@ def fe_total_mining():
     name="finding Fe",
     units="Mt/Year",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "fe_hidden_resources": 4,
@@ -10395,7 +10395,7 @@ def water_fe_extraction():
     name="water per Fe",
     units="Mt/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"coefficients_water_per_fe_grade": 5},
 )
@@ -10452,7 +10452,7 @@ _ext_constant_water_per_fe_recycled = ExtConstant(
     name="water use Fe",
     units="Mt/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"fe_mining": 5, "water_per_fe": 5},
 )

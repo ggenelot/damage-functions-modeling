@@ -136,12 +136,12 @@ def diet_according_to_food_shortage():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_diets": 1,
-        "select_policy_diet_patterns_sp": 5,
-        "plant_based_50_percent_diet_pattern_of_policy_diets_sp": 1,
         "flexitariana_diet_patterns_of_policy_diets_sp": 1,
-        "willett_diet_patterns_of_policy_diets_sp": 1,
         "baseline_diet_pattern_of_policy_diets_sp": 1,
         "plant_based_100_diet_pattern_of_policy_diets_sp": 1,
+        "plant_based_50_percent_diet_pattern_of_policy_diets_sp": 1,
+        "select_policy_diet_patterns_sp": 5,
+        "willett_diet_patterns_of_policy_diets_sp": 1,
     },
 )
 def diet_according_to_policies_sp():
@@ -192,13 +192,13 @@ def diet_according_to_policies_sp():
         "time": 1,
         "time_historical_data_land_module": 1,
         "diet_demanded": 1,
-        "switch_model_explorer": 2,
-        "select_policy_diet_patterns_sp": 1,
         "select_tipe_diets_me": 1,
-        "share_of_change_to_policy_diet": 2,
-        "efect_shortage_of_policy_diet": 1,
         "diet_according_to_policies_sp": 1,
+        "efect_shortage_of_policy_diet": 1,
         "diet_according_to_food_shortage": 3,
+        "switch_model_explorer": 2,
+        "share_of_change_to_policy_diet": 2,
+        "select_policy_diet_patterns_sp": 1,
     },
 )
 def diet_available():
@@ -236,8 +236,8 @@ def diet_available():
         "switch_model_explorer": 2,
         "select_tipe_diets_me": 1,
         "diet_demanded_according_to_gdppc": 3,
-        "diet_according_to_policies_sp": 1,
         "select_policy_diet_patterns_sp": 1,
+        "diet_according_to_policies_sp": 1,
         "share_of_change_to_policy_diet": 2,
     },
 )
@@ -345,7 +345,7 @@ def diet_demanded_according_to_gdppc():
     name="efect shortage of policy diet",
     units="DMNL",
     subscripts=["REGIONS 9 I", "FOODS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"share_of_available_crops_for_food": 33},
 )
@@ -575,7 +575,7 @@ def food_demanded_by_households_per_region():
     name="food demanded from land products",
     units="t/Year",
     subscripts=["REGIONS 9 I", "FOODS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "food_demanded_by_households_per_region": 13,
@@ -769,11 +769,11 @@ def gdppc_per_share_of_available_food():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_objective_diets": 1,
-        "year_initial_diet_change_sp": 2,
         "year_final_diet_change_sp": 2,
         "switch_diet_change_sp": 2,
-        "objective_diet_change_sp": 1,
+        "year_initial_diet_change_sp": 2,
         "time": 2,
+        "objective_diet_change_sp": 1,
     },
 )
 def increase_of_share_of_change_to_policy_diet():
@@ -1016,8 +1016,8 @@ _ext_constant_plant_based_50_percent_diet_pattern_of_policy_diets_sp = ExtConsta
     comp_subtype="Normal",
     depends_on={
         "switch_landwater": 1,
-        "exogenous_population_9r": 1,
         "time": 1,
+        "exogenous_population_9r": 1,
         "population_9_regions": 1,
     },
 )
@@ -1065,8 +1065,8 @@ _ext_constant_select_policy_diet_patterns_sp = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "mask_essential_foods": 1,
-        "crops_available_for_food": 1,
         "land_products_demanded_for_food_delayed": 1,
+        "crops_available_for_food": 1,
     },
 )
 def share_of_available_crops_for_food():

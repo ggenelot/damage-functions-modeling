@@ -484,7 +484,7 @@ def prosup_flexibility_technologies_demand_aggregated():
     name="PROSUP sector energy own consumption per commodity",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "fe_excluding_trade": 5,
@@ -562,7 +562,7 @@ def prosup_sector_energy_own_consumption_per_commodity():
     name="PROSUP storage losses",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"total_prosto_losses_elec": 1, "imv_prosup_storage_losses": 2},
 )
@@ -608,7 +608,7 @@ def prosup_storage_losses():
     name="PROSUP transmission losses",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"fe_excluding_trade": 3, "prosup_transmission_loss_shares": 3},
 )
@@ -802,7 +802,7 @@ _ext_constant_protra_conversion_efficiency_heat_2015 = ExtConstant(
     name="PROTRA fuel utilization ratio",
     units="DMNL",
     subscripts=["REGIONS 36 I", "NRG PROTRA I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"protra_conversion_efficiencies_complete_matrix": 1},
 )
@@ -842,7 +842,7 @@ def protra_fuel_utilization_ratio():
     name="PROTRA input share TI bio",
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG PROTRA I", "NRG TI I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 2,
@@ -1116,7 +1116,7 @@ def protra_no_process_efficiencies_36r():
     name="share total transmission loss",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"total_prosup_transmission_losses": 3, "fe_excluding_trade": 3},
 )
@@ -1641,8 +1641,8 @@ def total_fe_iea_model_check():
     comp_subtype="Normal",
     depends_on={
         "switch_nrg_trade": 1,
-        "fe_net_exports_by_region": 1,
         "fe_domestic": 1,
+        "fe_net_exports_by_region": 1,
         "fe_excluding_trade": 1,
     },
 )
@@ -1757,17 +1757,17 @@ def total_prosup_transmission_losses():
     name="variation exogenous PROTRA input shares",
     units="1/Year",
     subscripts=["REGIONS 9 I", "NRG PROTRA I", "NRG TI I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 4,
         "model_explorer_target_share_bioenergy_in_fossil_liquids_and_gases": 4,
-        "protra_input_shares_empiric": 4,
-        "switch_policy_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
+        "year_final_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
         "target_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
         "year_initial_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
+        "protra_input_shares_empiric": 4,
         "time": 8,
-        "year_final_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
+        "switch_policy_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
     },
 )
 def variation_exogenous_protra_input_shares():
