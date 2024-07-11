@@ -37,8 +37,8 @@ _integ_accumulated_sea_level_rise_loss = Integ(
     depends_on={
         "land_use_area_productive_uses": 1,
         "accumulated_sea_level_rise_loss": 1,
-        "historical_land_use_by_region": 2,
         "initial_time": 2,
+        "historical_land_use_by_region": 2,
     },
 )
 def check_summ_all_lands():

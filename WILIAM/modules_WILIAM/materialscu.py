@@ -75,8 +75,8 @@ def avoid_zero_cu_market():
     comp_subtype="Normal",
     depends_on={
         "target_rr_rest_sp_w_base_metals": 1,
-        "a_lineal_regr_rr_base_metals": 1,
         "target_year_p_rr_minerals_rest_w_base_metals": 1,
+        "a_lineal_regr_rr_base_metals": 1,
     },
 )
 def b_lineal_regr_rr_base_metals():
@@ -148,9 +148,9 @@ def by_mineral_rr_base_metals():
     depends_on={
         "time": 2,
         "historic_improvement_recycling_rates_minerals_base_metals": 2,
+        "start_year_p_rr_minerals_w_base_metals": 1,
         "by_mineral_rr_1yr_base_metals": 1,
         "by_mineral_rr_base_metals": 1,
-        "start_year_p_rr_minerals_w_base_metals": 1,
     },
 )
 def by_mineral_rr_variation_metals():
@@ -282,8 +282,8 @@ def change_cu_grade():
     comp_subtype="Normal",
     depends_on={
         "coefficients_change_cu_mining_technology_s_curve": 12,
-        "time": 3,
         "imv_start_time": 3,
+        "time": 3,
     },
 )
 def change_cu_mining_technology_s_curve():
@@ -837,8 +837,8 @@ _integ_cu_cumulative_mining = Integ(
         "switch_eco2mat_cu_demand": 1,
         "switch_materials": 1,
         "historical_cu_demand": 1,
-        "implicit_price_materials_cu": 1,
         "output_real": 1,
+        "implicit_price_materials_cu": 1,
     },
 )
 def cu_demand():
@@ -2702,9 +2702,9 @@ def cu_price_historical():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_cu_price": 1,
-        "price_transformation": 1,
         "estimated_price_with_tax_metals": 1,
         "cu_base_price_2015": 1,
+        "price_transformation": 1,
     },
 )
 def cu_price_index_economy():
@@ -2954,9 +2954,9 @@ _integ_cu_scrapped = Integ(
     comp_subtype="Normal",
     depends_on={
         "switch_cu_recycling_policy": 1,
+        "cu_separation_loss_rate": 2,
         "cu_scrapped": 2,
         "cu_eol_recycling_rate_sp": 1,
-        "cu_separation_loss_rate": 2,
         "cu_recycling_test": 1,
     },
 )
@@ -3505,8 +3505,8 @@ _ext_data_historical_cu_demand = ExtData(
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "initial_output_real_materials": 2,
         "historical_cu_demand": 1,
+        "initial_output_real_materials": 2,
         "demand_cu_base_year": 1,
     },
 )
@@ -3544,10 +3544,10 @@ def implicit_price_materials_cu():
     depends_on={
         "time": 1,
         "historic_improvement_recycling_rates_minerals_base_metals": 1,
+        "common_rr_minerals_variation_base_metals": 1,
+        "by_mineral_rr_variation_metals": 1,
         "eol_recycling_rates_minerals_base_metals": 1,
         "select_mineral_rr_targets_sp_w_base_metals": 1,
-        "by_mineral_rr_variation_metals": 1,
-        "common_rr_minerals_variation_base_metals": 1,
         "constrain_rr_improv_for_per_mineral_base_metals": 1,
     },
 )
@@ -3940,8 +3940,8 @@ _ext_constant_max_recycling_rates_minerals_base_metals = ExtConstant(
         "cu_known_reserves": 6,
         "cu_extraction_coefficient": 6,
         "rich_grade_factor": 1,
-        "high_grade_factor": 1,
         "change_cu_grade": 4,
+        "high_grade_factor": 1,
         "change_cu_mining_technology_s_curve": 3,
         "cu_profit_push_ocean": 1,
     },

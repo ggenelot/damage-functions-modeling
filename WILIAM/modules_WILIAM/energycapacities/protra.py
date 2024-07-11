@@ -417,8 +417,8 @@ _ext_constant_overcapacity_factor_empiric.add(
     comp_subtype="Normal",
     depends_on={
         "max_to_from_existing_stock_by_protra": 1,
-        "protra_heat_shortfall_allocation": 2,
         "chp_heat_power_ratio_9r": 1,
+        "protra_heat_shortfall_allocation": 2,
     },
 )
 def production_from_chp_expansion():
@@ -3824,9 +3824,9 @@ def protra_capacity_empirical_in_tw():
     depends_on={
         "time": 2,
         "protra_capacity_variation_empirical": 3,
-        "unit_conversion_tw_per_ej_per_year": 1,
-        "protra_shortfall_allocation": 1,
         "protra_max_full_load_hours_after_constraints": 1,
+        "protra_shortfall_allocation": 1,
+        "unit_conversion_tw_per_ej_per_year": 1,
         "one_year": 1,
     },
 )
@@ -4447,13 +4447,13 @@ def protra_elec_expansion_request_with_limits_nres():
     depends_on={
         "remaining_potential_protra_res_pp": 5,
         "remaining_elec_shortfall_to_be_allocated": 11,
-        "switch_energy": 2,
-        "unlimited_protra_res_parameter": 1,
-        "switch_law2nrg_solarland": 1,
-        "stress_signal_protra_curtailed": 4,
-        "stress_signal_solar_land": 1,
-        "switch_nrg_limited_res_potentials": 5,
         "switch_nrg_variability_effects": 4,
+        "unlimited_protra_res_parameter": 1,
+        "stress_signal_protra_curtailed": 4,
+        "switch_nrg_limited_res_potentials": 5,
+        "switch_law2nrg_solarland": 1,
+        "switch_energy": 2,
+        "stress_signal_solar_land": 1,
         "switch_law2nrg_available_forestry_products_for_industry": 1,
         "signal_availability_forestry_products_for_energy": 1,
     },
@@ -4733,11 +4733,11 @@ def protra_elec_shortfall_allocation():
     comp_subtype="Normal",
     depends_on={
         "to_shortfall": 13,
-        "remaining_potential_protra_res_chp_hp": 5,
         "switch_nrg_limited_res_potentials": 6,
+        "remaining_potential_protra_res_chp_hp": 5,
         "switch_law2nrg_available_forestry_products_for_industry": 1,
-        "signal_availability_forestry_products_for_energy": 1,
         "switch_energy": 1,
+        "signal_availability_forestry_products_for_energy": 1,
     },
 )
 def protra_heat_expansion_request_with_res_potentials():
@@ -5130,8 +5130,8 @@ def protra_pp_solar_pv_by_subtechnology_capacity_expansion():
         "pwidth_protra_capacity_expansion_priorities_vector_sp": 1,
         "model_explorer_protra_capacity_expansion": 1,
         "lcoe_by_protra_priority_signal": 1,
-        "protra_capacity_expansion_policy_weight_sp": 2,
         "protra_capacity_expansion_priorities_vector_sp": 1,
+        "protra_capacity_expansion_policy_weight_sp": 2,
         "switch_model_explorer": 1,
     },
 )

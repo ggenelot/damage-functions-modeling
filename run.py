@@ -73,15 +73,15 @@ for index, run in runs.iterrows():
 
 
     # Run the model
-    print(f'Running model : {run["name"]}')
+    #print(f'Running model : {run["name"]}')
     run = model.run(progress=True,
                     params={'total radiative forcing': total_forcing, 
-                            'EXTRA: EXTRA: exponent' : run['exponent'],
-                            'EXTRA: EXTRA: normalisation constant': run['norm_constant']
+                            '"EXTRA: EXTRA: exponent"' : run['exponent'],
+                            '"EXTRA: EXTRA: normalisation constant"': run['norm_constant']
                             },
                     return_columns=output_variables,
                     final_time=run['final_time'],  
-                    output_file=f'results/batch/run_{run["run_number"]}}_from{run["initial_time"]_to_{run["final_time"]_{run["RCP"]}}.nc')
+                    output_file=f'results/batch/run_{run["run_number"]}.nc')
 
     #print(f'Done running model : {run["name"]}')
 warnings.resetwarnings()

@@ -144,8 +144,8 @@ _ext_data_co2_tax_households_sp = ExtData(
     comp_subtype="Normal",
     depends_on={
         "select_co2_tax_households_sp": 3,
-        "select_gases_co2_tax_households_sp": 6,
         "co2_tax_households_sp": 3,
+        "select_gases_co2_tax_households_sp": 6,
     },
 )
 def co2_tax_rate_households():
@@ -243,8 +243,8 @@ def co2_tax_rate_households():
     comp_subtype="Normal",
     depends_on={
         "select_co2_tax_sectors_sp": 3,
-        "co2_tax_sectors_sp": 3,
         "select_gases_co2_tax_sectors_sp": 6,
+        "co2_tax_sectors_sp": 3,
     },
 )
 def co2_tax_rate_sectors():
@@ -1030,12 +1030,12 @@ def implicit_price_final_energy_sectors():
     comp_subtype="Normal",
     depends_on={
         "switch_economy": 1,
-        "co2_tax_rate_sectors": 2,
-        "unit_conversion_dollars_mdollars": 2,
-        "implicit_price_final_energy_sectors": 2,
-        "delayed_ts_implicit_co2_emissions_factor_sectors_until_2015": 1,
-        "final_energy_purchaser_price_sectors_without_co2_tax": 2,
         "initial_final_energy_price_purchaser_price_sectors_without_co2_tax": 2,
+        "final_energy_purchaser_price_sectors_without_co2_tax": 2,
+        "delayed_ts_implicit_co2_emissions_factor_sectors_until_2015": 1,
+        "implicit_price_final_energy_sectors": 2,
+        "unit_conversion_dollars_mdollars": 2,
+        "co2_tax_rate_sectors": 2,
         "unit_conversion_tco2eq_mtco2eq": 2,
         "delayed_ts_implicit_co2_emission_factor_sectors": 1,
     },
@@ -1374,11 +1374,11 @@ def intermediate_imports_multipliers():
     comp_subtype="Normal",
     depends_on={
         "select_mark_up_sp": 1,
-        "time": 1,
         "initial_year_mark_up_sp": 1,
+        "time": 1,
         "mark_up_sp": 1,
-        "add_mark_up_low_unemploymnet_smooth": 1,
         "mark_up_default": 1,
+        "add_mark_up_low_unemploymnet_smooth": 1,
     },
 )
 def mark_up():
@@ -1459,15 +1459,15 @@ def non_accelerating_wage_inflation_rate_of_unemployment_to_unemployment_ratio()
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "delayed_ts_implicit_ghg_emissions_factor_households_coicop_until_2015": 1,
-        "unit_conversion_dollars_mdollars": 2,
         "implicit_price_energy_households_coicop": 2,
         "delayed_ts_implicit_ghg_emission_factor_households_coicop": 1,
+        "switch_economy": 1,
+        "unit_conversion_dollars_mdollars": 2,
+        "delayed_ts_implicit_ghg_emissions_factor_households_coicop_until_2015": 1,
         "co2_tax_rate_households": 2,
+        "price_coicop_without_co2_tax": 2,
         "unit_conversion_tco2eq_mtco2eq": 2,
         "price_transformation": 2,
-        "price_coicop_without_co2_tax": 2,
-        "switch_economy": 1,
     },
 )
 def price_coicop():
@@ -1534,18 +1534,18 @@ def price_coicop():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_households": 1,
-        "trade_and_transportation_margins_paid_for_domestic_products_for_final_demand": 2,
-        "tax_rate_final_products_domestic_default": 2,
-        "base2015_price_coicop": 4,
-        "trade_and_transportation_margins_paid_for_imported_products_for_final_demand": 2,
         "consumption_structure_coicop": 4,
-        "tax_rate_final_products_imports_default": 2,
         "initial_import_shares_final_demand": 2,
+        "trade_and_transportation_margins_paid_for_domestic_products_for_final_demand": 2,
         "initial_price_of_output": 2,
-        "price_transformation": 4,
+        "tax_rate_final_products_domestic_default": 2,
+        "trade_and_transportation_margins_paid_for_imported_products_for_final_demand": 2,
+        "tax_rate_final_products_imports_default": 2,
+        "base2015_price_coicop": 4,
         "initial_import_shares_origin_final_demand": 2,
-        "import_shares_final_demand_constrained": 2,
+        "price_transformation": 4,
         "price_output": 2,
+        "import_shares_final_demand_constrained": 2,
     },
 )
 def price_coicop_without_co2_tax():
@@ -1816,14 +1816,14 @@ def price_domestic_purchaser_prices_sectors():
     depends_on={
         "gross_fixed_capital_formation_structure": 2,
         "trade_and_transportation_margins_paid_for_domestic_products_for_final_demand": 1,
-        "tax_rate_final_products_domestic_default": 1,
         "import_shares_final_demand_constrained": 2,
-        "price_transformation": 6,
+        "tax_rate_final_products_domestic_default": 1,
         "price_output": 2,
+        "price_transformation": 6,
         "base2015_price_gfcf": 2,
+        "trade_and_transportation_margins_paid_for_imported_products_for_final_demand": 1,
         "tax_rate_final_products_imports_default": 1,
         "import_shares_origin_final_demand": 1,
-        "trade_and_transportation_margins_paid_for_imported_products_for_final_demand": 1,
     },
 )
 def price_gfcf():
@@ -2067,12 +2067,12 @@ def price_import_purchaser_prices_sectors():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "price_transformation": 2,
-        "initial_price_with_mark_up": 2,
         "price_import": 2,
         "price_domestic": 2,
-        "switches_mat2eco_by_sector": 1,
+        "price_transformation": 2,
+        "initial_price_with_mark_up": 2,
         "delayed_ts_price_materials_and_private_households": 1,
+        "switches_mat2eco_by_sector": 1,
         "base_price_materials_and_private_households": 1,
     },
 )
@@ -2189,8 +2189,8 @@ def price_ratio_households():
     comp_subtype="Normal",
     depends_on={
         "price_domestic_purchaser_prices_sectors": 1,
-        "price_import_purchaser_prices_sectors": 1,
         "base2015_price_ratio_sectors": 1,
+        "price_import_purchaser_prices_sectors": 1,
     },
 )
 def price_ratio_sectors():
@@ -2211,28 +2211,28 @@ def price_ratio_sectors():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_prices": 1,
-        "ghg_cost_per_unit_of_output": 2,
-        "initial_labour_productivity": 1,
         "initial_wage_hour": 1,
-        "depreciation_rate": 2,
+        "initial_labour_productivity": 1,
         "tax_rate_products_imports_by_sectors_default": 2,
+        "delayed_ts_price_gfcf": 2,
+        "tax_rate_production": 2,
         "taxes_on_respurces_per_unit_of_output": 2,
-        "mark_up": 4,
         "tax_rate_products_domestic_by_sectors_default": 2,
         "technical_coefficients_import": 2,
-        "tax_rate_production": 2,
-        "price_transformation": 12,
-        "technical_coefficients_domestic": 2,
+        "mark_up": 4,
+        "ghg_cost_per_unit_of_output": 2,
         "initial_capital_productivity": 1,
+        "technical_coefficients_domestic": 2,
         "delayed_ts_price_output": 8,
-        "delayed_ts_price_gfcf": 2,
-        "switch_climate_change_damage": 1,
-        "capital_productivity": 1,
-        "climate_change_incremental_damage_rate_to_capital_stock_extrapolations_included": 1,
-        "climate_change_incremental_damage_rate_to_capital_stock": 1,
+        "depreciation_rate": 2,
+        "price_transformation": 12,
         "switch_eco_climate_change_damage_capital": 1,
+        "climate_change_incremental_damage_rate_to_capital_stock": 1,
         "select_climate_change_impacts_sensitivity_sp": 1,
+        "switch_climate_change_damage": 1,
         "labour_productivity": 1,
+        "climate_change_incremental_damage_rate_to_capital_stock_extrapolations_included": 1,
+        "capital_productivity": 1,
         "wage_hour": 1,
     },
 )
@@ -2424,10 +2424,10 @@ def primary_inputs_coefficients():
     comp_subtype="Normal",
     depends_on={
         "primary_inputs_coefficients": 2,
-        "price_transformation": 1,
-        "time": 1,
-        "delayed_ts_price_materials_and_private_households": 1,
         "initial_primary_inputs_coefficients": 1,
+        "delayed_ts_price_materials_and_private_households": 1,
+        "time": 1,
+        "price_transformation": 1,
     },
 )
 def primary_inputs_coefficients_with_changes_in_material_prices():
@@ -2738,11 +2738,11 @@ def tax_ghg_households():
     comp_subtype="Normal",
     depends_on={
         "switch_economy": 1,
+        "unit_conversion_gtco2eq_mtco2eq": 2,
+        "delayed_ts_imv_ghg_energy_emissions_35r_co2eq_until_2015": 1,
         "unit_conversion_dollars_mdollars": 2,
         "co2_tax_rate_sectors": 2,
-        "delayed_ts_imv_ghg_energy_emissions_35r_co2eq_until_2015": 1,
         "unit_conversion_tco2eq_mtco2eq": 2,
-        "unit_conversion_gtco2eq_mtco2eq": 2,
         "delayed_ts_ghg_energy_emissions_35r_co2eq": 1,
     },
 )

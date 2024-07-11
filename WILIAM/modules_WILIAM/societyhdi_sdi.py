@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     depends_on={
         "world_material_footprint": 2,
         "pb_material_footprint": 2,
-        "sdi_co2_emissions": 2,
         "pb_co2": 2,
+        "sdi_co2_emissions": 2,
     },
 )
 def ao_sdi():
@@ -421,9 +421,9 @@ def standard_of_living_index():
         "cu_market_sales": 1,
         "fe_market_sales": 1,
         "ni_market_sales": 1,
+        "unit_conversion_mj_ej": 6,
         "unit_conversion_kg_mt": 6,
         "world_pe_by_commodity": 6,
-        "unit_conversion_mj_ej": 6,
         "pe_energy_density_mj_kg": 6,
         "world_population": 1,
         "unit_conversion_t_mt": 1,

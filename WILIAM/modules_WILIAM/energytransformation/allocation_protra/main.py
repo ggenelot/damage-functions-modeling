@@ -29,8 +29,8 @@ def aggregated_to_production_by_commodity():
     depends_on={
         "switch_energy": 1,
         "switch_mat2nrg_uranium_availability": 1,
-        "uranium_extraction_rate": 1,
         "pe_global_demand_uranium": 1,
+        "uranium_extraction_rate": 1,
     },
 )
 def cf_nuclear_after_uranium_scarcity():
@@ -52,9 +52,9 @@ def cf_nuclear_after_uranium_scarcity():
     comp_subtype="Normal",
     depends_on={
         "protra_to_allocated": 1,
+        "protra_operative_capacity_stock_selected": 1,
         "unit_conversion_tw_per_ej_per_year": 1,
         "unit_conversion_hours_year": 1,
-        "protra_operative_capacity_stock_selected": 1,
     },
 )
 def cf_protra():
@@ -141,8 +141,8 @@ _ext_constant_chp_heat_power_ratio_9r = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "protra_heat_allocation": 2,
-        "chp_heat_power_ratio_9r": 1,
         "max_to_from_existing_stock_by_protra": 1,
+        "chp_heat_power_ratio_9r": 1,
     },
 )
 def chp_production():
@@ -583,8 +583,8 @@ def protra_max_full_load_hours_after_constraints():
     comp_subtype="Normal",
     depends_on={
         "switch_nrg_variability_effects": 1,
-        "variation_cf_curtailed_protra": 3,
         "protra_max_full_load_hours": 2,
+        "variation_cf_curtailed_protra": 3,
     },
 )
 def protra_max_full_load_hours_curtailed():
@@ -837,8 +837,8 @@ def protra_to_allocated_in_twh():
     comp_subtype="Normal",
     depends_on={
         "pwidth_protra_utilization_allocation_policy_priorities_sp": 1,
-        "protra_utilization_priorities_policyweight_sp": 2,
         "protra_utilization_allocation_priorities_sp": 1,
+        "protra_utilization_priorities_policyweight_sp": 2,
         "protra_utilization_priorities_endogenous": 1,
     },
 )
