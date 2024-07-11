@@ -64,8 +64,8 @@ def availability_of_crops_for_food():
     depends_on={
         "time": 1,
         "time_historical_data_land_module": 1,
-        "wood_demanded_for_energy_converted_to_tonnes": 1,
         "forestry_products_available_for_energy": 1,
+        "wood_demanded_for_energy_converted_to_tonnes": 1,
     },
 )
 def availability_of_forestry_products_for_energy():
@@ -683,8 +683,8 @@ def land_products_distributed_from_pool():
     comp_subtype="Normal",
     depends_on={
         "land_products_demanded": 2,
-        "share_of_land_products_from_smallholders": 2,
         "land_products_available": 2,
+        "share_of_land_products_from_smallholders": 2,
     },
 )
 def land_products_protected_from_global_pool():

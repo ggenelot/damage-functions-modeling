@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
         "define_46_eta1": 1,
         "temperature_change": 3,
         "define_46_eta2": 1,
-        "define_46_eta3": 1,
         "define_46_exponent": 1,
+        "define_46_eta3": 1,
     },
 )
 def define_46_eq_damage_function():

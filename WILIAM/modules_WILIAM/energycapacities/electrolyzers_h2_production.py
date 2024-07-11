@@ -467,14 +467,14 @@ def flexible_electrolysers_capacity_decommissioning():
     comp_subtype="Normal",
     depends_on={
         "electrolytic_h2_required_to_satisfy_h2_demand": 1,
-        "objective_flexible_electrolizers_expansion_sp": 1,
-        "initial_year_flexible_electrolizers_expansion_sp_0": 2,
-        "one_year": 1,
-        "year_final_flexible_electrolizers_expansion_sp_0": 2,
         "prosup_flexopt_elec_capacity_expansion": 1,
-        "switch_nrg_proflex_capacity_expansion_endogenous": 1,
         "switch_policy_flexible_electrolyzers_expansion_sp_0": 1,
+        "initial_year_flexible_electrolizers_expansion_sp_0": 2,
+        "objective_flexible_electrolizers_expansion_sp": 1,
+        "switch_nrg_proflex_capacity_expansion_endogenous": 1,
+        "year_final_flexible_electrolizers_expansion_sp_0": 2,
         "time": 1,
+        "one_year": 1,
         "flexible_electrolysers_capacity_decommissioning": 1,
     },
 )
@@ -954,10 +954,10 @@ _ext_constant_select_stationary_electrolyzers_expansion_priority_sp = ExtConstan
     comp_subtype="Normal",
     depends_on={
         "total_fe_including_net_trade": 12,
-        "efficiency_methanization": 4,
         "efficiency_methanol_synthesis": 4,
         "share_fe_liquid_substituted_by_h2_synthetic_liquid": 4,
         "share_fe_gas_substituted_by_h2_synthetic_gas": 4,
+        "efficiency_methanization": 4,
     },
 )
 def share_electrolytic_h2_commodity_by_process():
@@ -1031,10 +1031,10 @@ def share_electrolytic_h2_commodity_by_process():
     comp_subtype="Normal",
     depends_on={
         "switch_policy_share_fe_liquid_and_gas_substituted_by_h2_synfuels_sp": 1,
-        "objective_share_fe_gas_substituted_by_h2_synthetic_gas_sp": 3,
         "initial_year_share_fe_liquid_and_gas_substituted_by_h2_synfuels_sp": 4,
         "year_final_share_fe_liquid_and_gas_substituted_by_h2_synfuels_sp": 3,
         "time": 3,
+        "objective_share_fe_gas_substituted_by_h2_synthetic_gas_sp": 3,
     },
 )
 def share_fe_gas_substituted_by_h2_synthetic_gas():
@@ -1079,10 +1079,10 @@ def share_fe_gas_substituted_by_h2_synthetic_gas():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_percentage_fe_liquid_substituted_by_h2_synthetic_liquid": 1,
-        "objective_share_fe_liquid_substituted_by_h2_synthetic_liquid_sp": 3,
-        "initial_year_share_fe_liquid_and_gas_substituted_by_h2_synfuels_sp": 4,
-        "switch_policy_share_fe_liquid_and_gas_substituted_by_h2_synfuels_sp": 1,
         "year_final_share_fe_liquid_and_gas_substituted_by_h2_synfuels_sp": 3,
+        "switch_policy_share_fe_liquid_and_gas_substituted_by_h2_synfuels_sp": 1,
+        "initial_year_share_fe_liquid_and_gas_substituted_by_h2_synfuels_sp": 4,
+        "objective_share_fe_liquid_substituted_by_h2_synthetic_liquid_sp": 3,
         "time": 3,
     },
 )
@@ -1184,12 +1184,12 @@ def stationary_electrolyzers_capacity_decommissioning():
     comp_subtype="Normal",
     depends_on={
         "select_availability_unmature_energy_technologies_sp": 2,
-        "stationary_electrolyzers_capacity_expansion_required": 1,
-        "objective_stationary_electrolyzers_expansion_sp": 1,
-        "initial_year_stationary_electrolyzers_expansion_sp": 2,
-        "select_stationary_electrolyzers_expansion_priority_sp": 1,
         "year_final_stationary_electrolyzers_expansion_sp": 2,
         "electrolytic_h2_required_to_satisfy_h2_demand": 1,
+        "initial_year_stationary_electrolyzers_expansion_sp": 2,
+        "objective_stationary_electrolyzers_expansion_sp": 1,
+        "stationary_electrolyzers_capacity_expansion_required": 1,
+        "select_stationary_electrolyzers_expansion_priority_sp": 1,
         "time": 1,
         "stationary_electrolyzers_capacity_decommissioning": 1,
     },
