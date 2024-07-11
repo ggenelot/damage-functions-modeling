@@ -120,7 +120,7 @@ for index, run in runs.iterrows():
                 pass
         
 ds.to_netcdf('results/batch/run_with_results.nc')
-
+ds.close()
 warnings.resetwarnings()
 
 print('Done every run')

@@ -284,8 +284,8 @@ def dynfenu_decom_protra():
     depends_on={
         "clean_water_for_om_required_for_protra": 1,
         "embodied_fe_intensity_clean_water": 1,
-        "embodied_fe_intensity_distilled_water": 1,
         "distilled_water_for_om_required_for_protra": 1,
+        "embodied_fe_intensity_distilled_water": 1,
         "matrix_unit_prefixes": 2,
     },
 )
@@ -541,11 +541,11 @@ def eptb_dynamic():
     depends_on={
         "to_over_lifetime_protra": 2,
         "share_total_transmission_loss": 2,
-        "share_self_electricity_consumption_protra": 1,
-        "fe_intensity_current_grids_om": 1,
         "fenust_protra": 1,
-        "protra_capacity_expansion_selected": 1,
         "unit_conversion_mw_tw": 1,
+        "share_self_electricity_consumption_protra": 1,
+        "protra_capacity_expansion_selected": 1,
+        "fe_intensity_current_grids_om": 1,
         "unit_conversion_mj_ej": 1,
     },
 )
@@ -590,7 +590,7 @@ def eroist_protra():
     units="DMNL",
     subscripts=["NRG PROTRA I"],
     comp_type="Constant, Data",
-    comp_subtype="External, Normal",
+    comp_subtype="Normal, External",
     depends_on={
         "__external__": "_ext_data_exogenous_eroist_protra",
         "__data__": "_ext_data_exogenous_eroist_protra",
@@ -670,10 +670,10 @@ _ext_constant_exogenous_eroist_protra.add(
     comp_subtype="Normal",
     depends_on={
         "protra_capacity_expansion_selected": 1,
-        "clean_water_for_om_required_for_protra": 1,
         "embodied_fe_intensity_clean_water": 1,
-        "embodied_fe_intensity_distilled_water": 1,
         "distilled_water_for_om_required_for_protra": 1,
+        "embodied_fe_intensity_distilled_water": 1,
+        "clean_water_for_om_required_for_protra": 1,
         "protra_lifetime": 1,
         "matrix_unit_prefixes": 4,
     },
@@ -1179,12 +1179,12 @@ def required_embodied_fe_per_material_for_new_grids():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 6,
-        "materials_required_for_new_protra": 6,
-        "embodied_fe_intensity_materials_36r": 6,
         "unit_conversion_kg_mt": 6,
+        "embodied_fe_intensity_materials_36r": 6,
+        "materials_required_for_new_protra": 6,
         "unit_conversion_mj_ej": 6,
-        "machining_rate_pv": 4,
         "scrap_rate": 8,
+        "machining_rate_pv": 4,
     },
 )
 def required_embodied_fe_per_material_for_new_protra():
@@ -1350,10 +1350,10 @@ def required_embodied_fe_per_material_for_new_protra():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 2,
-        "embodied_fe_intensity_materials_36r": 2,
         "materials_required_for_om_protra": 2,
-        "unit_conversion_kg_mt": 2,
         "unit_conversion_mj_ej": 2,
+        "embodied_fe_intensity_materials_36r": 2,
+        "unit_conversion_kg_mt": 2,
     },
 )
 def required_embodied_fe_per_material_for_om_new_protra():

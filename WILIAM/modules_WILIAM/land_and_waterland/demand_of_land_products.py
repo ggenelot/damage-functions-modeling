@@ -500,8 +500,8 @@ def output_real_9r_for_forestry_sector():
     depends_on={
         "switch_landwater": 1,
         "output_real_9r": 2,
-        "exogenous_output_real_9r_construction_sector": 1,
         "exogenous_output_real_9r_manufacture_wood_sector": 1,
+        "exogenous_output_real_9r_construction_sector": 1,
     },
 )
 def output_real_of_wood_manufacturing_and_construction_sectors():

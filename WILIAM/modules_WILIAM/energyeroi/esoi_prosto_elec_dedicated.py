@@ -145,8 +145,8 @@ def fenust_intensity_stationary_batteries():
     comp_subtype="Normal",
     depends_on={
         "switch_nrg_dynamic_eroist": 2,
-        "prosto_dedicated_capacity_expansion": 2,
         "fenust_intensity_phs_exogenous": 1,
+        "prosto_dedicated_capacity_expansion": 2,
         "fenust_intensity_stationary_batteries": 1,
     },
 )

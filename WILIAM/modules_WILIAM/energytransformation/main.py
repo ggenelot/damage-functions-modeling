@@ -111,8 +111,8 @@ def fe_domestic():
         "switch_nrg_demand_transformation": 1,
         "iea_total_fe_empirical": 1,
         "unit_conversion_tj_ej": 1,
-        "final_non_energy_demand_by_fe_9r": 1,
         "final_energy_demand_by_fe_9r": 1,
+        "final_non_energy_demand_by_fe_9r": 1,
     },
 )
 def fe_excluding_trade():
@@ -1762,12 +1762,12 @@ def total_prosup_transmission_losses():
     depends_on={
         "switch_model_explorer": 4,
         "model_explorer_target_share_bioenergy_in_fossil_liquids_and_gases": 4,
-        "year_final_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
-        "protra_input_shares_empiric": 4,
+        "target_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
         "year_initial_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
         "switch_policy_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
-        "target_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
         "time": 8,
+        "protra_input_shares_empiric": 4,
+        "year_final_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
     },
 )
 def variation_exogenous_protra_input_shares():

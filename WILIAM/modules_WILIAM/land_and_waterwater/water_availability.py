@@ -24,8 +24,8 @@ def initial_water_available_hm3():
     depends_on={
         "switch_landwater": 1,
         "first_factor_water_equation": 2,
-        "global_temperature_change_2015": 1,
         "second_factor_water_equation": 2,
+        "global_temperature_change_2015": 1,
         "temperature_change": 1,
     },
 )

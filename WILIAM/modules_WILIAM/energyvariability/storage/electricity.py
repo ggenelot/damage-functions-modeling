@@ -1169,9 +1169,9 @@ def roundtrip_and_transmission_losses_by_prosto():
     depends_on={
         "v2g_share_ev_vehicles": 1,
         "objective_sc_sp": 2,
-        "year_initial_sc_sp": 3,
         "year_final_sc_sp": 2,
         "initial_sc_sp": 4,
+        "year_initial_sc_sp": 3,
         "time": 4,
         "switch_sc_sp": 1,
     },
@@ -1387,9 +1387,9 @@ def total_prosto_losses_elec():
     depends_on={
         "time": 4,
         "initial_v2g_sp": 4,
+        "year_initial_v2g_sp": 3,
         "objective_v2g_sp": 2,
         "year_final_v2g_sp": 2,
-        "year_initial_v2g_sp": 3,
         "switch_v2g_sp": 1,
     },
 )

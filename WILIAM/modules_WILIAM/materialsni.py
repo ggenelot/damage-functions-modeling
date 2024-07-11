@@ -4988,8 +4988,8 @@ _integ_ni_cumulative_mining = Integ(
         "switch_eco2mat_ni_demand": 1,
         "switch_materials": 1,
         "ni_modified_demand_world7": 1,
-        "output_real": 1,
         "implicit_price_ni": 1,
+        "output_real": 1,
     },
 )
 def ni_demand():
@@ -5219,10 +5219,10 @@ def ni_fe_demand():
     depends_on={
         "ni_hidden_resources": 5,
         "ni_rich_find_rate": 1,
-        "prospecting_technology_improvements_for_ni": 4,
-        "scaling_numbers_from_ni_hidden_to_ni_known": 2,
-        "prospecting_for_ni_from_all": 2,
         "prospekting_rate_ni": 3,
+        "scaling_numbers_from_ni_hidden_to_ni_known": 2,
+        "prospecting_technology_improvements_for_ni": 4,
+        "prospecting_for_ni_from_all": 2,
         "prospecting_for_ni_from_grades": 3,
         "mining_technology_improvements_for_ni": 1,
     },
@@ -6174,9 +6174,9 @@ def ni_price_effect_on_demand():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_ni_price": 1,
-        "price_transformation": 1,
-        "estimated_price_with_tax_metals": 1,
         "ni_base_price_2000": 1,
+        "estimated_price_with_tax_metals": 1,
+        "price_transformation": 1,
     },
 )
 def ni_price_index_economy():
@@ -6465,8 +6465,8 @@ def ni_share_of_secondary_material():
         "ni_plating": 1,
         "ni_other_use": 1,
         "ni_market": 1,
-        "imv_ss_fast_in_use": 1,
         "ni_content_in_ss_steel": 1,
+        "imv_ss_fast_in_use": 1,
         "imv_ss_slow_in_use": 1,
     },
 )

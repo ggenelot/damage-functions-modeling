@@ -3930,7 +3930,7 @@ _ext_data_prosto_capacity_expansion_calculator.add(
     units="TW/Year",
     subscripts=["REGIONS 9 I", "NRG PROTRA I"],
     comp_type="Constant, Data",
-    comp_subtype="External, Normal",
+    comp_subtype="Normal, External",
     depends_on={
         "__external__": "_ext_data_protra_capacity_expansion_calculator",
         "__data__": "_ext_data_protra_capacity_expansion_calculator",

@@ -359,7 +359,7 @@ def net_protra_capacity_expansion_annual_growth():
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG TO I"],
     comp_type="Constant",
-    comp_subtype="External, Normal",
+    comp_subtype="Normal, External",
     depends_on={"__external__": "_ext_constant_overcapacity_factor_empiric"},
 )
 def overcapacity_factor_empiric():
@@ -517,8 +517,8 @@ def production_from_hp_expansion():
     depends_on={
         "time": 2,
         "protra_capacity_variation_empirical": 3,
-        "protra_lifetime": 1,
         "protra_capacity_stock": 1,
+        "protra_lifetime": 1,
     },
 )
 def protra_capacity_decommissioning():
@@ -603,8 +603,8 @@ def protra_capacity_decommissioning_35r():
     depends_on={
         "time": 1,
         "protra_capacity_variation_empirical": 1,
-        "protra_capacity_decommissioning_selected": 1,
         "share_protra_capacity_stock_eu27": 1,
+        "protra_capacity_decommissioning_selected": 1,
     },
 )
 def protra_capacity_decommissioning_eu27():
@@ -677,7 +677,7 @@ def protra_capacity_decommissioning_selected():
     units="GW",
     subscripts=["REGIONS 36 I", "NRG TO I", "NRG PROTRA I"],
     comp_type="Constant, Data",
-    comp_subtype="External, Normal",
+    comp_subtype="Normal, External",
     depends_on={
         "__external__": "_ext_data_protra_capacity_empirical",
         "__data__": "_ext_data_protra_capacity_empirical",
@@ -4447,13 +4447,13 @@ def protra_elec_expansion_request_with_limits_nres():
     depends_on={
         "remaining_potential_protra_res_pp": 5,
         "remaining_elec_shortfall_to_be_allocated": 11,
-        "unlimited_protra_res_parameter": 1,
-        "switch_law2nrg_solarland": 1,
+        "switch_nrg_variability_effects": 4,
         "stress_signal_solar_land": 1,
         "stress_signal_protra_curtailed": 4,
         "switch_energy": 2,
+        "unlimited_protra_res_parameter": 1,
         "switch_nrg_limited_res_potentials": 5,
-        "switch_nrg_variability_effects": 4,
+        "switch_law2nrg_solarland": 1,
         "switch_law2nrg_available_forestry_products_for_industry": 1,
         "signal_availability_forestry_products_for_energy": 1,
     },
@@ -4735,8 +4735,8 @@ def protra_elec_shortfall_allocation():
         "to_shortfall": 13,
         "remaining_potential_protra_res_chp_hp": 5,
         "switch_nrg_limited_res_potentials": 6,
-        "switch_law2nrg_available_forestry_products_for_industry": 1,
         "switch_energy": 1,
+        "switch_law2nrg_available_forestry_products_for_industry": 1,
         "signal_availability_forestry_products_for_energy": 1,
     },
 )
@@ -5128,11 +5128,11 @@ def protra_pp_solar_pv_by_subtechnology_capacity_expansion():
     comp_subtype="Normal",
     depends_on={
         "pwidth_protra_capacity_expansion_priorities_vector_sp": 1,
+        "switch_model_explorer": 1,
         "protra_capacity_expansion_priorities_vector_sp": 1,
         "protra_capacity_expansion_policy_weight_sp": 2,
         "lcoe_by_protra_priority_signal": 1,
         "model_explorer_protra_capacity_expansion": 1,
-        "switch_model_explorer": 1,
     },
 )
 def protra_priority_vector():
@@ -5322,8 +5322,8 @@ def remaining_elec_shortfall_to_be_allocated():
     comp_subtype="Normal",
     depends_on={
         "remaining_elec_shortfall_to_be_allocated": 1,
-        "to_shortfall": 2,
         "protra_heat_shortfall_allocation": 1,
+        "to_shortfall": 2,
     },
 )
 def remaining_global_shortfall_after_heat_allocation():
