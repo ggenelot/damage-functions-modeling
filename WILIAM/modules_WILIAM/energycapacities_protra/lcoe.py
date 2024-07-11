@@ -45,9 +45,9 @@ def lcoe_by_protra_priority_signal():
     depends_on={
         "dynamic_capacity_investment_cost_protra_development_36r": 1,
         "unit_conversion_dollars_mdollars": 1,
+        "protra_max_full_load_hours_after_constraints": 2,
         "opex_in_usd_per_mwh": 1,
         "protra_lifetime": 2,
-        "protra_max_full_load_hours_after_constraints": 2,
     },
 )
 def lcoe_protra():

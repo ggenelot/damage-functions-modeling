@@ -87,8 +87,8 @@ def biomass_stock_forest_primay():
     comp_subtype="Normal",
     depends_on={
         "biomass_stock_all_forests": 1,
-        "historical_forest_volume_stock_all_forests": 1,
         "initial_time": 1,
+        "historical_forest_volume_stock_all_forests": 1,
         "forest_volume_stock_changes": 1,
     },
 )
@@ -171,8 +171,8 @@ def forest_primary_area_lost():
     comp_subtype="Normal",
     depends_on={
         "volume_stock_change_net_afforestation_m_and_p": 1,
-        "forest_primary_area_lost": 1,
         "maximum_forest_stock_per_area": 1,
+        "forest_primary_area_lost": 1,
     },
 )
 def forest_stock_change_net_afforestation():
@@ -196,9 +196,9 @@ def forest_stock_change_net_afforestation():
         "time_historical_data_land_module": 1,
         "historical_forest_volume_stock_change_all_forests": 1,
         "roundwood_volumme_extracted_from_forest_m_and_p": 1,
-        "growth_forest_all": 1,
         "natural_disturbance_all_forest": 1,
         "forest_stock_change_net_afforestation": 1,
+        "growth_forest_all": 1,
     },
 )
 def forest_volume_stock_changes():

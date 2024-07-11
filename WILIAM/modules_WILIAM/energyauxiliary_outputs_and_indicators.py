@@ -138,8 +138,8 @@ _delayfixed_auxiliary_pe_gdp_intensity = DelayFixed(
     depends_on={
         "protra_to_allocated": 1,
         "unit_conversion_twh_ej": 1,
-        "unit_conversion_hours_year": 1,
         "protra_operative_capacity_stock_selected": 1,
+        "unit_conversion_hours_year": 1,
     },
 )
 def cf_power_system():
@@ -413,8 +413,8 @@ def co2_intensity_to_heat():
         "ghg_emissions_by_sector": 3,
         "unit_conversion_t_mt": 3,
         "gwp_20_year": 3,
-        "gwp_100_year": 3,
         "select_gwp_time_frame_sp": 3,
+        "gwp_100_year": 3,
         "output_real_9r": 1,
     },
 )
@@ -1316,8 +1316,8 @@ def share_fe_demand_commodity():
     comp_subtype="Normal",
     depends_on={
         "ti_by_proref_and_commodity": 5,
-        "to_h2_gases_based_fuel": 2,
         "share_to_elec_res_vs_total_elec": 1,
+        "to_h2_gases_based_fuel": 2,
     },
 )
 def share_fe_gas_res_vs_total_gas():
@@ -1923,8 +1923,8 @@ def total_final_energy_intensities_1r_1s():
     comp_subtype="Normal",
     depends_on={
         "pe_by_commodity": 1,
-        "total_final_energy_demand_by_fe": 1,
         "final_energy_demand_by_fe_9r": 1,
+        "total_final_energy_demand_by_fe": 1,
     },
 )
 def total_pe_energy_uses():

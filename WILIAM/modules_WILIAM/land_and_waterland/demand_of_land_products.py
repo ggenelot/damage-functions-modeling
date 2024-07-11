@@ -101,9 +101,9 @@ def crops_demanded_for_energy_world():
         "time": 1,
         "time_historical_data_land_module": 1,
         "exo_pe_by_commodity_agriculture_products": 2,
-        "switch_landwater": 1,
-        "pe_by_commodity_dem": 1,
         "adjustment_pe_by_commodity_agricultural": 1,
+        "pe_by_commodity_dem": 1,
+        "switch_landwater": 1,
     },
 )
 def energy_demanded_from_agriculture_products():
@@ -500,8 +500,8 @@ def output_real_9r_for_forestry_sector():
     depends_on={
         "switch_landwater": 1,
         "output_real_9r": 2,
-        "exogenous_output_real_9r_construction_sector": 1,
         "exogenous_output_real_9r_manufacture_wood_sector": 1,
+        "exogenous_output_real_9r_construction_sector": 1,
     },
 )
 def output_real_of_wood_manufacturing_and_construction_sectors():
