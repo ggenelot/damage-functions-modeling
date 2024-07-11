@@ -6,5 +6,7 @@ numpy
 xarray
 pysd
 seaborn
-matplotlib.pyplot
 pandas
+matplotlib
+statsmodels
+
