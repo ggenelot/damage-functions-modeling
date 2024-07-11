@@ -13,11 +13,11 @@ Translated using PySD version 3.14.0
         "time": 3,
         "time_historical_data_land_module": 1,
         "change_of_urban_land_dispersion_trends": 2,
-        "switch_urban_land_density_sp": 1,
-        "year_final_urban_land_density_sp": 2,
         "objective_urban_land_density_sp": 1,
-        "year_initial_urban_land_density_sp": 2,
         "urban_land_dispersion_trends": 1,
+        "year_final_urban_land_density_sp": 2,
+        "switch_urban_land_density_sp": 1,
+        "year_initial_urban_land_density_sp": 2,
     },
 )
 def change_of_urban_land_dispersion():

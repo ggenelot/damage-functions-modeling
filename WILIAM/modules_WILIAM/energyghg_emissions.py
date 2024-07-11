@@ -452,8 +452,8 @@ def co2_intensity_of_passenger_transport_9r():
     comp_subtype="Normal",
     depends_on={
         "ghg_energy_emissions_by_sector_35r": 3,
-        "gwp_20_year": 3,
         "select_gwp_time_frame_sp": 3,
+        "gwp_20_year": 3,
         "gwp_100_year": 3,
         "unit_conversion_tco2eq_gtco2eq": 3,
         "unit_conversion_mt_t": 3,
@@ -923,7 +923,7 @@ _ext_constant_emission_factors_off_road_transportation = ExtConstant(
     units="kg/TJ",
     subscripts=["TRANSPORT POWER TRAIN I", "PRIVATE TRANSPORT I", "GHG I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={"__external__": "_ext_constant_emission_factors_private_transport"},
 )
 def emission_factors_private_transport():
@@ -1000,7 +1000,7 @@ _ext_constant_emission_factors_private_transport.add(
     units="kg/TJ",
     subscripts=["TRANSPORT POWER TRAIN I", "PUBLIC TRANSPORT I", "GHG I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={"__external__": "_ext_constant_emission_factors_public_transport"},
 )
 def emission_factors_public_transport():
@@ -1123,7 +1123,7 @@ _ext_constant_emission_factors_road_transportation = ExtConstant(
     units="kg/TJ",
     subscripts=["NRG PROTRA I", "NRG TI I", "GHG I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={"__external__": "_ext_constant_emission_factors_stationary_combustion"},
 )
 def emission_factors_stationary_combustion():
@@ -1459,8 +1459,8 @@ def ghg_all_emissions_35r():
     depends_on={
         "ghg_all_emissions_35r": 1,
         "unit_conversion_t_gt": 1,
-        "gwp_20_year": 1,
         "select_gwp_time_frame_sp": 1,
+        "gwp_20_year": 1,
         "gwp_100_year": 1,
         "unit_conversion_tco2eq_mtco2eq": 1,
     },
@@ -1525,8 +1525,8 @@ def ghg_all_emissions_eu27():
         "unit_conversion_t_mt": 2,
         "unit_conversion_mt_ej": 2,
         "surface_coal_mining_emission_factors": 1,
-        "pe_by_commodity": 1,
         "world_pe_by_commodity": 1,
+        "pe_by_commodity": 1,
     },
 )
 def ghg_coal_extraction_emissions():
@@ -1576,7 +1576,7 @@ def ghg_coal_extraction_emissions():
     units="kg/TJ",
     subscripts=["NRG FE I", "GHG I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_ghg_emission_factors_residential_stationary_combustion"
     },
@@ -1622,7 +1622,7 @@ _ext_constant_ghg_emission_factors_residential_stationary_combustion = ExtConsta
     units="kg/TJ",
     subscripts=["NRG FE I", "GHG I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_ghg_emission_factors_stationary_combustion"
     },
@@ -1833,9 +1833,9 @@ def ghg_emissions_all_energy_chain_9r():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 1,
-        "base_output_real": 1,
         "ghg_emissions_all_energy_chain_per_unit_of_sector_output_35r": 2,
         "unit_conversion_mt_t": 2,
+        "base_output_real": 1,
         "output_real": 1,
     },
 )
@@ -1893,9 +1893,9 @@ def ghg_emissions_all_energy_chain_per_unit_of_sector_output_35r():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 2,
-        "base_output_real": 2,
         "unit_conversion_t_mt": 4,
         "ghg_emissions_all_energy_chain_9r": 4,
+        "base_output_real": 2,
         "output_real_9r": 2,
     },
 )
@@ -2557,8 +2557,8 @@ def ghg_emissions_by_protra_sectors_9r():
         "emission_factors_stationary_combustion": 24,
         "unit_conversion_kg_mt": 9,
         "unit_conversion_tj_ej": 5,
-        "ghg_emission_factors_stationary_combustion": 4,
         "final_energy_demand_bysectors_and_fe_9r": 4,
+        "ghg_emission_factors_stationary_combustion": 4,
         "ghg_fugitive_emissions_refining": 1,
         "ghg_fugitive_emissions_supply": 1,
         "ghg_coal_extraction_emissions": 1,
@@ -3333,8 +3333,8 @@ def ghg_emissions_final_energy_by_sector_and_fe_economic_classification():
     depends_on={
         "ghg_emissions_final_energy_by_sector_and_fe_economic_classification": 3,
         "unit_conversion_t_mt": 3,
-        "gwp_20_year": 3,
         "select_gwp_time_frame_sp": 3,
+        "gwp_20_year": 3,
         "gwp_100_year": 3,
         "unit_conversion_tco2eq_mtco2eq": 3,
     },
@@ -3592,8 +3592,8 @@ def ghg_emissions_households_coicop_35_r():
     comp_subtype="Normal",
     depends_on={
         "ghg_emissions_households_coicop_35_r": 3,
-        "gwp_20_year": 3,
         "select_gwp_time_frame_sp": 3,
+        "gwp_20_year": 3,
         "gwp_100_year": 3,
         "unit_conversion_t_mt": 3,
         "unit_conversion_tco2eq_mtco2eq": 3,
@@ -3836,8 +3836,8 @@ def ghg_energy_emissions_by_sector_35r():
     comp_subtype="Normal",
     depends_on={
         "buildings_ghg_emissions_end_use_energy_by_fe_35r": 3,
-        "gwp_20_year": 3,
         "select_gwp_time_frame_sp": 3,
+        "gwp_20_year": 3,
         "gwp_100_year": 3,
         "unit_conversion_tco2eq_gtco2eq": 3,
         "unit_conversion_mt_t": 3,
@@ -3912,8 +3912,8 @@ def ghg_energy_emissions_households_heating_35r_co2eq():
     comp_subtype="Normal",
     depends_on={
         "private_transport_ghg_emissions_35r": 3,
-        "gwp_20_year": 3,
         "select_gwp_time_frame_sp": 3,
+        "gwp_20_year": 3,
         "gwp_100_year": 3,
         "unit_conversion_tco2eq_gtco2eq": 3,
         "unit_conversion_mt_t": 3,
@@ -4069,9 +4069,9 @@ def ghg_extraction_emissions():
         "unit_conversion_g_mt": 2,
         "unit_conversion_j_m3_nat_gas": 1,
         "unit_conversion_tj_ej": 1,
-        "emission_factors_coal_to_gas_production": 1,
-        "unit_conversion_kg_mt": 1,
         "emission_factors_gas_to_liquid_production": 1,
+        "unit_conversion_kg_mt": 1,
+        "emission_factors_coal_to_gas_production": 1,
     },
 )
 def ghg_fugitive_emissions_refining():
@@ -4142,8 +4142,8 @@ def ghg_fugitive_emissions_refining():
         "unit_conversion_j_ej": 2,
         "unit_conversion_j_m3_nat_gas": 1,
         "unit_conversion_g_mt": 2,
-        "unit_conversion_toe_m3": 1,
         "unit_conversion_j_toe": 1,
+        "unit_conversion_toe_m3": 1,
     },
 )
 def ghg_fugitive_emissions_supply():
@@ -4391,11 +4391,11 @@ def ghg_oil_extraction_emissions():
     comp_subtype="Normal",
     depends_on={
         "ghg_emissions_all_energy_chain_by_sector_35r": 5,
-        "ghg_emission_factors_stationary_combustion": 5,
-        "unit_conversion_kg_mt": 10,
-        "private_transport_ghg_emissions_35r": 5,
         "final_energy_demand_by_sector_and_fe": 5,
+        "unit_conversion_kg_mt": 10,
+        "ghg_emission_factors_stationary_combustion": 5,
         "buildings_ghg_emissions_end_use_energy_by_fe_35r": 5,
+        "private_transport_ghg_emissions_35r": 5,
     },
 )
 def ghg_protra_emissions_by_fe_35r():
@@ -4933,8 +4933,8 @@ def imv_ghg_emissions_final_energy_by_sector_and_fe_35r():
     comp_subtype="Normal",
     depends_on={
         "ghg_energy_emissions_by_sector_35r": 3,
-        "gwp_20_year": 3,
         "select_gwp_time_frame_sp": 3,
+        "gwp_20_year": 3,
         "gwp_100_year": 3,
         "unit_conversion_tco2eq_gtco2eq": 3,
         "unit_conversion_mt_t": 3,

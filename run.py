@@ -99,7 +99,7 @@ for index, run in runs.iterrows():
     exponent = run['exponent']
     norm_constant = run['norm_constant']
 
-    print{f"Running model for run {run['run_number']} with RCP {rcp}, exponent {exponent} and norm_constant {norm_constant}"}
+    print(f"Running model for run {run['run_number']} with RCP {rcp}, exponent {exponent} and norm_constant {norm_constant}")
 
     # Run the model
     run = model.run(progress=True,

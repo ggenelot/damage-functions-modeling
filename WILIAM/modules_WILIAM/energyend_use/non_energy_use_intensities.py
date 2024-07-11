@@ -30,8 +30,8 @@ def final_non_energy_demand_by_fe_35r():
     depends_on={
         "final_non_energy_demand_by_fe_eu27": 3,
         "final_non_energy_demand_by_fe_35r": 3,
-        "switch_nrg_hydrogen_industrial_demand": 2,
         "h2_total_demand_lhv_basis": 2,
+        "switch_nrg_hydrogen_industrial_demand": 2,
     },
 )
 def final_non_energy_demand_by_fe_9r():
@@ -120,8 +120,8 @@ def final_non_energy_demand_by_fe_eu27():
         "switch_energy": 1,
         "base_output_real": 2,
         "non_energy_use_intensities_by_sector_and_fe": 3,
-        "switch_eco2nrg_output_real": 1,
         "output_real": 1,
+        "switch_eco2nrg_output_real": 1,
     },
 )
 def final_non_energy_demand_by_sectors_and_fe():
@@ -242,9 +242,9 @@ _ext_constant_switch_nrg_hydrogen_industrial_demand = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "select_non_energy_use_intensities_sector": 1,
-        "historical_non_energy_use_intensities_by_sector_and_fe": 1,
         "time": 1,
         "historical_growth_non_energy_use_intensity_by_fe": 3,
+        "historical_non_energy_use_intensities_by_sector_and_fe": 1,
         "non_energy_use_intensities_by_sector_and_fe": 1,
     },
 )
