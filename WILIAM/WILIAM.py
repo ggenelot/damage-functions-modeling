@@ -8,38 +8,38 @@ import numpy as np
 import xarray as xr
 
 from pysd.py_backend.functions import (
-    if_then_else,
+    get_time_value,
+    zidz,
     step,
+    if_then_else,
+    xidz,
+    vmax,
+    active_initial,
+    ramp,
+    modulo,
     sum,
+    prod,
+    vector_select,
+    invert_matrix,
     integer,
     vector_reorder,
-    invert_matrix,
-    vector_sort_order,
-    vmax,
-    ramp,
     vmin,
-    modulo,
-    vector_select,
-    active_initial,
-    get_time_value,
-    prod,
-    xidz,
-    zidz,
+    vector_sort_order,
 )
 from pysd.py_backend.statefuls import (
-    Initial,
     SampleIfTrue,
-    Delay,
-    DelayFixed,
     Integ,
+    Initial,
+    DelayFixed,
     Smooth,
+    Delay,
 )
-from pysd.py_backend.external import ExtConstant, ExtLookup, ExtData
-from pysd.py_backend.utils import load_modules, load_model_data
-from pysd.py_backend.allocation import allocate_by_priority, allocate_available
+from pysd.py_backend.external import ExtLookup, ExtData, ExtConstant
+from pysd.py_backend.utils import load_model_data, load_modules
+from pysd.py_backend.allocation import allocate_available, allocate_by_priority
 from pysd import Component
 
-__pysd_version__ = "3.14.0"
+__pysd_version__ = "3.13.4"
 
 __data = {"scope": None, "time": lambda: 0}
 
@@ -733,11 +733,11 @@ _ext_constant_initial_passenger_transport_demand_share_exogenous.add(
         "time": 4,
         "initial_year_model_explorer": 7,
         "initial_passenger_transport_demand_share_exogenous": 7,
-        "final_year_model_explorer": 6,
         "select_passenger_transport_demand_modal_share_me": 3,
+        "final_year_model_explorer": 6,
         "scenario_passenger_transport_demand_modal_share_option_2_me": 1,
-        "scenario_passenger_transport_demand_modal_share_option_1_me": 1,
         "scenario_passenger_transport_demand_modal_share_option_3_me": 1,
+        "scenario_passenger_transport_demand_modal_share_option_1_me": 1,
     },
 )
 def model_explorer_passenger_transport_demand_modal_share():
@@ -818,11 +818,11 @@ def model_explorer_passenger_transport_demand_modal_share():
     depends_on={
         "time": 4,
         "initial_year_model_explorer": 7,
-        "final_year_model_explorer": 6,
-        "scenario_passenger_transport_demand_option_2_me": 1,
-        "scenario_passenger_transport_demand_option_1_me": 1,
         "scenario_passenger_transport_demand_option_3_me": 1,
+        "scenario_passenger_transport_demand_option_1_me": 1,
+        "final_year_model_explorer": 6,
         "select_reduction_passenger_transport_demand_me": 3,
+        "scenario_passenger_transport_demand_option_2_me": 1,
     },
 )
 def model_explorer_reduction_passenger_transport_demand():

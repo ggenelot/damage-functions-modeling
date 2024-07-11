@@ -1,6 +1,6 @@
 """
 Module economyauxiliary_outputs_and_indicators
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(

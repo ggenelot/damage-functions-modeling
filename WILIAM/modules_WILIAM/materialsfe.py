@@ -1,6 +1,6 @@
 """
 Module materialsfe
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -680,8 +680,8 @@ _integ_fe_cumulative_mining = Integ(
         "switch_eco2mat_fe_demand": 1,
         "switch_materials": 1,
         "imv_fe_mining_historical": 1,
-        "implicit_price_fe": 1,
         "output_real": 1,
+        "implicit_price_fe": 1,
     },
 )
 def fe_demand():
@@ -738,8 +738,8 @@ _ext_constant_fe_demand_shares = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "world_population": 1,
-        "imv_iron_demand_per_person": 1,
         "fe_demand_shares": 2,
+        "imv_iron_demand_per_person": 1,
         "global_steel_demand": 1,
         "unit_conversion_billion_to_million": 2,
         "imv_fe_demand_for_reinforcment_bars": 1,
@@ -1934,8 +1934,8 @@ def fe_price_in():
     depends_on={
         "switch_mat2eco_fe_price": 1,
         "estimated_price_with_tax_metals": 1,
-        "fe_base_price_2015": 1,
         "price_transformation": 1,
+        "fe_base_price_2015": 1,
     },
 )
 def fe_price_index_economy():
@@ -2389,8 +2389,8 @@ def fe_scrapping():
     depends_on={
         "switch_fe_recycling_rate": 1,
         "fe_eol_recycling_rate_sp": 1,
-        "fe_scrap_curve": 1,
         "fe_scrap": 1,
+        "fe_scrap_curve": 1,
     },
 )
 def fe_sent_to_recycling():

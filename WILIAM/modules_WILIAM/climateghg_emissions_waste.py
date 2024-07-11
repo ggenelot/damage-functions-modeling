@@ -1,6 +1,6 @@
 """
 Module climateghg_emissions_waste
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -276,8 +276,8 @@ def co2_waste_emissions_intensity_35r():
     comp_subtype="Normal",
     depends_on={
         "co2_waste_emissions_9r": 1,
-        "unit_conversion_mt_gt": 2,
         "ch4_waste_emissions_9r": 1,
+        "unit_conversion_mt_gt": 2,
         "n2o_waste_emissions_9r": 1,
     },
 )

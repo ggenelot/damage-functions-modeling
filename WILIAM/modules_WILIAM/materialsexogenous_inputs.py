@@ -1,6 +1,6 @@
 """
 Module materialsexogenous_inputs
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -3929,8 +3929,8 @@ _ext_data_prosto_capacity_expansion_calculator.add(
     name="PROTRA CAPACITY EXPANSION CALCULATOR",
     units="TW/Year",
     subscripts=["REGIONS 9 I", "NRG PROTRA I"],
-    comp_type="Constant, Data",
-    comp_subtype="Normal, External",
+    comp_type="Data, Constant",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_data_protra_capacity_expansion_calculator",
         "__data__": "_ext_data_protra_capacity_expansion_calculator",

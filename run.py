@@ -61,21 +61,12 @@ ds_path = 'results/batch/run_0.nc'
 
 ds = xr.open_dataset(ds_path)
 
-# Add missing dimensions if they don't exist
-for dim in ['RCP', 'exponent', 'norm_constant']:
-    if dim not in ds.dims:
-        ds = ds.expand_dims({dim: runs[dim].unique()})
-
-# Create or update coordinates
-ds = ds.assign_coords({
-    'RCP': runs['RCP'].unique(),
-    'exponent': runs['exponent'].unique(),
-    'norm_constant': runs['norm_constant'].unique()
-})
+run_num = 1
+ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 
 
 # Reducing the number of runs to test the model
-runs = runs.head(5)
+runs = runs.head(run_num)
 
 
 ## Preparing to vary the radiative forcing
@@ -96,8 +87,9 @@ for index, run in runs.iterrows():
     total_forcing = forcing[forcing_columns]
     total_forcing = pd.Series(index=total_forcing['time'], data=total_forcing[rcp].values)
     print("Forcing initialized")
-    exponent = run['exponent']
-    norm_constant = run['norm_constant']
+    
+    exponent = np.random.normal(-2, 2, 1)[0]
+    norm_constant = np.random.uniform(10000, 50000, 1)[0]
 
     print(f"Running model for run {run['run_number']} with RCP {rcp}, exponent {exponent} and norm_constant {norm_constant}")
 
@@ -114,8 +106,8 @@ for index, run in runs.iterrows():
 
     for variable in result_variables: 
         try:   
-                ds[variable].loc[dict(RCP=rcp, exponent = exponent, norm_constant = norm_constant)]
-                print(f"Added variable {variable} to the dataset")
+                ds[variable].loc[dict(Run = index)] = run[variable].values
+                print(f"Added variable {variable} to the dataset : {run[variable].values}")
         except:
                 pass
         

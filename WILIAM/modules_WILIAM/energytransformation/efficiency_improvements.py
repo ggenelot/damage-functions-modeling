@@ -1,6 +1,6 @@
 """
 Module energytransformation.efficiency_improvements
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -114,10 +114,10 @@ _integ_efficiences_pv_technology_panels = Integ(
     depends_on={
         "time": 4,
         "historic_pv_modules_efficiency": 2,
+        "efficiences_max_pv_technology": 1,
+        "annual_efficiency_increase_pv_sp": 1,
         "efficiences_pv_technology_panels": 1,
         "initial_year_efficiency_increase_rate_pv_sp": 1,
-        "annual_efficiency_increase_pv_sp": 1,
-        "efficiences_max_pv_technology": 1,
     },
 )
 def efficiency_increase_pv_panels():
