@@ -53,6 +53,10 @@ output_variables = np.concatenate([variables_modelled_names, interest_variables]
 
 runs = pd.read_csv('run_manager.csv')
 
+# Reducing the number of runs to test the model
+
+runs = runs.head(5)
+
 ## Preparing to vary the radiative forcing
 
 # Load the basic radiative forcing 
@@ -66,24 +70,28 @@ forcing = pd.read_csv('full_rcp.csv')
 # Iterate over the rows of the run manager
 for index, run in runs.iterrows():
 
-    print("Initializing forcing...")
+    print("Initializing forcing... ")
     rcp = run['RCP']
-    total_forcing = forcing[rcp]
+    forcing_columns = [rcp,  'time']
+    total_forcing = forcing[forcing_columns]
+    total_forcing = pd.Series(index=total_forcing['time'], data=total_forcing[rcp].values)
     print("Forcing initialized")
+    exponent = run['exponent']
+    norm_constant = run['norm_constant']
 
+    print{f"Running model for run {run['run_number']} with RCP {rcp}, exponent {exponent} and norm_constant {norm_constant}"}
 
     # Run the model
-    #print(f'Running model : {run["name"]}')
     run = model.run(progress=True,
                     params={'total radiative forcing': total_forcing, 
-                            '"EXTRA: EXTRA: exponent"' : run['exponent'],
-                            '"EXTRA: EXTRA: normalisation constant"': run['norm_constant']
+                            '"EXTRA: EXTRA: exponent"' : exponent,
+                            '"EXTRA: EXTRA: normalisation constant"': norm_constant
                             },
                     return_columns=output_variables,
                     final_time=run['final_time'],  
-                    output_file=f'results/batch/run_{run["run_number"]}.nc')
+                    output_file=f'results/batch/run_{str(run["run_number"])}.nc')
 
-    #print(f'Done running model : {run["name"]}')
+
 warnings.resetwarnings()
 
 print('Done every run')
