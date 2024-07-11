@@ -53,15 +53,35 @@ output_variables = np.concatenate([variables_modelled_names, interest_variables]
 
 runs = pd.read_csv('run_manager.csv')
 
-# Reducing the number of runs to test the model
 
+
+## Preparing the dataset 
+
+ds_path = 'results/batch/run_0.nc'
+
+ds = xr.open_dataset(ds_path)
+
+# Add missing dimensions if they don't exist
+for dim in ['RCP', 'exponent', 'norm_constant']:
+    if dim not in ds.dims:
+        ds = ds.expand_dims({dim: runs[dim].unique()})
+
+# Create or update coordinates
+ds = ds.assign_coords({
+    'RCP': runs['RCP'].unique(),
+    'exponent': runs['exponent'].unique(),
+    'norm_constant': runs['norm_constant'].unique()
+})
+
+
+# Reducing the number of runs to test the model
 runs = runs.head(5)
+
 
 ## Preparing to vary the radiative forcing
 
 # Load the basic radiative forcing 
 
-rcps = ['RCP6.0', 'RCP4.5', 'RCP2.6', 'RCP8.5']
 
 forcing = pd.read_csv('full_rcp.csv')
 
@@ -88,9 +108,18 @@ for index, run in runs.iterrows():
                             '"EXTRA: EXTRA: normalisation constant"': norm_constant
                             },
                     return_columns=output_variables,
-                    final_time=run['final_time'],  
-                    output_file=f'results/batch/run_{str(run["run_number"])}.nc')
+                    final_time=run['final_time'])
 
+    result_variables = run.columns 
+
+    for variable in result_variables: 
+        try:   
+                ds[variable].loc[dict(RCP=rcp, exponent = exponent, norm_constant = norm_constant)]
+                print(f"Added variable {variable} to the dataset")
+        except:
+                pass
+        
+ds.to_netcdf('results/batch/run_with_results.nc')
 
 warnings.resetwarnings()
 
