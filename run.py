@@ -61,7 +61,7 @@ ds_path = 'results/batch/run_0.nc'
 
 ds = xr.open_dataset(ds_path)
 
-run_num = len(runs)
+run_num =  3 #len(runs)
 ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 
 
@@ -103,6 +103,9 @@ for index, run in runs.iterrows():
                     final_time=run['final_time'])
 
     result_variables = run.columns 
+
+    ds["exponent"].loc[dict(Run = index)] = exponent
+    ds["norm_constant"].loc[dict(Run = index)] = norm_constant
 
     for variable in result_variables: 
         try:   
