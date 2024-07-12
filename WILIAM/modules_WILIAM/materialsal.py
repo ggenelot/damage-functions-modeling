@@ -1,6 +1,6 @@
 """
 Module materialsal
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -126,8 +126,8 @@ _integ_al_cumulative_mining = Integ(
         "switch_eco2mat_al_demand": 1,
         "switch_materials": 1,
         "al_modified_demand_world7": 1,
-        "output_real": 1,
         "implicit_price_al": 1,
+        "output_real": 1,
     },
 )
 def al_demand():
@@ -1485,10 +1485,10 @@ def al_price():
     depends_on={
         "time": 1,
         "initial_al_price": 1,
-        "al_available_delayed": 2,
         "maximum_al_price": 1,
-        "al_demand": 2,
+        "al_available_delayed": 2,
         "coefficients_al_price_economy": 3,
+        "al_demand": 2,
     },
 )
 def al_price_economy():
@@ -2336,8 +2336,8 @@ def decrease_al_profit():
     comp_subtype="Normal",
     depends_on={
         "switch_al_recycling_policy": 1,
-        "al_scrapped_metal": 2,
         "al_eol_recycling_rate_sp": 1,
+        "al_scrapped_metal": 2,
         "al_recycling_drive_scaling": 1,
     },
 )
@@ -2359,8 +2359,8 @@ def decrease_al_scrapped_metal_loss():
     comp_subtype="Normal",
     depends_on={
         "switch_al_recycling_policy": 1,
-        "al_scrapped_metal": 2,
         "al_eol_recycling_rate_sp": 1,
+        "al_scrapped_metal": 2,
         "al_recycling_drive_scaling": 1,
     },
 )

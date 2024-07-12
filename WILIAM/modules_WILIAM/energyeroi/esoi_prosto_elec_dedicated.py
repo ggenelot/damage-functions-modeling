@@ -1,6 +1,6 @@
 """
 Module energyeroi.esoi_prosto_elec_dedicated
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -31,8 +31,8 @@ def dynesoist_prosto_elec_dedicated():
     comp_subtype="Normal",
     depends_on={
         "eroist_ini_hydro_2015": 1,
-        "cf_protra_full_load_hours": 1,
         "cf_prosto": 1,
+        "cf_protra_full_load_hours": 1,
     },
 )
 def esoist_initial_phs():
@@ -57,8 +57,8 @@ def esoist_initial_phs():
         "cf_prosto": 1,
         "prosto_dedicated_lifetime": 1,
         "unit_conversion_j_wh": 1,
-        "matrix_unit_prefixes": 1,
         "unit_conversion_wh_we": 1,
+        "matrix_unit_prefixes": 1,
         "fenust_intensity_phs_exogenous": 1,
     },
 )
@@ -87,8 +87,8 @@ def esoist_phs():
         "cf_prosto": 1,
         "prosto_dedicated_lifetime": 1,
         "unit_conversion_j_wh": 1,
-        "matrix_unit_prefixes": 1,
         "unit_conversion_wh_we": 1,
+        "matrix_unit_prefixes": 1,
         "esoist_initial_phs": 1,
     },
 )

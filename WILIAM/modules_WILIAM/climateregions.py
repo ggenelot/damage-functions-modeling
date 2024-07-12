@@ -1,6 +1,6 @@
 """
 Module climateregions
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -141,8 +141,8 @@ def temperature_change_by_region_and_climate():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "temperature_change_amoc_weakening": 1,
         "weighted_temperature_change_by_region_and_climate": 2,
+        "temperature_change_amoc_weakening": 1,
     },
 )
 def temperature_change_in9regions():

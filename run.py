@@ -1,10 +1,11 @@
+print('Executing run.py')
+
 import pysd
 import xarray as xr
 import warnings
 import pandas as pd
 import numpy as np
 
-print('Executing run.py')
 
 print('Loading model...')
 
@@ -61,7 +62,7 @@ ds_path = 'results/batch/run_0.nc'
 
 ds = xr.open_dataset(ds_path)
 
-run_num =  3 #len(runs)
+run_num =  20 #len(runs)
 ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 
 
@@ -100,12 +101,18 @@ for index, run in runs.iterrows():
                             '"EXTRA: EXTRA: normalisation constant"': norm_constant
                             },
                     return_columns=output_variables,
-                    final_time=run['final_time'])
+                    final_time=2050)
 
     result_variables = run.columns 
 
-    ds["extra_extra_exponent"].loc[dict(Run = index)] = exponent
-    ds["extra_extra_normalisation_constant"].loc[dict(Run = index)] = norm_constant
+    extra_extra_exponent_copy = ds["extra_extra_exponent"].copy()
+    extra_extra_exponent_copy.loc[dict(Run = index)] = exponent
+    ds["extra_extra_exponent"] = extra_extra_exponent_copy
+
+    extra_extra_normalisation_constant_copy = ds["extra_extra_normalisation_constant"].copy()
+    extra_extra_normalisation_constant_copy.loc[dict(Run = index)] = norm_constant
+    ds["extra_extra_normalisation_constant"] = extra_extra_normalisation_constant_copy
+
 
     for variable in result_variables: 
         try:   
@@ -114,7 +121,7 @@ for index, run in runs.iterrows():
         except:
                 pass
         
-ds.to_netcdf('results/batch/run_with_1000.nc')
+ds.to_netcdf('results/batch/run_with_1200.nc')
 ds.close()
 warnings.resetwarnings()
 

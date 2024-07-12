@@ -1,6 +1,6 @@
 """
 Module energyvariability.regressions
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -445,8 +445,8 @@ def individual_logistic_regression_terms_energy_variability():
     depends_on={
         "switch_nrg_variability": 1,
         "legacy_elec_demand_energyplan": 1,
-        "unit_conversion_twh_ej": 1,
         "fe_excluding_trade": 1,
+        "unit_conversion_twh_ej": 1,
     },
 )
 def legacy_elec_demand():
@@ -517,10 +517,10 @@ def outputs_logistic_regression():
     depends_on={
         "switch_nrg_variability": 1,
         "exogenous_predictors_energy_variability_regressions": 1,
-        "hourly_average_power_elec_demand": 1,
         "unit_conversion_mw_tw": 1,
-        "ev_batteries_power_v2g_9r": 1,
+        "hourly_average_power_elec_demand": 1,
         "hourly_average_power_elec_demand_energyplan": 1,
+        "ev_batteries_power_v2g_9r": 1,
     },
 )
 def predictor_10_v2g():
@@ -556,8 +556,8 @@ def predictor_10_v2g():
         "exogenous_predictors_energy_variability_regressions": 1,
         "fe_excluding_trade": 1,
         "legacy_elec_demand": 1,
-        "unit_conversion_twh_ej": 1,
         "legacy_elec_demand_energyplan": 1,
+        "unit_conversion_twh_ej": 1,
     },
 )
 def predictor_11_hydrogen_fe_demand():
@@ -591,9 +591,9 @@ def predictor_11_hydrogen_fe_demand():
     depends_on={
         "switch_nrg_variability": 1,
         "exogenous_predictors_energy_variability_regressions": 1,
+        "unit_conversion_mw_tw": 1,
         "flexible_electrolysers_capacity_stock": 1,
         "hourly_average_power_elec_demand": 1,
-        "unit_conversion_mw_tw": 1,
         "hourly_average_power_elec_demand_energyplan": 1,
     },
 )
@@ -628,11 +628,11 @@ def predictor_12_hydrogen_supply():
     depends_on={
         "switch_nrg_variability": 1,
         "exogenous_predictors_energy_variability_regressions": 1,
-        "objective_flex_elec_demand_sp": 2,
-        "time": 3,
-        "initial_year_flex_elec_demand_sp": 3,
         "year_final_flex_elec_demand_sp": 3,
+        "objective_flex_elec_demand_sp": 2,
         "switch_flex_elec_demand_sp": 3,
+        "initial_year_flex_elec_demand_sp": 3,
+        "time": 3,
     },
 )
 def predictor_13_flexible_demand():
@@ -696,8 +696,8 @@ def predictor_13_flexible_demand():
         "exogenous_predictors_energy_variability_regressions": 1,
         "protra_operative_capacity_stock_selected": 2,
         "hourly_average_power_elec_demand": 1,
-        "unit_conversion_mw_tw": 1,
         "hourly_average_power_elec_demand_energyplan": 1,
+        "unit_conversion_mw_tw": 1,
     },
 )
 def predictor_1_protra_pp_solar():
@@ -740,8 +740,8 @@ def predictor_1_protra_pp_solar():
         "exogenous_predictors_energy_variability_regressions": 1,
         "protra_operative_capacity_stock_selected": 2,
         "hourly_average_power_elec_demand": 1,
-        "unit_conversion_mw_tw": 1,
         "hourly_average_power_elec_demand_energyplan": 1,
+        "unit_conversion_mw_tw": 1,
     },
 )
 def predictor_2_protra_pp_wind():
@@ -784,8 +784,8 @@ def predictor_2_protra_pp_wind():
         "exogenous_predictors_energy_variability_regressions": 1,
         "protra_operative_capacity_stock_selected": 4,
         "hourly_average_power_elec_demand": 1,
-        "unit_conversion_mw_tw": 1,
         "hourly_average_power_elec_demand_energyplan": 1,
+        "unit_conversion_mw_tw": 1,
     },
 )
 def predictor_3_capacity_zero_ghg_semiflex():
@@ -832,12 +832,12 @@ def predictor_3_capacity_zero_ghg_semiflex():
     depends_on={
         "switch_nrg_variability": 1,
         "exogenous_predictors_energy_variability_regressions": 1,
-        "ev_batteries_power_sc": 2,
-        "hourly_average_power_elec_demand": 2,
-        "hourly_average_power_elec_demand_energyplan": 2,
-        "unit_conversion_mw_tw": 2,
         "prosto_capacity_stock": 2,
+        "unit_conversion_mw_tw": 2,
+        "ev_batteries_power_sc": 2,
         "ev_batteries_power_v2g": 2,
+        "hourly_average_power_elec_demand_energyplan": 2,
+        "hourly_average_power_elec_demand": 2,
     },
 )
 def predictor_4_stationary_storage():
@@ -920,8 +920,8 @@ def predictor_4_stationary_storage():
         "exogenous_predictors_energy_variability_regressions": 1,
         "fe_excluding_trade": 1,
         "legacy_elec_demand": 1,
-        "unit_conversion_twh_ej": 1,
         "legacy_elec_demand_energyplan": 1,
+        "unit_conversion_twh_ej": 1,
     },
 )
 def predictor_5_heat_demand():
@@ -957,8 +957,8 @@ def predictor_5_heat_demand():
         "exogenous_predictors_energy_variability_regressions": 1,
         "protra_operative_capacity_stock_selected": 10,
         "hourly_average_power_elec_demand": 1,
-        "unit_conversion_mw_tw": 1,
         "hourly_average_power_elec_demand_energyplan": 1,
+        "unit_conversion_mw_tw": 1,
     },
 )
 def predictor_6_chp():
@@ -1023,10 +1023,10 @@ def predictor_6_chp():
     depends_on={
         "switch_nrg_variability": 1,
         "exogenous_predictors_energy_variability_regressions": 1,
-        "prosup_p2h_capacity_stock": 1,
-        "hourly_average_power_elec_demand": 1,
         "unit_conversion_mw_tw": 1,
+        "hourly_average_power_elec_demand": 1,
         "hourly_average_power_elec_demand_energyplan": 1,
+        "prosup_p2h_capacity_stock": 1,
         "switch_test_nrg_activate_p2h_regressions": 1,
     },
 )
@@ -1066,10 +1066,10 @@ def predictor_7_heat_pumps():
     depends_on={
         "switch_nrg_variability": 1,
         "exogenous_predictors_energy_variability_regressions": 1,
-        "prosup_p2h_capacity_stock": 1,
-        "hourly_average_power_elec_demand": 1,
         "unit_conversion_mw_tw": 1,
+        "hourly_average_power_elec_demand": 1,
         "hourly_average_power_elec_demand_energyplan": 1,
+        "prosup_p2h_capacity_stock": 1,
         "switch_test_nrg_activate_p2h_regressions": 1,
     },
 )
@@ -1109,11 +1109,11 @@ def predictor_8_electric_boilers():
     depends_on={
         "switch_nrg_variability": 1,
         "exogenous_predictors_energy_variability_regressions": 1,
-        "legacy_elec_demand": 9,
-        "unit_conversion_mj_ej": 9,
-        "unit_conversion_twh_ej": 9,
         "energy_passenger_transport_consumption_by_fe_35r": 9,
+        "unit_conversion_mj_ej": 9,
+        "legacy_elec_demand": 9,
         "legacy_elec_demand_energyplan": 9,
+        "unit_conversion_twh_ej": 9,
     },
 )
 def predictor_9_electric_vehicle_demand():

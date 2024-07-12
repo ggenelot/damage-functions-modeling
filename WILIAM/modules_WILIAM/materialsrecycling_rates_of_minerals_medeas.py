@@ -1,6 +1,6 @@
 """
 Module materialsrecycling_rates_of_minerals_medeas
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     depends_on={
         "target_rr_alternative_technologies_sp_w": 1,
         "current_recycling_rates_minerals_alt_techn": 1,
-        "target_year_p_rr_minerals_alt_techn_w": 1,
         "start_year_p_rr_minerals_alt_techn_w": 1,
+        "target_year_p_rr_minerals_alt_techn_w": 1,
     },
 )
 def a_lineal_regr_rr_alt_techn():
@@ -55,8 +55,8 @@ def a_lineal_regr_rr_rest():
     comp_subtype="Normal",
     depends_on={
         "target_rr_alternative_technologies_sp_w": 1,
-        "target_year_p_rr_minerals_alt_techn_w": 1,
         "a_lineal_regr_rr_alt_techn": 1,
+        "target_year_p_rr_minerals_alt_techn_w": 1,
     },
 )
 def b_lineal_regr_rr_alt_techn():
@@ -194,8 +194,8 @@ _delayfixed_by_mineral_rr_rest_1yr = DelayFixed(
         "time": 2,
         "historic_improvement_recycling_rates_minerals": 2,
         "by_mineral_rr_alt_techn": 1,
-        "by_mineral_rr_alt_techn_1yr": 1,
         "start_year_p_rr_minerals_alt_techn_w": 1,
+        "by_mineral_rr_alt_techn_1yr": 1,
     },
 )
 def by_mineral_rr_variation_alt_techn():
@@ -231,8 +231,8 @@ def by_mineral_rr_variation_alt_techn():
         "time": 2,
         "historic_improvement_recycling_rates_minerals": 2,
         "by_mineral_rr_rest": 1,
-        "start_year_p_rr_minerals_rest_w": 1,
         "by_mineral_rr_rest_1yr": 1,
+        "start_year_p_rr_minerals_rest_w": 1,
     },
 )
 def by_mineral_rr_variation_rest():
@@ -449,11 +449,11 @@ _integ_eol_recycling_rates_minerals_roe = Integ(
     depends_on={
         "time": 1,
         "historic_improvement_recycling_rates_minerals": 1,
-        "switch_nrg_dynamic_eroist": 1,
-        "common_rr_minerals_variation_alt_techn": 1,
         "eol_recycling_rates_minerals_bu_techs": 1,
+        "switch_nrg_dynamic_eroist": 1,
         "by_mineral_rr_variation_alt_techn": 1,
         "select_mineral_rr_targets_sp_w": 1,
+        "common_rr_minerals_variation_alt_techn": 1,
         "constrain_rr_improv_for_alt_techn_per_mineral": 1,
     },
 )
@@ -495,10 +495,10 @@ def improvement_recycling_rates_minerals_alt_techn():
     depends_on={
         "time": 1,
         "historic_improvement_recycling_rates_minerals": 1,
-        "eol_recycling_rates_minerals_roe": 1,
         "common_rr_minerals_variation_rest": 1,
         "select_mineral_rr_targets_sp_w": 1,
         "by_mineral_rr_variation_rest": 1,
+        "eol_recycling_rates_minerals_roe": 1,
         "constrain_rr_improv_for_rest_per_mineral": 1,
     },
 )

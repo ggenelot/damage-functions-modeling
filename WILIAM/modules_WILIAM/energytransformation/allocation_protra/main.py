@@ -1,6 +1,6 @@
 """
 Module energytransformation.allocation_protra.main
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -29,8 +29,8 @@ def aggregated_to_production_by_commodity():
     depends_on={
         "switch_energy": 1,
         "switch_mat2nrg_uranium_availability": 1,
-        "pe_global_demand_uranium": 1,
         "uranium_extraction_rate": 1,
+        "pe_global_demand_uranium": 1,
     },
 )
 def cf_nuclear_after_uranium_scarcity():
@@ -53,8 +53,8 @@ def cf_nuclear_after_uranium_scarcity():
     depends_on={
         "protra_to_allocated": 1,
         "protra_operative_capacity_stock_selected": 1,
-        "unit_conversion_hours_year": 1,
         "unit_conversion_tw_per_ej_per_year": 1,
+        "unit_conversion_hours_year": 1,
     },
 )
 def cf_protra():
@@ -258,7 +258,7 @@ _delayfixed_delayed_ts_protra_capacity_stock = DelayFixed(
     name="max TO from existing stock by PROTRA",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "protra_operative_capacity_stock_selected": 1,
@@ -294,7 +294,7 @@ def max_to_from_existing_stock_by_protra():
 @component.add(
     name="max TO from existing stock by PROTRA HP and CHP",
     subscripts=["REGIONS 9 I", "NRG COMMODITIES I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"max_to_from_existing_stock_by_protra": 1},
 )
@@ -327,7 +327,7 @@ def max_to_from_existing_stock_by_protra_hp_and_chp():
     name="max TO from existing stock by PROTRA PP",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG COMMODITIES I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"max_to_from_existing_stock_by_protra": 1},
 )
@@ -406,7 +406,7 @@ def protra_actual_full_load_hours():
     name="PROTRA capacity utilization rate",
     units="1",
     subscripts=["REGIONS 9 I", "NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "protra_actual_full_load_hours": 1,
@@ -496,9 +496,9 @@ def protra_heat_allocation():
         "variation_cf_nuclear_after_uranium_scarcity": 1,
         "protra_max_full_load_hours_curtailed": 1,
         "switch_law2nrg_hydropower_production": 2,
-        "switch_energy": 2,
-        "switch_climate_change_damage": 2,
         "variation_precipitation_evapotranspiration_36r": 2,
+        "switch_climate_change_damage": 2,
+        "switch_energy": 2,
     },
 )
 def protra_max_full_load_hours_after_constraints():
@@ -583,8 +583,8 @@ def protra_max_full_load_hours_after_constraints():
     comp_subtype="Normal",
     depends_on={
         "switch_nrg_variability_effects": 1,
-        "protra_max_full_load_hours": 2,
         "variation_cf_curtailed_protra": 3,
+        "protra_max_full_load_hours": 2,
     },
 )
 def protra_max_full_load_hours_curtailed():
@@ -636,7 +636,7 @@ def protra_max_full_load_hours_curtailed():
     name="PROTRA other TO allocations",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "PROTRA NP I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"remaining_to_to_be_allocated": 5},
 )
@@ -709,7 +709,7 @@ def protra_other_to_allocations():
     name="PROTRA TO allocated",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "chp_production": 2,

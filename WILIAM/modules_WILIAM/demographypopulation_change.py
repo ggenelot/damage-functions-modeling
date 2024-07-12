@@ -1,6 +1,6 @@
 """
 Module demographypopulation_change
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -177,11 +177,11 @@ def deaths():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "historical_shares_migration": 2,
         "emigrations": 3,
-        "switch_migration_sp": 1,
-        "start_year_migrations_sp": 1,
+        "historical_shares_migration": 2,
         "shares_emigration_sp": 1,
+        "start_year_migrations_sp": 1,
+        "switch_migration_sp": 1,
     },
 )
 def emigration_distribution():
@@ -220,11 +220,11 @@ def emigration_distribution():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "historic_emigrations_rate": 1,
         "population_by_cohorts": 2,
+        "historic_emigrations_rate": 1,
         "percentage_emigrations_sp": 1,
-        "switch_migration_sp": 1,
         "start_year_migrations_sp": 1,
+        "switch_migration_sp": 1,
     },
 )
 def emigrations():
@@ -291,9 +291,9 @@ def european_births():
     depends_on={
         "time": 3,
         "historical_fertility_rates_2005_2010": 1,
-        "historical_fertility_rates_2010_2015": 1,
-        "historical_fertility_rates_2015_2020": 2,
         "ramp_scenario_fertility_rates": 1,
+        "historical_fertility_rates_2015_2020": 2,
+        "historical_fertility_rates_2010_2015": 1,
     },
 )
 def fertility_rates():
@@ -335,8 +335,8 @@ def fertility_rates():
     depends_on={
         "time": 2,
         "historical_gender_birth_ratio_2005_2010": 1,
-        "historical_gender_birth_ratio_2010_2015": 1,
         "historical_gender_birth_ratio_2015_2020": 1,
+        "historical_gender_birth_ratio_2010_2015": 1,
     },
 )
 def gender_birth():
@@ -414,8 +414,8 @@ def immigrations():
     comp_subtype="Normal",
     depends_on={
         "a_exponential_leab_to_mr": 2,
-        "life_expectancy_at_birth": 2,
         "b_exponential_leab_to_mr": 2,
+        "life_expectancy_at_birth": 2,
         "min_historical_mortality_rate": 2,
     },
 )
@@ -713,9 +713,9 @@ def population_variation():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
-        "target_year_fertility_rates_sp": 2,
         "slope_scenario_fertility_rates": 2,
         "time": 2,
+        "target_year_fertility_rates_sp": 2,
     },
 )
 def ramp_scenario_fertility_rates():
@@ -772,8 +772,8 @@ def retired_population():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_fertility_rates": 1,
-        "historical_fertility_rates_2015_2020": 1,
         "target_scenario_fertility_rates": 1,
+        "historical_fertility_rates_2015_2020": 1,
         "target_year_fertility_rates_sp": 1,
     },
 )
