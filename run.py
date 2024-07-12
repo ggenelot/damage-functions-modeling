@@ -61,7 +61,7 @@ ds_path = 'results/batch/run_0.nc'
 
 ds = xr.open_dataset(ds_path)
 
-run_num = 1
+run_num = len(runs)
 ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 
 
@@ -107,11 +107,11 @@ for index, run in runs.iterrows():
     for variable in result_variables: 
         try:   
                 ds[variable].loc[dict(Run = index)] = run[variable].values
-                print(f"Added variable {variable} to the dataset : {run[variable].values}")
+                #print(f"Added variable {variable} to the dataset : {run[variable].values}")
         except:
                 pass
         
-ds.to_netcdf('results/batch/run_with_results.nc')
+ds.to_netcdf('results/batch/run_with_2100.nc')
 ds.close()
 warnings.resetwarnings()
 

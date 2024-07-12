@@ -1,6 +1,6 @@
 """
 Module climateghg_emissions_waste
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -149,7 +149,7 @@ def co2_waste_emissions_by_gdp_35_r():
     name="CO2 waste emissions by sector",
     units="Gt/Year",
     subscripts=["REGIONS 35 I", "SECTORS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"co2_waste_emissions_35r": 1},
 )
@@ -276,8 +276,8 @@ def co2_waste_emissions_intensity_35r():
     comp_subtype="Normal",
     depends_on={
         "co2_waste_emissions_9r": 1,
-        "ch4_waste_emissions_9r": 1,
         "unit_conversion_mt_gt": 2,
+        "ch4_waste_emissions_9r": 1,
         "n2o_waste_emissions_9r": 1,
     },
 )

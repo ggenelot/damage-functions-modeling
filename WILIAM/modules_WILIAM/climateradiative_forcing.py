@@ -1,6 +1,6 @@
 """
 Module climateradiative_forcing
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -10,9 +10,9 @@ Translated using PySD version 3.13.4
     comp_subtype="Normal",
     depends_on={
         "other_forcings": 1,
-        "mineral_aerosols_and_land_rf": 1,
         "last_historical_rf_year": 1,
         "time": 1,
+        "mineral_aerosols_and_land_rf": 1,
     },
 )
 def adjusted_other_forcings():
@@ -33,13 +33,13 @@ def adjusted_other_forcings():
     comp_subtype="Normal",
     depends_on={
         "ch4_n2o_interaction_coeffient": 1,
-        "ch4_n20_inter_exp_2": 1,
+        "ch4_n2o_inter_coef_3": 1,
+        "ch4_n2o_inter_coef_2": 1,
+        "ch4_atm_conc": 3,
         "n2o_reference_conc": 2,
         "ch4_n2o_unit_adj": 5,
-        "ch4_n2o_inter_coef_3": 1,
-        "ch4_atm_conc": 3,
-        "ch4_n2o_inter_coef_2": 1,
         "ch4_n20_inter_exp": 1,
+        "ch4_n20_inter_exp_2": 1,
     },
 )
 def adjustment_for_ch4_and_n2o_ref():
@@ -77,12 +77,12 @@ def adjustment_for_ch4_and_n2o_ref():
     depends_on={
         "ch4_n2o_interaction_coeffient": 1,
         "n2o_atm_conc": 2,
-        "ch4_n20_inter_exp_2": 1,
-        "ch4_n2o_unit_adj": 5,
-        "ch4_reference_conc": 3,
         "ch4_n2o_inter_coef_3": 1,
         "ch4_n2o_inter_coef_2": 1,
+        "ch4_reference_conc": 3,
+        "ch4_n2o_unit_adj": 5,
         "ch4_n20_inter_exp": 1,
+        "ch4_n20_inter_exp_2": 1,
     },
 )
 def adjustment_for_ch4_ref_and_n2o():
@@ -119,13 +119,13 @@ def adjustment_for_ch4_ref_and_n2o():
     comp_subtype="Normal",
     depends_on={
         "ch4_n2o_interaction_coeffient": 1,
-        "ch4_n20_inter_exp_2": 1,
-        "n2o_reference_conc": 2,
-        "ch4_n2o_unit_adj": 5,
-        "ch4_reference_conc": 3,
         "ch4_n2o_inter_coef_3": 1,
         "ch4_n2o_inter_coef_2": 1,
+        "ch4_reference_conc": 3,
+        "n2o_reference_conc": 2,
+        "ch4_n2o_unit_adj": 5,
         "ch4_n20_inter_exp": 1,
+        "ch4_n20_inter_exp_2": 1,
     },
 )
 def adjustment_for_ch4ref_and_n2oref():
@@ -176,11 +176,11 @@ def ch4_and_n2o_radiative_forcing():
     comp_subtype="Normal",
     depends_on={
         "ch4_radiative_efficiency_coefficient": 1,
-        "ch4_reference_conc": 1,
-        "ch4_atm_conc": 1,
         "ch4_n2o_unit_adj": 2,
-        "adjustment_for_ch4ref_and_n2oref": 1,
+        "ch4_atm_conc": 1,
+        "ch4_reference_conc": 1,
         "adjustment_for_ch4_and_n2o_ref": 1,
+        "adjustment_for_ch4ref_and_n2oref": 1,
     },
 )
 def ch4_radiative_forcing():
@@ -290,11 +290,11 @@ def hfc_rf_total():
     comp_subtype="Normal",
     depends_on={
         "n2o_radiative_efficiency_coefficient": 1,
-        "n2o_atm_conc": 1,
-        "n2o_reference_conc": 1,
         "ch4_n2o_unit_adj": 2,
-        "adjustment_for_ch4ref_and_n2oref": 1,
+        "n2o_reference_conc": 1,
+        "n2o_atm_conc": 1,
         "adjustment_for_ch4_ref_and_n2o": 1,
+        "adjustment_for_ch4ref_and_n2oref": 1,
     },
 )
 def n2o_radiative_forcing():
@@ -337,8 +337,8 @@ def other_forcings():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
-        "model_explorer_rcp_ghg_emissions": 3,
         "other_forcings_rcp_scenario": 8,
+        "model_explorer_rcp_ghg_emissions": 3,
         "select_rcp_for_exogenous_ghg_emissions_sp": 3,
     },
 )

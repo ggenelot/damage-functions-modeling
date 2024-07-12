@@ -1,6 +1,6 @@
 """
 Module climatecarbon_cycle
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -57,9 +57,9 @@ _initial_biostimulation_coeff = Initial(
             "initial": {"ref_buffer_factor": 1},
             "step": {
                 "ref_buffer_factor": 1,
-                "c_in_mixed_layer": 1,
-                "preind_c_in_mixed_layer": 1,
                 "buff_c_coeff": 1,
+                "preind_c_in_mixed_layer": 1,
+                "c_in_mixed_layer": 1,
             },
         }
     },
@@ -494,9 +494,9 @@ def equilibrium_c_per_meter_in_mixed_layer():
     comp_subtype="Normal",
     depends_on={
         "init_npp": 1,
+        "biostimulation_coeff": 1,
         "c_in_atmosphere": 1,
         "preindustrial_c": 1,
-        "biostimulation_coeff": 1,
         "effect_of_warming_on_c_flux_to_biomass": 1,
     },
 )
@@ -715,7 +715,7 @@ _initial_layer_time_constant_1 = Initial(
     units="m",
     subscripts=["LAYERS I"],
     comp_type="Stateful, Auxiliary",
-    comp_subtype="Initial, Normal",
+    comp_subtype="Normal, Initial",
     depends_on={"_initial_mean_depth_of_adjacent_layers": 1, "layer_depth": 2},
     other_deps={
         "_initial_mean_depth_of_adjacent_layers": {

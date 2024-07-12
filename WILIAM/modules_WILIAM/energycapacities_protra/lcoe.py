@@ -1,13 +1,13 @@
 """
 Module energycapacities_protra.lcoe
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
     name="LCOE by PROTRA priority signal",
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG PROTRA I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"lcoe_protra": 1, "min_lcoe": 1, "max_lcoe": 1},
 )

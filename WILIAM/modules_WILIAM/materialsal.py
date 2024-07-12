@@ -1,6 +1,6 @@
 """
 Module materialsal
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -126,8 +126,8 @@ _integ_al_cumulative_mining = Integ(
         "switch_eco2mat_al_demand": 1,
         "switch_materials": 1,
         "al_modified_demand_world7": 1,
-        "output_real": 1,
         "implicit_price_al": 1,
+        "output_real": 1,
     },
 )
 def al_demand():
@@ -1485,10 +1485,10 @@ def al_price():
     depends_on={
         "time": 1,
         "initial_al_price": 1,
-        "coefficients_al_price_economy": 3,
         "al_available_delayed": 2,
-        "al_demand": 2,
         "maximum_al_price": 1,
+        "al_demand": 2,
+        "coefficients_al_price_economy": 3,
     },
 )
 def al_price_economy():
@@ -1634,9 +1634,9 @@ def al_price_historical():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_al_price": 1,
-        "estimated_price_with_tax_metals": 1,
         "al_base_price_2006": 1,
         "price_transformation": 1,
+        "estimated_price_with_tax_metals": 1,
     },
 )
 def al_price_index_economy():
@@ -2548,8 +2548,8 @@ _ext_data_historical_al_price = ExtData(
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "initial_output_real_materials": 2,
         "al_demand_historical_world_7": 1,
+        "initial_output_real_materials": 2,
         "al_demand_base_year": 1,
     },
 )
