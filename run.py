@@ -88,7 +88,7 @@ for index, run in runs.iterrows():
     total_forcing = pd.Series(index=total_forcing['time'], data=total_forcing[rcp].values)
     print("Forcing initialized")
     
-    exponent = np.random.normal(-2, 2, 1)[0]
+    exponent = np.random.normal(0, 2, 1)[0]
     norm_constant = np.random.uniform(10000, 50000, 1)[0]
 
     print(f"Running model for run {run['run_number']} with RCP {rcp}, exponent {exponent} and norm_constant {norm_constant}")
@@ -104,17 +104,17 @@ for index, run in runs.iterrows():
 
     result_variables = run.columns 
 
-    ds["exponent"].loc[dict(Run = index)] = exponent
-    ds["norm_constant"].loc[dict(Run = index)] = norm_constant
+    ds["extra_extra_exponent"].loc[dict(Run = index)] = exponent
+    ds["extra_extra_normalisation_constant"].loc[dict(Run = index)] = norm_constant
 
     for variable in result_variables: 
         try:   
                 ds[variable].loc[dict(Run = index)] = run[variable].values
-                #print(f"Added variable {variable} to the dataset : {run[variable].values}")
+                print(f"Added variable {variable} to the dataset.")
         except:
                 pass
         
-ds.to_netcdf('results/batch/run_with_2100.nc')
+ds.to_netcdf('results/batch/run_with_1000.nc')
 ds.close()
 warnings.resetwarnings()
 
