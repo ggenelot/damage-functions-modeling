@@ -568,8 +568,8 @@ def hev_vehicles_batteries_power_required():
         "unit_conversion_j_wh": 1,
         "unit_converison_wh_kwh": 1,
         "unit_conversion_hours_year": 1,
-        "vehicle_electric_power": 1,
         "cf_electrified_vehicle": 1,
+        "vehicle_electric_power": 1,
         "max_lifetime_ev_batteries": 1,
     },
 )

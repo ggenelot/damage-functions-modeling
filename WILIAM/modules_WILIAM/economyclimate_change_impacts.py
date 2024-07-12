@@ -942,11 +942,11 @@ _ext_constant_c_heat_stress_damage_function = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "switch_economy": 1,
-        "b_capital_stock_damage_function": 8,
-        "c_capital_stock_damage_function": 2,
         "temperature_change_2015": 5,
-        "a_capital_stock_damage_function": 10,
+        "b_capital_stock_damage_function": 8,
         "correspondence_matrix_damage_function": 14,
+        "a_capital_stock_damage_function": 10,
+        "c_capital_stock_damage_function": 2,
         "temperature_change_in_35regions": 5,
     },
 )
@@ -1197,8 +1197,8 @@ def capital_stock_damage_function():
     comp_subtype="Normal",
     depends_on={
         "select_climate_change_impacts_remove_extrapolations_sp": 1,
-        "capital_stock_damage_function": 4,
         "auxiliar_variable_to_remove_extrapolations_of_droughts": 1,
+        "capital_stock_damage_function": 4,
     },
 )
 def capital_stock_damage_function_drought():
@@ -1271,8 +1271,8 @@ def capital_stock_damage_function_drought():
     comp_subtype="Normal",
     depends_on={
         "select_climate_change_impacts_remove_extrapolations_sp": 1,
-        "capital_stock_damage_function": 4,
         "auxiliar_variable_to_remove_extrapolations_of_heatwaves": 1,
+        "capital_stock_damage_function": 4,
     },
 )
 def capital_stock_damage_function_heat():
@@ -1544,8 +1544,8 @@ def climate_change_damage_rate_to_capital_stock_until_2015():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "climate_change_damage_rate_to_capital_stock_until_2015": 1,
         "climate_change_damage_rate_to_capital_stock": 1,
+        "climate_change_damage_rate_to_capital_stock_until_2015": 1,
         "ratio_to_update_damage_functions": 1,
     },
 )
@@ -1592,8 +1592,8 @@ def global_temperature_change_2015():
     comp_subtype="Normal",
     depends_on={
         "switch_economy": 1,
-        "global_temperature_change_2015": 2,
         "b_heat_stress_damage_function": 2,
+        "global_temperature_change_2015": 2,
         "a_heat_stress_damage_function": 2,
         "c_heat_stress_damage_function": 2,
         "temperature_change": 2,

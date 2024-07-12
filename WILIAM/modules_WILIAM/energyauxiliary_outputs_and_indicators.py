@@ -138,8 +138,8 @@ _delayfixed_auxiliary_pe_gdp_intensity = DelayFixed(
     depends_on={
         "protra_to_allocated": 1,
         "unit_conversion_twh_ej": 1,
-        "protra_operative_capacity_stock_selected": 1,
         "unit_conversion_hours_year": 1,
+        "protra_operative_capacity_stock_selected": 1,
     },
 )
 def cf_power_system():
@@ -412,9 +412,9 @@ def co2_intensity_to_heat():
     depends_on={
         "ghg_emissions_by_sector": 3,
         "unit_conversion_t_mt": 3,
-        "gwp_20_year": 3,
         "gwp_100_year": 3,
         "select_gwp_time_frame_sp": 3,
+        "gwp_20_year": 3,
         "output_real_9r": 1,
     },
 )

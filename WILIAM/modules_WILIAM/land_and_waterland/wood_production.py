@@ -198,8 +198,8 @@ _integ_biomass_stock_of_managed_forest_and_plantations = Integ(
     name="change of stock forest M and P",
     units="m3/Year",
     subscripts=["REGIONS 9 I"],
-    comp_type="Stateful, Auxiliary",
-    comp_subtype="Normal, Smooth",
+    comp_type="Auxiliary, Stateful",
+    comp_subtype="Smooth, Normal",
     depends_on={
         "biomass_stock_of_managed_forest_and_plantations": 1,
         "initial_volume_stock_of_forest_m_and_p": 1,
@@ -561,11 +561,11 @@ def historical_wood_extracted():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_forestry_self_sufficiency": 1,
-        "objective_forestry_self_sufficiency_sp": 1,
-        "year_final_forestry_self_sufficiency_sp": 2,
-        "year_initial_forestry_self_sufficiency_sp": 2,
         "switch_forestry_self_sufficiency_sp": 1,
+        "year_initial_forestry_self_sufficiency_sp": 2,
         "time": 2,
+        "year_final_forestry_self_sufficiency_sp": 2,
+        "objective_forestry_self_sufficiency_sp": 1,
     },
 )
 def increase_of_self_suficiency_forestry():
@@ -620,8 +620,8 @@ def intial_stock_m_and_p():
     name="limit to forest extraction",
     units="DMNL",
     subscripts=["REGIONS 9 I"],
-    comp_type="Stateful, Auxiliary",
-    comp_subtype="Normal, Smooth",
+    comp_type="Auxiliary, Stateful",
+    comp_subtype="Smooth, Normal",
     depends_on={
         "biomass_stock_all_forests": 3,
         "stock_of_forest_volume_protected": 4,
@@ -831,9 +831,9 @@ def roundwood_available_world():
         "time": 1,
         "time_historical_data_land_module": 1,
         "historical_wood_extracted": 1,
+        "initial_volume_stock_of_forest_m_and_p": 1,
         "biomass_stock_of_managed_forest_and_plantations": 1,
         "global_roundwood_demand_distributed_to_regions": 1,
-        "initial_volume_stock_of_forest_m_and_p": 1,
     },
 )
 def roundwood_extracted():
