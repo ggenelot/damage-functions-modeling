@@ -1,211 +1,211 @@
-WILIAM region,WILIAM code,WILIAM country,FUND code,FUND region,Country,ISO
+WILIAM region,WILIAM code,REGIONS 35 I,FUND code,FUND region,Country,ISO
 "United States, Mexico and Canada",USMCA,USMCA,USA,USA,United States of America,USA
 "United States, Mexico and Canada",USMCA,USMCA,CAN,Canada,Canada,CAN
-Rest of the world,LROW,,WEU,Western Europe,Andorra,AND
-European Union,EU27,Austria ,WEU,Western Europe, Austria,AUT
-European Union,EU27,Belgium,WEU,Western Europe, Belgium,BEL
-European Union,EU27,Cyprus,WEU,Western Europe, Cyprus,CYP
-European Union,EU27,Denmark,WEU,Western Europe, Denmark,DNK
-European Union,EU27,Finland,WEU,Western Europe, Finland,FIN
-European Union,EU27,France,WEU,Western Europe, France,FRA
-European Union,EU27,Germany,WEU,Western Europe, Germany,DEU
-European Union,EU27,Greece,WEU,Western Europe, Greece,GRC
+Rest of the world,LROW,LROW,WEU,Western Europe,Andorra,AND
+European Union,EU27,AUSTRIA ,WEU,Western Europe, Austria,AUT
+European Union,EU27,BELGIUM,WEU,Western Europe, Belgium,BEL
+European Union,EU27,CYPRUS,WEU,Western Europe, Cyprus,CYP
+European Union,EU27,DENMARK,WEU,Western Europe, Denmark,DNK
+European Union,EU27,FINLAND,WEU,Western Europe, Finland,FIN
+European Union,EU27,FRANCE,WEU,Western Europe, France,FRA
+European Union,EU27,GERMANY,WEU,Western Europe, Germany,DEU
+European Union,EU27,GREECE,WEU,Western Europe, Greece,GRC
 Rest of the world,LROW,LROW,WEU,Western Europe, Iceland,ISL
-European Union,EU27,Ireland,WEU,Western Europe, Ireland,IRL
-European Union,EU27,Italy,WEU,Western Europe, Italy,ITA
-Rest of the world,LROW,,WEU,Western Europe, Liechtenstein,LIE
-European Union,EU27,Luxembourg,WEU,Western Europe, Luxembourg,LUX
-European Union,EU27,Malta,WEU,Western Europe, Malta,MLT
-Rest of the world,LROW,,WEU,Western Europe, Monaco,MCO
-European Union,EU27,Netherlands,WEU,Western Europe, Netherlands,NLD
+European Union,EU27,IRELAND,WEU,Western Europe, Ireland,IRL
+European Union,EU27,ITALY,WEU,Western Europe, Italy,ITA
+Rest of the world,LROW,LROW,WEU,Western Europe, Liechtenstein,LIE
+European Union,EU27,LUXEMBOURG,WEU,Western Europe, Luxembourg,LUX
+European Union,EU27,MALTA,WEU,Western Europe, Malta,MLT
+Rest of the world,LROW,LROW,WEU,Western Europe, Monaco,MCO
+European Union,EU27,NETHERLANDS,WEU,Western Europe, Netherlands,NLD
 Rest of the world,LROW,LROW,WEU,Western Europe, Norway,NOR
-European Union,EU27,Portugal,WEU,Western Europe, Portugal,PRT
-Rest of the world,LROW,,WEU,Western Europe, San Marino,SMR
-European Union,EU27,Spain,WEU,Western Europe, Spain,ESP
-European Union,EU27,Sweden,WEU,Western Europe, Sweden,SWE
+European Union,EU27,PORTUGAL,WEU,Western Europe, Portugal,PRT
+Rest of the world,LROW,LROW,WEU,Western Europe, San Marino,SMR
+European Union,EU27,SPAIN,WEU,Western Europe, Spain,ESP
+European Union,EU27,SWEDEN,WEU,Western Europe, Sweden,SWE
 Rest of the world,LROW,LROW,WEU,Western Europe, Switzerland,CHE
 United Kingdom,UK,UK,WEU,Western Europe, United Kingdom,GBR
 East Asia and Oceania,EASOC,EASOC,JPK,Japan and South Korea,Japan,JPN
 East Asia and Oceania,EASOC,EASOC,JPK,Japan and South Korea, South Korea,KOR
 East Asia and Oceania,EASOC,EASOC,ANZ,Australia and New Zealand,Australia,AUS
 East Asia and Oceania,EASOC,EASOC,ANZ,Australia and New Zealand, New Zealand,NZL
-Rest of the world,LROW,,CEE,Central and Eastern Europe,Albania,ALB
-Rest of the world,LROW,,CEE,Central and Eastern Europe, Bosnia and Herzegovina,BIH
-European Union,EU27,Bulgaria,CEE,Central and Eastern Europe, Bulgaria,BGR
-European Union,EU27,Croatia,CEE,Central and Eastern Europe, Croatia,HRV
-Rest of the world,LROW,,CEE,Central and Eastern Europe, Czech Republic,CAF
-European Union,EU27,Hungary,CEE,Central and Eastern Europe, Hungary,HUN
-Rest of the world,LROW,,CEE,Central and Eastern Europe, FYR Macedonia,
-European Union,EU27,Poland,CEE,Central and Eastern Europe, Poland,POL
-European Union,EU27,Romania,CEE,Central and Eastern Europe, Romania,ROU
-European Union,EU27,Slovakia,CEE,Central and Eastern Europe, Slovakia,SVK
-European Union,EU27,Slovenia,CEE,Central and Eastern Europe, Slovenia,SVN
-European Union,EU27,Latvia,CEE,Central and Eastern Europe, Yugoslavia,LVA
-Rest of the world,LROW,,FSU,Former Soviet Union,Armenia,ARM
-Rest of the world,LROW,,FSU,Former Soviet Union, Azerbaijan,AZE
-Rest of the world,LROW,,FSU,Former Soviet Union, Belarus,BLR
-European Union,EU27,Estonia,FSU,Former Soviet Union, Estonia,EST
-Rest of the world,LROW,,FSU,Former Soviet Union, Georgia,GEO
+Rest of the world,LROW,LROW,CEE,Central and Eastern Europe,Albania,ALB
+Rest of the world,LROW,LROW,CEE,Central and Eastern Europe, Bosnia and Herzegovina,BIH
+European Union,EU27,BULGARIA,CEE,Central and Eastern Europe, Bulgaria,BGR
+European Union,EU27,CROATIA,CEE,Central and Eastern Europe, Croatia,HRV
+Rest of the world,LROW,LROW,CEE,Central and Eastern Europe, Czech Republic,CAF
+European Union,EU27,HUNGARY,CEE,Central and Eastern Europe, Hungary,HUN
+Rest of the world,LROW,LROW,CEE,Central and Eastern Europe, FYR Macedonia,
+European Union,EU27,POLAND,CEE,Central and Eastern Europe, Poland,POL
+European Union,EU27,ROMANIA,CEE,Central and Eastern Europe, Romania,ROU
+European Union,EU27,SLOVAKIA,CEE,Central and Eastern Europe, Slovakia,SVK
+European Union,EU27,SLOVENIA,CEE,Central and Eastern Europe, Slovenia,SVN
+European Union,EU27,LATVIA,CEE,Central and Eastern Europe, Yugoslavia,LVA
+Rest of the world,LROW,LROW,FSU,Former Soviet Union,Armenia,ARM
+Rest of the world,LROW,LROW,FSU,Former Soviet Union, Azerbaijan,AZE
+Rest of the world,LROW,LROW,FSU,Former Soviet Union, Belarus,BLR
+European Union,EU27,ESTONIA,FSU,Former Soviet Union, Estonia,EST
+Rest of the world,LROW,LROW,FSU,Former Soviet Union, Georgia,GEO
 Rest of the world,LROW,LROW,FSU,Former Soviet Union, Kazakhstan,KAZ
-Rest of the world,LROW,,FSU,Former Soviet Union, Kyrgyzstan,KGZ
-European Union,EU27,Latvia,FSU,Former Soviet Union, Latvia,LVA
-European Union,EU27,Lithuania ,FSU,Former Soviet Union, Lithuania,LTU
-Rest of the world,LROW,,FSU,Former Soviet Union, Moldova,MDA
-Russia,Russia,Russia,FSU,Former Soviet Union, Russia,RUS
-Rest of the world,LROW,,FSU,Former Soviet Union, Tajikistan,TJK
-Rest of the world,LROW,,FSU,Former Soviet Union, Turkmenistan,TKM
-Rest of the world,LROW,,FSU,Former Soviet Union, Ukraine,UKR
-Rest of the world,LROW,,FSU,Former Soviet Union, Uzbekistan,UZB
-Rest of the world,LROW,,MDE,Middle East,Bahrain,BHR
-Rest of the world,LROW,,MDE,Middle East, Iran,IRN
-Rest of the world,LROW,,MDE,Middle East, Iraq,IRQ
+Rest of the world,LROW,LROW,FSU,Former Soviet Union, Kyrgyzstan,KGZ
+European Union,EU27,LATVIA,FSU,Former Soviet Union, Latvia,LVA
+European Union,EU27,LITHUANIA ,FSU,Former Soviet Union, Lithuania,LTU
+Rest of the world,LROW,LROW,FSU,Former Soviet Union, Moldova,MDA
+Russia,Russia,RUSSIA,FSU,Former Soviet Union, Russia,RUS
+Rest of the world,LROW,LROW,FSU,Former Soviet Union, Tajikistan,TJK
+Rest of the world,LROW,LROW,FSU,Former Soviet Union, Turkmenistan,TKM
+Rest of the world,LROW,LROW,FSU,Former Soviet Union, Ukraine,UKR
+Rest of the world,LROW,LROW,FSU,Former Soviet Union, Uzbekistan,UZB
+Rest of the world,LROW,LROW,MDE,Middle East,Bahrain,BHR
+Rest of the world,LROW,LROW,MDE,Middle East, Iran,IRN
+Rest of the world,LROW,LROW,MDE,Middle East, Iraq,IRQ
 Rest of the world,LROW,LROW,MDE,Middle East, Israel,ISR
-Rest of the world,LROW,,MDE,Middle East, Jordan,JOR
-Rest of the world,LROW,,MDE,Middle East, Kuwait,KWT
-Rest of the world,LROW,,MDE,Middle East, Lebanon,LBN
-Rest of the world,LROW,,MDE,Middle East, Oman,OMN
-Rest of the world,LROW,,MDE,Middle East, Qatar,QAT
+Rest of the world,LROW,LROW,MDE,Middle East, Jordan,JOR
+Rest of the world,LROW,LROW,MDE,Middle East, Kuwait,KWT
+Rest of the world,LROW,LROW,MDE,Middle East, Lebanon,LBN
+Rest of the world,LROW,LROW,MDE,Middle East, Oman,OMN
+Rest of the world,LROW,LROW,MDE,Middle East, Qatar,QAT
 Rest of the world,LROW,LROW,MDE,Middle East, Saudi Arabia,SAU
-Rest of the world,LROW,,MDE,Middle East, Syria,SYR
-Rest of the world,LROW,,MDE,Middle East, Turkey,
-Rest of the world,LROW,,MDE,Middle East, United Arab Emirates,ARE
-Rest of the world,LROW,,MDE,Middle East, West Bank and Gaza,BES
-Rest of the world,LROW,,MDE,Middle East, Yemen,YEM
-Rest of the world,LROW,,CAM,Central America,Belize,BLZ
+Rest of the world,LROW,LROW,MDE,Middle East, Syria,SYR
+Rest of the world,LROW,LROW,MDE,Middle East, Turkey,
+Rest of the world,LROW,LROW,MDE,Middle East, United Arab Emirates,ARE
+Rest of the world,LROW,LROW,MDE,Middle East, West Bank and Gaza,BES
+Rest of the world,LROW,LROW,MDE,Middle East, Yemen,YEM
+Rest of the world,LROW,LROW,CAM,Central America,Belize,BLZ
 Latin America,LATAM,LATAM,CAM,Central America, Costa Rica,CRI
-Rest of the world,LROW,,CAM,Central America, El Salvador,SLV
-Rest of the world,LROW,,CAM,Central America, Guatemala,GTM
-Rest of the world,LROW,,CAM,Central America, Honduras,HND
+Rest of the world,LROW,LROW,CAM,Central America, El Salvador,SLV
+Rest of the world,LROW,LROW,CAM,Central America, Guatemala,GTM
+Rest of the world,LROW,LROW,CAM,Central America, Honduras,HND
 "United States, Mexico and Canada",USMCA,USMCA,CAM,Central America, Mexico,MEX
-Rest of the world,LROW,,CAM,Central America, Nicaragua,NIC
-Rest of the world,LROW,,CAM,Central America, Panama,PAN
+Rest of the world,LROW,LROW,CAM,Central America, Nicaragua,NIC
+Rest of the world,LROW,LROW,CAM,Central America, Panama,PAN
 Latin America,LATAM,LATAM,SAM,South America,Argentina,ARG
-Rest of the world,LROW,,SAM,South America, Bolivia,BOL
+Rest of the world,LROW,LROW,SAM,South America, Bolivia,BOL
 Latin America,LATAM,LATAM,SAM,South America, Brazil,BRA
 Latin America,LATAM,LATAM,SAM,South America, Chile,CHL
 Latin America,LATAM,LATAM,SAM,South America, Colombia,COL
-Rest of the world,LROW,,SAM,South America, Ecuador,ECU
-Rest of the world,LROW,,SAM,South America, French Guiana,GUF
-Rest of the world,LROW,,SAM,South America, Guyana,GUY
-Rest of the world,LROW,,SAM,South America, Paraguay,PRY
+Rest of the world,LROW,LROW,SAM,South America, Ecuador,ECU
+Rest of the world,LROW,LROW,SAM,South America, French Guiana,GUF
+Rest of the world,LROW,LROW,SAM,South America, Guyana,GUY
+Rest of the world,LROW,LROW,SAM,South America, Paraguay,PRY
 Latin America,LATAM,LATAM,SAM,South America, Peru,PER
-Rest of the world,LROW,,SAM,South America, Suriname,SUR
-Rest of the world,LROW,,SAM,South America, Uruguay,URY
-Rest of the world,LROW,,SAM,South America, Venezuela,VEN
-Rest of the world,LROW,,SAS,South Asia,Afghanistan,AFG
-Rest of the world,LROW,,SAS,South Asia, Bangladesh,BGD
-Rest of the world,LROW,,SAS,South Asia, Bhutan,BTN
-India,India,India,SAS,South Asia, India,IND
-Rest of the world,LROW,,SAS,South Asia, Nepal,NPL
-Rest of the world,LROW,,SAS,South Asia, Pakistan,PAK
-Rest of the world,LROW,,SAS,South Asia, Sri Lanka,LKA
+Rest of the world,LROW,LROW,SAM,South America, Suriname,SUR
+Rest of the world,LROW,LROW,SAM,South America, Uruguay,URY
+Rest of the world,LROW,LROW,SAM,South America, Venezuela,VEN
+Rest of the world,LROW,LROW,SAS,South Asia,Afghanistan,AFG
+Rest of the world,LROW,LROW,SAS,South Asia, Bangladesh,BGD
+Rest of the world,LROW,LROW,SAS,South Asia, Bhutan,BTN
+India,India,INDIA,SAS,South Asia, India,IND
+Rest of the world,LROW,LROW,SAS,South Asia, Nepal,NPL
+Rest of the world,LROW,LROW,SAS,South Asia, Pakistan,PAK
+Rest of the world,LROW,LROW,SAS,South Asia, Sri Lanka,LKA
 East Asia and Oceania,EASOC,EASOC,SEA,Southeast Asia,Brunei,BRN
 East Asia and Oceania,EASOC,EASOC,SEA,Southeast Asia, Cambodia,KHM
-Rest of the world,LROW,,SEA,Southeast Asia, East Timor,TLS
+Rest of the world,LROW,LROW,SEA,Southeast Asia, East Timor,TLS
 East Asia and Oceania,EASOC,EASOC,SEA,Southeast Asia, Indonesia,IDN
-Rest of the world,LROW,,SEA,Southeast Asia, Laos,
+Rest of the world,LROW,LROW,SEA,Southeast Asia, Laos,
 East Asia and Oceania,EASOC,EASOC,SEA,Southeast Asia, Malaysia,MYS
-Rest of the world,LROW,,SEA,Southeast Asia, Myanmar,MMR
-Rest of the world,LROW,,SEA,Southeast Asia, Papua New Guinea,PNG
+Rest of the world,LROW,LROW,SEA,Southeast Asia, Myanmar,MMR
+Rest of the world,LROW,LROW,SEA,Southeast Asia, Papua New Guinea,PNG
 East Asia and Oceania,EASOC,EASOC,SEA,Southeast Asia, Philippines,PHL
 East Asia and Oceania,EASOC,EASOC,SEA,Southeast Asia, Singapore,SGP
 East Asia and Oceania,EASOC,EASOC,SEA,Southeast Asia, Taiwan,TWN
 East Asia and Oceania,EASOC,EASOC,SEA,Southeast Asia, Thailand,THA
 East Asia and Oceania,EASOC,EASOC,SEA,Southeast Asia, Vietnam,VNM
-China,China,China,CHI,China plus,China,CHN
-China,China,China,CHI,China plus, Hong Kong,HKG
+China,China,CHINA,CHI,China plus,China,CHN
+China,China,CHINA,CHI,China plus, Hong Kong,HKG
 East Asia and Oceania,EASOC,EASOC,CHI,China plus, North Korea,KOR
-Rest of the world,LROW,,CHI,China plus, Macau,
-Rest of the world,LROW,,CHI,China plus, Mongolia,MNG
-Rest of the world,LROW,,NAF,North Africa,Algeria,DZA
-Rest of the world,LROW,,NAF,North Africa, Egypt,EGY
-Rest of the world,LROW,,NAF,North Africa, Libya,LBY
+Rest of the world,LROW,LROW,CHI,China plus, Macau,
+Rest of the world,LROW,LROW,CHI,China plus, Mongolia,MNG
+Rest of the world,LROW,LROW,NAF,North Africa,Algeria,DZA
+Rest of the world,LROW,LROW,NAF,North Africa, Egypt,EGY
+Rest of the world,LROW,LROW,NAF,North Africa, Libya,LBY
 Rest of the world,LROW,LROW,NAF,North Africa, Morocco,MAR
 Rest of the world,LROW,LROW,NAF,North Africa, Tunisia,TUN
-Rest of the world,LROW,,NAF,North Africa, Western Sahara,ESH
-Rest of the world,LROW,,SSA,Sub-Saharan Africa,Angola,AGO
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Benin,BEN
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Botswana,BWA
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Burkina Faso,BFA
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Burundi,BDI
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Cameroon,CMR
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Cape Verde,
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Central African Republic,CAF
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Chad,TCD
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Congo-Brazzaville,COG
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Congo-Kinshasa,COG
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Cote d’Ivoire,CIV
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Djibouti,DJI
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Equatorial Guinea,GNQ
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Eritrea,ERI
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Ethiopia,ETH
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Gabon,GAB
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Gambia,GMB
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Ghana,GHA
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Guinea,GIN
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Guinea- Bissau,GNB
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Kenya,KEN
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Lesotho,LSO
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Liberia,LBR
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Madagascar,MDG
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Malawi,MWI
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Mali,MLI
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Mauritania,MRT
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Mozambique,MOZ
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Namibia,NAM
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Niger,NER
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Nigeria,NGA
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Rwanda,RWA
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Senegal,SEN
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Sierra Leone,SLE
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Somalia,SOM
+Rest of the world,LROW,LROW,NAF,North Africa, Western Sahara,ESH
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa,Angola,AGO
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Benin,BEN
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Botswana,BWA
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Burkina Faso,BFA
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Burundi,BDI
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Cameroon,CMR
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Cape Verde,
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Central African Republic,CAF
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Chad,TCD
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Congo-Brazzaville,COG
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Congo-Kinshasa,COG
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Cote d’Ivoire,CIV
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Djibouti,DJI
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Equatorial Guinea,GNQ
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Eritrea,ERI
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Ethiopia,ETH
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Gabon,GAB
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Gambia,GMB
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Ghana,GHA
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Guinea,GIN
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Guinea- Bissau,GNB
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Kenya,KEN
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Lesotho,LSO
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Liberia,LBR
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Madagascar,MDG
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Malawi,MWI
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Mali,MLI
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Mauritania,MRT
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Mozambique,MOZ
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Namibia,NAM
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Niger,NER
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Nigeria,NGA
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Rwanda,RWA
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Senegal,SEN
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Sierra Leone,SLE
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Somalia,SOM
 Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, South Africa,ZAF
 Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, South Africa,ZAF
 Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, South Africa,ZAF
 Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, South Africa,ZAF
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Sudan,SDN
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Swaziland,
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Tanzania,TZA
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Togo,TGO
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Uganda,UGA
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Zambia,ZMB
-Rest of the world,LROW,,SSA,Sub-Saharan Africa, Zimbabwe,ZWE
-Rest of the world,LROW,,SIS,Small Island States,Antigua and Barbuda,ATG
-Rest of the world,LROW,,SIS,Small Island States, Aruba,ABW
-Rest of the world,LROW,,SIS,Small Island States, Bahamas,BHS
-Rest of the world,LROW,,SIS,Small Island States, Barbados,BRB
-Rest of the world,LROW,,SIS,Small Island States, Bermuda,BMU
-Rest of the world,LROW,,SIS,Small Island States, Comoros,COM
-Rest of the world,LROW,,SIS,Small Island States, Cuba,CUB
-Rest of the world,LROW,,SIS,Small Island States, Dominica,DMA
-Rest of the world,LROW,,SIS,Small Island States, Dominican Republic,DOM
-Rest of the world,LROW,,SIS,Small Island States, Fiji,FJI
-Rest of the world,LROW,,SIS,Small Island States, French Polynesia,PYF
-Rest of the world,LROW,,SIS,Small Island States, Grenada,GRD
-Rest of the world,LROW,,SIS,Small Island States, Guadeloupe,GLP
-Rest of the world,LROW,,SIS,Small Island States, Haiti,HTI
-Rest of the world,LROW,,SIS,Small Island States, Jamaica,JAM
-Rest of the world,LROW,,SIS,Small Island States, Kiribati,KIR
-Rest of the world,LROW,,SIS,Small Island States, Maldives,MDV
-Rest of the world,LROW,,SIS,Small Island States, Marshall Islands,MHL
-Rest of the world,LROW,,SIS,Small Island States, Martinique,MTQ
-Rest of the world,LROW,,SIS,Small Island States, Mauritius,MUS
-Rest of the world,LROW,,SIS,Small Island States, Micronesia,FSM
-Rest of the world,LROW,,SIS,Small Island States, Nauru,NRU
-European Union,EU27,Netherlands,SIS,Small Island States, Netherlands Antilles,NLD
-Rest of the world,LROW,,SIS,Small Island States, New Caledonia,NCL
-Rest of the world,LROW,,SIS,Small Island States, Palau,PLW
-Rest of the world,LROW,,SIS,Small Island States, Puerto Rico,PRI
-Rest of the world,LROW,,SIS,Small Island States, Reunion,REU
-Rest of the world,LROW,,SIS,Small Island States, Samoa,WSM
-Rest of the world,LROW,,SIS,Small Island States, Sao Tome and Principe,STP
-Rest of the world,LROW,,SIS,Small Island States, Seychelles,SYC
-Rest of the world,LROW,,SIS,Small Island States, Solomon Islands,SLB
-Rest of the world,LROW,,SIS,Small Island States, St Kitts and Nevis,KNA
-Rest of the world,LROW,,SIS,Small Island States, St Lucia,LCA
-Rest of the world,LROW,,SIS,Small Island States, St Vincent and Grenadines,VCT
-Rest of the world,LROW,,SIS,Small Island States, Tonga,TON
-Rest of the world,LROW,,SIS,Small Island States, Trinidad and Tobago,TTO
-Rest of the world,LROW,,SIS,Small Island States, Tuvalu,TUV
-Rest of the world,LROW,,SIS,Small Island States, Vanuatu,VUT
-Rest of the world,LROW,,SIS,Small Island States, Virgin Islands,VIR
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Sudan,SDN
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Swaziland,
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Tanzania,TZA
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Togo,TGO
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Uganda,UGA
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Zambia,ZMB
+Rest of the world,LROW,LROW,SSA,Sub-Saharan Africa, Zimbabwe,ZWE
+Rest of the world,LROW,LROW,SIS,Small Island States,Antigua and Barbuda,ATG
+Rest of the world,LROW,LROW,SIS,Small Island States, Aruba,ABW
+Rest of the world,LROW,LROW,SIS,Small Island States, Bahamas,BHS
+Rest of the world,LROW,LROW,SIS,Small Island States, Barbados,BRB
+Rest of the world,LROW,LROW,SIS,Small Island States, Bermuda,BMU
+Rest of the world,LROW,LROW,SIS,Small Island States, Comoros,COM
+Rest of the world,LROW,LROW,SIS,Small Island States, Cuba,CUB
+Rest of the world,LROW,LROW,SIS,Small Island States, Dominica,DMA
+Rest of the world,LROW,LROW,SIS,Small Island States, Dominican Republic,DOM
+Rest of the world,LROW,LROW,SIS,Small Island States, Fiji,FJI
+Rest of the world,LROW,LROW,SIS,Small Island States, French Polynesia,PYF
+Rest of the world,LROW,LROW,SIS,Small Island States, Grenada,GRD
+Rest of the world,LROW,LROW,SIS,Small Island States, Guadeloupe,GLP
+Rest of the world,LROW,LROW,SIS,Small Island States, Haiti,HTI
+Rest of the world,LROW,LROW,SIS,Small Island States, Jamaica,JAM
+Rest of the world,LROW,LROW,SIS,Small Island States, Kiribati,KIR
+Rest of the world,LROW,LROW,SIS,Small Island States, Maldives,MDV
+Rest of the world,LROW,LROW,SIS,Small Island States, Marshall Islands,MHL
+Rest of the world,LROW,LROW,SIS,Small Island States, Martinique,MTQ
+Rest of the world,LROW,LROW,SIS,Small Island States, Mauritius,MUS
+Rest of the world,LROW,LROW,SIS,Small Island States, Micronesia,FSM
+Rest of the world,LROW,LROW,SIS,Small Island States, Nauru,NRU
+European Union,EU27,NETHERLANDS,SIS,Small Island States, Netherlands Antilles,NLD
+Rest of the world,LROW,LROW,SIS,Small Island States, New Caledonia,NCL
+Rest of the world,LROW,LROW,SIS,Small Island States, Palau,PLW
+Rest of the world,LROW,LROW,SIS,Small Island States, Puerto Rico,PRI
+Rest of the world,LROW,LROW,SIS,Small Island States, Reunion,REU
+Rest of the world,LROW,LROW,SIS,Small Island States, Samoa,WSM
+Rest of the world,LROW,LROW,SIS,Small Island States, Sao Tome and Principe,STP
+Rest of the world,LROW,LROW,SIS,Small Island States, Seychelles,SYC
+Rest of the world,LROW,LROW,SIS,Small Island States, Solomon Islands,SLB
+Rest of the world,LROW,LROW,SIS,Small Island States, St Kitts and Nevis,KNA
+Rest of the world,LROW,LROW,SIS,Small Island States, St Lucia,LCA
+Rest of the world,LROW,LROW,SIS,Small Island States, St Vincent and Grenadines,VCT
+Rest of the world,LROW,LROW,SIS,Small Island States, Tonga,TON
+Rest of the world,LROW,LROW,SIS,Small Island States, Trinidad and Tobago,TTO
+Rest of the world,LROW,LROW,SIS,Small Island States, Tuvalu,TUV
+Rest of the world,LROW,LROW,SIS,Small Island States, Vanuatu,VUT
+Rest of the world,LROW,LROW,SIS,Small Island States, Virgin Islands,VIR
