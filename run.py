@@ -46,7 +46,8 @@ interest_variables = [
     "temperature_change_in_35regions", 
     "total_population", 
     "population_35_regions", 
-    "total_radiative_forcing"
+    "total_radiative_forcing", 
+    "gross_domestic_product_nominal"
 ]
 
 output_variables = np.concatenate([variables_modelled_names, interest_variables])
