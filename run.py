@@ -56,31 +56,44 @@ runs = pd.read_csv('run_manager.csv')
 
 
 
-## Preparing the dataset 
-
-ds_path = 'results/batch/run_0.nc'
-
-ds = xr.open_dataset(ds_path)
-
-run_num =  20 #len(runs)
-ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
-
-
-# Reducing the number of runs to test the model
-runs = runs.head(run_num)
-
-
 ## Preparing to vary the radiative forcing
 
 # Load the basic radiative forcing 
-
-
 forcing = pd.read_csv('full_rcp.csv')
 
+
+# Run the model a first time to initialize the dataset
+output_ds_path = 'results/batch/run_ds.nc'
+
+exponent = np.random.normal(0, 1, 1)[0]
+norm_constant = np.random.uniform(10000, 50000, 1)[0]
+
+print(f"Initializing the model for the first run")
+
+
+# Run the model
+run = model.run(progress=True,
+                params={'"EXTRA: EXTRA: exponent"' : exponent,
+                        '"EXTRA: EXTRA: normalisation constant"': norm_constant
+                        },
+                time_step=5, 
+                output_file=output_ds_path,
+                return_columns=output_variables,
+                final_time=2050)
+
+
+## Preparing the dataset 
+
+ds = xr.open_dataset(output_ds_path)
+
+run_num =  3 #len(runs)
+ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 
 
 # Iterate over the rows of the run manager
 for index, run in runs.iterrows():
+    
+    first_run = True
 
     print("Initializing forcing... ")
     rcp = run['RCP']
@@ -94,14 +107,18 @@ for index, run in runs.iterrows():
 
     print(f"Running model for run {run['run_number']} with RCP {rcp}, exponent {exponent} and norm_constant {norm_constant}")
 
+
     # Run the model
     run = model.run(progress=True,
                     params={'total radiative forcing': total_forcing, 
                             '"EXTRA: EXTRA: exponent"' : exponent,
                             '"EXTRA: EXTRA: normalisation constant"': norm_constant
                             },
+                    time_step=5, 
                     return_columns=output_variables,
                     final_time=2050)
+    
+    # Store the simulation results in a dataframe
 
     result_variables = run.columns 
 
@@ -121,6 +138,8 @@ for index, run in runs.iterrows():
         except:
                 pass
         
+    first_run = False
+
 ds.to_netcdf('results/batch/run_with_1200.nc')
 ds.close()
 warnings.resetwarnings()
