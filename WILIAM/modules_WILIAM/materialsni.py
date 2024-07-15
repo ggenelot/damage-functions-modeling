@@ -1,6 +1,6 @@
 """
 Module materialsni
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -4690,7 +4690,7 @@ def mining_cost_ni_ton():
     name="mining technology improvements for NI",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"coefficients_mining_technology_improvements": 9, "time": 3},
 )
@@ -4821,7 +4821,7 @@ def ni_base_price_2000():
     name="Ni change grade",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"coefficients_ni_change_grade": 12, "ni_price": 4},
 )
@@ -4988,8 +4988,8 @@ _integ_ni_cumulative_mining = Integ(
         "switch_eco2mat_ni_demand": 1,
         "switch_materials": 1,
         "ni_modified_demand_world7": 1,
-        "output_real": 1,
         "implicit_price_ni": 1,
+        "output_real": 1,
     },
 )
 def ni_demand():
@@ -5838,8 +5838,8 @@ def ni_mining_income():
     comp_subtype="Normal",
     depends_on={
         "ni_mining_income": 1,
-        "ni_mining_expences": 1,
         "profit_margin_on_extraction": 1,
+        "ni_mining_expences": 1,
     },
 )
 def ni_mining_profit():
@@ -6175,8 +6175,8 @@ def ni_price_effect_on_demand():
     depends_on={
         "switch_mat2eco_ni_price": 1,
         "ni_base_price_2000": 1,
-        "price_transformation": 1,
         "estimated_price_with_tax_metals": 1,
+        "price_transformation": 1,
     },
 )
 def ni_price_index_economy():
@@ -6465,8 +6465,8 @@ def ni_share_of_secondary_material():
         "ni_plating": 1,
         "ni_other_use": 1,
         "ni_market": 1,
-        "ni_content_in_ss_steel": 1,
         "imv_ss_slow_in_use": 1,
+        "ni_content_in_ss_steel": 1,
         "imv_ss_fast_in_use": 1,
     },
 )
@@ -6702,7 +6702,7 @@ def prospecting_for_ni_from_all():
     name="prospecting for Ni from grades",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "ni_known_reserves": 6,

@@ -1,6 +1,6 @@
 """
 Module climateimpacts.sea_level_rise
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -10,9 +10,9 @@ Translated using PySD version 3.13.4
     comp_subtype="Normal",
     depends_on={
         "sensitivity_of_sea_level_rise_to_temperature": 1,
-        "time": 1,
-        "sea_level_sensitivity_from_ice_sheet_melting": 1,
         "slr_ice_sheet_melting_year": 1,
+        "sea_level_sensitivity_from_ice_sheet_melting": 1,
+        "time": 1,
     },
 )
 def adjusted_sensitivity_of_sea_level_rise_to_temperature():
@@ -227,7 +227,7 @@ def sea_level_rise_for_world():
     units="mm",
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "sea_level_rise": 1, "slr_in_2000": 1},
+    depends_on={"time": 1, "slr_in_2000": 1, "sea_level_rise": 1},
 )
 def sea_level_rise_from_2000():
     """

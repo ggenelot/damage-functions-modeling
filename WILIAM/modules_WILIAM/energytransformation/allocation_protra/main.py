@@ -1,6 +1,6 @@
 """
 Module energytransformation.allocation_protra.main
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -29,8 +29,8 @@ def aggregated_to_production_by_commodity():
     depends_on={
         "switch_energy": 1,
         "switch_mat2nrg_uranium_availability": 1,
-        "uranium_extraction_rate": 1,
         "pe_global_demand_uranium": 1,
+        "uranium_extraction_rate": 1,
     },
 )
 def cf_nuclear_after_uranium_scarcity():
@@ -52,9 +52,9 @@ def cf_nuclear_after_uranium_scarcity():
     comp_subtype="Normal",
     depends_on={
         "protra_to_allocated": 1,
-        "protra_operative_capacity_stock_selected": 1,
         "unit_conversion_tw_per_ej_per_year": 1,
         "unit_conversion_hours_year": 1,
+        "protra_operative_capacity_stock_selected": 1,
     },
 )
 def cf_protra():
@@ -495,8 +495,8 @@ def protra_heat_allocation():
         "protra_max_full_load_hours": 5,
         "variation_cf_nuclear_after_uranium_scarcity": 1,
         "protra_max_full_load_hours_curtailed": 1,
-        "switch_law2nrg_hydropower_production": 2,
         "variation_precipitation_evapotranspiration_36r": 2,
+        "switch_law2nrg_hydropower_production": 2,
         "switch_climate_change_damage": 2,
         "switch_energy": 2,
     },
@@ -833,7 +833,7 @@ def protra_to_allocated_in_twh():
     name="PROTRA utilization applied priorities",
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG PRO I", "pprofile"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "pwidth_protra_utilization_allocation_policy_priorities_sp": 1,

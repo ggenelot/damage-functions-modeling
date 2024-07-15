@@ -1,6 +1,6 @@
 """
 Module energytransformation.main
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -110,9 +110,9 @@ def fe_domestic():
     depends_on={
         "switch_nrg_demand_transformation": 1,
         "iea_total_fe_empirical": 1,
-        "final_energy_demand_by_fe_9r": 1,
-        "final_non_energy_demand_by_fe_9r": 1,
         "unit_conversion_tj_ej": 1,
+        "final_non_energy_demand_by_fe_9r": 1,
+        "final_energy_demand_by_fe_9r": 1,
     },
 )
 def fe_excluding_trade():
@@ -1641,8 +1641,8 @@ def total_fe_iea_model_check():
     comp_subtype="Normal",
     depends_on={
         "switch_nrg_trade": 1,
-        "fe_net_exports_by_region": 1,
         "fe_domestic": 1,
+        "fe_net_exports_by_region": 1,
         "fe_excluding_trade": 1,
     },
 )
@@ -1757,15 +1757,15 @@ def total_prosup_transmission_losses():
     name="variation exogenous PROTRA input shares",
     units="1/Year",
     subscripts=["REGIONS 9 I", "NRG PROTRA I", "NRG TI I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 4,
         "model_explorer_target_share_bioenergy_in_fossil_liquids_and_gases": 4,
-        "year_initial_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
-        "year_final_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
-        "target_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
         "switch_policy_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
+        "year_initial_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
+        "target_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
+        "year_final_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
         "protra_input_shares_empiric": 4,
         "time": 8,
     },

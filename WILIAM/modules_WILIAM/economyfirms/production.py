@@ -1,13 +1,13 @@
 """
 Module economyfirms.production
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
     name="change technical coefficients",
     units="DMNL",
     subscripts=["REGIONS 36 I", "SECTORS I", "SECTORS MAP I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "time": 5,
@@ -172,7 +172,7 @@ _delayfixed_delayed_ts_2_final_energy_intensities_by_sector_and_fe = DelayFixed(
     units="TJ/million$/Year",
     subscripts=["REGIONS 35 I", "SECTORS I", "NRG FE I"],
     comp_type="Stateful, Constant",
-    comp_subtype="DelayFixed, Normal",
+    comp_subtype="Normal, DelayFixed",
     depends_on={"_delayfixed_delayed_ts_final_energy_intensities_by_sector_and_fe": 1},
     other_deps={
         "_delayfixed_delayed_ts_final_energy_intensities_by_sector_and_fe": {
@@ -414,8 +414,8 @@ def energy_intensities_variation_economic_module_classification():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "delayed_ts_2_final_energy_intensities_by_sector_and_fe": 2,
         "delayed_ts_final_energy_intensities_by_sector_and_fe": 2,
+        "delayed_ts_2_final_energy_intensities_by_sector_and_fe": 2,
     },
 )
 def energy_intensity_variation():
@@ -708,9 +708,9 @@ _ext_constant_switch_nrg2eco_a_matrix_energy_intensities = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "technical_coefficients_total": 1,
+        "import_shares_intermediates_constrained": 1,
         "initial_import_shares_intermediates": 1,
         "switch_eco_trade": 1,
-        "import_shares_intermediates_constrained": 1,
     },
 )
 def technical_coefficients_domestic():
@@ -737,8 +737,8 @@ def technical_coefficients_domestic():
         "switch_eco_trade": 1,
         "initial_import_shares_intermediates": 1,
         "import_shares_intermediates_constrained": 1,
-        "import_shares_origin_intermediates": 1,
         "technical_coefficients_total": 1,
+        "import_shares_origin_intermediates": 1,
     },
 )
 def technical_coefficients_import():

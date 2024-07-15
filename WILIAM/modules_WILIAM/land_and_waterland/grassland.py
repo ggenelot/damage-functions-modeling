@@ -1,6 +1,6 @@
 """
 Module land_and_waterland.grassland
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -193,8 +193,8 @@ _integ_share_of_grasslands_under_unsaturated_regenerative_management = Integ(
     comp_subtype="Normal",
     depends_on={
         "switch_soil_management_in_grasslands_sp": 1,
-        "time": 2,
         "year_initial_soil_management_in_grasslands_sp": 2,
+        "time": 2,
         "year_final_soil_management_in_grasslands_sp": 2,
         "objective_soil_management_in_grasslands_sp": 1,
     },

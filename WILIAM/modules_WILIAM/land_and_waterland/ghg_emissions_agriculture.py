@@ -1,6 +1,6 @@
 """
 Module land_and_waterland.ghg_emissions_agriculture
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -47,21 +47,21 @@ _ext_constant_animals_distribution_regions = ExtConstant(
         "yield_of_cattle_milk": 1,
         "meat_ruminant_cattle_distribution": 1,
         "yield_of_meat_cattle": 1,
-        "meat_ruminant_buffalo_distribution": 1,
         "yield_of_meat_buffalo": 1,
-        "yield_of_buffalo_milk": 1,
         "dairy_milk_buffalo_distribution": 1,
-        "yield_of_goats_milk": 1,
-        "yield_of_meat_goat": 1,
+        "meat_ruminant_buffalo_distribution": 1,
+        "yield_of_buffalo_milk": 1,
         "dairy_milk_goats_distribution": 1,
+        "yield_of_meat_goat": 1,
+        "yield_of_goats_milk": 1,
         "meat_ruminant_goat_distribution": 1,
         "meat_ruminant_sheep_distribution": 1,
+        "yield_of_sheep_milk": 1,
         "yield_of_meat_sheep": 1,
         "dairy_milk_sheep_distribution": 1,
-        "yield_of_sheep_milk": 1,
-        "yield_of_hen_eggs": 1,
-        "yield_of_meat_chickens": 1,
         "meat_monogastric_chickens_distribution": 1,
+        "yield_of_meat_chickens": 1,
+        "yield_of_hen_eggs": 1,
         "meat_monogastric_swine_distribution": 1,
         "yield_of_meat_pig": 1,
     },
@@ -133,10 +133,10 @@ def animals_producing():
         "switch_law_emissions_irrigated_crop_area": 1,
         "switch_law_emissions": 1,
         "exo_area_irrigated_rice_t": 1,
+        "area_of_crops_all_managements": 1,
+        "share_rainfed_rice": 1,
         "switch_separate_irrigated_rainfed": 1,
         "area_of_irrigated_crops": 1,
-        "share_rainfed_rice": 1,
-        "area_of_crops_all_managements": 1,
     },
 )
 def area_of_irrigated_rice():
@@ -170,9 +170,9 @@ def area_of_irrigated_rice():
         "switch_law_emissions": 1,
         "exo_area_rainfed_rice_t": 1,
         "area_of_crops_all_managements": 1,
-        "area_of_rainfed_crops": 1,
-        "switch_separate_irrigated_rainfed": 1,
         "share_rainfed_rice": 1,
+        "switch_separate_irrigated_rainfed": 1,
+        "area_of_rainfed_crops": 1,
     },
 )
 def area_of_rainfed_rice():
@@ -274,8 +274,8 @@ _delayfixed_aux_diet_available_2020 = DelayFixed(
         "year_initial_manure_management_system_sp": 1,
         "time": 2,
         "year_final_manure_management_system_sp": 1,
-        "objetive_buffalo_manure_system_sp": 1,
         "methane_conversion_factor_by_system": 2,
+        "objetive_buffalo_manure_system_sp": 1,
         "buffalo_manure_system": 1,
     },
 )
@@ -360,8 +360,8 @@ def ch4_emissions_agriculture():
     depends_on={
         "factor_emissions_enteric_fermentation": 1,
         "number_animals_by_region": 1,
-        "unit_conversion_mt_t": 1,
         "unit_conversion_t_kg": 1,
+        "unit_conversion_mt_t": 1,
     },
 )
 def ch4_emissions_enteric_fermentation():
@@ -549,17 +549,17 @@ def ch4_emissions_manure_management_total():
     comp_subtype="Normal",
     depends_on={
         "area_of_irrigated_rice": 1,
-        "scaling_factor_water_regime_rice_irrigated": 1,
         "scaling_factor_organic_amendment": 2,
-        "unit_conversion_mt_t": 2,
         "scaling_factor_water_regime_preseason": 2,
-        "unit_conversion_t_kg": 2,
         "unit_conversion_km2_ha": 2,
-        "cultivation_period_rice": 2,
+        "unit_conversion_t_kg": 2,
         "factor_emissions_baseline_rice": 2,
+        "cultivation_period_rice": 2,
+        "unit_conversion_mt_t": 2,
+        "scaling_factor_water_regime_rice_irrigated": 1,
         "area_of_rainfed_rice": 1,
-        "share_upland_rice_by_region": 1,
         "scaling_factor_water_regime_rice_rainfed": 1,
+        "share_upland_rice_by_region": 1,
     },
 )
 def ch4_emissions_rice():
@@ -665,8 +665,8 @@ _ext_constant_cultivation_period_rice = ExtConstant(
         "year_initial_manure_management_system_sp": 1,
         "time": 2,
         "year_final_manure_management_system_sp": 1,
-        "methane_conversion_factor_by_system": 2,
         "objetive_dairy_cattle_manure_system_sp": 1,
+        "methane_conversion_factor_by_system": 2,
         "dairy_cattle_manure_system": 1,
     },
 )
@@ -1629,8 +1629,8 @@ def n2o_emissions_agriculture():
     depends_on={
         "n_application": 2,
         "factor_emission_n_application": 1,
-        "n_fraction_volatilises": 1,
         "factor_emission_n_application_indirect": 1,
+        "n_fraction_volatilises": 1,
         "unit_conversion_n2on_n2o": 1,
         "unit_conversion_t_kg": 1,
         "unit_conversion_t_mt": 1,
@@ -1956,8 +1956,8 @@ _ext_constant_objetive_swine_manure_system_sp = ExtConstant(
         "year_initial_manure_management_system_sp": 1,
         "time": 2,
         "year_final_manure_management_system_sp": 1,
-        "methane_conversion_factor_by_system": 2,
         "objetive_other_cattle_manure_system_sp": 1,
+        "methane_conversion_factor_by_system": 2,
         "other_cattle_manure_system": 1,
     },
 )

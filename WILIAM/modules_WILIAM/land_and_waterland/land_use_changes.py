@@ -1,6 +1,6 @@
 """
 Module land_and_waterland.land_use_changes
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -48,8 +48,8 @@ _delayfixed_aux_land_uses_2015 = DelayFixed(
     comp_subtype="Normal",
     depends_on={
         "switch_climate_change_damage": 1,
-        "sea_level_rise_by_region": 1,
         "effective_percent_of_land_change_per_meter_of_sea_level_rise": 1,
+        "sea_level_rise_by_region": 1,
         "unit_conversion_km2_ha": 1,
     },
 )
@@ -80,8 +80,8 @@ def cropland_loss_due_to_sea_level_rise_by_region():
         "land_use_changes_demanded": 2,
         "land_use_area_by_region": 1,
         "initial_land_use_by_region_2015": 1,
-        "select_limits_land_uses_by_source_sp": 1,
         "maximum_land_uses_by_source": 1,
+        "select_limits_land_uses_by_source_sp": 1,
     },
 )
 def factor_of_maximum_land_limit():
@@ -227,7 +227,7 @@ def factor_of_minimum_land_limit():
     name="factor of solar land limit",
     units="DMNL",
     subscripts=["REGIONS 9 I", "LANDS I", "LANDS MAP I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "switch_policy_land_protection_from_solar_pv_sp": 1,
@@ -361,8 +361,8 @@ def increase_of_matrix_of_land_use_changes():
     comp_subtype="Normal",
     depends_on={
         "switch_land_production_policy": 1,
-        "time": 2,
         "year_initial_land_protecion_policy": 1,
+        "time": 2,
         "year_final_land_protection_policy": 1,
         "objective_land_protection_policy": 1,
     },
@@ -399,9 +399,9 @@ def land_protection_by_policy():
     comp_subtype="Normal",
     depends_on={
         "land_use_area_productive_uses": 10,
-        "share_of_shrubland": 2,
-        "wetland_area": 3,
         "snow_ice_and_waterbodies_area": 3,
+        "wetland_area": 3,
+        "share_of_shrubland": 2,
     },
 )
 def land_use_area_by_region():
@@ -1357,11 +1357,11 @@ def land_uses_until_2015():
     depends_on={
         "select_eroi_min_potential_wind_solar_sp": 5,
         "limits_to_solar_land_expansion_eroi_min_0": 1,
-        "limits_to_solar_land_expansion_eroi_min_5": 1,
-        "limits_to_solar_land_expansion_eroi_min_8": 1,
         "limits_to_solar_land_expansion_eroi_min_10": 1,
-        "limits_to_solar_land_expansion_eroi_min_2": 1,
         "limits_to_solar_land_expansion_eroi_min_3": 1,
+        "limits_to_solar_land_expansion_eroi_min_8": 1,
+        "limits_to_solar_land_expansion_eroi_min_5": 1,
+        "limits_to_solar_land_expansion_eroi_min_2": 1,
     },
 )
 def limits_to_solar_land_expansion_eroi_min():

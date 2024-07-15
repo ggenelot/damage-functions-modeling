@@ -1,6 +1,6 @@
 """
 Module societyexogenous_inputs
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(

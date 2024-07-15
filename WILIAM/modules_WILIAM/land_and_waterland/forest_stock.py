@@ -1,6 +1,6 @@
 """
 Module land_and_waterland.forest_stock
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -195,10 +195,10 @@ def forest_stock_change_net_afforestation():
         "time": 2,
         "time_historical_data_land_module": 1,
         "historical_forest_volume_stock_change_all_forests": 1,
-        "forest_stock_change_net_afforestation": 1,
         "growth_forest_all": 1,
-        "natural_disturbance_all_forest": 1,
+        "forest_stock_change_net_afforestation": 1,
         "roundwood_volumme_extracted_from_forest_m_and_p": 1,
+        "natural_disturbance_all_forest": 1,
     },
 )
 def forest_volume_stock_changes():
