@@ -1,6 +1,6 @@
 """
 Module climatecarbon_cycle
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -57,8 +57,8 @@ _initial_biostimulation_coeff = Initial(
             "initial": {"ref_buffer_factor": 1},
             "step": {
                 "ref_buffer_factor": 1,
-                "c_in_mixed_layer": 1,
                 "preind_c_in_mixed_layer": 1,
+                "c_in_mixed_layer": 1,
                 "buff_c_coeff": 1,
             },
         }

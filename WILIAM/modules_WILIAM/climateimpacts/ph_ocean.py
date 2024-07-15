@@ -1,6 +1,6 @@
 """
 Module climateimpacts.ph_ocean
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -30,7 +30,7 @@ def aragonite_saturation():
     units="pH",
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "ph_ocean": 1, "ph_in_2000": 1},
+    depends_on={"time": 1, "ph_in_2000": 1, "ph_ocean": 1},
 )
 def delta_ph_from_2000():
     """
@@ -48,8 +48,8 @@ def delta_ph_from_2000():
     comp_subtype="Normal",
     depends_on={
         "ph_constant_1": 1,
-        "ph_constant_2": 1,
         "ppm_to_calculate_oceanic_ph_threshold": 3,
+        "ph_constant_2": 1,
         "ph_constant_3": 1,
         "ph_constant_4": 1,
     },

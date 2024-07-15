@@ -1,6 +1,6 @@
 """
 Module energyvariability.power2heat
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -218,8 +218,8 @@ _ext_constant_initial_year_p2h_expansion_sp.add(
     depends_on={
         "to_by_commodity": 1,
         "unit_conversion_twh_ej": 1,
-        "unit_conversion_hours_year": 1,
         "cf_prosup_elec2heat": 1,
+        "unit_conversion_hours_year": 1,
     },
 )
 def maximum_capacity_expansion_p2h():
@@ -299,10 +299,10 @@ def prosup_p2h_capacity_decomissioning():
     depends_on={
         "switch_nrg_proflex_capacity_expansion_endogenous": 1,
         "objective_capacity_p2h_sp": 1,
-        "year_final_p2h_expansion_sp": 2,
-        "one_year": 1,
         "initial_year_p2h_expansion_sp": 2,
         "time": 1,
+        "year_final_p2h_expansion_sp": 2,
+        "one_year": 1,
         "prosup_flexopt_elec_capacity_expansion": 1,
         "remaining_potential_capacity_p2h": 1,
         "prosup_p2h_capacity_decomissioning": 1,

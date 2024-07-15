@@ -1,6 +1,6 @@
 """
 Module materialsfe
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -575,7 +575,7 @@ def fe_base_price_2015():
     name="Fe change grade",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"coefficients_change_grade": 9, "fe_market_feedback_price": 3},
 )
@@ -680,8 +680,8 @@ _integ_fe_cumulative_mining = Integ(
         "switch_eco2mat_fe_demand": 1,
         "switch_materials": 1,
         "imv_fe_mining_historical": 1,
-        "output_real": 1,
         "implicit_price_fe": 1,
+        "output_real": 1,
     },
 )
 def fe_demand():
@@ -738,8 +738,8 @@ _ext_constant_fe_demand_shares = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "world_population": 1,
-        "fe_demand_shares": 2,
         "global_steel_demand": 1,
+        "fe_demand_shares": 2,
         "imv_iron_demand_per_person": 1,
         "unit_conversion_billion_to_million": 2,
         "imv_fe_demand_for_reinforcment_bars": 1,
@@ -1485,8 +1485,8 @@ def fe_market_sales():
     comp_subtype="Normal",
     depends_on={
         "fe_sent_to_recycling": 1,
-        "smelting_loss_yield": 1,
         "fe_total_mining": 1,
+        "smelting_loss_yield": 1,
         "imv_stainless_steel_lost_to_iron_scrap": 1,
     },
 )
@@ -1933,9 +1933,9 @@ def fe_price_in():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_fe_price": 1,
-        "price_transformation": 1,
         "fe_base_price_2015": 1,
         "estimated_price_with_tax_metals": 1,
+        "price_transformation": 1,
     },
 )
 def fe_price_index_economy():
@@ -2389,8 +2389,8 @@ def fe_scrapping():
     depends_on={
         "switch_fe_recycling_rate": 1,
         "fe_eol_recycling_rate_sp": 1,
-        "fe_scrap": 1,
         "fe_scrap_curve": 1,
+        "fe_scrap": 1,
     },
 )
 def fe_sent_to_recycling():
@@ -2792,8 +2792,8 @@ _ext_constant_grade_number = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "initial_output_real_materials": 2,
         "imv_fe_mining_historical": 1,
+        "initial_output_real_materials": 2,
         "demand_fe_base_year": 1,
     },
 )

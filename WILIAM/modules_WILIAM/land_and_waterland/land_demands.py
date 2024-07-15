@@ -1,6 +1,6 @@
 """
 Module land_and_waterland.land_demands
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -44,8 +44,8 @@ _integ_accumulated_error_in_solar_land = Integ(
         "time": 2,
         "year_initial_afforestation_sp": 2,
         "year_final_afforestation_sp": 2,
-        "initial_land_use_by_region": 1,
         "objective_afforestation_sp": 1,
+        "initial_land_use_by_region": 1,
     },
 )
 def afforestation_due_to_policies():
@@ -360,8 +360,8 @@ def exo_population_variation_exogenous():
         "time": 2,
         "year_initial_forest_plantations_sp": 2,
         "year_final_forest_plantations_sp": 2,
-        "initial_land_use_by_region": 1,
         "objective_forest_plantations_sp": 1,
+        "initial_land_use_by_region": 1,
     },
 )
 def forest_plantations_growth_due_to_policies():
@@ -400,10 +400,10 @@ def forest_plantations_growth_due_to_policies():
         "priorities_of_land_use_change_sp": 2,
         "initial_land_use_by_region": 2,
         "control_parameter_of_land_use_changes": 2,
-        "ki_solar_feedback": 1,
-        "accumulated_error_in_solar_land": 1,
         "difference_solar_land": 1,
         "kp_solar_feedback": 1,
+        "ki_solar_feedback": 1,
+        "accumulated_error_in_solar_land": 1,
     },
 )
 def increment_of_cropland_and_solar_demanded():
@@ -574,8 +574,8 @@ _smooth_increment_of_urban_land_demanded = Smooth(
         "time": 2,
         "time_historical_data_land_module": 1,
         "exo_land_for_solar_demanded": 1,
-        "switch_landwater": 1,
         "land_use_by_protra": 1,
+        "switch_landwater": 1,
     },
 )
 def land_for_solar_demanded():
@@ -607,9 +607,9 @@ def land_for_solar_demanded():
         "time": 1,
         "time_historical_data_land_module": 1,
         "trends_of_land_use_changes": 1,
+        "switch_law_exogenous_land_use_demands": 2,
         "check_exogenous_land_use_demands": 1,
         "land_use_changes_demanded_before_exogenous": 1,
-        "switch_law_exogenous_land_use_demands": 2,
     },
 )
 def land_use_changes_demanded():
@@ -1277,10 +1277,10 @@ def share_of_land_use_change_from_others():
     comp_subtype="Normal",
     depends_on={
         "initial_share_of_land_use_changes_from_others_up": 12,
+        "year_initial_solar_land_from_others_sp": 1,
         "objective_solar_land_from_others_sp": 1,
         "switch_solar_land_from_others_sp": 1,
         "time": 1,
-        "year_initial_solar_land_from_others_sp": 1,
     },
 )
 def share_of_land_use_changes_from_others_up():
@@ -1446,8 +1446,8 @@ def share_solar_urban():
     comp_subtype="Normal",
     depends_on={
         "switch_policy_maximum_share_solar_urban_sp": 1,
-        "share_solar_urban": 4,
         "policy_maximum_share_solar_urban_sp": 6,
+        "share_solar_urban": 4,
     },
 )
 def stress_signal_solar_land():

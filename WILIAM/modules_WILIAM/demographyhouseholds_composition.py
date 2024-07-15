@@ -1,6 +1,6 @@
 """
 Module demographyhouseholds_composition
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -103,8 +103,8 @@ _ext_constant_buffer_eu_households_speed_of_change_sp = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "buffer_eu_households_speed_of_change_sp": 1,
-        "historical_max_eu_households_per_100_people": 2,
         "eu_households_per_100_people": 2,
+        "historical_max_eu_households_per_100_people": 2,
         "historical_min_eu_households_per_100_people": 2,
     },
 )
@@ -178,10 +178,10 @@ def check_people_per_hh_eu_2():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "speed_for_demographic_fitting": 1,
-        "surplus_persons_by_household": 1,
-        "demographic_ratio_compensation": 1,
         "eu_households_per_100_people": 2,
+        "surplus_persons_by_household": 1,
+        "speed_for_demographic_fitting": 1,
+        "demographic_ratio_compensation": 1,
     },
 )
 def compensation_between_population_and_households():
@@ -377,8 +377,8 @@ def eu_population_in_households_2():
     comp_subtype="Normal",
     depends_on={
         "eu_undefined_population_by_household_2015": 1,
-        "eu_undefined_population_in_households_2015": 1,
         "eu_households_by_type_2015": 1,
+        "eu_undefined_population_in_households_2015": 1,
         "number_households_by_type_eu27": 1,
         "eu_undefined_population_in_households": 1,
     },
@@ -1065,8 +1065,8 @@ def urbanization_eu_households_per_100_people():
     comp_subtype="Normal",
     depends_on={
         "time": 3,
-        "average_people_per_household_non_eu_regions_timeseries_target_sp": 2,
         "select_variation_of_average_people_per_household_in_non_eu_regions_sp": 2,
+        "average_people_per_household_non_eu_regions_timeseries_target_sp": 2,
     },
 )
 def variation_average_people_per_household_noneu_regions():
@@ -1110,11 +1110,11 @@ def variation_average_people_per_household_noneu_regions():
     depends_on={
         "time": 1,
         "mean_variation_eu_households_per_100_people": 1,
-        "urbanization_eu_households_per_100_people": 1,
-        "average_variation_eu_households_per_100_people": 1,
         "ruralization_eu_households_per_100_people": 1,
-        "select_slope_evolution_of_eu27_households_composition_sp": 3,
         "eu_households_per_100_people": 1,
+        "urbanization_eu_households_per_100_people": 1,
+        "select_slope_evolution_of_eu27_households_composition_sp": 3,
+        "average_variation_eu_households_per_100_people": 1,
     },
 )
 def variation_eu_households_per_100_people():
