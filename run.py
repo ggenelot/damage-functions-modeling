@@ -63,7 +63,7 @@ runs = pd.read_csv('run_manager.csv')
 forcing = pd.read_csv('full_rcp.csv')
 
 # Run the model a first time to initialize the dataset
-output_ds_path = 'results/batch/run_ds.nc'
+output_ds_path = 'results/batch/run_ds_16_07.nc'
 
 initial_time = 2005
 final_time = 2050
