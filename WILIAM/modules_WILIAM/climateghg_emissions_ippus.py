@@ -168,7 +168,7 @@ def ch4_ippus_emissions_9r():
     name="CH4 IPPUs emissions by sectors",
     units="Gt/Year",
     subscripts=["REGIONS 35 I", "SECTORS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "ch4_chemical_industry_emissions_by_gdp": 1,
@@ -528,15 +528,15 @@ def co2_ippus_emissions_9r():
     name="CO2 IPPUs emissions by sectors",
     units="Gt/Year",
     subscripts=["REGIONS 35 I", "SECTORS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "co2_cement_production_emissions_by_gdp": 1,
         "co2_lime_production_emissions_by_gdp": 1,
         "unit_conversion_kt_gt": 4,
+        "co2_other_process_uses_of_carbonates_emissions_by_gdp": 1,
         "co2_chemical_industry_emissions_by_gdp": 1,
         "co2_non_energy_products_from_fuels_and_solvent_use_emissions_by_gdp": 1,
-        "co2_other_process_uses_of_carbonates_emissions_by_gdp": 1,
         "co2_metal_industry_emissions_by_gdp": 1,
         "co2_glass_production_emissions_by_gdp": 1,
     },
@@ -1102,7 +1102,7 @@ def n2o_ippus_emissions_9r():
     name="N2O IPPUs emissions by sectors",
     units="Gt/Year",
     subscripts=["REGIONS 35 I", "SECTORS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "n2o_chemical_industry_emissions_by_gdp": 1,
@@ -1271,8 +1271,8 @@ def rest_of_ghg_ippus_emissions_by_gdp():
     depends_on={
         "rest_of_ghg_ippus_emissions_historical_data": 1,
         "gwp_100_year": 1,
-        "select_gwp_time_frame_sp": 1,
         "gwp_20_year": 1,
+        "select_gwp_time_frame_sp": 1,
         "unit_conversion_tco2eq_gtco2eq": 1,
     },
 )

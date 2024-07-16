@@ -10,9 +10,9 @@ Translated using PySD version 3.14.0
     comp_subtype="Normal",
     depends_on={
         "sensitivity_of_sea_level_rise_to_temperature": 1,
-        "slr_ice_sheet_melting_year": 1,
-        "sea_level_sensitivity_from_ice_sheet_melting": 1,
         "time": 1,
+        "sea_level_sensitivity_from_ice_sheet_melting": 1,
+        "slr_ice_sheet_melting_year": 1,
     },
 )
 def adjusted_sensitivity_of_sea_level_rise_to_temperature():
@@ -185,8 +185,8 @@ _integ_sea_level_rise = Integ(
     comp_subtype="Normal",
     depends_on={
         "sea_level_rise_parameter_alpha": 1,
-        "sea_level_rise_parameter_beta": 1,
         "temperature_change": 1,
+        "sea_level_rise_parameter_beta": 1,
         "vertical_land_movement": 1,
         "time": 1,
     },
@@ -227,7 +227,7 @@ def sea_level_rise_for_world():
     units="mm",
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "slr_in_2000": 1, "sea_level_rise": 1},
+    depends_on={"time": 1, "sea_level_rise": 1, "slr_in_2000": 1},
 )
 def sea_level_rise_from_2000():
     """

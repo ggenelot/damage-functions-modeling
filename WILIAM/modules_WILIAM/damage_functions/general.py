@@ -100,25 +100,35 @@ def extra_extra_normalisation_constant():
 
 
 @component.add(
+    name='"FUND: EXTRA: EQ SWITCH deaths"', comp_type="Constant", comp_subtype="Normal"
+)
+def fund_extra_eq_switch_deaths():
+    return 0
+
+
+@component.add(
     name='"FUND: TOT: EQ: fund total impact"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
     depends_on={
-        "fund_tot_eq_moneraty_impact": 1,
-        "fund_tot_eq_total_deaths": 1,
+        "fund_tot_eq_monetary_impact": 1,
+        "fund_extra_eq_switch_deaths": 1,
         "fund_mm1_eq_value_of_a_statistical_life": 1,
+        "fund_tot_eq_total_deaths": 1,
     },
 )
 def fund_tot_eq_fund_total_impact():
     return (
-        fund_tot_eq_moneraty_impact()
-        + fund_mm1_eq_value_of_a_statistical_life() * fund_tot_eq_total_deaths()
+        fund_tot_eq_monetary_impact()
+        + fund_mm1_eq_value_of_a_statistical_life()
+        * fund_tot_eq_total_deaths()
+        * fund_extra_eq_switch_deaths()
     )
 
 
 @component.add(
-    name='"FUND: TOT: EQ moneraty impact"',
+    name='"FUND: TOT: EQ monetary impact"',
     subscripts=["REGIONS 35 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
@@ -132,7 +142,7 @@ def fund_tot_eq_fund_total_impact():
         "fund_w1_eq_change_in_water_resources": 1,
     },
 )
-def fund_tot_eq_moneraty_impact():
+def fund_tot_eq_monetary_impact():
     return (
         fund_e1_eq_space_heating()
         + fund_e1_eq_value_of_the_loss_of_the_ecosystems()

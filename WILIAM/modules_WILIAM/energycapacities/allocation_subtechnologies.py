@@ -95,7 +95,7 @@ _delayfixed_delay_pv_eroi_selection = DelayFixed(
         "TRANSPORT POWER TRAIN I",
         "BATTERY VEHICLES I",
     ],
-    comp_type="Stateful, Constant",
+    comp_type="Constant, Stateful",
     comp_subtype="Normal, DelayFixed",
     depends_on={
         "_delayfixed_delayed_esoi_st_electrified_vehicle": 1,
@@ -253,8 +253,8 @@ def indicator_of_battery_abundance():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 1,
-        "indicator_of_mineral_scarcity": 2,
         "relative_demand_of_mineral_by_ev_battery": 1,
+        "indicator_of_mineral_scarcity": 2,
     },
 )
 def indicator_of_battery_scarcity():
@@ -455,13 +455,13 @@ _ext_constant_select_logit_model_pv_subtech_allocation = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "select_logit_model_pv_subtech_allocation": 1,
-        "delay_pv_eroi_selection": 4,
+        "delay_indicator_pv_panel_mineral_abundance": 4,
         "switch_nrg_endogenous_share_pv_subtechnologies": 1,
         "share_pv_subtechnologies_before_2020": 1,
-        "delay_indicator_pv_panel_mineral_abundance": 4,
-        "initial_share_weights_pv_technologies": 4,
+        "delay_pv_eroi_selection": 4,
         "logit_model_coefficient_or_exponent": 4,
+        "select_logit_model_pv_subtech_allocation": 1,
+        "initial_share_weights_pv_technologies": 4,
     },
 )
 def share_new_pv_subtechn_land():
@@ -604,13 +604,13 @@ def share_new_pv_subtechn_land():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "select_logit_model_pv_subtech_allocation": 1,
-        "delay_pv_eroi_selection": 4,
+        "delay_indicator_pv_panel_mineral_abundance": 4,
         "switch_nrg_endogenous_share_pv_subtechnologies": 1,
         "share_pv_subtechnologies_before_2020": 1,
-        "delay_indicator_pv_panel_mineral_abundance": 4,
-        "initial_share_weights_pv_technologies": 4,
+        "delay_pv_eroi_selection": 4,
         "logit_model_coefficient_or_exponent": 4,
+        "select_logit_model_pv_subtech_allocation": 1,
+        "initial_share_weights_pv_technologies": 4,
     },
 )
 def share_new_pv_subtechn_urban():
@@ -759,11 +759,11 @@ def share_new_pv_subtechn_urban():
     depends_on={
         "time": 1,
         "share_ev_batteries_before_2015": 1,
-        "initial_share_weights_evs_batteries": 4,
         "select_logit_model_ev_batteries_subtech_allocation": 1,
         "indicator_of_battery_abundance": 4,
-        "delayed_esoi_st_electrified_vehicle": 4,
+        "initial_share_weights_evs_batteries": 4,
         "logit_model_coefficient_or_exponent": 4,
+        "delayed_esoi_st_electrified_vehicle": 4,
     },
 )
 def share_of_new_ev_subtechn_batteries():

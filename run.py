@@ -55,7 +55,7 @@ output_variables = np.concatenate([variables_modelled_names, interest_variables]
 
 runs = pd.read_csv('run_manager.csv')
 time_step = 5
-
+final_time = 2050
 
 
 ## Preparing to vary the radiative forcing
@@ -81,7 +81,7 @@ run = model.run(progress=True,
                         }, 
                 output_file=output_ds_path,
                 return_columns=output_variables,
-                final_time=2050)
+                final_time=final_time)
 
 
 ## Preparing the dataset 
@@ -119,7 +119,7 @@ for index, run in runs.iterrows():
                             'TIME STEP': time_step
                             },
                     return_columns=output_variables,
-                    final_time=2050)
+                    final_time=final_time)
     
     # Store the simulation results in a dataframe
 

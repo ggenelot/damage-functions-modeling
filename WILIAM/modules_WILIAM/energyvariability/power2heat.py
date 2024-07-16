@@ -409,7 +409,7 @@ _ext_constant_prosup_p2h_thermal_efficiency.add(
     name="PROSUP TO P2H technologies",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "PROSUP P2H I", "NRG TO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "prosup_p2h_capacity_stock": 4,

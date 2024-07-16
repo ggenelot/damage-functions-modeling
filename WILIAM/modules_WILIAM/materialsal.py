@@ -126,8 +126,8 @@ _integ_al_cumulative_mining = Integ(
         "switch_eco2mat_al_demand": 1,
         "switch_materials": 1,
         "al_modified_demand_world7": 1,
-        "output_real": 1,
         "implicit_price_al": 1,
+        "output_real": 1,
     },
 )
 def al_demand():
@@ -1485,10 +1485,10 @@ def al_price():
     depends_on={
         "time": 1,
         "initial_al_price": 1,
-        "coefficients_al_price_economy": 3,
-        "al_demand": 2,
         "maximum_al_price": 1,
         "al_available_delayed": 2,
+        "al_demand": 2,
+        "coefficients_al_price_economy": 3,
     },
 )
 def al_price_economy():
@@ -2548,8 +2548,8 @@ _ext_data_historical_al_price = ExtData(
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "al_demand_historical_world_7": 1,
         "initial_output_real_materials": 2,
+        "al_demand_historical_world_7": 1,
         "al_demand_base_year": 1,
     },
 )

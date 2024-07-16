@@ -730,8 +730,9 @@
             "extra_extra_exponent",
             "extra_extra_gdp_modifyer",
             "extra_extra_normalisation_constant",
+            "fund_extra_eq_switch_deaths",
             "fund_tot_eq_fund_total_impact",
-            "fund_tot_eq_moneraty_impact",
+            "fund_tot_eq_monetary_impact",
             "fund_tot_eq_total_deaths",
             "witness_tot_eq_witness_total_impact"
         ],
