@@ -5,7 +5,12 @@ import xarray as xr
 import warnings
 import pandas as pd
 import numpy as np
+import utils.variables as vr
 
+
+#############################################################
+# Load the model and the variables
+#############################################################
 
 print('Loading model...')
 
@@ -32,6 +37,10 @@ variables['isEquation'] = variables['Real Name'].str.split(':').str[2].str.strip
 variables.loc[variables['Equation'].isnull(), 'Model'] = np.nan
 
 
+
+variables["Interest"] = vr.isInterest(variables["Py Name"])
+
+
 variables.to_csv('variables.csv')
 variables_modelled = variables[variables['Model'].notna()]
 variables_modelled_names = variables_modelled['Py Name'].values
@@ -39,16 +48,7 @@ variables_modelled_names = variables_modelled['Py Name'].values
 
 # Adding other variables of interest
 
-interest_variables = [
-    "gini_gdppc_regions", 
-    "gini_gdppc_eu27", 
-    "temperature_change", 
-    "temperature_change_in_35regions", 
-    "total_population", 
-    "population_35_regions", 
-    "total_radiative_forcing", 
-    "gross_domestic_product_nominal"
-]
+
 
 output_variables = np.concatenate([variables_modelled_names, interest_variables])
 
@@ -62,12 +62,29 @@ runs = pd.read_csv('run_manager.csv')
 # Load the basic radiative forcing 
 forcing = pd.read_csv('full_rcp.csv')
 
-
 # Run the model a first time to initialize the dataset
 output_ds_path = 'results/batch/run_ds.nc'
 
-exponent = np.random.normal(0, 1, 1)[0]
-norm_constant = np.random.uniform(10000, 50000, 1)[0]
+initial_time = 2005
+final_time = 2050
+time_step = 5 
+time_span = time = np.linspace(initial_time, final_time, num=(final_time - initial_time)//time_step + 1)
+
+
+exponent_values = np.random.normal(0, 1, len(time_span))
+exponent = pd.Series(index=time_span, data=exponent_values)
+
+norm_constant_values = np.random.uniform(10000, 50000, len(time_span))
+norm_constant = pd.Series(index=time_span, data=norm_constant_values)
+
+
+
+
+
+############################################################################################################
+# Initial run
+############################################################################################################
+
 
 print(f"Initializing the model for the first run")
 
@@ -79,7 +96,8 @@ run = model.run(progress=True,
                         }, 
                 output_file=output_ds_path,
                 return_columns=output_variables,
-                final_time=2050)
+                intial_time=initial_time,
+                final_time=final_time)
 
 
 ## Preparing the dataset 
@@ -90,6 +108,12 @@ run_num =  3 #len(runs)
 ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 
 runs = runs.head(run_num)
+
+
+
+############################################################################################################
+# Other runs
+############################################################################################################
 
 # Iterate over the rows of the run manager
 for index, run in runs.iterrows():
@@ -103,10 +127,13 @@ for index, run in runs.iterrows():
     total_forcing = pd.Series(index=total_forcing['time'], data=total_forcing[rcp].values)
     print("Forcing initialized")
     
-    exponent = np.random.normal(0, 2, 1)[0]
-    norm_constant = np.random.uniform(10000, 50000, 1)[0]
+    exponent_values = np.random.normal(0, 1, len(time_span))
+    exponent = pd.Series(index=time_span, data=exponent_values)
 
-    print(f"Running model for run {run['run_number']} with RCP {rcp}, exponent {exponent} and norm_constant {norm_constant}")
+    norm_constant_values = np.random.uniform(10000, 50000, len(time_span))
+    norm_constant = pd.Series(index=time_span, data=norm_constant_values)
+
+    print(f"Running model for run {run['run_number']}")
 
 
     # Run the model
@@ -116,7 +143,8 @@ for index, run in runs.iterrows():
                             '"EXTRA: EXTRA: normalisation constant"': norm_constant
                             },
                     return_columns=output_variables,
-                    final_time=2050)
+                    intial_time=initial_time,
+                    final_time=final_time)
     
     # Store the simulation results in a dataframe
 
@@ -140,8 +168,12 @@ for index, run in runs.iterrows():
         
     first_run = False
 
-ds.to_netcdf('results/batch/run_with_1200.nc')
+ds.to_netcdf(output_ds_path)
 ds.close()
+
+
+
+
 warnings.resetwarnings()
 
 print('Done every run')
