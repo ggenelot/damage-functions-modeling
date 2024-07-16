@@ -38,8 +38,8 @@ variables.loc[variables['Equation'].isnull(), 'Model'] = np.nan
 
 
 
-variables["Interest"] = variables["Py Name"].apply(lambda x: vr.isInterest(x))
-interest_variables = variables[variables["Interest"] == True]["Py Name"].values
+variables["Interest"] = vr.isInterest(variables["Py Name"])
+
 
 variables.to_csv('variables.csv')
 variables_modelled = variables[variables['Model'].notna()]
@@ -67,7 +67,7 @@ output_ds_path = 'results/batch/run_ds_16_07.nc'
 
 initial_time = 2005
 final_time = 2050
-time_step = 5 
+time_step = 1 
 time_span = time = np.linspace(initial_time, final_time, num=(final_time - initial_time)//time_step + 1)
 
 
@@ -96,15 +96,14 @@ run = model.run(progress=True,
                         }, 
                 output_file=output_ds_path,
                 return_columns=output_variables,
-                final_time=final_time, 
-                time_step=time_step)
+                final_time=final_time)
 
 
 ## Preparing the dataset 
 
 ds = xr.open_dataset(output_ds_path)
 
-run_num =  3 #len(runs)
+run_num =  1 #len(runs)
 ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 
 runs = runs.head(run_num)
@@ -143,8 +142,7 @@ for index, run in runs.iterrows():
                             '"EXTRA: EXTRA: normalisation constant"': norm_constant
                             },
                     return_columns=output_variables,
-                    final_time=final_time, 
-                    time_step=time_step)
+                    final_time=final_time)
     
     # Store the simulation results in a dataframe
 
