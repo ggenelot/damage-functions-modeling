@@ -3896,7 +3896,7 @@ _ext_lookup_initial_share_of_irrigation.add(
     name="INITIAL SHARE OF LAND USE CHANGES FROM OTHERS DOWN",
     units="DMNL",
     subscripts=["REGIONS 9 I", "LANDS I", "LANDS MAP I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_initial_share_of_land_use_changes_from_others_down",

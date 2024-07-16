@@ -7,7 +7,7 @@ Translated using PySD version 3.14.0
     name="Clean water for OM required for PROTRA",
     units="Mt",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PROTRA I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "protra_operative_capacity_stock_selected": 1,
@@ -50,7 +50,7 @@ def clean_water_for_om_required_for_protra():
     name="Distilled water for OM required for PROTRA",
     units="Mt",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PROTRA I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "protra_operative_capacity_stock_selected": 2,
@@ -107,7 +107,7 @@ def distilled_water_for_om_required_for_protra():
     name="dynEROIst PROTRA",
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PROTRA I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "protra_to_allocated": 9,
@@ -284,8 +284,8 @@ def dynfenu_decom_protra():
     depends_on={
         "clean_water_for_om_required_for_protra": 1,
         "embodied_fe_intensity_clean_water": 1,
-        "embodied_fe_intensity_distilled_water": 1,
         "distilled_water_for_om_required_for_protra": 1,
+        "embodied_fe_intensity_distilled_water": 1,
         "matrix_unit_prefixes": 2,
     },
 )
@@ -541,11 +541,11 @@ def eptb_dynamic():
     depends_on={
         "to_over_lifetime_protra": 2,
         "share_total_transmission_loss": 2,
-        "unit_conversion_mj_ej": 1,
-        "fe_intensity_current_grids_om": 1,
+        "unit_conversion_mw_tw": 1,
         "fenust_protra": 1,
         "protra_capacity_expansion_selected": 1,
-        "unit_conversion_mw_tw": 1,
+        "fe_intensity_current_grids_om": 1,
+        "unit_conversion_mj_ej": 1,
         "share_self_electricity_consumption_protra": 1,
     },
 )
@@ -671,9 +671,9 @@ _ext_constant_exogenous_eroist_protra.add(
     depends_on={
         "protra_capacity_expansion_selected": 1,
         "embodied_fe_intensity_clean_water": 1,
-        "embodied_fe_intensity_distilled_water": 1,
-        "clean_water_for_om_required_for_protra": 1,
         "distilled_water_for_om_required_for_protra": 1,
+        "clean_water_for_om_required_for_protra": 1,
+        "embodied_fe_intensity_distilled_water": 1,
         "protra_lifetime": 1,
         "matrix_unit_prefixes": 4,
     },
@@ -711,9 +711,9 @@ def fenu_water_om_ptotra():
     depends_on={
         "cf_protra_full_load_hours": 1,
         "protra_lifetime": 1,
+        "matrix_unit_prefixes": 1,
         "unit_conversion_j_wh": 1,
         "unit_conversion_wh_we": 1,
-        "matrix_unit_prefixes": 1,
         "exogenous_eroist_protra": 1,
     },
 )
@@ -981,7 +981,7 @@ def manufacturing_energy_intensity_for_pv_panels():
     name="manufacturing energy intensity PROTRA",
     units="EJ/TW",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PROTRA I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"manufacturing_energy_intensity_for_pv_panels": 1},
 )
@@ -1108,10 +1108,10 @@ def required_embodied_fe_materials_for_protra():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 2,
+        "unit_conversion_kg_mt": 2,
+        "embodied_fe_intensity_materials_36r": 2,
         "materials_required_for_new_grids_by_protra": 2,
         "unit_conversion_mj_ej": 2,
-        "embodied_fe_intensity_materials_36r": 2,
-        "unit_conversion_kg_mt": 2,
     },
 )
 def required_embodied_fe_per_material_for_new_grids():
@@ -1179,12 +1179,12 @@ def required_embodied_fe_per_material_for_new_grids():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 6,
-        "materials_required_for_new_protra": 6,
-        "unit_conversion_mj_ej": 6,
-        "embodied_fe_intensity_materials_36r": 6,
         "unit_conversion_kg_mt": 6,
-        "machining_rate_pv": 4,
+        "embodied_fe_intensity_materials_36r": 6,
+        "unit_conversion_mj_ej": 6,
+        "materials_required_for_new_protra": 6,
         "scrap_rate": 8,
+        "machining_rate_pv": 4,
     },
 )
 def required_embodied_fe_per_material_for_new_protra():
@@ -1350,10 +1350,10 @@ def required_embodied_fe_per_material_for_new_protra():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 2,
+        "unit_conversion_kg_mt": 2,
+        "embodied_fe_intensity_materials_36r": 2,
         "materials_required_for_om_protra": 2,
         "unit_conversion_mj_ej": 2,
-        "embodied_fe_intensity_materials_36r": 2,
-        "unit_conversion_kg_mt": 2,
     },
 )
 def required_embodied_fe_per_material_for_om_new_protra():
@@ -1447,8 +1447,8 @@ def share_fenu_overgrids_over_total_fenu_protra():
         "protra_capacity_expansion_selected": 1,
         "unit_conversion_wh_we": 1,
         "protra_lifetime": 1,
-        "unit_conversion_j_wh": 1,
         "matrix_unit_prefixes": 1,
+        "unit_conversion_j_wh": 1,
     },
 )
 def to_over_lifetime_protra():
@@ -1536,7 +1536,7 @@ def total_fenust_protra_eroi_exogenous():
     name="transport materials energy intensity PROTRA",
     units="EJ/TW",
     subscripts=["NRG TO I", "NRG PROTRA I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "transport_materials_fe_intensity_pv_technologies": 1,
