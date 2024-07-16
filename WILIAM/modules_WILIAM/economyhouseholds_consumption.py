@@ -55,10 +55,10 @@ _smooth_adjustment_factor_households_consumption_to_avoid_negative_assets = Smoo
     depends_on={
         "time": 1,
         "delayed_ts_households_net_lending": 1,
-        "delayed_ts_households_financial_assets": 1,
         "initial_households_financial_assets_per_household": 1,
-        "delayed_ts_total_households_consumption_coicop": 1,
+        "delayed_ts_households_financial_assets": 1,
         "delayed_ts_households_disposable_income": 1,
+        "delayed_ts_total_households_consumption_coicop": 1,
     },
 )
 def adjustment_factor_households_consumption_to_avoid_negative_assets_non_smooth():
@@ -582,7 +582,7 @@ _ext_constant_constant_air = ExtConstant(
     name="CONSTANT DURABLES",
     units="DMNL",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I", "COICOP DURABLES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "constant_appliances": 2,
@@ -1075,8 +1075,8 @@ def consumer_price_index():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "base_number_of_households": 1,
         "households_consumption_coicop": 2,
+        "base_number_of_households": 1,
         "unit_conversion_dollars_mdollars": 2,
         "number_of_households_by_income_and_type": 1,
     },
@@ -1112,9 +1112,9 @@ def consumption_coicop():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
+        "unit_conversion_dollars_2015_mdollars_2015": 2,
         "base_number_of_households": 1,
         "households_consumption_coicop_real": 2,
-        "unit_conversion_dollars_2015_mdollars_2015": 2,
         "number_of_households_by_income_and_type": 1,
     },
 )
@@ -1700,7 +1700,7 @@ def dynamic_beta_durables():
     name="dynamic beta durables non adjusted",
     units="DMNL",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I", "COICOP DURABLES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "households_disposable_income_real_12_types": 420,
@@ -10679,7 +10679,7 @@ def dynamic_beta_non_durables():
     name="dynamic beta non durables non adjusted",
     units="DMNL",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "households_disposable_income_real_12_types": 420,
@@ -18588,7 +18588,7 @@ def dynamic_constant_durables():
     name="dynamic constant durables non adjusted",
     units="DMNL",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I", "COICOP DURABLES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "households_disposable_income_real_12_types": 420,
@@ -27538,8 +27538,8 @@ def dynamic_constant_durables_non_adjusted():
     comp_subtype="Normal",
     depends_on={
         "alpha_durables_non_disaggregated_countries": 1,
-        "gamma_durables_non_disaggregated_countries": 1,
         "households_disposable_income_real": 1,
+        "gamma_durables_non_disaggregated_countries": 1,
         "maximum_constant_durables_non_disaggregated_countries": 1,
     },
 )
@@ -27592,7 +27592,7 @@ def dynamic_constant_non_durables():
     name="dynamic constant non durables non adjusted",
     units="DMNL",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "households_disposable_income_real_12_types": 420,
@@ -35500,7 +35500,7 @@ def dynamic_constant_non_durables_non_disaggregated_countries():
     name="energy consumption private transport COICOP physical units",
     units="EJ/Year",
     subscripts=["REGIONS 36 I", "HOUSEHOLDS I", "COICOP ENERGY I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"energy_consumption_private_passenger_transport_by_mode": 6},
 )
@@ -35753,10 +35753,10 @@ def households_consumption_coicop_real_non_adjusted():
     comp_subtype="Normal",
     depends_on={
         "select_limit_annual_growth_consumption_durables_sp": 1,
-        "initial_limit_annual_growth_consumption_durables_sp": 1,
         "time": 1,
-        "limit_annual_growth_consumption_durables_sp": 2,
+        "initial_limit_annual_growth_consumption_durables_sp": 1,
         "annual_growth_households_consumption_durables_real": 2,
+        "limit_annual_growth_consumption_durables_sp": 2,
         "delayed_households_consumption_durables_real": 2,
     },
 )
@@ -35812,7 +35812,7 @@ def households_consumption_energy_buildings():
     name="households consumption energy buildings bottom up",
     units="dollars/(Year*households)",
     subscripts=["REGIONS 36 I", "HOUSEHOLDS I", "COICOP TRANSP ENERGY I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"initial_households_consumption_coicop": 1},
 )
@@ -35876,7 +35876,7 @@ def households_consumption_energy_buildings_real():
     name="households consumption energy buildings top down",
     units="dollars/(Year*households)",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I", "COICOP TRANSP ENERGY I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"households_consumption_transport_energy_top_down": 1},
 )
@@ -35907,7 +35907,7 @@ def households_consumption_energy_buildings_top_down():
     name="households consumption energy transport bottom up",
     units="dollars/(Year*households)",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I", "COICOP TRANSP ENERGY I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "households_energy_transport_consumption_coicop": 1,
@@ -36129,12 +36129,12 @@ _smooth_households_consumption_propensity_durables = Smooth(
     name="households consumption propensity durables non smooth",
     units="DMNL",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I", "COICOP DURABLES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "dynamic_constant_durables": 2,
-        "dynamic_beta_durables": 1,
         "households_disposable_income_real": 2,
+        "dynamic_beta_durables": 1,
     },
 )
 def households_consumption_propensity_durables_non_smooth():
@@ -36236,7 +36236,7 @@ _smooth_households_consumption_propensity_non_durables = Smooth(
     name="households consumption propensity non durables non smooth",
     units="DMNL",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "dynamic_constant_non_durables": 2,
@@ -36299,7 +36299,7 @@ def households_consumption_propensity_non_durables_non_smooth():
     name="households consumption public transport bottom up",
     units="dollars/(Year*households)",
     subscripts=["REGIONS 36 I", "HOUSEHOLDS I", "COICOP TRANSP ENERGY I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "households_public_households_transport_demand_coicop": 1,
@@ -36486,8 +36486,8 @@ def households_consumption_transport_and_buildings_energy():
         "time": 1,
         "initial_households_consumption_coicop": 1,
         "dollars_per_dollars_2015": 1,
-        "households_consumption_energy_buildings_real": 1,
         "households_consumption_transport_real": 1,
+        "households_consumption_energy_buildings_real": 1,
     },
 )
 def households_consumption_transport_and_buildings_energy_real():
@@ -36539,8 +36539,8 @@ def households_consumption_transport_bottom_up():
         "switch_eco_hh_transport_energy_bottom_up": 2,
         "initial_households_consumption_transport_bottom_up": 2,
         "households_consumption_transport_energy_top_down_non_adjusted": 3,
-        "switch_economy": 1,
         "households_consumption_transport_energy_top_down_adjustment_factor": 2,
+        "switch_economy": 1,
     },
 )
 def households_consumption_transport_energy_top_down():
@@ -36583,13 +36583,13 @@ def households_consumption_transport_energy_top_down():
         "_smooth_households_consumption_transport_energy_top_down_adjustment_factor": {
             "initial": {
                 "select_limit_consumption_energy_over_total_non_durables_sp": 1,
-                "ratio_household_consumpion_transport_energy_to_total_non_durables": 2,
                 "limit_consumption_energy_over_total_non_durables": 2,
+                "ratio_household_consumpion_transport_energy_to_total_non_durables": 2,
             },
             "step": {
                 "select_limit_consumption_energy_over_total_non_durables_sp": 1,
-                "ratio_household_consumpion_transport_energy_to_total_non_durables": 2,
                 "limit_consumption_energy_over_total_non_durables": 2,
+                "ratio_household_consumpion_transport_energy_to_total_non_durables": 2,
             },
         }
     },
@@ -36677,8 +36677,8 @@ _smooth_households_consumption_transport_energy_top_down_adjustment_factor = Smo
         "households_disposable_income": 2,
         "price_coicop": 2,
         "price_transformation": 2,
-        "transport_and_energy_elasticities": 2,
         "constant_transport_energy": 1,
+        "transport_and_energy_elasticities": 2,
     },
 )
 def households_consumption_transport_energy_top_down_non_adjusted():
@@ -36767,12 +36767,12 @@ def households_consumption_transport_real():
     name="households consumption transport top down",
     units="dollars/(Year*households)",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I", "COICOP TRANSP ENERGY I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "select_lockdown_effect_on_households_transport_sp": 1,
-        "year_lockdown_effect_on_households_transport_sp": 1,
         "time": 1,
+        "year_lockdown_effect_on_households_transport_sp": 1,
         "lockdown_households_transport_demand_variation_sp": 1,
         "households_consumption_transport_energy_top_down": 2,
     },
@@ -36817,18 +36817,18 @@ def households_consumption_transport_top_down():
         "switch_economy": 1,
         "switch_fin2eco": 1,
         "time": 1,
-        "households_net_labour_income": 2,
+        "initial_households_property_income_paid": 1,
+        "households_other_transfers_paid": 2,
         "household_basic_income": 2,
         "initial_households_property_income_received": 1,
-        "households_income_tax": 2,
+        "households_net_labour_income": 2,
         "households_social_benefits": 2,
-        "initial_households_property_income_paid": 1,
-        "households_other_transfers_received": 2,
-        "households_other_transfers_paid": 2,
-        "households_wealth_tax": 2,
         "households_net_operating_surplus": 2,
-        "households_property_income_paid": 1,
+        "households_wealth_tax": 2,
+        "households_income_tax": 2,
+        "households_other_transfers_received": 2,
         "households_property_income_received": 1,
+        "households_property_income_paid": 1,
     },
 )
 def households_disposable_income():
@@ -36873,8 +36873,8 @@ def households_disposable_income():
     comp_subtype="Normal",
     depends_on={
         "households_disposable_income": 1,
-        "households_consumer_price_index": 1,
         "price_transformation": 1,
+        "households_consumer_price_index": 1,
         "dollars_per_dollars_2015": 1,
     },
 )
@@ -36971,8 +36971,8 @@ def households_energy_transport_consumption_coicop():
         "switch_eco_households": 1,
         "time": 1,
         "initial_households_labour_compensation": 1,
-        "adjustment_factor_labour_compensation": 1,
         "delayed_ts_labour_compensation_per_household": 1,
+        "adjustment_factor_labour_compensation": 1,
     },
 )
 def households_gross_labour_income():
@@ -37013,10 +37013,10 @@ def households_gross_savings():
     comp_subtype="Normal",
     depends_on={
         "households_income_tax_exc_ghg_tax_reductions": 1,
-        "ghg_tax_revenues_used_to_reduce_income_tax": 1,
-        "number_of_households_by_income_and_type": 1,
-        "shares_households_income_tax": 1,
         "unit_conversion_dollars_mdollars": 1,
+        "ghg_tax_revenues_used_to_reduce_income_tax": 1,
+        "shares_households_income_tax": 1,
+        "number_of_households_by_income_and_type": 1,
     },
 )
 def households_income_tax():
@@ -37071,8 +37071,8 @@ def households_net_labour_income():
         "switch_eco_households": 1,
         "time": 1,
         "initial_households_net_operating_surplus": 1,
-        "adjustment_factor_net_operating_surplus": 1,
         "delayed_ts_net_operating_surplus_per_hh": 1,
+        "adjustment_factor_net_operating_surplus": 1,
     },
 )
 def households_net_operating_surplus():
@@ -37211,11 +37211,11 @@ def households_share_quaids():
     depends_on={
         "constant_quaids": 4,
         "price_coicop": 8,
-        "beta_quaids": 4,
         "price_transformation": 16,
+        "beta_quaids": 4,
         "households_consumption_non_durable_non_energy": 16,
-        "epsilon_quaids": 4,
         "price_quaids_1": 16,
+        "epsilon_quaids": 4,
         "price_quaids_2": 8,
         "alpha_quaids": 4,
     },
@@ -37728,11 +37728,11 @@ def households_tax_rate_wealth():
         "switch_economy": 1,
         "switch_fin2eco": 1,
         "time": 1,
+        "initial_household_taxes_on_assets_to_finance_basic_income": 1,
         "households_tax_rate_wealth": 2,
         "initial_households_net_wealth": 1,
-        "initial_household_taxes_on_assets_to_finance_basic_income": 1,
-        "households_taxes_on_assets_to_finance_basic_income": 1,
         "delayed_ts_households_net_wealth": 1,
+        "households_taxes_on_assets_to_finance_basic_income": 1,
     },
 )
 def households_wealth_tax():
@@ -37754,7 +37754,7 @@ def households_wealth_tax():
     name="IMPLICIT PRICE ENERGY HOUSEHOLDS COICOP",
     units="Mdollars/TJ",
     subscripts=["REGIONS 35 I", "COICOP I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "initial_consumption_coicop": 1,
@@ -37838,10 +37838,10 @@ def implicit_price_public_transport_households():
     depends_on={
         "time": 1,
         "implicit_price_energy_households_coicop": 2,
-        "households_consumption_energy_buildings_real": 2,
         "dollars_per_dollars_2015": 2,
-        "unit_conversion_dollars_mdollars": 2,
         "base_number_of_households": 1,
+        "unit_conversion_dollars_mdollars": 2,
+        "households_consumption_energy_buildings_real": 2,
         "number_of_households_by_income_and_type": 1,
     },
 )
@@ -37905,8 +37905,8 @@ def imv_final_energy_consumption_buildings_households():
         "households_consumption_transport_real": 2,
         "implicit_price_energy_households_coicop": 2,
         "dollars_per_dollars_2015": 2,
-        "unit_conversion_dollars_mdollars": 2,
         "base_number_of_households": 1,
+        "unit_conversion_dollars_mdollars": 2,
         "number_of_households_by_income_and_type": 1,
     },
 )
@@ -39543,8 +39543,8 @@ def initial_households_labour_compensation():
     depends_on={
         "base_number_of_households": 1,
         "operating_surplus_share": 1,
-        "initial_net_operating_surplus": 1,
         "initial_tax_income_corporations": 1,
+        "initial_net_operating_surplus": 1,
         "share_operating_surplus_distributed": 1,
         "unit_conversion_dollars_mdollars": 1,
     },
@@ -39999,12 +39999,12 @@ def net_operating_surplus_non_adjusted():
     depends_on={
         "time": 8,
         "base_number_of_households": 16,
-        "households_shares_by_income": 8,
         "switch_dem2eco_number_households": 8,
         "number_households_by_type_eu27_adjusted": 1,
-        "switch_economy": 8,
-        "households_correspondance_12_to_60": 1,
         "switch_eco_households": 8,
+        "households_correspondance_12_to_60": 1,
+        "switch_economy": 8,
+        "households_shares_by_income": 8,
         "number_households_noneu": 1,
         "number_households_by_type_eu27": 6,
     },
@@ -40768,8 +40768,8 @@ def shares_households_income_tax():
     depends_on={
         "time": 1,
         "base_number_of_households": 1,
-        "delayed_ts_social_benefits_per_household": 2,
         "unit_conversion_dollars_mdollars": 2,
+        "delayed_ts_social_benefits_per_household": 2,
         "number_of_households_by_income_and_type": 1,
     },
 )
@@ -40967,9 +40967,9 @@ _ext_constant_tax_rate_income_sp = ExtConstant(
     depends_on={
         "time": 2,
         "tax_rate_social_security_default": 2,
-        "tax_rate_social_security_sp": 1,
         "initial_year_tax_rate_social_security_sp": 1,
         "select_tax_rate_social_security_sp": 1,
+        "tax_rate_social_security_sp": 1,
     },
 )
 def tax_rate_social_security():
@@ -41054,13 +41054,13 @@ _ext_constant_tax_rate_wealth_sp = ExtConstant(
     depends_on={
         "switch_economy": 1,
         "switch_fin2eco": 1,
-        "households_net_labour_income": 2,
         "household_basic_income": 2,
         "initial_households_property_income_received": 1,
+        "households_net_labour_income": 2,
         "households_social_benefits": 2,
-        "households_other_transfers_received": 2,
-        "households_social_security": 2,
         "households_net_operating_surplus": 2,
+        "households_social_security": 2,
+        "households_other_transfers_received": 2,
         "households_property_income_received": 1,
     },
 )
@@ -41152,16 +41152,16 @@ def total_households_consumption_transport_energy_top_down():
     comp_subtype="Normal",
     depends_on={
         "select_lockdown_effect_on_households_transport_sp": 1,
-        "year_lockdown_effect_on_households_transport_sp": 1,
         "time": 1,
-        "price_non_durables": 4,
-        "beta_transport": 2,
-        "epsilon_transport": 2,
-        "households_consumption_non_durables": 4,
-        "price_transport": 4,
-        "constant_transport": 2,
+        "year_lockdown_effect_on_households_transport_sp": 1,
         "lockdown_households_transport_demand_variation_sp": 1,
+        "price_transport": 4,
+        "households_consumption_non_durables": 4,
+        "constant_transport": 2,
         "price_transformation": 4,
+        "price_non_durables": 4,
+        "epsilon_transport": 2,
+        "beta_transport": 2,
     },
 )
 def transport_demand_by_household_type():

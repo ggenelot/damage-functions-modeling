@@ -148,9 +148,9 @@ def by_mineral_rr_base_metals():
     depends_on={
         "time": 2,
         "historic_improvement_recycling_rates_minerals_base_metals": 2,
+        "start_year_p_rr_minerals_w_base_metals": 1,
         "by_mineral_rr_base_metals": 1,
         "by_mineral_rr_1yr_base_metals": 1,
-        "start_year_p_rr_minerals_w_base_metals": 1,
     },
 )
 def by_mineral_rr_variation_metals():
@@ -282,8 +282,8 @@ def change_cu_grade():
     comp_subtype="Normal",
     depends_on={
         "coefficients_change_cu_mining_technology_s_curve": 12,
-        "imv_start_time": 3,
         "time": 3,
+        "imv_start_time": 3,
     },
 )
 def change_cu_mining_technology_s_curve():
@@ -913,7 +913,7 @@ def cu_demand_scaling_factor_for_semi_products():
     name="Cu energy use",
     units="MJ/kg*Mt/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"coefficients_cu_energy_use": 5, "mining_cu_known_reserves": 5},
 )
@@ -2702,8 +2702,8 @@ def cu_price_historical():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_cu_price": 1,
-        "cu_base_price_2015": 1,
         "estimated_price_with_tax_metals": 1,
+        "cu_base_price_2015": 1,
         "price_transformation": 1,
     },
 )
@@ -2866,8 +2866,8 @@ def cu_rate_of_new_scrap():
     depends_on={
         "switch_cu_recycling_policy": 1,
         "cu_eol_recycling_rate_sp": 1,
-        "cu_recycling_test": 1,
         "cu_scrapped": 1,
+        "cu_recycling_test": 1,
     },
 )
 def cu_recycled_to_cu_market():
@@ -2954,9 +2954,9 @@ _integ_cu_scrapped = Integ(
     comp_subtype="Normal",
     depends_on={
         "switch_cu_recycling_policy": 1,
-        "cu_separation_loss_rate": 2,
         "cu_eol_recycling_rate_sp": 1,
         "cu_scrapped": 2,
+        "cu_separation_loss_rate": 2,
         "cu_recycling_test": 1,
     },
 )
@@ -3544,10 +3544,10 @@ def implicit_price_materials_cu():
     depends_on={
         "time": 1,
         "historic_improvement_recycling_rates_minerals_base_metals": 1,
-        "by_mineral_rr_variation_metals": 1,
-        "select_mineral_rr_targets_sp_w_base_metals": 1,
         "common_rr_minerals_variation_base_metals": 1,
+        "select_mineral_rr_targets_sp_w_base_metals": 1,
         "eol_recycling_rates_minerals_base_metals": 1,
+        "by_mineral_rr_variation_metals": 1,
         "constrain_rr_improv_for_per_mineral_base_metals": 1,
     },
 )
@@ -4770,7 +4770,7 @@ def water_forecast_cochilico_for_chile():
     name="water use Cu",
     units="Mm3/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "mining_cu_known_reserves": 5,
@@ -4866,7 +4866,7 @@ def water_use_cu_secondary():
     name="water use per Cu",
     units="m3/t",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"water_per_cu": 5},
 )

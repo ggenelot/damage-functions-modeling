@@ -12,8 +12,8 @@ Translated using PySD version 3.14.0
     depends_on={
         "switch_materials": 1,
         "length_per_mw_building_wiring_baseline": 2,
-        "power_pv_panel_baseline": 1,
         "power_per_panel_by_pv_technology": 1,
+        "power_pv_panel_baseline": 1,
     },
 )
 def length_per_mw_building_wiring():
@@ -37,8 +37,8 @@ def length_per_mw_building_wiring():
     depends_on={
         "switch_materials": 1,
         "length_per_mw_house_wiring_baseline": 2,
-        "power_pv_panel_baseline": 1,
         "power_per_panel_by_pv_technology": 1,
+        "power_pv_panel_baseline": 1,
     },
 )
 def length_per_mw_house_wiring():
@@ -62,8 +62,8 @@ def length_per_mw_house_wiring():
     depends_on={
         "switch_materials": 1,
         "length_per_mw_inverter_to_transformer_baseline": 2,
-        "power_pv_panel_baseline": 1,
         "power_per_panel_by_pv_technology": 1,
+        "power_pv_panel_baseline": 1,
     },
 )
 def length_per_mw_inverter_to_transformer():
@@ -87,8 +87,8 @@ def length_per_mw_inverter_to_transformer():
     depends_on={
         "switch_materials": 1,
         "length_per_mw_panel_to_inverter_baseline": 2,
-        "power_pv_panel_baseline": 1,
         "power_per_panel_by_pv_technology": 1,
+        "power_pv_panel_baseline": 1,
     },
 )
 def length_per_mw_panel_to_inverter():
@@ -305,8 +305,8 @@ def pv_wiring_land_total_intensity():
         "material_requirements_pv_wiring_building": 1,
         "length_per_mw_building_wiring": 1,
         "share_pv_installations_single_family_vs_total_households_buildings_sp": 2,
-        "length_per_mw_house_wiring": 1,
         "material_requirements_pv_wiring_house": 1,
+        "length_per_mw_house_wiring": 1,
     },
 )
 def pv_wiring_urban_total_intensity():
@@ -332,8 +332,8 @@ def pv_wiring_urban_total_intensity():
     depends_on={
         "time": 3,
         "initial_year_reduction_material_intensity_pv_sp": 3,
-        "material_intensity_pv_cells": 3,
         "reduction_rate_material_intensity_pv_rest_of_materials_sp": 1,
+        "material_intensity_pv_cells": 3,
         "reduction_rate_material_intensity_c_si_pv_sn_sp": 1,
         "reduction_rate_material_intensity_c_si_pv_si_sp": 1,
     },

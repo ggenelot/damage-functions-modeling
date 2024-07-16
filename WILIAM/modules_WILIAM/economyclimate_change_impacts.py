@@ -1197,8 +1197,8 @@ def capital_stock_damage_function():
     comp_subtype="Normal",
     depends_on={
         "select_climate_change_impacts_remove_extrapolations_sp": 1,
-        "capital_stock_damage_function": 4,
         "auxiliar_variable_to_remove_extrapolations_of_droughts": 1,
+        "capital_stock_damage_function": 4,
     },
 )
 def capital_stock_damage_function_drought():
@@ -1271,8 +1271,8 @@ def capital_stock_damage_function_drought():
     comp_subtype="Normal",
     depends_on={
         "select_climate_change_impacts_remove_extrapolations_sp": 1,
-        "auxiliar_variable_to_remove_extrapolations_of_heatwaves": 1,
         "capital_stock_damage_function": 4,
+        "auxiliar_variable_to_remove_extrapolations_of_heatwaves": 1,
     },
 )
 def capital_stock_damage_function_heat():
@@ -1417,8 +1417,8 @@ def capital_stock_damage_function_wildfire():
         "select_climate_hazards_sp": 4,
         "total_hazards_capital_stock_damage_function": 1,
         "capital_stock_damage_function_wildfire": 1,
-        "capital_stock_damage_function_drought": 1,
         "capital_stock_damage_function_heat": 1,
+        "capital_stock_damage_function_drought": 1,
     },
 )
 def capital_stock_damage_rate_for_all_the_uncertainty_scenarios():
@@ -1594,8 +1594,8 @@ def global_temperature_change_2015():
         "switch_economy": 1,
         "a_heat_stress_damage_function": 2,
         "global_temperature_change_2015": 2,
-        "c_heat_stress_damage_function": 2,
         "b_heat_stress_damage_function": 2,
+        "c_heat_stress_damage_function": 2,
         "temperature_change": 2,
     },
 )
@@ -1645,8 +1645,8 @@ def heat_stress_damage_function_until_2015():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "heat_stress_damage_function": 1,
         "heat_stress_damage_function_until_2015": 1,
+        "heat_stress_damage_function": 1,
     },
 )
 def heat_stress_incremental_damage_function():
@@ -1956,8 +1956,8 @@ def total_hazards_capital_stock_damage_function():
     comp_subtype="Normal",
     depends_on={
         "a_vector_borne_diseases_damage_function": 1,
-        "global_temperature_change_2015": 1,
         "switch_economy": 1,
+        "global_temperature_change_2015": 1,
         "temperature_change": 1,
     },
 )
@@ -2003,8 +2003,8 @@ def vector_borne_diseases_damage_function_until_2015():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "vector_borne_diseases_damage_function_until_2015": 1,
         "vector_borne_diseases_damage_function": 1,
+        "vector_borne_diseases_damage_function_until_2015": 1,
     },
 )
 def vector_borne_diseases_incremental_damage_function():

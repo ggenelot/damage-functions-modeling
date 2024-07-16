@@ -298,11 +298,11 @@ def prosup_p2h_capacity_decomissioning():
     comp_subtype="Normal",
     depends_on={
         "switch_nrg_proflex_capacity_expansion_endogenous": 1,
-        "objective_capacity_p2h_sp": 1,
-        "initial_year_p2h_expansion_sp": 2,
         "time": 1,
-        "year_final_p2h_expansion_sp": 2,
         "one_year": 1,
+        "year_final_p2h_expansion_sp": 2,
+        "initial_year_p2h_expansion_sp": 2,
+        "objective_capacity_p2h_sp": 1,
         "prosup_flexopt_elec_capacity_expansion": 1,
         "remaining_potential_capacity_p2h": 1,
         "prosup_p2h_capacity_decomissioning": 1,
@@ -409,7 +409,7 @@ _ext_constant_prosup_p2h_thermal_efficiency.add(
     name="PROSUP TO P2H technologies",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "PROSUP P2H I", "NRG TO I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "prosup_p2h_capacity_stock": 4,

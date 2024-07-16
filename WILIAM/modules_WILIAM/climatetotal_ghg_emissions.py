@@ -143,15 +143,15 @@ def ch4_agriculture_emissions_corrected_by_historic_data():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
-        "total_ghg_energy_emissions_9r": 2,
-        "unit_conversion_mt_gt": 6,
-        "ch4_agriculture_emissions_corrected_by_historic_data": 2,
-        "ch4_ippus_emissions_9r": 2,
-        "model_explorer_rcp_ghg_emissions": 4,
-        "switch_climate": 2,
-        "ch4_total_anthro_rest_of_emissions_rcp": 8,
         "ch4_waste_emissions_9r": 2,
+        "model_explorer_rcp_ghg_emissions": 4,
+        "total_ghg_energy_emissions_9r": 2,
+        "ch4_ippus_emissions_9r": 2,
+        "unit_conversion_mt_gt": 6,
+        "ch4_total_anthro_rest_of_emissions_rcp": 8,
+        "switch_climate": 2,
         "exo_ch4_energy_emissions_9r": 2,
+        "ch4_agriculture_emissions_corrected_by_historic_data": 2,
         "select_rcp_for_exogenous_ghg_emissions_sp": 3,
     },
 )
@@ -379,8 +379,8 @@ _ext_data_co2_soil_and_luc_emissions_historical = ExtData(
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "exo_ch4_emissions_agriculture": 1,
         "ch4_emissions_agriculture": 1,
+        "exo_ch4_emissions_agriculture": 1,
         "aux_ch4_correction_factor": 1,
     },
 )
@@ -433,8 +433,8 @@ def correction_factor_by_co2_luc_historic_data():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "n2o_emissions_agriculture": 1,
         "exo_n2o_emissions_agriculture": 1,
+        "n2o_emissions_agriculture": 1,
         "aux_n2o_correction_factor": 1,
     },
 )
@@ -678,10 +678,10 @@ def ghg_emissions_per_capita_9r():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 9,
-        "hfc_emissions_rcp_6_0_endog": 18,
+        "hfc_emissions_rcp_2_6_endog": 18,
         "model_explorer_rcp_ghg_emissions": 36,
         "hfc_emissions_rcp_8_5_endog": 18,
-        "hfc_emissions_rcp_2_6_endog": 18,
+        "hfc_emissions_rcp_6_0_endog": 18,
         "hfc_emissions_rcp_4_5_endog": 18,
         "select_rcp_for_exogenous_ghg_emissions_sp": 27,
     },
@@ -1635,15 +1635,15 @@ def n2o_agriculture_emissions_corrected_by_historic_data():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
+        "n2o_waste_emissions_9r": 2,
+        "model_explorer_rcp_ghg_emissions": 4,
         "total_ghg_energy_emissions_9r": 2,
         "unit_conversion_mt_gt": 6,
-        "model_explorer_rcp_ghg_emissions": 4,
-        "switch_climate": 2,
-        "n2o_waste_emissions_9r": 2,
-        "n2o_ippus_emissions_9r": 2,
         "exo_n2o_energy_emissions_9r": 2,
-        "n2o_total_anthro_rest_of_emissions_rcp": 8,
         "n2o_agriculture_emissions_corrected_by_historic_data": 2,
+        "switch_climate": 2,
+        "n2o_total_anthro_rest_of_emissions_rcp": 8,
+        "n2o_ippus_emissions_9r": 2,
         "select_rcp_for_exogenous_ghg_emissions_sp": 3,
     },
 )
@@ -1844,8 +1844,8 @@ def pfc_emissions_rcp_endog():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
-        "sf6_emissions_rcp_endog": 8,
         "model_explorer_rcp_ghg_emissions": 4,
+        "sf6_emissions_rcp_endog": 8,
         "select_rcp_for_exogenous_ghg_emissions_sp": 3,
     },
 )
@@ -2203,9 +2203,9 @@ _integ_total_cumulative_co2_emissions = Integ(
     depends_on={
         "total_co2_emissions": 1,
         "unit_conversion_t_gt": 1,
+        "gwp_100_year": 14,
         "select_gwp_time_frame_sp": 14,
         "gwp_20_year": 14,
-        "gwp_100_year": 14,
         "unit_conversion_tco2eq_gtco2eq": 14,
         "unit_conversion_t_mt": 2,
         "ch4_anthro_emissions": 1,

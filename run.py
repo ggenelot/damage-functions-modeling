@@ -75,8 +75,7 @@ print(f"Initializing the model for the first run")
 run = model.run(progress=True,
                 params={'"EXTRA: EXTRA: exponent"' : exponent,
                         '"EXTRA: EXTRA: normalisation constant"': norm_constant
-                        },
-                time_step=5, 
+                        }, 
                 output_file=output_ds_path,
                 return_columns=output_variables,
                 final_time=2050)
@@ -89,6 +88,7 @@ ds = xr.open_dataset(output_ds_path)
 run_num =  3 #len(runs)
 ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 
+runs = runs.head(run_num)
 
 # Iterate over the rows of the run manager
 for index, run in runs.iterrows():
@@ -114,7 +114,6 @@ for index, run in runs.iterrows():
                             '"EXTRA: EXTRA: exponent"' : exponent,
                             '"EXTRA: EXTRA: normalisation constant"': norm_constant
                             },
-                    time_step=5, 
                     return_columns=output_variables,
                     final_time=2050)
     

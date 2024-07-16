@@ -277,8 +277,8 @@ _smooth_change_of_stock_forest_m_and_p = Smooth(
     depends_on={
         "roundwood_available_world": 1,
         "roundwood_demanded_world": 1,
-        "historical_roundwood_harvested": 1,
         "initial_time": 1,
+        "historical_roundwood_harvested": 1,
     },
 )
 def global_availability_of_biomass():
@@ -561,11 +561,11 @@ def historical_wood_extracted():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_forestry_self_sufficiency": 1,
-        "year_initial_forestry_self_sufficiency_sp": 2,
-        "year_final_forestry_self_sufficiency_sp": 2,
-        "objective_forestry_self_sufficiency_sp": 1,
         "time": 2,
         "switch_forestry_self_sufficiency_sp": 1,
+        "year_initial_forestry_self_sufficiency_sp": 2,
+        "objective_forestry_self_sufficiency_sp": 1,
+        "year_final_forestry_self_sufficiency_sp": 2,
     },
 )
 def increase_of_self_suficiency_forestry():
@@ -604,8 +604,8 @@ def increase_of_self_suficiency_forestry():
     depends_on={
         "initial_time": 1,
         "historical_forest_volume_stock_all_forests": 1,
-        "maximum_forest_stock_per_area": 1,
         "initial_land_use_by_region": 1,
+        "maximum_forest_stock_per_area": 1,
     },
 )
 def intial_stock_m_and_p():
@@ -831,9 +831,9 @@ def roundwood_available_world():
         "time": 1,
         "time_historical_data_land_module": 1,
         "historical_wood_extracted": 1,
+        "biomass_stock_of_managed_forest_and_plantations": 1,
         "global_roundwood_demand_distributed_to_regions": 1,
         "initial_volume_stock_of_forest_m_and_p": 1,
-        "biomass_stock_of_managed_forest_and_plantations": 1,
     },
 )
 def roundwood_extracted():
@@ -999,9 +999,9 @@ _integ_share_of_self_suficiency_of_forestry_products = Integ(
         "time": 2,
         "year_initial_forest_loss_limit_sp": 1,
         "year_final_forest_loss_limit_sp": 1,
+        "historical_forest_volume_stock_all_forests": 1,
         "time_historical_data_land_module": 1,
         "objective_forest_loss_limit_sp": 1,
-        "historical_forest_volume_stock_all_forests": 1,
     },
 )
 def stock_of_forest_volume_protected():
