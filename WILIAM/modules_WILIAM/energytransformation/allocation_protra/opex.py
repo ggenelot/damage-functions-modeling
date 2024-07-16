@@ -207,7 +207,7 @@ def co2_cost_by_protra_and_region():
     name="CO2 emission factor by PROTRA",
     units="kg/TJ",
     subscripts=["NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"emission_factors_stationary_combustion": 24},
 )
@@ -588,7 +588,7 @@ def fuel_price_by_protra_9r_adjusted():
     name="fuel price by PROTRA world",
     units="Mdollars/EJ",
     subscripts=["NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "gas_price_mdollars_per_ej": 5,
@@ -658,9 +658,9 @@ def fuel_price_by_protra_world():
     depends_on={
         "time": 1,
         "switch_energy": 1,
-        "gas_price_historical": 1,
-        "unit_conversion_mmbtu_ej": 2,
         "unit_conversion_dollars_mdollars": 2,
+        "unit_conversion_mmbtu_ej": 2,
+        "gas_price_historical": 1,
         "estimated_gas_price": 1,
     },
 )
@@ -782,7 +782,7 @@ def nuclear_price_mdollars_per_ej_fictional():
     name="O and M cost MDollars per EJ",
     units="Mdollars/EJ",
     subscripts=["REGIONS 9 I", "NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"operation_and_maintainance_cost": 10, "ccs_om_cost_factor": 9},
 )

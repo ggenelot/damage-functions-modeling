@@ -96,13 +96,13 @@ def aux_shortage_crops():
     name="availability of crops",
     units="DMNL",
     subscripts=["LAND PRODUCTS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "time": 1,
         "time_historical_data_land_module": 1,
-        "land_products_demanded_world": 2,
         "land_products_available_all_regions": 2,
+        "land_products_demanded_world": 2,
         "mask_crops": 2,
     },
 )
@@ -359,8 +359,8 @@ def factor_of_minimum_crops():
     depends_on={
         "time": 1,
         "time_historical_data_land_module": 1,
-        "land_products_demanded_world": 4,
         "land_products_available_all_regions": 2,
+        "land_products_demanded_world": 4,
         "mask_crops": 2,
     },
 )
@@ -848,7 +848,7 @@ _delayfixed_historical_shares_rainfed_delayed = DelayFixed(
     name="increase of shares of crops all managements",
     units="DMNL/Year",
     subscripts=["REGIONS 9 I", "LAND PRODUCTS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "time": 10,
@@ -1143,7 +1143,7 @@ def increase_of_shares_of_irrigated_crops():
     name="increase of shares of irrigated crops aux",
     units="DMNL/Year",
     subscripts=["REGIONS 9 I", "LAND PRODUCTS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "time": 11,
@@ -1452,7 +1452,7 @@ def increase_of_shares_of_rainfed_crops():
     name="increase of shares of rainfed crops aux",
     units="DMNL/Year",
     subscripts=["REGIONS 9 I", "LAND PRODUCTS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "time": 11,
@@ -1761,7 +1761,7 @@ def irrigated_crops_available_by_region():
     name="land products available from croplands",
     units="t/Year",
     subscripts=["REGIONS 9 I", "LAND PRODUCTS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "switch_separate_irrigated_rainfed": 11,
@@ -2068,8 +2068,8 @@ def matrix_of_changes_of_irrigated_crops():
     comp_subtype="Normal",
     depends_on={
         "ratio_shortage_of_crops": 4,
-        "parameter_of_crop_share_change": 1,
         "factor_minimum_rainfed": 1,
+        "parameter_of_crop_share_change": 1,
         "factor_maximum_rainfed_crops": 1,
     },
 )
@@ -2173,8 +2173,8 @@ def ratio_shortage_of_crops():
         "switch_separate_irrigated_rainfed": 1,
         "crops_available_all_managements": 1,
         "share_of_residuals_from_crops": 2,
-        "rainfed_crops_available_by_region": 1,
         "irrigated_crops_available_by_region": 1,
+        "rainfed_crops_available_by_region": 1,
     },
 )
 def residues_available_from_crops():

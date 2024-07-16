@@ -740,8 +740,8 @@ def max_power_for_elec_storage_of_the_ev_vehicles():
     comp_subtype="Normal",
     depends_on={
         "switch_nrg_limited_res_potentials": 1,
-        "unlimited_protra_res_parameter": 1,
         "unit_conversion_tw_per_ej_per_year": 1,
+        "unlimited_protra_res_parameter": 1,
         "phs_potential_sp": 1,
         "stationary_batteries_maximum_sp": 1,
     },
@@ -1168,11 +1168,11 @@ def roundtrip_and_transmission_losses_by_prosto():
     comp_subtype="Normal",
     depends_on={
         "v2g_share_ev_vehicles": 1,
-        "time": 4,
         "initial_sc_sp": 4,
-        "objective_sc_sp": 2,
-        "year_initial_sc_sp": 3,
+        "time": 4,
         "year_final_sc_sp": 2,
+        "year_initial_sc_sp": 3,
+        "objective_sc_sp": 2,
         "switch_sc_sp": 1,
     },
 )
@@ -1256,8 +1256,8 @@ def stored_energy_input_by_prosto():
     comp_subtype="Normal",
     depends_on={
         "stored_energy_output_by_prosto": 2,
-        "charging_losses_share_by_prosto_elec": 1,
         "discharging_losses_share_by_prosto_elec": 1,
+        "charging_losses_share_by_prosto_elec": 1,
     },
 )
 def stored_energy_losses_roundtrip_by_prosto():
@@ -1387,8 +1387,8 @@ def total_prosto_losses_elec():
     depends_on={
         "time": 4,
         "initial_v2g_sp": 4,
-        "year_final_v2g_sp": 2,
         "objective_v2g_sp": 2,
+        "year_final_v2g_sp": 2,
         "year_initial_v2g_sp": 3,
         "switch_v2g_sp": 1,
     },
