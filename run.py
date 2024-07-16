@@ -54,6 +54,7 @@ output_variables = np.concatenate([variables_modelled_names, interest_variables]
 
 
 runs = pd.read_csv('run_manager.csv')
+time_step = 5
 
 
 
@@ -75,7 +76,8 @@ print(f"Initializing the model for the first run")
 # Run the model
 run = model.run(progress=True,
                 params={'"EXTRA: EXTRA: exponent"' : exponent,
-                        '"EXTRA: EXTRA: normalisation constant"': norm_constant
+                        '"EXTRA: EXTRA: normalisation constant"': norm_constant, 
+                        'TIME STEP': time_step
                         }, 
                 output_file=output_ds_path,
                 return_columns=output_variables,
@@ -113,7 +115,8 @@ for index, run in runs.iterrows():
     run = model.run(progress=True,
                     params={'total radiative forcing': total_forcing, 
                             '"EXTRA: EXTRA: exponent"' : exponent,
-                            '"EXTRA: EXTRA: normalisation constant"': norm_constant
+                            '"EXTRA: EXTRA: normalisation constant"': norm_constant, 
+                            'TIME STEP': time_step
                             },
                     return_columns=output_variables,
                     final_time=2050)
@@ -140,7 +143,7 @@ for index, run in runs.iterrows():
         
     first_run = False
 
-ds.to_netcdf('results/batch/run_with_1200.nc')
+ds.to_netcdf(output_ds_path)
 ds.close()
 warnings.resetwarnings()
 
