@@ -38,8 +38,8 @@ variables.loc[variables['Equation'].isnull(), 'Model'] = np.nan
 
 
 
-variables["Interest"] = vr.isInterest(variables["Py Name"])
-
+variables["Interest"] = variables["Py Name"].apply(lambda x: vr.isInterest(x))
+interest_variables = variables[variables["Interest"] == True]["Py Name"].values
 
 variables.to_csv('variables.csv')
 variables_modelled = variables[variables['Model'].notna()]
@@ -63,7 +63,7 @@ runs = pd.read_csv('run_manager.csv')
 forcing = pd.read_csv('full_rcp.csv')
 
 # Run the model a first time to initialize the dataset
-output_ds_path = 'results/batch/run_ds.nc'
+output_ds_path = 'results/batch/run_ds_16_07.nc'
 
 initial_time = 2005
 final_time = 2050
@@ -96,8 +96,8 @@ run = model.run(progress=True,
                         }, 
                 output_file=output_ds_path,
                 return_columns=output_variables,
-                intial_time=initial_time,
-                final_time=final_time)
+                final_time=final_time, 
+                time_step=time_step)
 
 
 ## Preparing the dataset 
@@ -143,8 +143,8 @@ for index, run in runs.iterrows():
                             '"EXTRA: EXTRA: normalisation constant"': norm_constant
                             },
                     return_columns=output_variables,
-                    intial_time=initial_time,
-                    final_time=final_time)
+                    final_time=final_time, 
+                    time_step=time_step)
     
     # Store the simulation results in a dataframe
 

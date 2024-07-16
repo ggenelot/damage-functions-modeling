@@ -126,8 +126,8 @@ _integ_al_cumulative_mining = Integ(
         "switch_eco2mat_al_demand": 1,
         "switch_materials": 1,
         "al_modified_demand_world7": 1,
-        "implicit_price_al": 1,
         "output_real": 1,
+        "implicit_price_al": 1,
     },
 )
 def al_demand():
@@ -1485,10 +1485,10 @@ def al_price():
     depends_on={
         "time": 1,
         "initial_al_price": 1,
-        "maximum_al_price": 1,
-        "al_available_delayed": 2,
         "al_demand": 2,
         "coefficients_al_price_economy": 3,
+        "maximum_al_price": 1,
+        "al_available_delayed": 2,
     },
 )
 def al_price_economy():
@@ -1634,9 +1634,9 @@ def al_price_historical():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_al_price": 1,
-        "estimated_price_with_tax_metals": 1,
         "price_transformation": 1,
         "al_base_price_2006": 1,
+        "estimated_price_with_tax_metals": 1,
     },
 )
 def al_price_index_economy():
@@ -1712,8 +1712,8 @@ _integ_al_profit_delay = Integ(
     comp_subtype="Normal",
     depends_on={
         "al_profit": 5,
-        "coefficients_al_profit_effect_on_mining_logistic": 2,
         "coefficients_al_profit_effect_on_mining_s_curve": 3,
+        "coefficients_al_profit_effect_on_mining_logistic": 2,
     },
 )
 def al_profit_effect_on_mining():
@@ -6077,8 +6077,8 @@ _ext_constant_maximum_al_price = ExtConstant(
     depends_on={
         "al_known_reseveres": 2,
         "al_extraction_coefficient": 2,
-        "al_low_grade_factor_mining": 1,
         "al_low_grade_change_price": 1,
+        "al_low_grade_factor_mining": 1,
     },
 )
 def mining_al_known_reserves():

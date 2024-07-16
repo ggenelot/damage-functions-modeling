@@ -252,8 +252,8 @@ def land_products_demanded():
         "crops_demanded_for_energy": 11,
         "land_products_demanded_for_food_before_losses": 10,
         "percent_of_land_products_for_other_uses": 10,
-        "roundwood_demanded_for_industry": 1,
         "wood_demanded_for_energy_converted_to_tonnes": 1,
+        "roundwood_demanded_for_industry": 1,
         "residues_of_forests_demanded_for_industry": 1,
     },
 )
