@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import xarray as xr
 
 
-def map_variable(data, year, europe=True, cmap="cividis", shapefile_location='../../../WILIAM_v1.3/geography/output_countries/countries.shp', boundary_linewidth=0.2):
+def map_variable(data, year, europe=True, cmap="cividis", shapefile_location='../../../WILIAM/geography/output_countries/countries.shp', boundary_linewidth=0.2):
 
     # Load variable name from the df
     variable = data.columns[2]
@@ -23,7 +23,7 @@ def map_variable(data, year, europe=True, cmap="cividis", shapefile_location='..
 
     data_map = data[data['time'] == year]
 
-    map_phenomenon = map.merge(data_map, left_on='Region_WIL', right_on='REGIONS 35 I', how='left')
+    map_phenomenon = map.merge(data_map, left_on = 'REGIONS 35',  right_on='REGIONS 35 I', how='left')
 
     # Plot the map
     fig, ax = plt.subplots(figsize=(10, 10))
