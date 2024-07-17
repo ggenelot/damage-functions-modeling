@@ -51,7 +51,8 @@ def isInterest(variable):
     "total_population", 
     "population_35_regions", 
     "total_radiative_forcing", 
-    "gross_domestic_product_nominal"
+    "gross_domestic_product_nominal", 
+    "average_disposable_income_per_capita"
     ]
 
     return variable in interest_variables
