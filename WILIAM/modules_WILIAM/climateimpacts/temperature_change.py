@@ -168,8 +168,8 @@ _initial_double_co2_forcing = Initial(
         "switch_model_explorer": 1,
         "model_explorer_climate_sensitivity": 1,
         "time": 1,
-        "selection_ecs_input_method": 1,
         "climate_sensitivity_sp": 1,
+        "selection_ecs_input_method": 1,
         "probabilistic_ecs": 1,
     },
 )
@@ -531,9 +531,9 @@ def temperature_change():
         "_initial_upper_layer_volume_vu": {
             "initial": {
                 "global_surface_area": 1,
+                "land_thickness": 1,
                 "mixed_depth": 1,
                 "land_area_fraction": 2,
-                "land_thickness": 1,
             },
             "step": {},
         }

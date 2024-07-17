@@ -356,11 +356,11 @@ def output_of_accumulated_expenditure_on_education_per_capita():
     comp_subtype="Normal",
     depends_on={
         "maximum_percentage_of_education_level": 20,
-        "gender_parity_index": 30,
+        "minimum_percentage_of_high_education_level": 12,
+        "beta_0_educational_level": 20,
         "beta_1_educational_level": 20,
         "accumulated_public_expenditure_on_education_per_capita": 20,
-        "beta_0_educational_level": 20,
-        "minimum_percentage_of_high_education_level": 12,
+        "gender_parity_index": 30,
         "minimum_percentage_of_medium_education_level": 8,
     },
 )
@@ -1069,12 +1069,12 @@ _ext_constant_switch_society = ExtConstant(
     depends_on={
         "switch_model_explorer": 2,
         "model_explorer_final_gender_parity_index": 2,
-        "time": 4,
-        "switch_policy_gender_parity_index_sp": 2,
-        "year_initial_gender_parity_index_sp": 4,
         "final_gender_parity_index_sp": 2,
-        "initial_gender_parity_index": 2,
+        "year_initial_gender_parity_index_sp": 4,
+        "time": 4,
         "year_final_gender_parity_index_sp": 4,
+        "switch_policy_gender_parity_index_sp": 2,
+        "initial_gender_parity_index": 2,
     },
 )
 def variation_in_gender_parity_index():
