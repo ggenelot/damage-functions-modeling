@@ -140,10 +140,10 @@ _ext_data_capacity_investment_cost_pro_flexopt_user_defined_sp = ExtData(
     depends_on={
         "select_capacity_investment_cost_development_sp": 4,
         "pro_flexopt_capacity_investment_cost_2015": 1,
-        "capacity_investment_cost_pro_flexopt_user_defined_sp": 1,
         "capacity_investment_cost_pro_flexopt_medium_development": 1,
-        "capacity_investment_cost_pro_flexopt_high_development": 1,
         "capacity_investment_cost_pro_flexopt_low_development": 1,
+        "capacity_investment_cost_pro_flexopt_high_development": 1,
+        "capacity_investment_cost_pro_flexopt_user_defined_sp": 1,
     },
 )
 def capacity_investment_cost_proflex_development():
@@ -178,10 +178,10 @@ def capacity_investment_cost_proflex_development():
     depends_on={
         "select_capacity_investment_cost_development_sp": 4,
         "protra_capacity_investment_cost_2015": 1,
-        "capacity_investment_cost_protra_medium_development": 1,
-        "capacity_investment_cost_protra_high_development": 1,
-        "capacity_investment_cost_protra_low_development": 1,
         "capacity_investment_cost_protra_user_defined_sp": 1,
+        "capacity_investment_cost_protra_low_development": 1,
+        "capacity_investment_cost_protra_high_development": 1,
+        "capacity_investment_cost_protra_medium_development": 1,
     },
 )
 def capacity_investment_cost_protra_development():
@@ -880,8 +880,8 @@ _delayfixed_delayed_ts_gfcf_protra_sectors_35r = DelayFixed(
     depends_on={
         "switch_energy": 2,
         "capacity_investment_cost_proflex_development": 4,
-        "correspondence_matrix_sectors_proflex": 2,
         "price_gfcf": 2,
+        "correspondence_matrix_sectors_proflex": 2,
     },
 )
 def dynamic_capacity_investment_cost_proflex_development():

@@ -138,8 +138,8 @@ _delayfixed_auxiliary_pe_gdp_intensity = DelayFixed(
     depends_on={
         "protra_to_allocated": 1,
         "unit_conversion_twh_ej": 1,
-        "unit_conversion_hours_year": 1,
         "protra_operative_capacity_stock_selected": 1,
+        "unit_conversion_hours_year": 1,
     },
 )
 def cf_power_system():
@@ -413,8 +413,8 @@ def co2_intensity_to_heat():
         "ghg_emissions_by_sector": 3,
         "unit_conversion_t_mt": 3,
         "select_gwp_time_frame_sp": 3,
-        "gwp_100_year": 3,
         "gwp_20_year": 3,
+        "gwp_100_year": 3,
         "output_real_9r": 1,
     },
 )
@@ -485,7 +485,7 @@ def co2e_intensity_of_final_energy_1r():
     subscripts=["REGIONS 9 I"],
     comp_type="Auxiliary",
     comp_subtype="Normal",
-    depends_on={"time": 1, "fe_gdp_intensity": 1, "fe_gdp_intensity_until_2015": 1},
+    depends_on={"time": 1, "fe_gdp_intensity_until_2015": 1, "fe_gdp_intensity": 1},
 )
 def cumulative_fe_gdp_intensity_change_from_2015():
     """
@@ -1316,8 +1316,8 @@ def share_fe_demand_commodity():
     comp_subtype="Normal",
     depends_on={
         "ti_by_proref_and_commodity": 5,
-        "to_h2_gases_based_fuel": 2,
         "share_to_elec_res_vs_total_elec": 1,
+        "to_h2_gases_based_fuel": 2,
     },
 )
 def share_fe_gas_res_vs_total_gas():
@@ -1678,7 +1678,7 @@ def share_total_prosto_losses_vs_to():
     name="shares RES in FE",
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG FE I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "share_to_elec_res_vs_total_elec": 1,

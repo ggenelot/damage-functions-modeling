@@ -101,8 +101,8 @@ def crops_demanded_for_energy_world():
         "time": 1,
         "time_historical_data_land_module": 1,
         "exo_pe_by_commodity_agriculture_products": 2,
-        "pe_by_commodity_dem": 1,
         "adjustment_pe_by_commodity_agricultural": 1,
+        "pe_by_commodity_dem": 1,
         "switch_landwater": 1,
     },
 )
@@ -252,8 +252,8 @@ def land_products_demanded():
         "crops_demanded_for_energy": 11,
         "land_products_demanded_for_food_before_losses": 10,
         "percent_of_land_products_for_other_uses": 10,
-        "wood_demanded_for_energy_converted_to_tonnes": 1,
         "roundwood_demanded_for_industry": 1,
+        "wood_demanded_for_energy_converted_to_tonnes": 1,
         "residues_of_forests_demanded_for_industry": 1,
     },
 )
@@ -500,8 +500,8 @@ def output_real_9r_for_forestry_sector():
     depends_on={
         "switch_landwater": 1,
         "output_real_9r": 2,
-        "exogenous_output_real_9r_manufacture_wood_sector": 1,
         "exogenous_output_real_9r_construction_sector": 1,
+        "exogenous_output_real_9r_manufacture_wood_sector": 1,
     },
 )
 def output_real_of_wood_manufacturing_and_construction_sectors():
