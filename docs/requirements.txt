@@ -9,4 +9,6 @@ seaborn
 pandas
 matplotlib
 statsmodels
-
+cartogram
+cartopy
+folium
