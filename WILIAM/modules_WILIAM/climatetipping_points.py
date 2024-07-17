@@ -38,8 +38,8 @@ def amaz_tipping_point_in_simulation_period():
     depends_on={
         "time": 1,
         "final_time": 1,
-        "random_uniform_function_amoc_weakening": 1,
         "cum_prob_amoc_weakening_tp_c1": 1,
+        "random_uniform_function_amoc_weakening": 1,
     },
 )
 def amoc_weakening_tipping_point_in_simulation_period():
@@ -122,9 +122,9 @@ def cum_prob_amoc_weakening_tp_c1():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "prob_dais_tp_2010_2200_c1": 2,
         "temperature_change": 2,
         "final_time": 2,
+        "prob_dais_tp_2010_2200_c1": 2,
     },
 )
 def cum_prob_dais_tp_c1():
@@ -151,8 +151,8 @@ def cum_prob_dais_tp_c1():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "temperature_change": 2,
         "prob_mgis_tp_2010_2200_c1": 2,
+        "temperature_change": 2,
         "final_time": 2,
     },
 )
@@ -388,9 +388,9 @@ def switch_wiliam_amoc_change():
     comp_subtype="Normal",
     depends_on={
         "switch_wiliam_amoc_change": 1,
-        "amoc_weakening_tipping_point_in_simulation_period": 1,
-        "time": 1,
         "values_temperature_amoc_change": 1,
+        "time": 1,
+        "amoc_weakening_tipping_point_in_simulation_period": 1,
     },
 )
 def temperature_change_amoc_weakening():

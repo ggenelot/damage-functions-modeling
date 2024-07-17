@@ -92,7 +92,7 @@ def blue_water_demand_by_sector():
     name="blue water demand for agriculture by GDP",
     units="hm3",
     subscripts=["REGIONS 35 I", "SECTORS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "blue_water_demand_by_sector": 2,
@@ -190,8 +190,8 @@ _integ_blue_water_demand_trends = Integ(
     depends_on={
         "blue_water_demand_for_agriculture_by_gdp": 2,
         "blue_water_demand_by_industries": 2,
-        "water_available_by_region": 2,
         "blue_water_used_for_households": 2,
+        "water_available_by_region": 2,
     },
 )
 def blue_water_used_by_industries():
@@ -256,10 +256,10 @@ def effective_blue_water_demanded_for_agriculture():
     comp_subtype="Normal",
     depends_on={
         "switch_landwater": 1,
-        "gdp_by_oekstra_for_water": 1,
-        "gdp_for_water": 1,
-        "gdp_real_35r_until_2019": 1,
         "gdp_oekstra_2019": 1,
+        "gdp_for_water": 1,
+        "gdp_by_oekstra_for_water": 1,
+        "gdp_real_35r_until_2019": 1,
     },
 )
 def factor_of_economic_output_for_water():
@@ -403,8 +403,8 @@ def historical_blue_water_growth_trends():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "initial_green_water_region_sect": 1,
         "variation_linear_green_water_region_sect": 1,
+        "initial_green_water_region_sect": 1,
     },
 )
 def historical_green_water_of_sectors_by_region():
@@ -443,10 +443,10 @@ def historical_green_water_of_sectors_by_region():
     comp_subtype="Normal",
     depends_on={
         "switch_water_efficiency_sp": 2,
-        "time": 2,
         "year_final_water_efficiency_sp": 2,
-        "year_initial_water_efficiency_sp": 2,
         "objective_water_efficiency_sp": 1,
+        "time": 2,
+        "year_initial_water_efficiency_sp": 2,
     },
 )
 def increase_water_efficiency():
@@ -561,9 +561,9 @@ def initial_water_per_sector_fao():
     comp_subtype="Normal",
     depends_on={
         "switch_landwater": 1,
-        "output_real": 2,
         "green_water_region_sector": 2,
         "base_output_real": 2,
+        "output_real": 2,
     },
 )
 def intensity_green_water_region_sector():
