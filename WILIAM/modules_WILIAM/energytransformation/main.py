@@ -1762,11 +1762,11 @@ def total_prosup_transmission_losses():
     depends_on={
         "switch_model_explorer": 4,
         "model_explorer_target_share_bioenergy_in_fossil_liquids_and_gases": 4,
-        "year_final_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
-        "year_initial_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
-        "target_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
         "switch_policy_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
+        "year_final_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
         "time": 8,
+        "target_share_bioenergy_in_ti_liquids_and_gases_sp": 4,
+        "year_initial_share_bioenergy_in_ti_liquids_and_gases_sp": 8,
         "protra_input_shares_empiric": 4,
     },
 )

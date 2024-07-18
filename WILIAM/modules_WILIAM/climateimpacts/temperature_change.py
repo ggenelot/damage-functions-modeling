@@ -531,9 +531,9 @@ def temperature_change():
         "_initial_upper_layer_volume_vu": {
             "initial": {
                 "global_surface_area": 1,
+                "land_area_fraction": 2,
                 "land_thickness": 1,
                 "mixed_depth": 1,
-                "land_area_fraction": 2,
             },
             "step": {},
         }

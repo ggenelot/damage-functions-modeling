@@ -179,9 +179,9 @@ def deaths():
         "time": 2,
         "emigrations": 3,
         "historical_shares_migration": 2,
-        "start_year_migrations_sp": 1,
         "switch_migration_sp": 1,
         "shares_emigration_sp": 1,
+        "start_year_migrations_sp": 1,
     },
 )
 def emigration_distribution():
@@ -291,8 +291,8 @@ def european_births():
     depends_on={
         "time": 3,
         "historical_fertility_rates_2005_2010": 1,
-        "historical_fertility_rates_2010_2015": 1,
         "historical_fertility_rates_2015_2020": 2,
+        "historical_fertility_rates_2010_2015": 1,
         "ramp_scenario_fertility_rates": 1,
     },
 )
@@ -637,8 +637,8 @@ def population_by_cohorts_each_five_years():
         "births": 1,
         "deaths": 3,
         "population_by_cohorts_each_five_years": 4,
-        "time_step": 2,
         "population_by_cohorts": 2,
+        "time_step": 2,
     },
 )
 def population_variation():
@@ -713,8 +713,8 @@ def population_variation():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
-        "slope_scenario_fertility_rates": 2,
         "time": 2,
+        "slope_scenario_fertility_rates": 2,
         "target_year_fertility_rates_sp": 2,
     },
 )
@@ -772,8 +772,8 @@ def retired_population():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_fertility_rates": 1,
-        "historical_fertility_rates_2015_2020": 1,
         "target_scenario_fertility_rates": 1,
+        "historical_fertility_rates_2015_2020": 1,
         "target_year_fertility_rates_sp": 1,
     },
 )
@@ -832,8 +832,8 @@ _ext_constant_switch_migration_sp = ExtConstant(
     depends_on={
         "objective_fertility_rates_sp": 2,
         "scenario_fertility_rate_minimum_sp": 1,
-        "scenario_fertility_rate_average_sp": 1,
         "scenario_fertility_rate_maximum_sp": 1,
+        "scenario_fertility_rate_average_sp": 1,
     },
 )
 def target_scenario_fertility_rates():

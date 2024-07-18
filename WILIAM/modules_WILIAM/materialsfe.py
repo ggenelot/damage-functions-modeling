@@ -680,8 +680,8 @@ _integ_fe_cumulative_mining = Integ(
         "switch_eco2mat_fe_demand": 1,
         "switch_materials": 1,
         "imv_fe_mining_historical": 1,
-        "implicit_price_fe": 1,
         "output_real": 1,
+        "implicit_price_fe": 1,
     },
 )
 def fe_demand():
@@ -738,9 +738,9 @@ _ext_constant_fe_demand_shares = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "world_population": 1,
+        "fe_demand_shares": 2,
         "imv_iron_demand_per_person": 1,
         "global_steel_demand": 1,
-        "fe_demand_shares": 2,
         "unit_conversion_billion_to_million": 2,
         "imv_fe_demand_for_reinforcment_bars": 1,
     },
@@ -1933,9 +1933,9 @@ def fe_price_in():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_fe_price": 1,
-        "price_transformation": 1,
-        "estimated_price_with_tax_metals": 1,
         "fe_base_price_2015": 1,
+        "estimated_price_with_tax_metals": 1,
+        "price_transformation": 1,
     },
 )
 def fe_price_index_economy():
@@ -2364,8 +2364,8 @@ def fe_scrap_losses_aux():
     comp_subtype="Normal",
     depends_on={
         "fe_society_out": 3,
-        "imv_ss_mncrni_fraction_recycled_to_stainless_steel": 1,
         "imv_mncrni_recycled_1": 1,
+        "imv_ss_mncrni_fraction_recycled_to_stainless_steel": 1,
     },
 )
 def fe_scrapping():

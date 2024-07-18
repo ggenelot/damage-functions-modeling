@@ -333,12 +333,12 @@ def material_intensity_om_wind_onshore_regional():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 2,
+        "initial_share_new_pv_subtechn_land": 1,
         "total_material_intensity_pv_by_technology": 4,
         "scrap_rate": 4,
-        "initial_share_new_pv_subtechn_land": 1,
         "share_new_pv_subtechn_land": 1,
-        "initial_share_new_pv_subtechn_urban": 1,
         "share_new_pv_subtechn_urban": 1,
+        "initial_share_new_pv_subtechn_urban": 1,
     },
 )
 def material_intensity_weighted_average_new_pv():
@@ -451,8 +451,8 @@ def material_intensity_weighted_average_new_pv():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "initial_share_pv_capacity_by_subtechnology": 1,
         "material_intensity_om_pv_by_technology": 2,
+        "initial_share_pv_capacity_by_subtechnology": 1,
         "share_capacity_stock_protra_pp_solar_pv_by_subtechnology": 1,
     },
 )

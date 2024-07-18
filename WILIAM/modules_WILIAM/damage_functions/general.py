@@ -114,8 +114,8 @@ def fund_extra_eq_switch_deaths():
     depends_on={
         "fund_tot_eq_monetary_impact": 1,
         "fund_extra_eq_switch_deaths": 1,
-        "fund_tot_eq_total_deaths": 1,
         "fund_mm1_eq_value_of_a_statistical_life": 1,
+        "fund_tot_eq_total_deaths": 1,
     },
 )
 def fund_tot_eq_fund_total_impact():

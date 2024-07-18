@@ -117,8 +117,8 @@ def length_per_mw_panel_to_inverter():
         "material_intensity_pv_cells": 2,
         "material_intensity_pv_panel_frame": 2,
         "material_intensity_ratio_om_pv_panels": 2,
-        "inverter_pv_lifetime": 4,
         "protra_lifetime": 4,
+        "inverter_pv_lifetime": 4,
         "material_intensity_pv_inverter": 2,
     },
 )
@@ -222,8 +222,8 @@ _integ_material_intensity_pv_cells = Integ(
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "material_intensity_pv_subtechnology_panel_frame": 2,
         "initial_area_pv_panel_per_power": 1,
+        "material_intensity_pv_subtechnology_panel_frame": 2,
         "area_pv_panel_per_power": 1,
     },
 )

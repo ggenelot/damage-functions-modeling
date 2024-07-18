@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     depends_on={
         "sensitivity_of_sea_level_rise_to_temperature": 1,
         "sea_level_sensitivity_from_ice_sheet_melting": 1,
-        "time": 1,
         "slr_ice_sheet_melting_year": 1,
+        "time": 1,
     },
 )
 def adjusted_sensitivity_of_sea_level_rise_to_temperature():
@@ -119,8 +119,8 @@ def check_shares_between_two_methods_of_calculation_of_sea_level_rise():
     comp_subtype="Normal",
     depends_on={
         "adjusted_sensitivity_of_sea_level_rise_to_temperature": 1,
-        "adjusted_temperature_change_from_preindustrial_for_slr_estimation": 1,
         "reference_temperature": 1,
+        "adjusted_temperature_change_from_preindustrial_for_slr_estimation": 1,
     },
 )
 def equilibrium_change_in_sea_level():
@@ -185,8 +185,8 @@ _integ_sea_level_rise = Integ(
     comp_subtype="Normal",
     depends_on={
         "sea_level_rise_parameter_alpha": 1,
-        "temperature_change": 1,
         "sea_level_rise_parameter_beta": 1,
+        "temperature_change": 1,
         "vertical_land_movement": 1,
         "time": 1,
     },
