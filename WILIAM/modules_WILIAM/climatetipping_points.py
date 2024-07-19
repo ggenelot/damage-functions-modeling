@@ -1,6 +1,6 @@
 """
 Module climatetipping_points
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     depends_on={
         "time": 1,
         "final_time": 1,
-        "cum_prob_amaz_tp_c1": 1,
         "random_uniform_function_amaz": 1,
+        "cum_prob_amaz_tp_c1": 1,
     },
 )
 def amaz_tipping_point_in_simulation_period():
@@ -38,8 +38,8 @@ def amaz_tipping_point_in_simulation_period():
     depends_on={
         "time": 1,
         "final_time": 1,
-        "cum_prob_amoc_weakening_tp_c1": 1,
         "random_uniform_function_amoc_weakening": 1,
+        "cum_prob_amoc_weakening_tp_c1": 1,
     },
 )
 def amoc_weakening_tipping_point_in_simulation_period():
@@ -65,8 +65,8 @@ def amoc_weakening_tipping_point_in_simulation_period():
     depends_on={
         "time": 2,
         "prob_amaz_tp_2010_2200_c1": 2,
-        "final_time": 2,
         "temperature_change": 2,
+        "final_time": 2,
     },
 )
 def cum_prob_amaz_tp_c1():
@@ -93,9 +93,9 @@ def cum_prob_amaz_tp_c1():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "final_time": 2,
-        "prob_amoc_weakening_tp_2010_2100_c1": 2,
         "temperature_change": 2,
+        "prob_amoc_weakening_tp_2010_2100_c1": 2,
+        "final_time": 2,
     },
 )
 def cum_prob_amoc_weakening_tp_c1():
@@ -122,9 +122,9 @@ def cum_prob_amoc_weakening_tp_c1():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
+        "temperature_change": 2,
         "prob_dais_tp_2010_2200_c1": 2,
         "final_time": 2,
-        "temperature_change": 2,
     },
 )
 def cum_prob_dais_tp_c1():
@@ -152,8 +152,8 @@ def cum_prob_dais_tp_c1():
     depends_on={
         "time": 2,
         "prob_mgis_tp_2010_2200_c1": 2,
-        "final_time": 2,
         "temperature_change": 2,
+        "final_time": 2,
     },
 )
 def cum_prob_mgis_tp_c1():
@@ -181,8 +181,8 @@ def cum_prob_mgis_tp_c1():
     depends_on={
         "time": 2,
         "prob_nino_tp_2010_2200_c1": 2,
-        "final_time": 2,
         "temperature_change": 2,
+        "final_time": 2,
     },
 )
 def cum_prob_nino_tp_c1():
@@ -388,8 +388,8 @@ def switch_wiliam_amoc_change():
     comp_subtype="Normal",
     depends_on={
         "switch_wiliam_amoc_change": 1,
-        "values_temperature_amoc_change": 1,
         "amoc_weakening_tipping_point_in_simulation_period": 1,
+        "values_temperature_amoc_change": 1,
         "time": 1,
     },
 )

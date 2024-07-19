@@ -1,6 +1,6 @@
 """
 Module energyeroi.pv_technologies
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -54,11 +54,11 @@ def decomissioning_fe_intensity_pv_technologies():
     comp_subtype="Normal",
     depends_on={
         "fe_delivered_at_consumer_phase_pv": 1,
+        "total_fe_embodied_pv_technology": 1,
+        "fe_intensity_current_grids_om": 1,
         "share_total_transmission_loss": 1,
         "share_self_electricity_consumption_protra": 1,
         "fe_delivered_at_plant_phase_pv": 1,
-        "total_fe_embodied_pv_technology": 1,
-        "fe_intensity_current_grids_om": 1,
     },
 )
 def eroifinal_pv_technologies():
@@ -105,8 +105,8 @@ def eroifinal_pv_technologies():
     comp_subtype="Normal",
     depends_on={
         "fe_delivered_at_plant_phase_pv": 2,
-        "share_self_electricity_consumption_protra": 1,
         "total_fe_embodied_pv_technology": 1,
+        "share_self_electricity_consumption_protra": 1,
     },
 )
 def eroist_pv_technologies():

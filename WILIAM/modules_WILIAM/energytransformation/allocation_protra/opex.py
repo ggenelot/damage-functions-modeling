@@ -1,6 +1,6 @@
 """
 Module energytransformation.allocation_protra.opex
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -207,7 +207,7 @@ def co2_cost_by_protra_and_region():
     name="CO2 emission factor by PROTRA",
     units="kg/TJ",
     subscripts=["NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"emission_factors_stationary_combustion": 24},
 )
@@ -436,8 +436,8 @@ def co2_emission_factor_by_protra_mt_per_ej():
         "time": 1,
         "switch_energy": 1,
         "coal_price_historical_t": 1,
-        "mixed_coal_conversion_factor_mt_to_ej": 1,
         "estimated_coal_price": 1,
+        "mixed_coal_conversion_factor_mt_to_ej": 1,
     },
 )
 def coal_price_mdollars_per_ej():
@@ -518,10 +518,10 @@ def fuel_price_by_protra_9r():
     comp_subtype="Normal",
     depends_on={
         "fuel_price_by_protra_9r": 6,
-        "signal_availability_forestry_products_for_energy": 2,
-        "switch_energy": 1,
-        "switch_law2nrg_available_forestry_products_for_industry": 1,
         "switch_nrg_limited_res_potentials": 1,
+        "switch_energy": 1,
+        "signal_availability_forestry_products_for_energy": 2,
+        "switch_law2nrg_available_forestry_products_for_industry": 1,
     },
 )
 def fuel_price_by_protra_9r_adjusted():
@@ -588,7 +588,7 @@ def fuel_price_by_protra_9r_adjusted():
     name="fuel price by PROTRA world",
     units="Mdollars/EJ",
     subscripts=["NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "gas_price_mdollars_per_ej": 5,
@@ -658,8 +658,8 @@ def fuel_price_by_protra_world():
     depends_on={
         "time": 1,
         "switch_energy": 1,
-        "gas_price_historical": 1,
         "unit_conversion_mmbtu_ej": 2,
+        "gas_price_historical": 1,
         "unit_conversion_dollars_mdollars": 2,
         "estimated_gas_price": 1,
     },
@@ -782,7 +782,7 @@ def nuclear_price_mdollars_per_ej_fictional():
     name="O and M cost MDollars per EJ",
     units="Mdollars/EJ",
     subscripts=["REGIONS 9 I", "NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"operation_and_maintainance_cost": 10, "ccs_om_cost_factor": 9},
 )
@@ -922,9 +922,9 @@ _ext_data_operation_and_maintainance_cost = ExtData(
     comp_subtype="Normal",
     depends_on={
         "protra_fuel_utilization_ratio": 1,
-        "co2_tax_rate_sectors": 1,
         "fuel_price_by_protra_9r_adjusted": 1,
         "co2_emission_factor_by_protra_mt_per_ej": 1,
+        "co2_tax_rate_sectors": 1,
         "o_and_m_cost_mdollars_per_ej": 1,
     },
 )

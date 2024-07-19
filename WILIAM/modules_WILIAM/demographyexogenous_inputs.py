@@ -1,6 +1,6 @@
 """
 Module demographyexogenous_inputs
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(

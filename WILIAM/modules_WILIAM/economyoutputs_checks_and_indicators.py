@@ -1,6 +1,6 @@
 """
 Module economyoutputs_checks_and_indicators
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -58,10 +58,10 @@ _delayfixed_delayed_gdp_real_1r = DelayFixed(
         "consumption_fixed_capital_real": 1,
         "taxes_production_real": 1,
         "gross_value_added_real": 5,
-        "taxes_products_final_demand_real": 5,
         "taxes_products_by_sector_real": 1,
-        "final_demand_dometic_in_basic_prices_real_by_component": 4,
+        "taxes_products_final_demand_real": 5,
         "final_demand_imports_in_basic_prices_real_by_component": 4,
+        "final_demand_dometic_in_basic_prices_real_by_component": 4,
         "total_exports_real_by_product": 2,
         "total_imports_real_by_product": 2,
         "employment_total": 1,

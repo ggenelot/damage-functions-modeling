@@ -63,10 +63,10 @@ runs = pd.read_csv('run_manager.csv')
 forcing = pd.read_csv('full_rcp.csv')
 
 # Run the model a first time to initialize the dataset
-output_ds_path = 'results/batch/run_ds_18_07.nc'
+output_ds_path = 'results/batch/run_ds_19_07.nc'
 
 initial_time = 2005
-final_time = 2060
+final_time = 2010
 time_step = 1 
 time_span = time = np.linspace(initial_time, final_time, num=(final_time - initial_time)//time_step + 1)
 
@@ -103,7 +103,7 @@ run = model.run(progress=True,
 
 ds = xr.open_dataset(output_ds_path)
 
-run_num =  15 #len(runs)
+run_num =  2 #len(runs)
 ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 
 runs = runs.head(run_num)
@@ -159,7 +159,9 @@ for index, run in runs.iterrows():
 
     for variable in result_variables: 
         try:   
-                ds[variable].loc[dict(Run = index)] = run[variable].values
+                variable_copy = ds[variable].copy()
+                variable_copy.loc[dict(Run = index)] = run[variable].values
+                ds[variable] = variable_copy
                 print(f"Added variable {variable} to the dataset.")
         except:
                 pass

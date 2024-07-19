@@ -1,6 +1,6 @@
 """
 Module materialsexogenous_inputs
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -4369,7 +4369,7 @@ _ext_constant_share_energy_requirements_for_decom_ev_batteries = ExtConstant(
     units="DMNL",
     subscripts=["NRG PROTRA I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_share_energy_requirements_for_decomm_protra"
     },
@@ -4502,7 +4502,7 @@ _ext_constant_share_of_cu_price = ExtConstant(
     units="DMNL",
     subscripts=["NRG PROTRA I"],
     comp_type="Constant",
-    comp_subtype="Normal, External",
+    comp_subtype="External, Normal",
     depends_on={
         "__external__": "_ext_constant_share_self_electricity_consumption_protra"
     },

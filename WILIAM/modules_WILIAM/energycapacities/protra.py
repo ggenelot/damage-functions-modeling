@@ -1,6 +1,6 @@
 """
 Module energycapacities.protra
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -148,7 +148,7 @@ _ext_constant_cf_loss_share_stopping_protra_capacity_expansion_sp = ExtConstant(
 @component.add(
     name="CHP capacity utilization rate",
     subscripts=["REGIONS 9 I", "NRG COMMODITIES I", "NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"protra_capacity_utilization_rate": 1},
 )
@@ -413,7 +413,7 @@ _ext_constant_overcapacity_factor_empiric.add(
     name="production from CHP expansion",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "PROTRA CHP I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "max_to_from_existing_stock_by_protra": 1,
@@ -477,7 +477,7 @@ def production_from_chp_expansion():
     name="production from HP expansion",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"protra_heat_shortfall_allocation": 1},
 )
@@ -603,8 +603,8 @@ def protra_capacity_decommissioning_35r():
     depends_on={
         "time": 1,
         "protra_capacity_variation_empirical": 1,
-        "share_protra_capacity_stock_eu27": 1,
         "protra_capacity_decommissioning_selected": 1,
+        "share_protra_capacity_stock_eu27": 1,
     },
 )
 def protra_capacity_decommissioning_eu27():
@@ -639,8 +639,8 @@ def protra_capacity_decommissioning_eu27():
     depends_on={
         "time": 1,
         "protra_capacity_variation_empirical": 1,
-        "protra_lifetime": 1,
         "protra_capacity_stock_eu27_2nd_approach": 1,
+        "protra_lifetime": 1,
     },
 )
 def protra_capacity_decommissioning_eu27_2nd_approach():
@@ -3824,9 +3824,9 @@ def protra_capacity_empirical_in_tw():
     depends_on={
         "time": 2,
         "protra_capacity_variation_empirical": 3,
-        "protra_shortfall_allocation": 1,
         "unit_conversion_tw_per_ej_per_year": 1,
         "protra_max_full_load_hours_after_constraints": 1,
+        "protra_shortfall_allocation": 1,
         "one_year": 1,
     },
 )
@@ -3921,8 +3921,8 @@ def protra_capacity_expansion_35r():
     depends_on={
         "time": 1,
         "protra_capacity_variation_empirical": 1,
-        "share_protra_capacity_stock_eu27": 1,
         "protra_capacity_expansion_selected": 1,
+        "share_protra_capacity_stock_eu27": 1,
     },
 )
 def protra_capacity_expansion_eu27():
@@ -3957,8 +3957,8 @@ def protra_capacity_expansion_eu27():
     depends_on={
         "time": 1,
         "protra_capacity_variation_empirical": 1,
-        "shares_to_shortfall_by_commodity_eu27_2nd_approach": 1,
         "protra_capacity_expansion": 1,
+        "shares_to_shortfall_by_commodity_eu27_2nd_approach": 1,
     },
 )
 def protra_capacity_expansion_eu27_2nd_approach():
@@ -4224,7 +4224,7 @@ def protra_capacity_variation_empirical():
     name="PROTRA CHP and HP expansion request",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG COMMODITIES I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "protra_heat_expansion_request_with_res_potentials": 2,
@@ -4285,7 +4285,7 @@ def protra_chp_and_hp_expansion_request():
     name="PROTRA elec expansion request",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG COMMODITIES I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "protra_elec_expansion_request_with_limits": 2,
@@ -4447,13 +4447,13 @@ def protra_elec_expansion_request_with_limits_nres():
     depends_on={
         "remaining_potential_protra_res_pp": 5,
         "remaining_elec_shortfall_to_be_allocated": 11,
-        "stress_signal_protra_curtailed": 4,
-        "stress_signal_solar_land": 1,
-        "switch_nrg_variability_effects": 4,
         "switch_law2nrg_solarland": 1,
+        "unlimited_protra_res_parameter": 1,
+        "stress_signal_protra_curtailed": 4,
+        "switch_nrg_variability_effects": 4,
         "switch_energy": 2,
         "switch_nrg_limited_res_potentials": 5,
-        "unlimited_protra_res_parameter": 1,
+        "stress_signal_solar_land": 1,
         "signal_availability_forestry_products_for_energy": 1,
         "switch_law2nrg_available_forestry_products_for_industry": 1,
     },
@@ -4685,7 +4685,7 @@ def protra_elec_expansion_request_with_limits_res():
     name="PROTRA elec shortfall allocation",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "protra_elec_expansion_request": 1,
@@ -4733,10 +4733,10 @@ def protra_elec_shortfall_allocation():
     comp_subtype="Normal",
     depends_on={
         "to_shortfall": 13,
-        "remaining_potential_protra_res_chp_hp": 5,
         "switch_nrg_limited_res_potentials": 6,
-        "signal_availability_forestry_products_for_energy": 1,
+        "remaining_potential_protra_res_chp_hp": 5,
         "switch_energy": 1,
+        "signal_availability_forestry_products_for_energy": 1,
         "switch_law2nrg_available_forestry_products_for_industry": 1,
     },
 )
@@ -5124,15 +5124,15 @@ def protra_pp_solar_pv_by_subtechnology_capacity_expansion():
 @component.add(
     name="protra priority vector",
     subscripts=["REGIONS 9 I", "NRG PRO I", "pprofile"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "pwidth_protra_capacity_expansion_priorities_vector_sp": 1,
+        "switch_model_explorer": 1,
+        "model_explorer_protra_capacity_expansion": 1,
         "protra_capacity_expansion_policy_weight_sp": 2,
         "lcoe_by_protra_priority_signal": 1,
-        "switch_model_explorer": 1,
         "protra_capacity_expansion_priorities_vector_sp": 1,
-        "model_explorer_protra_capacity_expansion": 1,
     },
 )
 def protra_priority_vector():
@@ -5176,7 +5176,7 @@ def protra_priority_vector():
     name="PROTRA shortfall allocation",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "production_from_chp_expansion": 1,
@@ -5322,8 +5322,8 @@ def remaining_elec_shortfall_to_be_allocated():
     comp_subtype="Normal",
     depends_on={
         "remaining_elec_shortfall_to_be_allocated": 1,
-        "protra_heat_shortfall_allocation": 1,
         "to_shortfall": 2,
+        "protra_heat_shortfall_allocation": 1,
     },
 )
 def remaining_global_shortfall_after_heat_allocation():

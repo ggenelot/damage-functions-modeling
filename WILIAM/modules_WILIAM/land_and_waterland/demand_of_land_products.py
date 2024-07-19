@@ -1,6 +1,6 @@
 """
 Module land_and_waterland.demand_of_land_products
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(

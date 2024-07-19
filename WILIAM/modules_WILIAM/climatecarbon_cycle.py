@@ -1,6 +1,6 @@
 """
 Module climatecarbon_cycle
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -457,8 +457,8 @@ def effect_of_warming_on_ch4_release_from_biological_activity():
     depends_on={
         "preind_c_in_mixed_layer": 1,
         "effect_of_temp_on_dic_p_co2": 1,
-        "preindustrial_c": 1,
         "buffer_factor": 1,
+        "preindustrial_c": 1,
         "c_in_atmosphere": 1,
     },
 )
@@ -494,8 +494,8 @@ def equilibrium_c_per_meter_in_mixed_layer():
     comp_subtype="Normal",
     depends_on={
         "init_npp": 1,
-        "biostimulation_coeff": 1,
         "preindustrial_c": 1,
+        "biostimulation_coeff": 1,
         "c_in_atmosphere": 1,
         "effect_of_warming_on_c_flux_to_biomass": 1,
     },
@@ -661,16 +661,16 @@ def init_c_in_atmosphere():
         "_initial_layer_time_constant": {
             "initial": {
                 "layer_depth": 1,
-                "eddy_diff_coeff": 1,
                 "mean_depth_of_adjacent_layers": 1,
+                "eddy_diff_coeff": 1,
             },
             "step": {},
         },
         "_initial_layer_time_constant_1": {
             "initial": {
                 "layer_depth": 1,
-                "eddy_diff_coeff": 1,
                 "mean_depth_of_adjacent_layers": 1,
+                "eddy_diff_coeff": 1,
             },
             "step": {},
         },

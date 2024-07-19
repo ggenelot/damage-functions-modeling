@@ -1,6 +1,6 @@
 """
 Module economytrade
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -88,11 +88,11 @@ _delayfixed_delayed_ts_import_shares_intermediates = DelayFixed(
     depends_on={
         "switch_fixed_import_shares": 1,
         "initial_import_shares_final_demand": 2,
-        "beta_import_shares_final_demand": 1,
         "constant_import_shares_final_demand": 1,
         "delayed_ts_price_ratio_households": 1,
-        "epsilon_import_shares_final_demand": 1,
         "delayed_ts_import_shares_final_demand": 4,
+        "epsilon_import_shares_final_demand": 1,
+        "beta_import_shares_final_demand": 1,
     },
 )
 def import_shares_final_demand():
@@ -232,10 +232,10 @@ def import_shares_final_demand_constrained():
         "switch_fixed_import_shares": 1,
         "initial_import_shares_intermediates": 4,
         "delayed_ts_price_ratio_sectors": 1,
-        "delayed_ts_import_shares_intermediates": 4,
         "beta_import_shares_intermediates": 1,
-        "constant_import_shares_intermediates": 1,
+        "delayed_ts_import_shares_intermediates": 4,
         "epsilon_import_shares_intermediates": 1,
+        "constant_import_shares_intermediates": 1,
     },
 )
 def import_shares_intermediates():

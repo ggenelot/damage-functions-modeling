@@ -1,6 +1,6 @@
 """
 Module materialscu
-Translated using PySD version 3.14.0
+Translated using PySD version 3.13.4
 """
 
 @component.add(
@@ -12,8 +12,8 @@ Translated using PySD version 3.14.0
     depends_on={
         "target_rr_rest_sp_w_base_metals": 1,
         "current_eol_rr_minerals_base_metals": 1,
-        "start_year_p_rr_minerals_w_base_metals": 1,
         "target_year_p_rr_minerals_rest_w_base_metals": 1,
+        "start_year_p_rr_minerals_w_base_metals": 1,
     },
 )
 def a_lineal_regr_rr_base_metals():
@@ -75,8 +75,8 @@ def avoid_zero_cu_market():
     comp_subtype="Normal",
     depends_on={
         "target_rr_rest_sp_w_base_metals": 1,
-        "a_lineal_regr_rr_base_metals": 1,
         "target_year_p_rr_minerals_rest_w_base_metals": 1,
+        "a_lineal_regr_rr_base_metals": 1,
     },
 )
 def b_lineal_regr_rr_base_metals():
@@ -148,9 +148,9 @@ def by_mineral_rr_base_metals():
     depends_on={
         "time": 2,
         "historic_improvement_recycling_rates_minerals_base_metals": 2,
-        "start_year_p_rr_minerals_w_base_metals": 1,
         "by_mineral_rr_base_metals": 1,
         "by_mineral_rr_1yr_base_metals": 1,
+        "start_year_p_rr_minerals_w_base_metals": 1,
     },
 )
 def by_mineral_rr_variation_metals():
@@ -837,8 +837,8 @@ _integ_cu_cumulative_mining = Integ(
         "switch_eco2mat_cu_demand": 1,
         "switch_materials": 1,
         "historical_cu_demand": 1,
-        "output_real": 1,
         "implicit_price_materials_cu": 1,
+        "output_real": 1,
     },
 )
 def cu_demand():
@@ -913,7 +913,7 @@ def cu_demand_scaling_factor_for_semi_products():
     name="Cu energy use",
     units="MJ/kg*Mt/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"coefficients_cu_energy_use": 5, "mining_cu_known_reserves": 5},
 )
@@ -2703,8 +2703,8 @@ def cu_price_historical():
     depends_on={
         "switch_mat2eco_cu_price": 1,
         "estimated_price_with_tax_metals": 1,
-        "cu_base_price_2015": 1,
         "price_transformation": 1,
+        "cu_base_price_2015": 1,
     },
 )
 def cu_price_index_economy():
@@ -2954,9 +2954,9 @@ _integ_cu_scrapped = Integ(
     comp_subtype="Normal",
     depends_on={
         "switch_cu_recycling_policy": 1,
+        "cu_scrapped": 2,
         "cu_eol_recycling_rate_sp": 1,
         "cu_separation_loss_rate": 2,
-        "cu_scrapped": 2,
         "cu_recycling_test": 1,
     },
 )
@@ -3544,10 +3544,10 @@ def implicit_price_materials_cu():
     depends_on={
         "time": 1,
         "historic_improvement_recycling_rates_minerals_base_metals": 1,
+        "common_rr_minerals_variation_base_metals": 1,
         "by_mineral_rr_variation_metals": 1,
         "eol_recycling_rates_minerals_base_metals": 1,
         "select_mineral_rr_targets_sp_w_base_metals": 1,
-        "common_rr_minerals_variation_base_metals": 1,
         "constrain_rr_improv_for_per_mineral_base_metals": 1,
     },
 )
@@ -3844,8 +3844,8 @@ def loss_during_separtion_and_proccessing():
     comp_subtype="Normal",
     depends_on={
         "select_material_intensitiy_sp": 4,
-        "growth_material_intensities_sp": 4,
         "time_step": 4,
+        "growth_material_intensities_sp": 4,
     },
 )
 def material_intensities_variation():
@@ -4770,7 +4770,7 @@ def water_forecast_cochilico_for_chile():
     name="water use Cu",
     units="Mm3/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "mining_cu_known_reserves": 5,
@@ -4866,7 +4866,7 @@ def water_use_cu_secondary():
     name="water use per Cu",
     units="m3/t",
     subscripts=["ORE GRADES I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"water_per_cu": 5},
 )
