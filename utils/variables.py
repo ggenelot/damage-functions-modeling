@@ -43,16 +43,5 @@ def variables_DICE():
 
 def isInterest(variable):
 
-    interest_variables = [
-    "gini_gdppc_regions", 
-    "gini_gdppc_eu27", 
-    "temperature_change", 
-    "temperature_change_in_35regions", 
-    "total_population", 
-    "population_35_regions", 
-    "total_radiative_forcing", 
-    "gross_domestic_product_nominal", 
-    "average_disposable_income_per_capita"
-    ]
 
     return variable in interest_variables

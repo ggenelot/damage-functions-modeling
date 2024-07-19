@@ -88,11 +88,11 @@ _delayfixed_delayed_ts_import_shares_intermediates = DelayFixed(
     depends_on={
         "switch_fixed_import_shares": 1,
         "initial_import_shares_final_demand": 2,
+        "beta_import_shares_final_demand": 1,
         "constant_import_shares_final_demand": 1,
-        "delayed_ts_price_ratio_households": 1,
         "delayed_ts_import_shares_final_demand": 4,
         "epsilon_import_shares_final_demand": 1,
-        "beta_import_shares_final_demand": 1,
+        "delayed_ts_price_ratio_households": 1,
     },
 )
 def import_shares_final_demand():

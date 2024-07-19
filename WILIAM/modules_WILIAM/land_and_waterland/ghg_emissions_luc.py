@@ -161,8 +161,8 @@ def c_landuse1_to_landuse2_emissions_region():
     comp_subtype="Normal",
     depends_on={
         "soil_carbon_density_cropland_region": 1,
-        "share_area_rainfed_cropland": 2,
         "vegetation_carbon_density_data_by_land_use": 2,
+        "share_area_rainfed_cropland": 2,
     },
 )
 def carbon_density_cropland_region():
@@ -797,19 +797,19 @@ _initial_imv_matrix_land_use_changes = Initial(
     depends_on={
         "switch_law_emissions_share_management_agriculture": 1,
         "switch_law_emissions": 1,
-        "exo_share_of_industrial_agriculture_t": 1,
-        "exo_share_of_low_input_agriculture_t": 1,
-        "factor_input_low_crops": 6,
-        "exo_share_of_traditional_agriculture_t": 1,
-        "exo_share_of_agriculture_in_transition_t": 1,
         "exo_share_of_regenerative_agriculture_t": 1,
-        "factor_input_high_without_manure_crops": 2,
+        "exo_share_of_agriculture_in_transition_t": 1,
+        "exo_share_of_traditional_agriculture_t": 1,
+        "exo_share_of_industrial_agriculture_t": 1,
         "factor_input_medium_crops": 2,
+        "factor_input_low_crops": 6,
+        "factor_input_high_without_manure_crops": 2,
+        "exo_share_of_low_input_agriculture_t": 1,
+        "average_share_of_regenerative_agriculture": 1,
+        "average_share_of_industrial_agriculture": 1,
+        "average_share_of_agriculture_in_transition": 1,
         "average_share_of_traditional_agriculture": 1,
         "average_share_of_low_input_agriculture": 1,
-        "average_share_of_industrial_agriculture": 1,
-        "average_share_of_regenerative_agriculture": 1,
-        "average_share_of_agriculture_in_transition": 1,
     },
 )
 def input_stock_change_factor_cropland():
@@ -886,19 +886,19 @@ def managed_grassland_area_by_region():
     depends_on={
         "switch_law_emissions_share_management_agriculture": 1,
         "switch_law_emissions": 1,
-        "exo_share_of_industrial_agriculture_t": 1,
-        "exo_share_of_low_input_agriculture_t": 1,
-        "factor_management_notill_tillage_crops": 2,
-        "exo_share_of_traditional_agriculture_t": 1,
-        "exo_share_of_agriculture_in_transition_t": 1,
         "exo_share_of_regenerative_agriculture_t": 1,
-        "factor_management_full_tillage_crops": 6,
+        "exo_share_of_agriculture_in_transition_t": 1,
         "factor_management_reduce_tillage_crops": 6,
+        "exo_share_of_traditional_agriculture_t": 1,
+        "exo_share_of_industrial_agriculture_t": 1,
+        "factor_management_full_tillage_crops": 6,
+        "factor_management_notill_tillage_crops": 2,
+        "exo_share_of_low_input_agriculture_t": 1,
+        "average_share_of_regenerative_agriculture": 1,
+        "average_share_of_industrial_agriculture": 1,
+        "average_share_of_agriculture_in_transition": 1,
         "average_share_of_traditional_agriculture": 1,
         "average_share_of_low_input_agriculture": 1,
-        "average_share_of_industrial_agriculture": 1,
-        "average_share_of_regenerative_agriculture": 1,
-        "average_share_of_agriculture_in_transition": 1,
     },
 )
 def management_regime_stock_change_factor_cropland():
@@ -979,10 +979,10 @@ def management_stock_change_factor_cropland():
     depends_on={
         "select_selection_management_grassland_sp": 4,
         "factor_management_nominally_managed_grassland": 1,
-        "factor_management_severely_degraded_grassland": 1,
+        "factor_management_improved_high_grassland": 1,
         "factor_management_moderately_degraded_grassland": 1,
         "factor_management_improved_medium_grassland": 1,
-        "factor_management_improved_high_grassland": 1,
+        "factor_management_severely_degraded_grassland": 1,
     },
 )
 def management_stock_change_factor_grassland():
@@ -1096,8 +1096,8 @@ def share_area_rainfed_cropland():
     comp_subtype="Normal",
     depends_on={
         "switch_law_emissions_irrigated_crop_area": 1,
-        "area_of_rainfed_crops": 2,
         "area_of_irrigated_crops": 2,
+        "area_of_rainfed_crops": 2,
         "exo_share_area_rice_cropland_t": 1,
     },
 )
@@ -1249,8 +1249,8 @@ def soil_carbon_density_shrubland_region():
     depends_on={
         "switch_nrg2law_pv_land_occupation_ratio": 1,
         "switch_landwater": 1,
-        "exo_pv_land_occupation_ratio_t": 6,
         "select_selection_management_solarland_sp": 6,
+        "exo_pv_land_occupation_ratio_t": 6,
         "pv_land_occupation_ratio": 6,
     },
 )
@@ -1547,8 +1547,8 @@ _delay_soil_emissions_grassland_management_delayed = Delay(
     depends_on={
         "switch_law_emissions_matrix_of_land_use_changes": 1,
         "switch_law_emissions": 1,
-        "imv_matrix_land_use_changes": 1,
         "factor_emission_soil_landuse_to_landuse2": 2,
+        "imv_matrix_land_use_changes": 1,
         "unit_conversion_km2_ha": 2,
         "matrix_of_land_use_changes": 1,
     },
@@ -1769,8 +1769,8 @@ def vegetation_carbon_density_shrubland_region():
     depends_on={
         "switch_nrg2law_pv_land_occupation_ratio": 1,
         "switch_landwater": 1,
-        "exo_pv_land_occupation_ratio_t": 6,
         "select_selection_management_solarland_sp": 6,
+        "exo_pv_land_occupation_ratio_t": 6,
         "pv_land_occupation_ratio": 6,
     },
 )
@@ -1900,8 +1900,8 @@ def vegetation_carbon_density_wetland_region():
         "switch_law_emissions_matrix_of_land_use_changes": 1,
         "switch_law_emissions": 1,
         "imv_matrix_land_use_changes": 1,
-        "factor_emission_vegetation_landuse_to_landuse2": 2,
         "unit_conversion_km2_ha": 2,
+        "factor_emission_vegetation_landuse_to_landuse2": 2,
         "matrix_of_land_use_changes": 1,
     },
 )

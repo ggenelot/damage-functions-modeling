@@ -16,8 +16,8 @@ Translated using PySD version 3.13.4
     depends_on={
         "share_energy_requirements_for_decomm_protra": 1,
         "machining_fe_intensity_pv": 1,
-        "fenust_pv": 1,
         "fe_intensity_manufacturing_pv_panels": 1,
+        "fenust_pv": 1,
     },
 )
 def decomissioning_fe_intensity_pv_technologies():
@@ -54,10 +54,10 @@ def decomissioning_fe_intensity_pv_technologies():
     comp_subtype="Normal",
     depends_on={
         "fe_delivered_at_consumer_phase_pv": 1,
-        "total_fe_embodied_pv_technology": 1,
-        "fe_intensity_current_grids_om": 1,
         "share_total_transmission_loss": 1,
+        "total_fe_embodied_pv_technology": 1,
         "share_self_electricity_consumption_protra": 1,
+        "fe_intensity_current_grids_om": 1,
         "fe_delivered_at_plant_phase_pv": 1,
     },
 )

@@ -117,9 +117,9 @@ def length_per_mw_panel_to_inverter():
         "material_intensity_pv_cells": 2,
         "material_intensity_pv_panel_frame": 2,
         "material_intensity_ratio_om_pv_panels": 2,
-        "material_intensity_pv_inverter": 2,
-        "protra_lifetime": 4,
         "inverter_pv_lifetime": 4,
+        "protra_lifetime": 4,
+        "material_intensity_pv_inverter": 2,
     },
 )
 def material_intensity_om_pv_by_technology():
@@ -252,8 +252,8 @@ def material_intensity_pv_panel_frame():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "material_requirements_pv_mounting_structures_baseline": 2,
         "initial_area_pv_panel_per_power": 1,
+        "material_requirements_pv_mounting_structures_baseline": 2,
         "area_pv_panel_per_power": 1,
     },
 )
@@ -279,8 +279,8 @@ def material_intensity_pv_panels_mounting_structures():
     depends_on={
         "length_per_mw_inverter_to_transformer": 1,
         "material_requirements_pv_wiring_land_inverter_to_transformer": 1,
-        "material_requirements_pv_wiring_land_panel_to_inverter": 1,
         "length_per_mw_panel_to_inverter": 1,
+        "material_requirements_pv_wiring_land_panel_to_inverter": 1,
     },
 )
 def pv_wiring_land_total_intensity():
@@ -332,8 +332,8 @@ def pv_wiring_urban_total_intensity():
     depends_on={
         "time": 3,
         "initial_year_reduction_material_intensity_pv_sp": 3,
-        "reduction_rate_material_intensity_pv_rest_of_materials_sp": 1,
         "material_intensity_pv_cells": 3,
+        "reduction_rate_material_intensity_pv_rest_of_materials_sp": 1,
         "reduction_rate_material_intensity_c_si_pv_sn_sp": 1,
         "reduction_rate_material_intensity_c_si_pv_si_sp": 1,
     },

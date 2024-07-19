@@ -10,8 +10,8 @@ Translated using PySD version 3.13.4
     depends_on={
         "dice_5_damage_function_phi_1": 1,
         "temperature_change": 2,
-        "witness_epsilon": 1,
         "dice_5_damage_function_phi2": 1,
+        "witness_epsilon": 1,
     },
 )
 def witness_dicelike_damage_eq_dicelike_damage():

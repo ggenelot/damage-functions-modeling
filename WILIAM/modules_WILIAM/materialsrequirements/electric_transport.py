@@ -7,13 +7,13 @@ Translated using PySD version 3.13.4
     name="additional Cu in the rest of EV wrt to ICE",
     units="Mt/Year",
     subscripts=["REGIONS 35 I", "MATERIALS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "total_new_number_ev_vehicles": 1,
-        "additional_cu_inland_ev_in_relation_to_ice": 1,
         "unit_conversion_kg_mt": 1,
+        "additional_cu_inland_ev_in_relation_to_ice": 1,
+        "total_new_number_ev_vehicles": 1,
     },
 )
 def additional_cu_in_the_rest_of_ev_wrt_to_ice():
@@ -212,9 +212,9 @@ def cumulated_demand_from_2015_cu_of_the_vehicles_vs_resources():
     comp_subtype="Normal",
     depends_on={
         "global_mineral_reserves_2015": 2,
+        "cumulated_materials_extract_for_railway_catenaries_from_2015": 1,
         "cumulated_additional_cu_in_the_rest_of_electric_vehicles_respect_to_ice_from_2015": 1,
         "cumulated_materials_to_extract_for_chargers_and_additional_cu_and_grids_to_chargers_and_catenary_from_2015": 1,
-        "cumulated_materials_extract_for_railway_catenaries_from_2015": 1,
     },
 )
 def cumulated_demand_from_2015_of_the_chargers_and_grids_vs_reserves():
@@ -252,8 +252,8 @@ def cumulated_demand_from_2015_of_the_chargers_and_grids_vs_reserves():
     comp_subtype="Normal",
     depends_on={
         "global_mineral_resources_2015": 3,
-        "cumulated_additional_cu_in_the_rest_of_electric_vehicles_respect_to_ice_from_2015": 1,
         "cumulated_materials_extract_for_railway_catenaries_from_2015": 1,
+        "cumulated_additional_cu_in_the_rest_of_electric_vehicles_respect_to_ice_from_2015": 1,
     },
 )
 def cumulated_demand_from_2015_of_the_chargers_and_grids_vs_resources():
@@ -903,9 +903,9 @@ def material_intensity_grids_ev_chargers():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "materials_required_for_new_railway_catenaries": 2,
-        "rc_rate_mineral_35r": 2,
         "cumulated_materials_extract_for_railway_catenaries_from_2015": 2,
+        "rc_rate_mineral_35r": 2,
+        "materials_required_for_new_railway_catenaries": 2,
     },
 )
 def materials_extract_for_new_railway_catenaries_from_2015():
@@ -1215,10 +1215,10 @@ def materials_required_for_new_electric_transport_9r():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "power_new_vehicle_batteries_35r": 1,
-        "unit_conversion_kg_mt": 1,
         "materials_per_new_capacity_installed_ev_batteries": 1,
         "scrap_rate": 1,
+        "power_new_vehicle_batteries_35r": 1,
+        "unit_conversion_kg_mt": 1,
         "unit_conversion_mw_tw": 1,
     },
 )
@@ -1255,9 +1255,9 @@ def materials_required_for_new_ev_batteries():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "material_intensity_ev_chargers": 1,
-        "number_new_ev_chargers": 1,
         "unit_conversion_kg_mt": 1,
+        "number_new_ev_chargers": 1,
+        "material_intensity_ev_chargers": 1,
     },
 )
 def materials_required_for_new_ev_chargers():
@@ -1293,10 +1293,10 @@ def materials_required_for_new_ev_chargers():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "unit_conversion_km_m": 1,
         "new_length_grid_to_ev_chargers": 1,
-        "material_intensity_grids_ev_chargers": 1,
         "unit_conversion_kg_mt": 1,
+        "unit_conversion_km_m": 1,
+        "material_intensity_grids_ev_chargers": 1,
     },
 )
 def materials_required_for_new_ev_chargers_grids():
@@ -1335,10 +1335,10 @@ def materials_required_for_new_ev_chargers_grids():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "material_intensity_catenary_railway": 2,
         "new_railway_catenary": 2,
-        "scrap_rate": 1,
+        "material_intensity_catenary_railway": 2,
         "unit_conversion_kg_mt": 2,
+        "scrap_rate": 1,
     },
 )
 def materials_required_for_new_railway_catenaries():
@@ -1424,10 +1424,10 @@ def materials_to_extract_for_new_chargers_and_additional_cu_and_grids_to_charger
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "materials_per_new_capacity_installed_ev_batteries": 1,
-        "power_discarded_vehicle_batteries": 1,
-        "unit_conversion_mw_tw": 1,
         "unit_conversion_kg_mt": 1,
+        "materials_per_new_capacity_installed_ev_batteries": 1,
+        "unit_conversion_mw_tw": 1,
+        "power_discarded_vehicle_batteries": 1,
     },
 )
 def mineral_of_decom_batteries():
@@ -1592,10 +1592,10 @@ def rc_rate_mineral_35r():
     comp_subtype="Normal",
     depends_on={
         "materials_per_new_capacity_installed_ev_batteries_lmo": 6,
-        "materials_per_new_capacity_installed_ev_batteries_nca": 6,
-        "materials_per_new_capacity_installed_ev_batteries_lfp": 6,
-        "materials_per_new_capacity_installed_ev_batteries_nmc811": 6,
         "materials_per_new_capacity_installed_ev_batteries_nmc622": 6,
+        "materials_per_new_capacity_installed_ev_batteries_nmc811": 6,
+        "materials_per_new_capacity_installed_ev_batteries_lfp": 6,
+        "materials_per_new_capacity_installed_ev_batteries_nca": 6,
     },
 )
 def relative_demand_of_mineral_by_ev_battery():

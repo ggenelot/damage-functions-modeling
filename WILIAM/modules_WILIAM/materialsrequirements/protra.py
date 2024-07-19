@@ -135,7 +135,7 @@ def cumulated_extracted_materials_all_protras_from_2015():
     name="material intensities for new PROTRA",
     units="kg/MW",
     subscripts=["REGIONS 9 I", "NRG PROTRA I", "MATERIALS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "material_intensity_new_capacity_csp_regional": 1,
@@ -190,7 +190,7 @@ def material_intensities_for_new_protra():
     name="material intensities OM PROTRA",
     units="kg/(MW*Year)",
     subscripts=["REGIONS 9 I", "NRG PROTRA I", "MATERIALS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "material_intensity_om_csp_regional": 1,
@@ -451,8 +451,8 @@ def material_intensity_weighted_average_new_pv():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "material_intensity_om_pv_by_technology": 2,
         "initial_share_pv_capacity_by_subtechnology": 1,
+        "material_intensity_om_pv_by_technology": 2,
         "share_capacity_stock_protra_pp_solar_pv_by_subtechnology": 1,
     },
 )
@@ -590,10 +590,10 @@ def materials_required_for_new_protra():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "material_intensities_om_protra": 2,
+        "unit_conversion_kg_mt": 2,
         "initial_protra_capacity_stock": 1,
         "unit_conversion_mw_tw": 2,
-        "unit_conversion_kg_mt": 2,
+        "material_intensities_om_protra": 2,
         "protra_operative_capacity_stock_selected": 1,
     },
 )

@@ -11,8 +11,8 @@ Translated using PySD version 3.13.4
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "embodied_fe_intensity_materials_36r": 4,
         "final_to_primary_energy_by_region_until_2015": 2,
+        "embodied_fe_intensity_materials_36r": 4,
         "final_to_primary_energy_by_region": 2,
     },
 )
@@ -114,8 +114,8 @@ def embodied_fe_intensity_materials_36r():
     depends_on={
         "switch_mat_embodied_energy_of_material_use": 2,
         "embodied_pe_intensity_recycled_materials": 2,
-        "rc_rate_mineral_35r": 2,
         "embodied_pe_intensity_virgin_materials": 2,
+        "rc_rate_mineral_35r": 2,
         "rc_rate_mineral": 2,
     },
 )

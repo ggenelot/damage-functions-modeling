@@ -7,7 +7,7 @@ Translated using PySD version 3.13.4
     name="AUX BASIC INCOME TAX PAYERS SP",
     units="DMNL",
     subscripts=["HOUSEHOLDS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"basic_income_tax_payers_sp": 1},
 )
@@ -72,11 +72,11 @@ def average_households_real_net_wealth_9r():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "households_net_wealth": 2,
-        "dollars_per_dollars_2015": 2,
         "number_of_households_by_income_and_type": 3,
         "base_number_of_households": 1,
+        "households_net_wealth": 2,
         "consumer_price_index": 2,
+        "dollars_per_dollars_2015": 2,
     },
 )
 def average_households_real_net_wealth_eu27():
@@ -376,9 +376,9 @@ _delayfixed_delayed_ts_households_net_wealth = DelayFixed(
             },
             "step": {
                 "time": 1,
+                "decrease_in_households_capital_stock_due_to_depreciation": 1,
                 "increase_in_households_capital_stock_due_to_investments": 1,
                 "variation_in_households_capital_stock_due_to_revalorizations": 1,
-                "decrease_in_households_capital_stock_due_to_depreciation": 1,
             },
         }
     },
@@ -507,8 +507,8 @@ _integ_households_financial_liabilities = Integ(
     comp_subtype="Normal",
     depends_on={
         "switch_finance": 1,
-        "initial_gross_savings": 1,
         "increase_in_households_capital_stock_due_to_investments": 2,
+        "initial_gross_savings": 1,
         "households_gross_savings": 1,
     },
 )
@@ -641,13 +641,13 @@ def implicit_tax_rate_to_finance_basic_income():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "mdollars_per_mdollars_2015": 2,
-        "unit_conversion_dollars_mdollars": 2,
-        "gross_fixed_capital_formation_real": 2,
-        "base_number_of_households": 3,
-        "households_financial_assets": 4,
-        "price_transformation": 2,
         "price_gfcf": 2,
+        "mdollars_per_mdollars_2015": 2,
+        "base_number_of_households": 3,
+        "gross_fixed_capital_formation_real": 2,
+        "unit_conversion_dollars_mdollars": 2,
+        "price_transformation": 2,
+        "households_financial_assets": 4,
         "number_of_households_by_income_and_type": 3,
     },
 )
@@ -981,8 +981,8 @@ def taxes_on_assets_to_finance_basic_income():
     comp_subtype="Normal",
     depends_on={
         "select_policy_finance_basic_income_sp": 2,
-        "taxes_on_assets_to_finance_basic_income": 1,
         "share_of_total_financial_assets_households_paying_taxes_finance_basic_income": 1,
+        "taxes_on_assets_to_finance_basic_income": 1,
     },
 )
 def taxes_on_assets_to_finance_basic_income_by_household_group():
@@ -1140,9 +1140,9 @@ def variation_in_households_financial_assets_due_to_net_lending():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
+        "ratio_liabilties_to_disposable_income": 3,
         "households_financial_liabilities": 3,
         "households_net_lending": 3,
-        "ratio_liabilties_to_disposable_income": 3,
         "delayed_ts_households_disposable_income": 3,
         "households_financial_assets": 1,
     },

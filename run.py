@@ -1,5 +1,11 @@
 print('Executing run.py')
 
+# This script : 
+# 1 - loads the VENSIM model into a python model with PySD,
+# 2 - launches a run to initialize the variables. Output variables are stored in a xarray dataset
+# 3 - Runs the model as many times as required, stores the output variable in the dataset with index 'Run'
+# 4 - Saves the dataset to a netCDF file that can be used for the later analysis
+
 import pysd
 import xarray as xr
 import warnings
@@ -38,8 +44,20 @@ variables.loc[variables['Equation'].isnull(), 'Model'] = np.nan
 
 
 
-variables["Interest"] = variables["Py Name"].apply(lambda x: vr.isInterest(x))
-interest_variables = variables[variables["Interest"] == True]["Py Name"].values
+#variables["Interest"] = variables["Py Name"].apply(lambda x: vr.isInterest(x))
+#interest_variables = variables[variables["Interest"] == True]["Py Name"].values
+interest_variables = [
+    "gini_gdppc_regions", 
+    "gini_gdppc_eu27", 
+    "temperature_change", 
+    "temperature_change_in_35regions", 
+    "total_population", 
+    "population_35_regions", 
+    "total_radiative_forcing", 
+    "gross_domestic_product_nominal", 
+    "average_disposable_income_per_capita", 
+    "extra_extra_gdp_modifyer"
+    ]
 
 variables.to_csv('variables.csv')
 variables_modelled = variables[variables['Model'].notna()]
@@ -63,7 +81,7 @@ runs = pd.read_csv('run_manager.csv')
 forcing = pd.read_csv('full_rcp.csv')
 
 # Run the model a first time to initialize the dataset
-output_ds_path = 'results/batch/run_ds_19_07.nc'
+output_ds_path = 'results/batch/run_ds_19_07_3.nc'
 
 initial_time = 2005
 final_time = 2010
@@ -103,8 +121,10 @@ run = model.run(progress=True,
 
 ds = xr.open_dataset(output_ds_path)
 
-run_num =  2 #len(runs)
+run_num =  1 #len(runs)
 ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
+ds = ds.rename({'REGIONS 35 I': 'region'})
+
 
 runs = runs.head(run_num)
 
@@ -148,6 +168,8 @@ for index, run in runs.iterrows():
 
     result_variables = run.columns 
 
+    
+
     extra_extra_exponent_copy = ds["extra_extra_exponent"].copy()
     extra_extra_exponent_copy.loc[dict(Run = index)] = exponent
     ds["extra_extra_exponent"] = extra_extra_exponent_copy
@@ -157,16 +179,33 @@ for index, run in runs.iterrows():
     ds["extra_extra_normalisation_constant"] = extra_extra_normalisation_constant_copy
 
 
-    for variable in result_variables: 
-        try:   
-                variable_copy = ds[variable].copy()
-                variable_copy.loc[dict(Run = index)] = run[variable].values
-                ds[variable] = variable_copy
-                print(f"Added variable {variable} to the dataset.")
-        except:
-                pass
-        
-    first_run = False
+    run = run.reset_index()
+    
+    for i in range(0, len(run.columns)):
+
+        try: 
+                column_name = run.columns.to_list()[i].strip()
+                #print(column_name)
+                variable_name = column_name.split('[')[0].strip()
+                region = column_name.split('[')[1].split(']')[0].strip()
+                #print(f'Variable : {variable_name}, region {region}')
+                variable_copy = ds[variable_name].copy()
+                #print('Before adding')
+                #print(run[column_name].values)
+                variable_copy.loc[dict(Run = index,  region=region)] = run[column_name].values
+                #print('After copying')
+                ds[variable_name] = variable_copy
+                #print(f"Added variable {variable_name} in region {region} to the dataset.")
+                
+        except:      
+                try: 
+                        variable_name = run.columns.to_list()[i].strip()
+                        variable_copy = ds[variable_name].copy()
+                        variable_copy.loc[dict(Run = index)] = run[variable_name].values
+                        ds[variable_name] = variable_copy
+                        print(f"NO REGION - Added variable {variable_name} to the dataset.")
+                except:
+                        print(f'FAILED to add variable {run.columns.to_list()[i]}')
 
 ds.to_netcdf(output_ds_path)
 ds.close()
@@ -177,4 +216,3 @@ ds.close()
 warnings.resetwarnings()
 
 print('Done every run')
-

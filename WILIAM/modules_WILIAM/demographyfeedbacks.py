@@ -12,10 +12,10 @@ Translated using PySD version 3.13.4
     depends_on={
         "switch_x2dem_life_expectancy_at_birth": 1,
         "switch_demography": 1,
+        "time": 2,
         "slope_ramp_life_expectancy_at_birth": 1,
         "last_historical_year_demography": 2,
         "variation_historical_life_expectancy_at_birth": 2,
-        "time": 2,
         "endogenous_feedbacks_to_life_expectancy_at_birth": 1,
     },
 )
@@ -175,13 +175,13 @@ _delay_delayed_historical_life_expectancy_at_birth = Delay(
     comp_subtype="Normal",
     depends_on={
         "historical_life_expectancy_at_birth": 1,
-        "coefficient_feedback_education_expenditure_to_life_expectancy_at_birth": 1,
-        "annual_variation_regional_average_schooling_time": 1,
         "coefficient_feedback_co2_emissions_to_life_expectancy_at_birth": 1,
-        "maximum_increase_life_expectancy_at_birth_by_health_expenditure": 1,
-        "annual_variation_co2_emissions": 1,
+        "coefficient_feedback_education_expenditure_to_life_expectancy_at_birth": 1,
         "coefficient_feedback_health_expenditure_to_life_expectancy_at_birth": 1,
         "annual_variation_government_expenditure": 1,
+        "annual_variation_co2_emissions": 1,
+        "maximum_increase_life_expectancy_at_birth_by_health_expenditure": 1,
+        "annual_variation_regional_average_schooling_time": 1,
     },
 )
 def endogenous_feedbacks_to_life_expectancy_at_birth():
@@ -318,8 +318,8 @@ _ext_constant_maximum_increase_life_expectancy_at_birth_by_health_expenditure = 
     depends_on={
         "final_value_life_expectancy_at_birth": 1,
         "historical_life_expectancy_at_birth": 1,
-        "last_historical_year_demography": 1,
         "target_year_life_expectancy_at_birth_sp": 1,
+        "last_historical_year_demography": 1,
     },
 )
 def slope_ramp_life_expectancy_at_birth():
