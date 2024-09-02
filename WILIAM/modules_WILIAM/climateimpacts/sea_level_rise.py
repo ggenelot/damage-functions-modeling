@@ -1,6 +1,6 @@
 """
 Module climateimpacts.sea_level_rise
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -185,8 +185,8 @@ _integ_sea_level_rise = Integ(
     comp_subtype="Normal",
     depends_on={
         "sea_level_rise_parameter_alpha": 1,
-        "temperature_change": 1,
         "sea_level_rise_parameter_beta": 1,
+        "temperature_change": 1,
         "vertical_land_movement": 1,
         "time": 1,
     },

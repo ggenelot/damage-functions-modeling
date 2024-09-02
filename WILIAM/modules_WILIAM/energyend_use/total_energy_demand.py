@@ -1,6 +1,6 @@
 """
 Module energyend_use.total_energy_demand
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -95,10 +95,10 @@ def elec_by_sector_fe_and_output():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_energy_efficiency_anual_improvement": 1,
+        "start_year_final_energy_efficiency_rate_top_down_sectors_sp": 1,
+        "historical_energy_efficiency_annual_improvement": 1,
         "time": 1,
         "final_energy_efficiency_rate_top_down_sectors_sp": 1,
-        "historical_energy_efficiency_annual_improvement": 1,
-        "start_year_final_energy_efficiency_rate_top_down_sectors_sp": 1,
     },
 )
 def energy_efficiency_annual_improvement():
@@ -416,8 +416,8 @@ _integ_final_energy_intensities_by_sector_and_fe = Integ(
         "time": 7,
         "trend_of_final_energy_substituion_annual_variation": 8,
         "price_final_energy": 9,
-        "signal_availability_forestry_products_for_energy_35r": 1,
         "switch_law2nrg_available_forestry_products_for_industry": 1,
+        "signal_availability_forestry_products_for_energy_35r": 1,
         "switch_nrg_limited_res_potentials": 1,
         "switch_energy": 1,
     },
@@ -843,8 +843,8 @@ def households_final_energy_demand_buildings_by_fe():
     depends_on={
         "switch_energy": 1,
         "initial_final_energy_consumption_households_by_fe": 1,
-        "households_final_energy_demand_transport_by_fe": 1,
         "households_final_energy_demand_buildings_by_fe": 1,
+        "households_final_energy_demand_transport_by_fe": 1,
     },
 )
 def households_final_energy_demand_by_fe():
@@ -1451,10 +1451,10 @@ def total_final_energy_intensities_by_sector():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "start_year_final_energy_substitution_rate_top_down_sectors_sp": 1,
         "final_energy_substitution_rate_top_down_sectors_sp": 1,
-        "historical_final_energy_substitution": 2,
         "select_final_energy_substitution_rate_top_down_sectors_sp": 2,
+        "start_year_final_energy_substitution_rate_top_down_sectors_sp": 1,
+        "historical_final_energy_substitution": 2,
     },
 )
 def trend_of_final_energy_substituion_annual_variation():
@@ -1503,10 +1503,10 @@ def trend_of_final_energy_substituion_annual_variation():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "energy_efficiency_annual_improvement": 3,
-        "minimum_energy_efficiency_versus_initial": 1,
-        "energy_efficiency_component": 1,
         "energy_efficiengy_component_2015": 2,
+        "energy_efficiency_annual_improvement": 3,
+        "energy_efficiency_component": 1,
+        "minimum_energy_efficiency_versus_initial": 1,
     },
 )
 def variation_energy_efficiency_component():
@@ -1551,9 +1551,9 @@ def variation_energy_efficiency_component():
     depends_on={
         "final_energy_intensities_by_sector_and_fe": 1,
         "final_energy_substitution_component": 1,
-        "energy_efficiency_component": 1,
-        "variation_final_energy_substitution_component": 1,
         "variation_energy_efficiency_component": 1,
+        "variation_final_energy_substitution_component": 1,
+        "energy_efficiency_component": 1,
     },
 )
 def variation_energy_intensity_by_sector_and_fe():

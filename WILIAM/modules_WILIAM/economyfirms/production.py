@@ -1,6 +1,6 @@
 """
 Module economyfirms.production
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -11,11 +11,11 @@ Translated using PySD version 3.13.4
     comp_subtype="Normal",
     depends_on={
         "time": 5,
-        "switch_nrg2eco_a_matrix_energy_intensities": 1,
         "switch_economy": 5,
         "energy_intensities_variation_economic_module_classification": 1,
-        "material_intensities_variation": 4,
+        "switch_nrg2eco_a_matrix_energy_intensities": 1,
         "switch_mat2eco_a_matrix_material_intensity": 4,
+        "material_intensities_variation": 4,
     },
 )
 def change_technical_coefficients():
@@ -708,9 +708,9 @@ _ext_constant_switch_nrg2eco_a_matrix_energy_intensities = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "technical_coefficients_total": 1,
+        "initial_import_shares_intermediates": 1,
         "switch_eco_trade": 1,
         "import_shares_intermediates_constrained": 1,
-        "initial_import_shares_intermediates": 1,
     },
 )
 def technical_coefficients_domestic():

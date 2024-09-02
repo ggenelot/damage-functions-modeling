@@ -1,6 +1,6 @@
 """
 Module energyvariability.proflex_allocation
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -240,8 +240,8 @@ _ext_constant_objective_flex_elec_demand_sp = ExtConstant(
         "switch_materials_calculator": 1,
         "prosto_capacity_expansion_calculator": 1,
         "prosto_dedicated_capacity_expansion": 1,
-        "proflex_dsm_capacity": 1,
         "delayed_proflex_dsm_capacity": 1,
+        "proflex_dsm_capacity": 1,
     },
 )
 def proflex_capacity_expansion():
@@ -288,10 +288,10 @@ def proflex_capacity_expansion():
     comp_subtype="Normal",
     depends_on={
         "switch_flex_elec_demand_sp": 3,
-        "year_final_flex_elec_demand_sp": 3,
         "time": 3,
-        "objective_flex_elec_demand_sp": 2,
         "initial_year_flex_elec_demand_sp": 3,
+        "year_final_flex_elec_demand_sp": 3,
+        "objective_flex_elec_demand_sp": 2,
         "unit_conversion_hours_year": 1,
     },
 )
@@ -345,14 +345,14 @@ def proflex_dsm_capacity():
     depends_on={
         "maximum_capacity_expansion_p2h": 1,
         "prosup_p2h_capacity_decomissioning": 1,
-        "select_availability_unmature_energy_technologies_sp": 2,
-        "flexible_electrolysers_capacity_stock": 1,
         "electrolytic_h2_required_to_satisfy_h2_demand": 1,
-        "ratio_maximum_proflex_expansion_sp": 3,
         "minimum_proflex_capacity_expansion_sp": 1,
+        "select_availability_unmature_energy_technologies_sp": 2,
         "flexible_electrolysers_capacity_decommissioning": 1,
-        "prosto_dedicated_capacity_stock": 2,
+        "flexible_electrolysers_capacity_stock": 1,
+        "ratio_maximum_proflex_expansion_sp": 3,
         "maximum_prosto_dedicated": 2,
+        "prosto_dedicated_capacity_stock": 2,
         "prosto_dedicated_capacity_decomissioning": 2,
     },
 )

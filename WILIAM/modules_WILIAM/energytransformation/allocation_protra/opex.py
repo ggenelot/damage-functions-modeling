@@ -1,6 +1,6 @@
 """
 Module energytransformation.allocation_protra.opex
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -518,8 +518,8 @@ def fuel_price_by_protra_9r():
     comp_subtype="Normal",
     depends_on={
         "fuel_price_by_protra_9r": 6,
-        "switch_law2nrg_available_forestry_products_for_industry": 1,
         "signal_availability_forestry_products_for_energy": 2,
+        "switch_law2nrg_available_forestry_products_for_industry": 1,
         "switch_nrg_limited_res_potentials": 1,
         "switch_energy": 1,
     },
@@ -658,9 +658,9 @@ def fuel_price_by_protra_world():
     depends_on={
         "time": 1,
         "switch_energy": 1,
-        "gas_price_historical": 1,
-        "unit_conversion_dollars_mdollars": 2,
         "unit_conversion_mmbtu_ej": 2,
+        "unit_conversion_dollars_mdollars": 2,
+        "gas_price_historical": 1,
         "estimated_gas_price": 1,
     },
 )

@@ -121,7 +121,7 @@ run = model.run(progress=True,
 
 ds = xr.open_dataset(output_ds_path)
 
-run_num =  1 #len(runs)
+run_num =  10 #len(runs)
 ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 ds = ds.rename({'REGIONS 35 I': 'region'})
 

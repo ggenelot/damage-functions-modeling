@@ -1,6 +1,6 @@
 """
 Module climateimpacts.temperature_change
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -167,10 +167,10 @@ _initial_double_co2_forcing = Initial(
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_climate_sensitivity": 1,
-        "climate_sensitivity_sp": 1,
         "time": 1,
         "probabilistic_ecs": 1,
         "selection_ecs_input_method": 1,
+        "climate_sensitivity_sp": 1,
     },
 )
 def ecs():
@@ -389,8 +389,8 @@ def heat_transfer():
                 "heat_transfer_rate": 1,
                 "mean_depth_of_adjacent_layers": 1,
                 "eddy_diff_coeff": 1,
-                "eddy_diff_mean": 1,
                 "heat_diffusion_covar": 2,
+                "eddy_diff_mean": 1,
             },
             "step": {},
         }
@@ -531,9 +531,9 @@ def temperature_change():
         "_initial_upper_layer_volume_vu": {
             "initial": {
                 "global_surface_area": 1,
-                "land_thickness": 1,
                 "mixed_depth": 1,
                 "land_area_fraction": 2,
+                "land_thickness": 1,
             },
             "step": {},
         }

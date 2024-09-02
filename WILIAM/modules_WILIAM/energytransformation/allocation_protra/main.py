@@ -1,6 +1,6 @@
 """
 Module energytransformation.allocation_protra.main
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -52,9 +52,9 @@ def cf_nuclear_after_uranium_scarcity():
     comp_subtype="Normal",
     depends_on={
         "protra_to_allocated": 1,
+        "protra_operative_capacity_stock_selected": 1,
         "unit_conversion_hours_year": 1,
         "unit_conversion_tw_per_ej_per_year": 1,
-        "protra_operative_capacity_stock_selected": 1,
     },
 )
 def cf_protra():
@@ -141,8 +141,8 @@ _ext_constant_chp_heat_power_ratio_9r = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "protra_heat_allocation": 2,
-        "max_to_from_existing_stock_by_protra": 1,
         "chp_heat_power_ratio_9r": 1,
+        "max_to_from_existing_stock_by_protra": 1,
     },
 )
 def chp_production():
@@ -496,9 +496,9 @@ def protra_heat_allocation():
         "variation_cf_nuclear_after_uranium_scarcity": 1,
         "protra_max_full_load_hours_curtailed": 1,
         "switch_climate_change_damage": 2,
+        "switch_law2nrg_hydropower_production": 2,
         "variation_precipitation_evapotranspiration_36r": 2,
         "switch_energy": 2,
-        "switch_law2nrg_hydropower_production": 2,
     },
 )
 def protra_max_full_load_hours_after_constraints():
@@ -837,9 +837,9 @@ def protra_to_allocated_in_twh():
     comp_subtype="Normal",
     depends_on={
         "pwidth_protra_utilization_allocation_policy_priorities_sp": 1,
-        "protra_utilization_priorities_endogenous": 1,
         "protra_utilization_priorities_policyweight_sp": 2,
         "protra_utilization_allocation_priorities_sp": 1,
+        "protra_utilization_priorities_endogenous": 1,
     },
 )
 def protra_utilization_applied_priorities():

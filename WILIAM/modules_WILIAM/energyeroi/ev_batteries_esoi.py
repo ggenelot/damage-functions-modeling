@@ -1,6 +1,6 @@
 """
 Module energyeroi.ev_batteries_esoi
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -66,8 +66,8 @@ def dynfenu_materials_ev_batteries_9r():
     depends_on={
         "materials_required_for_new_ev_batteries": 1,
         "embodied_fe_intensity_materials_36r": 1,
-        "unit_conversion_kg_mt": 1,
         "unit_conversion_mj_ej": 1,
+        "unit_conversion_kg_mt": 1,
     },
 )
 def dynfenu_per_material_ev_batteries():
@@ -91,11 +91,11 @@ def dynfenu_per_material_ev_batteries():
     comp_subtype="Normal",
     depends_on={
         "dynfenust_ev": 1,
-        "unit_conversion_mj_ej": 1,
-        "fenu_intensity_transport_total_ev_vehicles_technology": 1,
         "fenu_intensity_total_materials_of_charger_and_grids": 1,
+        "unit_conversion_mj_ej": 1,
         "power_new_vehicle_batteries_35r": 1,
         "unit_conversion_mw_tw": 1,
+        "fenu_intensity_transport_total_ev_vehicles_technology": 1,
     },
 )
 def dynfenupou_ev():
@@ -122,10 +122,10 @@ def dynfenupou_ev():
     comp_subtype="Normal",
     depends_on={
         "dynfenust_ev_batteries": 1,
-        "fenu_intensity_transport_materials_batteries": 1,
         "power_new_vehicle_batteries_35r": 1,
-        "unit_conversion_mj_ej": 1,
         "unit_conversion_mw_tw": 1,
+        "unit_conversion_mj_ej": 1,
+        "fenu_intensity_transport_materials_batteries": 1,
     },
 )
 def dynfenust_ev():
@@ -150,8 +150,8 @@ def dynfenust_ev():
     depends_on={
         "dynfenust_intensity_ev_batteries": 2,
         "power_new_vehicle_batteries_35r": 1,
-        "share_energy_requirements_for_decom_ev_batteries": 1,
         "power_discarded_vehicle_batteries": 1,
+        "share_energy_requirements_for_decom_ev_batteries": 1,
     },
 )
 def dynfenust_ev_batteries():
@@ -199,13 +199,13 @@ def dynfenust_intensity_ev_batteries():
         "energy_delivered_by_electrified_vehicles_battery_lifetime": 2,
         "ol_ev_batteries": 2,
         "eabe": 1,
-        "share_energy_requirements_for_decom_ev_batteries": 1,
-        "vehicle_electric_power": 2,
-        "fenu_intensity_transport_total_ev_vehicles_technology": 1,
-        "ev_charge_losses_share": 2,
-        "unit_conversion_kw_mw": 2,
         "fenust_intensity_batteries_electrified_vehicles": 1,
         "fenu_intensity_total_materials_of_charger_and_grids": 1,
+        "unit_conversion_kw_mw": 2,
+        "vehicle_electric_power": 2,
+        "ev_charge_losses_share": 2,
+        "share_energy_requirements_for_decom_ev_batteries": 1,
+        "fenu_intensity_transport_total_ev_vehicles_technology": 1,
     },
 )
 def esoi_final_electrified_vehicle():
@@ -246,11 +246,11 @@ def esoi_final_electrified_vehicle():
     depends_on={
         "energy_delivered_by_electrified_vehicles_battery_lifetime": 1,
         "ol_ev_batteries": 1,
-        "share_energy_requirements_for_decom_ev_batteries": 1,
-        "vehicle_electric_power": 1,
-        "unit_conversion_kw_mw": 1,
-        "fenu_intensity_transport_materials_batteries": 1,
         "fenust_intensity_batteries_electrified_vehicles": 1,
+        "unit_conversion_kw_mw": 1,
+        "vehicle_electric_power": 1,
+        "share_energy_requirements_for_decom_ev_batteries": 1,
+        "fenu_intensity_transport_materials_batteries": 1,
     },
 )
 def esoi_st_electrified_vehicle():

@@ -1,6 +1,6 @@
 """
 Module energyend_use.transport.ev.capacities_cf_and_lif
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -568,8 +568,8 @@ def hev_vehicles_batteries_power_required():
         "unit_conversion_j_wh": 1,
         "unit_converison_wh_kwh": 1,
         "unit_conversion_hours_year": 1,
-        "cf_electrified_vehicle": 1,
         "vehicle_electric_power": 1,
+        "cf_electrified_vehicle": 1,
         "max_lifetime_ev_batteries": 1,
     },
 )

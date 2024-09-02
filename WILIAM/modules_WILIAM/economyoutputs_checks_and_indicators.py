@@ -1,6 +1,6 @@
 """
 Module economyoutputs_checks_and_indicators
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -67,8 +67,8 @@ _delayfixed_delayed_gdp_real_1r = DelayFixed(
         "employment_total": 1,
         "labour_force": 1,
         "unemployment_rate": 1,
-        "government_revenue": 1,
         "gross_domestic_product_deflator": 6,
+        "government_revenue": 1,
         "government_expenditure": 1,
         "government_budget_balance": 2,
         "government_debt": 2,

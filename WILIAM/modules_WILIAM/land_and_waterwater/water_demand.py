@@ -1,6 +1,6 @@
 """
 Module land_and_waterwater.water_demand
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -190,8 +190,8 @@ _integ_blue_water_demand_trends = Integ(
     depends_on={
         "blue_water_demand_for_agriculture_by_gdp": 2,
         "blue_water_demand_by_industries": 2,
-        "water_available_by_region": 2,
         "blue_water_used_for_households": 2,
+        "water_available_by_region": 2,
     },
 )
 def blue_water_used_by_industries():
@@ -257,9 +257,9 @@ def effective_blue_water_demanded_for_agriculture():
     depends_on={
         "switch_landwater": 1,
         "gdp_for_water": 1,
+        "gdp_oekstra_2019": 1,
         "gdp_real_35r_until_2019": 1,
         "gdp_by_oekstra_for_water": 1,
-        "gdp_oekstra_2019": 1,
     },
 )
 def factor_of_economic_output_for_water():
@@ -443,10 +443,10 @@ def historical_green_water_of_sectors_by_region():
     comp_subtype="Normal",
     depends_on={
         "switch_water_efficiency_sp": 2,
-        "time": 2,
         "year_initial_water_efficiency_sp": 2,
-        "year_final_water_efficiency_sp": 2,
         "objective_water_efficiency_sp": 1,
+        "year_final_water_efficiency_sp": 2,
+        "time": 2,
     },
 )
 def increase_water_efficiency():
@@ -561,9 +561,9 @@ def initial_water_per_sector_fao():
     comp_subtype="Normal",
     depends_on={
         "switch_landwater": 1,
+        "output_real": 2,
         "base_output_real": 2,
         "green_water_region_sector": 2,
-        "output_real": 2,
     },
 )
 def intensity_green_water_region_sector():

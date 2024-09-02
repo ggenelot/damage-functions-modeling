@@ -1,6 +1,6 @@
 """
 Module land_and_waterland.intermodule_global_allocate
-Translated using PySD version 3.13.4
+Translated using PySD version 3.14.0
 """
 
 @component.add(
@@ -683,8 +683,8 @@ def land_products_distributed_from_pool():
     comp_subtype="Normal",
     depends_on={
         "land_products_demanded": 2,
-        "land_products_available": 2,
         "share_of_land_products_from_smallholders": 2,
+        "land_products_available": 2,
     },
 )
 def land_products_protected_from_global_pool():
