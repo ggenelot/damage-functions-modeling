@@ -11,6 +11,7 @@ Damage functions are used in Integrated Assessment Models (IAMs) to estimate the
 Contents
 --------
 
+
 .. toctree::
    maxdepth: 2
    caption: Introduction:
@@ -23,4 +24,3 @@ Contents
    5_socio/index
    3_notebooks/index
    7_documentation/index
-
