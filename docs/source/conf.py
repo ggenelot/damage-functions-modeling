@@ -1,5 +1,8 @@
 # Configuration file for the Sphinx documentation builder.
 
+import sphinx_book_theme
+
+
 # -- Project information
 
 project = 'Damage functions in IAM'
@@ -33,6 +36,7 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_theme = 'sphinx_book_theme'
+html_theme_path = [sphinx_book_theme.get_html_theme_path()]
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
