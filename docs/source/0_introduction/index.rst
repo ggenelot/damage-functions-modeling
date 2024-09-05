@@ -1,5 +1,5 @@
-.. Introduction
-===============
+Introduction
+=============
 
 Welcome to the Introduction section of the documentation!
 

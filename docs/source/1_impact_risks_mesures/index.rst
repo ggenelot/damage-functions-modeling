@@ -1,5 +1,5 @@
-.. Impacts, risks and measures
-==============================   
+Impacts, risks and measures
+===========================   
 
 Chapter about the impacts of climate change
 
