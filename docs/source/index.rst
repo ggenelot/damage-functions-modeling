@@ -15,7 +15,12 @@ Contents
    maxdepth: 2
    caption: Introduction:
 
-   1_introduction/index
+   0_introduction/index
+   1_impact_risks_mesures/index
+   2_litrev/index
+   3_modelling/index
+   4_ethics/index
+   5_socio/index
    3_notebooks/index
-   4_API/index
+   7_documentation/index
 
