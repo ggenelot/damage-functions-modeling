@@ -1,5 +1,5 @@
-.. Literature review
-====================
+Literature review
+=================
 
 Welcome to the Introduction section of the documentation!
 

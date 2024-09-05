@@ -1,5 +1,5 @@
-.. Ethics of damage modelling
-=============================
+Ethics of damage modelling
+===========================
 
 Welcome to the Introduction section of the documentation!
 
