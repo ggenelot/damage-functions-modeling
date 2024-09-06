@@ -7,4 +7,4 @@ Welcome to the Introduction section of the documentation!
     :maxdepth: 2
 
     litrev
-    mca/mca
+    mca\mca
