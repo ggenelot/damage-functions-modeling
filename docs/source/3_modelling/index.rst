@@ -7,3 +7,4 @@ Welcome to the Introduction section of the documentation!
     :maxdepth: 2
 
     damage
+    geography/correspondance_table
