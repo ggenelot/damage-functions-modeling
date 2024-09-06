@@ -1,5 +1,6 @@
 # Configuration file for the Sphinx documentation builder.
 
+import sphinx_book_theme
 
 # -- Project information
 
