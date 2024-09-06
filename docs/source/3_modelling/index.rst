@@ -8,3 +8,8 @@ Welcome to the Introduction section of the documentation!
 
     damage
     geography/correspondance_table
+    ethical_coef
+    run 
+    dataprep
+    regprep
+    regressions
