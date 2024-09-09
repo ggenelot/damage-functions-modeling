@@ -81,10 +81,10 @@ runs = pd.read_csv('run_manager.csv')
 forcing = pd.read_csv('full_rcp.csv')
 
 # Run the model a first time to initialize the dataset
-output_ds_path = 'results/batch/run_ds_19_07_3.nc'
+output_ds_path = 'results/final.nc'
 
 initial_time = 2005
-final_time = 2010
+final_time = 2080
 time_step = 1 
 time_span = time = np.linspace(initial_time, final_time, num=(final_time - initial_time)//time_step + 1)
 
@@ -121,7 +121,7 @@ run = model.run(progress=True,
 
 ds = xr.open_dataset(output_ds_path)
 
-run_num =  10 #len(runs)
+run_num =  50 #len(runs)
 ds = ds.expand_dims({"Run": run_num}).assign_coords({"Run": range(0, run_num)})
 ds = ds.rename({'REGIONS 35 I': 'region'})
 
