@@ -11,6 +11,7 @@ import xarray as xr
 import warnings
 import pandas as pd
 import numpy as np
+import datetime
 import utils.variables as vr
 
 
@@ -84,7 +85,7 @@ forcing = pd.read_csv('full_rcp.csv')
 output_ds_path = 'results/final.nc'
 
 initial_time = 2005
-final_time = 2080
+final_time = 2070
 time_step = 1 
 time_span = time = np.linspace(initial_time, final_time, num=(final_time - initial_time)//time_step + 1)
 
@@ -156,7 +157,7 @@ for index, run in runs.iterrows():
 
 
     # Run the model
-    run = model.run(progress=True,
+    run_result = model.run(progress=True,
                     params={'total radiative forcing': total_forcing, 
                             '"EXTRA: EXTRA: exponent"' : exponent,
                             '"EXTRA: EXTRA: normalisation constant"': norm_constant
@@ -166,7 +167,7 @@ for index, run in runs.iterrows():
     
     # Store the simulation results in a dataframe
 
-    result_variables = run.columns 
+    result_variables = run_result.columns 
 
     
 
@@ -179,12 +180,12 @@ for index, run in runs.iterrows():
     ds["extra_extra_normalisation_constant"] = extra_extra_normalisation_constant_copy
 
 
-    run = run.reset_index()
+    run_result = run_result.reset_index()
     
-    for i in range(0, len(run.columns)):
+    for i in range(0, len(run_result.columns)):
 
         try: 
-                column_name = run.columns.to_list()[i].strip()
+                column_name = run_result.columns.to_list()[i].strip()
                 #print(column_name)
                 variable_name = column_name.split('[')[0].strip()
                 region = column_name.split('[')[1].split(']')[0].strip()
@@ -192,7 +193,7 @@ for index, run in runs.iterrows():
                 variable_copy = ds[variable_name].copy()
                 #print('Before adding')
                 #print(run[column_name].values)
-                variable_copy.loc[dict(Run = index,  region=region)] = run[column_name].values
+                variable_copy.loc[dict(Run = index,  region=region)] = run_result[column_name].values
                 #print('After copying')
                 ds[variable_name] = variable_copy
                 #print(f"Added variable {variable_name} in region {region} to the dataset.")
@@ -206,6 +207,17 @@ for index, run in runs.iterrows():
                         print(f"NO REGION - Added variable {variable_name} to the dataset.")
                 except:
                         print(f'FAILED to add variable {run.columns.to_list()[i]}')
+
+# Add a message to a text file
+
+current_datetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+message = f"\n Executed run {index} at {current_datetime}"
+file_path = "output.txt"
+
+with open(file_path, "w") as file:
+        file.write(message)
+
+print("Message saved to", file_path)
 
 ds.to_netcdf(output_ds_path)
 ds.close()

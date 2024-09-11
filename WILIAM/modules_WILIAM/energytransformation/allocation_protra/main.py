@@ -29,8 +29,8 @@ def aggregated_to_production_by_commodity():
     depends_on={
         "switch_energy": 1,
         "switch_mat2nrg_uranium_availability": 1,
-        "pe_global_demand_uranium": 1,
         "uranium_extraction_rate": 1,
+        "pe_global_demand_uranium": 1,
     },
 )
 def cf_nuclear_after_uranium_scarcity():
@@ -52,9 +52,9 @@ def cf_nuclear_after_uranium_scarcity():
     comp_subtype="Normal",
     depends_on={
         "protra_to_allocated": 1,
+        "unit_conversion_tw_per_ej_per_year": 1,
         "protra_operative_capacity_stock_selected": 1,
         "unit_conversion_hours_year": 1,
-        "unit_conversion_tw_per_ej_per_year": 1,
     },
 )
 def cf_protra():
@@ -141,8 +141,8 @@ _ext_constant_chp_heat_power_ratio_9r = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "protra_heat_allocation": 2,
-        "chp_heat_power_ratio_9r": 1,
         "max_to_from_existing_stock_by_protra": 1,
+        "chp_heat_power_ratio_9r": 1,
     },
 )
 def chp_production():
@@ -258,7 +258,7 @@ _delayfixed_delayed_ts_protra_capacity_stock = DelayFixed(
     name="max TO from existing stock by PROTRA",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "protra_operative_capacity_stock_selected": 1,
@@ -294,7 +294,7 @@ def max_to_from_existing_stock_by_protra():
 @component.add(
     name="max TO from existing stock by PROTRA HP and CHP",
     subscripts=["REGIONS 9 I", "NRG COMMODITIES I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"max_to_from_existing_stock_by_protra": 1},
 )
@@ -327,7 +327,7 @@ def max_to_from_existing_stock_by_protra_hp_and_chp():
     name="max TO from existing stock by PROTRA PP",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG COMMODITIES I", "NRG PRO I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"max_to_from_existing_stock_by_protra": 1},
 )
@@ -406,7 +406,7 @@ def protra_actual_full_load_hours():
     name="PROTRA capacity utilization rate",
     units="1",
     subscripts=["REGIONS 9 I", "NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "protra_actual_full_load_hours": 1,
@@ -495,10 +495,10 @@ def protra_heat_allocation():
         "protra_max_full_load_hours": 5,
         "variation_cf_nuclear_after_uranium_scarcity": 1,
         "protra_max_full_load_hours_curtailed": 1,
-        "switch_climate_change_damage": 2,
         "switch_law2nrg_hydropower_production": 2,
-        "variation_precipitation_evapotranspiration_36r": 2,
         "switch_energy": 2,
+        "variation_precipitation_evapotranspiration_36r": 2,
+        "switch_climate_change_damage": 2,
     },
 )
 def protra_max_full_load_hours_after_constraints():
@@ -636,7 +636,7 @@ def protra_max_full_load_hours_curtailed():
     name="PROTRA other TO allocations",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "PROTRA NP I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={"remaining_to_to_be_allocated": 5},
 )
@@ -709,7 +709,7 @@ def protra_other_to_allocations():
     name="PROTRA TO allocated",
     units="EJ/Year",
     subscripts=["REGIONS 9 I", "NRG TO I", "NRG PROTRA I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "chp_production": 2,
@@ -833,12 +833,12 @@ def protra_to_allocated_in_twh():
     name="PROTRA utilization applied priorities",
     units="DMNL",
     subscripts=["REGIONS 9 I", "NRG PRO I", "pprofile"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "pwidth_protra_utilization_allocation_policy_priorities_sp": 1,
-        "protra_utilization_priorities_policyweight_sp": 2,
         "protra_utilization_allocation_priorities_sp": 1,
+        "protra_utilization_priorities_policyweight_sp": 2,
         "protra_utilization_priorities_endogenous": 1,
     },
 )

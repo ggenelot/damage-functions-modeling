@@ -995,8 +995,8 @@ def prosto_dedicated_capacity_decomissioning():
         "time": 3,
         "limited_capacity_expansion_prosto_dedicated": 3,
         "prosto_dedicated_capacity_stock": 1,
-        "switch_nrg_proflex_capacity_expansion_endogenous": 2,
         "prosto_dedicated_capacity_decomissioning": 2,
+        "switch_nrg_proflex_capacity_expansion_endogenous": 2,
         "prosup_flexopt_elec_capacity_expansion": 2,
         "historic_capacity_expansion_stationary_bateries": 1,
     },
@@ -1168,11 +1168,11 @@ def roundtrip_and_transmission_losses_by_prosto():
     comp_subtype="Normal",
     depends_on={
         "v2g_share_ev_vehicles": 1,
-        "year_final_sc_sp": 2,
         "time": 4,
-        "objective_sc_sp": 2,
         "initial_sc_sp": 4,
+        "objective_sc_sp": 2,
         "year_initial_sc_sp": 3,
+        "year_final_sc_sp": 2,
         "switch_sc_sp": 1,
     },
 )
@@ -1387,9 +1387,9 @@ def total_prosto_losses_elec():
     depends_on={
         "time": 4,
         "initial_v2g_sp": 4,
+        "year_initial_v2g_sp": 3,
         "year_final_v2g_sp": 2,
         "objective_v2g_sp": 2,
-        "year_initial_v2g_sp": 3,
         "switch_v2g_sp": 1,
     },
 )

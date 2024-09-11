@@ -1485,9 +1485,9 @@ def al_price():
     depends_on={
         "time": 1,
         "initial_al_price": 1,
-        "maximum_al_price": 1,
-        "al_available_delayed": 2,
         "al_demand": 2,
+        "al_available_delayed": 2,
+        "maximum_al_price": 1,
         "coefficients_al_price_economy": 3,
     },
 )
@@ -1634,9 +1634,9 @@ def al_price_historical():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_al_price": 1,
-        "al_base_price_2006": 1,
-        "estimated_price_with_tax_metals": 1,
         "price_transformation": 1,
+        "estimated_price_with_tax_metals": 1,
+        "al_base_price_2006": 1,
     },
 )
 def al_price_index_economy():
@@ -2336,8 +2336,8 @@ def decrease_al_profit():
     comp_subtype="Normal",
     depends_on={
         "switch_al_recycling_policy": 1,
-        "al_eol_recycling_rate_sp": 1,
         "al_scrapped_metal": 2,
+        "al_eol_recycling_rate_sp": 1,
         "al_recycling_drive_scaling": 1,
     },
 )
@@ -2359,8 +2359,8 @@ def decrease_al_scrapped_metal_loss():
     comp_subtype="Normal",
     depends_on={
         "switch_al_recycling_policy": 1,
-        "al_eol_recycling_rate_sp": 1,
         "al_scrapped_metal": 2,
+        "al_eol_recycling_rate_sp": 1,
         "al_recycling_drive_scaling": 1,
     },
 )
@@ -2548,8 +2548,8 @@ _ext_data_historical_al_price = ExtData(
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "al_demand_historical_world_7": 1,
         "initial_output_real_materials": 2,
+        "al_demand_historical_world_7": 1,
         "al_demand_base_year": 1,
     },
 )
@@ -6077,8 +6077,8 @@ _ext_constant_maximum_al_price = ExtConstant(
     depends_on={
         "al_known_reseveres": 2,
         "al_extraction_coefficient": 2,
-        "al_low_grade_change_price": 1,
         "al_low_grade_factor_mining": 1,
+        "al_low_grade_change_price": 1,
     },
 )
 def mining_al_known_reserves():
