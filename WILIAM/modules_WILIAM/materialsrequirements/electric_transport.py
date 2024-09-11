@@ -11,9 +11,9 @@ Translated using PySD version 3.14.0
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "additional_cu_inland_ev_in_relation_to_ice": 1,
-        "unit_conversion_kg_mt": 1,
         "total_new_number_ev_vehicles": 1,
+        "unit_conversion_kg_mt": 1,
+        "additional_cu_inland_ev_in_relation_to_ice": 1,
     },
 )
 def additional_cu_in_the_rest_of_ev_wrt_to_ice():
@@ -90,8 +90,8 @@ def cement_required_for_new_ev_chargers_and_grids():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "cumulated_additional_cu_in_the_rest_of_electric_vehicles_respect_to_ice_from_2015": 2,
         "additional_cu_in_the_rest_of_ev_wrt_to_ice": 2,
+        "cumulated_additional_cu_in_the_rest_of_electric_vehicles_respect_to_ice_from_2015": 2,
         "rc_rate_mineral_35r": 2,
     },
 )
@@ -850,8 +850,8 @@ def material_intensity_ev_chargers():
         "material_intensity_ev_grid_to_charger_low_voltage": 2,
         "scrap_rate": 4,
         "material_intensity_ev_grid_to_charger_lowmedium_voltage": 2,
-        "material_intensity_ev_grid_to_charger_medium_voltage": 2,
         "material_intensity_ev_grid_to_charger_high_voltage": 2,
+        "material_intensity_ev_grid_to_charger_medium_voltage": 2,
     },
 )
 def material_intensity_grids_ev_chargers():
@@ -903,9 +903,9 @@ def material_intensity_grids_ev_chargers():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
+        "cumulated_materials_extract_for_railway_catenaries_from_2015": 2,
         "materials_required_for_new_railway_catenaries": 2,
         "rc_rate_mineral_35r": 2,
-        "cumulated_materials_extract_for_railway_catenaries_from_2015": 2,
     },
 )
 def materials_extract_for_new_railway_catenaries_from_2015():
@@ -1216,10 +1216,10 @@ def materials_required_for_new_electric_transport_9r():
     depends_on={
         "switch_materials": 1,
         "scrap_rate": 1,
+        "materials_per_new_capacity_installed_ev_batteries": 1,
+        "power_new_vehicle_batteries_35r": 1,
         "unit_conversion_mw_tw": 1,
         "unit_conversion_kg_mt": 1,
-        "power_new_vehicle_batteries_35r": 1,
-        "materials_per_new_capacity_installed_ev_batteries": 1,
     },
 )
 def materials_required_for_new_ev_batteries():
@@ -1255,9 +1255,9 @@ def materials_required_for_new_ev_batteries():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "number_new_ev_chargers": 1,
-        "unit_conversion_kg_mt": 1,
         "material_intensity_ev_chargers": 1,
+        "unit_conversion_kg_mt": 1,
+        "number_new_ev_chargers": 1,
     },
 )
 def materials_required_for_new_ev_chargers():
@@ -1293,8 +1293,8 @@ def materials_required_for_new_ev_chargers():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "material_intensity_grids_ev_chargers": 1,
         "new_length_grid_to_ev_chargers": 1,
+        "material_intensity_grids_ev_chargers": 1,
         "unit_conversion_kg_mt": 1,
         "unit_conversion_km_m": 1,
     },
@@ -1335,10 +1335,10 @@ def materials_required_for_new_ev_chargers_grids():
     comp_subtype="Normal",
     depends_on={
         "switch_materials": 1,
-        "scrap_rate": 1,
-        "unit_conversion_kg_mt": 2,
-        "new_railway_catenary": 2,
         "material_intensity_catenary_railway": 2,
+        "scrap_rate": 1,
+        "new_railway_catenary": 2,
+        "unit_conversion_kg_mt": 2,
     },
 )
 def materials_required_for_new_railway_catenaries():
@@ -1593,9 +1593,9 @@ def rc_rate_mineral_35r():
     depends_on={
         "materials_per_new_capacity_installed_ev_batteries_lmo": 6,
         "materials_per_new_capacity_installed_ev_batteries_lfp": 6,
-        "materials_per_new_capacity_installed_ev_batteries_nmc622": 6,
-        "materials_per_new_capacity_installed_ev_batteries_nmc811": 6,
         "materials_per_new_capacity_installed_ev_batteries_nca": 6,
+        "materials_per_new_capacity_installed_ev_batteries_nmc811": 6,
+        "materials_per_new_capacity_installed_ev_batteries_nmc622": 6,
     },
 )
 def relative_demand_of_mineral_by_ev_battery():

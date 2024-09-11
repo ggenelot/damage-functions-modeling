@@ -8,33 +8,33 @@ import numpy as np
 import xarray as xr
 
 from pysd.py_backend.functions import (
-    ramp,
+    active_initial,
+    vector_sort_order,
     vector_select,
     vector_reorder,
-    vector_sort_order,
-    xidz,
-    get_time_value,
-    modulo,
-    if_then_else,
-    integer,
-    active_initial,
-    vmax,
-    vmin,
-    zidz,
     step,
-    invert_matrix,
+    modulo,
     sum,
+    invert_matrix,
+    vmin,
+    vmax,
+    xidz,
+    if_then_else,
     prod,
+    ramp,
+    zidz,
+    integer,
+    get_time_value,
 )
 from pysd.py_backend.statefuls import (
-    Smooth,
     DelayFixed,
-    SampleIfTrue,
-    Integ,
     Initial,
+    Smooth,
+    Integ,
     Delay,
+    SampleIfTrue,
 )
-from pysd.py_backend.external import ExtConstant, ExtData, ExtLookup
+from pysd.py_backend.external import ExtLookup, ExtConstant, ExtData
 from pysd.py_backend.utils import load_modules, load_model_data
 from pysd.py_backend.allocation import allocate_available, allocate_by_priority
 from pysd import Component
@@ -818,11 +818,11 @@ def model_explorer_passenger_transport_demand_modal_share():
     depends_on={
         "time": 4,
         "initial_year_model_explorer": 7,
+        "scenario_passenger_transport_demand_option_1_me": 1,
         "scenario_passenger_transport_demand_option_3_me": 1,
-        "scenario_passenger_transport_demand_option_2_me": 1,
         "select_reduction_passenger_transport_demand_me": 3,
         "final_year_model_explorer": 6,
-        "scenario_passenger_transport_demand_option_1_me": 1,
+        "scenario_passenger_transport_demand_option_2_me": 1,
     },
 )
 def model_explorer_reduction_passenger_transport_demand():

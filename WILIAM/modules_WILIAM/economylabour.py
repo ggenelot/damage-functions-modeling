@@ -93,8 +93,8 @@ def annual_labour_productivity_variation():
         "time": 2,
         "initial_year_working_time_variation_sp": 2,
         "final_year_working_time_variation_sp": 2,
-        "initial_hours_per_worker": 1,
         "working_time_target": 1,
+        "initial_hours_per_worker": 1,
     },
 )
 def annual_variation_hours_per_worker():
@@ -165,16 +165,16 @@ def annual_wage_hour_variation():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_labour": 1,
-        "non_accelerating_wage_inflation_rate_of_unemployment": 4,
-        "epsilon_wage_hour": 2,
-        "delayed_ts_labour_productivity": 4,
-        "gamma_wage_hour": 2,
         "constant_wage": 2,
-        "initial_delayed_consumer_price_index": 2,
+        "epsilon_wage_hour": 2,
+        "non_accelerating_wage_inflation_rate_of_unemployment": 4,
         "labour_productivity": 2,
         "alpha_wage_hour": 2,
-        "initial_delayed_2_consumer_price_index": 1,
         "unemployment_rate": 4,
+        "initial_delayed_consumer_price_index": 2,
+        "initial_delayed_2_consumer_price_index": 1,
+        "gamma_wage_hour": 2,
+        "delayed_ts_labour_productivity": 4,
         "delayed_2_consumer_price_index": 1,
         "delayed_consumer_price_index": 2,
     },
@@ -395,8 +395,8 @@ _delayfixed_aux_labour_productivity = DelayFixed(
     depends_on={
         "labour_compensation": 1,
         "unit_conversion_dollars_mdollars": 1,
-        "hours_worked": 1,
         "unit_conversion_hours_mhours": 1,
+        "hours_worked": 1,
     },
 )
 def average_wage_hour():
@@ -453,8 +453,8 @@ _ext_constant_base_working_age_population = ExtConstant(
         "switch_climate_change_damage": 1,
         "switch_eco_climate_change_damage_labour_productivity": 1,
         "switch_eco_labour": 1,
-        "heat_stress_incremental_damage_function": 1,
         "vector_borne_diseases_incremental_damage_function": 1,
+        "heat_stress_incremental_damage_function": 1,
         "labour_productivity": 1,
     },
 )
@@ -1031,8 +1031,8 @@ _ext_constant_initial_year_working_time_variation_sp = ExtConstant(
     depends_on={
         "hours_worked": 1,
         "unit_conversion_hours_mhours": 1,
-        "wage_hour": 1,
         "unit_conversion_dollars_mdollars": 1,
+        "wage_hour": 1,
     },
 )
 def labour_compensation():
@@ -1283,9 +1283,9 @@ _ext_constant_limit_upper_bound_annual_growth_wages_sp = ExtConstant(
         "constant_participation_rate": 1,
         "beta_participation_rate": 1,
         "delayed_ts_unemployment_rate": 1,
-        "epsilon_participation_rate": 1,
         "delayed_ts_wage_hour_total": 1,
         "delayed_ts_consumer_price_index": 1,
+        "epsilon_participation_rate": 1,
         "price_transformation": 1,
     },
 )

@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     depends_on={
         "world_material_footprint": 2,
         "pb_material_footprint": 2,
-        "sdi_co2_emissions": 2,
         "pb_co2": 2,
+        "sdi_co2_emissions": 2,
     },
 )
 def ao_sdi():

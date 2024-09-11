@@ -101,9 +101,9 @@ def aux_shortage_crops():
     depends_on={
         "time": 1,
         "time_historical_data_land_module": 1,
-        "land_products_demanded_world": 2,
         "mask_crops": 2,
         "land_products_available_all_regions": 2,
+        "land_products_demanded_world": 2,
     },
 )
 def availability_of_crops():
@@ -359,9 +359,9 @@ def factor_of_minimum_crops():
     depends_on={
         "time": 1,
         "time_historical_data_land_module": 1,
-        "land_products_demanded_world": 4,
         "mask_crops": 2,
         "land_products_available_all_regions": 2,
+        "land_products_demanded_world": 4,
     },
 )
 def gap_availability_of_crops():
@@ -1975,8 +1975,8 @@ def land_products_available_from_croplands():
     depends_on={
         "ratio_shortage_of_crops": 4,
         "factor_of_maximum_crops": 1,
-        "parameter_of_crop_share_change": 1,
         "factor_of_minimum_crops": 1,
+        "parameter_of_crop_share_change": 1,
     },
 )
 def matrix_of_changes_of_crops_all_managements():
@@ -2021,9 +2021,9 @@ def matrix_of_changes_of_crops_all_managements():
     comp_subtype="Normal",
     depends_on={
         "ratio_shortage_of_crops": 4,
-        "parameter_of_crop_share_change": 1,
         "factor_minimum_irrigated": 1,
         "factor_maximum_irrigated": 1,
+        "parameter_of_crop_share_change": 1,
     },
 )
 def matrix_of_changes_of_irrigated_crops():
@@ -2069,8 +2069,8 @@ def matrix_of_changes_of_irrigated_crops():
     depends_on={
         "ratio_shortage_of_crops": 4,
         "factor_minimum_rainfed": 1,
-        "parameter_of_crop_share_change": 1,
         "factor_maximum_rainfed_crops": 1,
+        "parameter_of_crop_share_change": 1,
     },
 )
 def matrix_of_changes_of_rainfed_crops():
@@ -2171,8 +2171,8 @@ def ratio_shortage_of_crops():
     comp_subtype="Normal",
     depends_on={
         "switch_separate_irrigated_rainfed": 1,
-        "share_of_residuals_from_crops": 2,
         "crops_available_all_managements": 1,
+        "share_of_residuals_from_crops": 2,
         "rainfed_crops_available_by_region": 1,
         "irrigated_crops_available_by_region": 1,
     },

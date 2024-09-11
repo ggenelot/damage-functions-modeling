@@ -222,9 +222,9 @@ def emigration_distribution():
         "time": 2,
         "population_by_cohorts": 2,
         "historic_emigrations_rate": 1,
-        "percentage_emigrations_sp": 1,
         "switch_migration_sp": 1,
         "start_year_migrations_sp": 1,
+        "percentage_emigrations_sp": 1,
     },
 )
 def emigrations():
@@ -335,8 +335,8 @@ def fertility_rates():
     depends_on={
         "time": 2,
         "historical_gender_birth_ratio_2005_2010": 1,
-        "historical_gender_birth_ratio_2010_2015": 1,
         "historical_gender_birth_ratio_2015_2020": 1,
+        "historical_gender_birth_ratio_2010_2015": 1,
     },
 )
 def gender_birth():
@@ -713,9 +713,9 @@ def population_variation():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
-        "time": 2,
-        "target_year_fertility_rates_sp": 2,
         "slope_scenario_fertility_rates": 2,
+        "target_year_fertility_rates_sp": 2,
+        "time": 2,
     },
 )
 def ramp_scenario_fertility_rates():
@@ -772,8 +772,8 @@ def retired_population():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_fertility_rates": 1,
-        "target_year_fertility_rates_sp": 1,
         "historical_fertility_rates_2015_2020": 1,
+        "target_year_fertility_rates_sp": 1,
         "target_scenario_fertility_rates": 1,
     },
 )

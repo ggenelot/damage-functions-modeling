@@ -680,8 +680,8 @@ _integ_fe_cumulative_mining = Integ(
         "switch_eco2mat_fe_demand": 1,
         "switch_materials": 1,
         "imv_fe_mining_historical": 1,
-        "output_real": 1,
         "implicit_price_fe": 1,
+        "output_real": 1,
     },
 )
 def fe_demand():
@@ -2364,8 +2364,8 @@ def fe_scrap_losses_aux():
     comp_subtype="Normal",
     depends_on={
         "fe_society_out": 3,
-        "imv_mncrni_recycled_1": 1,
         "imv_ss_mncrni_fraction_recycled_to_stainless_steel": 1,
+        "imv_mncrni_recycled_1": 1,
     },
 )
 def fe_scrapping():

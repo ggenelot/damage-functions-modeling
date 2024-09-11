@@ -212,7 +212,7 @@ for index, run in runs.iterrows():
 
 current_datetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 message = f"\n Executed run {index} at {current_datetime}"
-file_path = "output.txt"
+file_path = "log.txt"
 
 with open(file_path, "w") as file:
         file.write(message)
