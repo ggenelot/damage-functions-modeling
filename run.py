@@ -82,7 +82,7 @@ runs = pd.read_csv('run_manager.csv')
 forcing = pd.read_csv('full_rcp.csv')
 
 # Run the model a first time to initialize the dataset
-output_ds_path = 'results/final.nc'
+output_ds_path = 'results/final_test.nc'
 
 initial_time = 2005
 final_time = 2070
@@ -200,13 +200,13 @@ for index, run in runs.iterrows():
                 
         except:      
                 try: 
-                        variable_name = run.columns.to_list()[i].strip()
+                        variable_name = run_result.columns.to_list()[i].strip()
                         variable_copy = ds[variable_name].copy()
-                        variable_copy.loc[dict(Run = index)] = run[variable_name].values
+                        variable_copy.loc[dict(Run = index)] = run_result[variable_name].values
                         ds[variable_name] = variable_copy
                         print(f"NO REGION - Added variable {variable_name} to the dataset.")
                 except:
-                        print(f'FAILED to add variable {run.columns.to_list()[i]}')
+                        print(f'FAILED to add variable {run_result.columns.to_list()[i]}')
 
 # Add a message to a text file
 
