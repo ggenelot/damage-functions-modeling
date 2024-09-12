@@ -1485,8 +1485,13 @@ def al_price():
     depends_on={
         "time": 1,
         "initial_al_price": 1,
+<<<<<<< HEAD
         "al_available_delayed": 2,
         "maximum_al_price": 1,
+=======
+        "maximum_al_price": 1,
+        "al_available_delayed": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "al_demand": 2,
         "coefficients_al_price_economy": 3,
     },
@@ -2336,8 +2341,8 @@ def decrease_al_profit():
     comp_subtype="Normal",
     depends_on={
         "switch_al_recycling_policy": 1,
-        "al_scrapped_metal": 2,
         "al_eol_recycling_rate_sp": 1,
+        "al_scrapped_metal": 2,
         "al_recycling_drive_scaling": 1,
     },
 )
@@ -2548,8 +2553,8 @@ _ext_data_historical_al_price = ExtData(
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "initial_output_real_materials": 2,
         "al_demand_historical_world_7": 1,
+        "initial_output_real_materials": 2,
         "al_demand_base_year": 1,
     },
 )

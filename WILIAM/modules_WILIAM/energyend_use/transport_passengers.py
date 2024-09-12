@@ -335,7 +335,7 @@ def buses_transport_demand_urban_income5():
         "BATTERY VEHICLES I",
         "HOUSEHOLDS I",
     ],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"desired_passenger_vehicle_distance": 3, "autonomy_ev_vehicles": 3},
 )
@@ -613,6 +613,10 @@ def desired_passenger_transport_demand_per_capita():
         "private_passenger_vehicle_fleet": 1,
         "load_factor_private_passenger_transport": 1,
         "public_passenger_vehicle_fleet": 1,
+<<<<<<< HEAD
+=======
+        "maximum_load_factor": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "load_factor_public_passenger_transport": 1,
         "max_vehicle_distance": 1,
         "maximum_load_factor": 1,
@@ -762,7 +766,7 @@ def energy_passenger_transport_consumption():
         "PASSENGERS TRANSPORT MODE I",
         "HOUSEHOLDS I",
     ],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"energy_passenger_transport_consumption": 10, "share_elec_in_phev": 2},
 )
@@ -1082,7 +1086,7 @@ def global_bev_and_phev_ldv_sales():
         "PRIVATE TRANSPORT I",
         "HOUSEHOLDS I",
     ],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"initial_passengers_private_fleet": 3},
 )
@@ -1780,7 +1784,7 @@ def initial_public_passenger_vehicle_fleet():
         "PUBLIC TRANSPORT I",
         "HOUSEHOLDS I",
     ],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"initial_passengers_public_fleet": 1},
 )
@@ -1906,7 +1910,7 @@ def ldv_transport_demand_dense_hh():
         "PASSENGERS TRANSPORT MODE I",
         "HOUSEHOLDS I",
     ],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "mileage_vehicles": 10,
@@ -2431,9 +2435,15 @@ def load_factor_private_passenger_transport():
     comp_subtype="Normal",
     depends_on={
         "switch_load_factor_change_sp": 2,
+<<<<<<< HEAD
         "year_final_load_factor_change_sp": 2,
         "objective_load_factor_change_sp": 1,
         "year_initial_load_factor_change_sp": 3,
+=======
+        "objective_load_factor_change_sp": 1,
+        "year_initial_load_factor_change_sp": 3,
+        "year_final_load_factor_change_sp": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "time": 2,
         "initial_load_factor_passengers_vehicles": 1,
     },
@@ -2812,7 +2822,7 @@ def modal_split_bus():
 @component.add(
     name="modal split exc LDV",
     subscripts=["REGIONS 35 I", "PASSENGERS TRANSPORT MODE I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "passenger_transport_modal_share_by_power_train": 1,
@@ -2911,6 +2921,7 @@ def modal_split_exc_ldv_adjusted():
         "initial_price_coicop": 1,
         "sigma_public_transport": 1,
         "price_coicop": 1,
+        "sigma_public_transport": 1,
     },
 )
 def modal_split_public():
@@ -2958,8 +2969,13 @@ def modal_split_rail():
         "private_passenger_vehicle_fleet": 10,
         "factor_passengers_private_fleet": 5,
         "bev_switch_policy": 2,
+<<<<<<< HEAD
         "year_initial_passenger_transport_share_sp": 2,
         "time": 2,
+=======
+        "time": 2,
+        "year_initial_passenger_transport_share_sp": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def new_passenger_private_vehicles():
@@ -3281,8 +3297,13 @@ def occupancy_rate():
     depends_on={
         "desired_passengers_transport_demand_by_mode_power_train_and_type_of_households": 2,
         "initial_passengers_vehicle_distance": 2,
+<<<<<<< HEAD
         "load_factor_public_passenger_transport": 1,
         "maximum_load_factor": 1,
+=======
+        "maximum_load_factor": 1,
+        "load_factor_public_passenger_transport": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "load_factor_private_passenger_transport": 1,
     },
 )
@@ -3353,13 +3374,17 @@ def passenger_transport_baseline():
     name="passenger transport demand corrected by GDPpc",
     units="km*person",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "switch_nrg_dynamic_transport_demand": 1,
         "desired_passenger_transport_demand": 1,
-        "exo_gdppc_spain": 1,
         "population_35_regions": 1,
+        "exo_gdppc_spain": 1,
+<<<<<<< HEAD
+        "population_35_regions": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "initial_passenger_transport_demand_per_capita_by_gdppc": 1,
     },
 )
@@ -3496,6 +3521,7 @@ def passenger_transport_fuel_consumption_efficiency():
     comp_subtype="Normal",
     depends_on={
         "switch_fuel_consumption_efficiency_change_sp": 2,
+        "year_initial_fuel_consumption_efficiency_change_sp": 3,
         "objective_fuel_consumption_efficiency_change_sp": 1,
         "year_initial_fuel_consumption_efficiency_change_sp": 3,
         "year_final_fuel_consumption_efficiency_change_sp": 2,
@@ -3575,12 +3601,21 @@ def passenger_transport_ghg_emissions():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_passenger_transport_demand_modal_share": 1,
+<<<<<<< HEAD
         "year_initial_passenger_transport_share_sp": 2,
         "year_final_passenger_transport_share_sp": 2,
         "switch_passenger_transport_modal_share_sp": 1,
         "target_passenger_transport_modal_share_by_power_train": 1,
         "passenger_transport_baseline": 3,
         "time": 1,
+=======
+        "time": 1,
+        "target_passenger_transport_modal_share_by_power_train": 1,
+        "passenger_transport_baseline": 3,
+        "switch_passenger_transport_modal_share_sp": 1,
+        "year_final_passenger_transport_share_sp": 2,
+        "year_initial_passenger_transport_share_sp": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def passenger_transport_modal_share_by_power_train():
@@ -4111,11 +4146,20 @@ def real_load_factor():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_reduction_passenger_transport_demand": 1,
+<<<<<<< HEAD
+=======
+        "objective_reduction_passenger_transport_demand_sp": 1,
+        "time": 2,
+        "switch_reduction_passenger_transport_demand_sp": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "year_final_reduction_passenger_transport_demand_sp": 2,
         "switch_reduction_passenger_transport_demand_sp": 2,
         "year_initial_reduction_passenger_transport_demand_sp": 3,
+<<<<<<< HEAD
         "objective_reduction_passenger_transport_demand_sp": 1,
         "time": 2,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def reduction_passenger_transport_demand():
@@ -4184,8 +4228,13 @@ def reduction_passenger_transport_demand():
     comp_subtype="Normal",
     depends_on={
         "trend_bev_bus": 1,
+<<<<<<< HEAD
         "initial_price_of_output": 2,
         "sigma_fuel_bus": 1,
+=======
+        "sigma_fuel_bus": 1,
+        "initial_price_of_output": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "delayed_ts_price_output": 2,
         "sigma_elect_bus": 1,
     },
@@ -4223,8 +4272,8 @@ def share_bev_bus():
     comp_subtype="Normal",
     depends_on={
         "trend_bev_ldv": 1,
-        "initial_price_coicop": 2,
         "sigma_fuel_ldv": 1,
+        "initial_price_coicop": 2,
         "price_coicop": 2,
         "sigma_elect_ldv": 1,
     },
@@ -4566,7 +4615,7 @@ def share_technologies_passenger_transport():
         "TRANSPORT POWER TRAIN I",
         "PASSENGERS TRANSPORT MODE I",
     ],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "base_share_technologies_passenger_transport": 1,
@@ -5035,7 +5084,7 @@ _smooth_smooth_wear_passenger_public_vehicles_mod_factor = Smooth(
         "TRANSPORT POWER TRAIN I",
         "PASSENGERS TRANSPORT MODE I",
     ],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"base_share_technologies_passenger_transport": 6},
 )
@@ -5719,7 +5768,7 @@ def total_energy_consumption_passenger_transport():
     name="total new number EV vehicles",
     units="vehicles",
     subscripts=["REGIONS 35 I", "TRANSPORT POWER TRAIN I", "BATTERY VEHICLES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "new_passenger_public_vehicles": 1,
@@ -5789,7 +5838,7 @@ def total_new_number_ev_vehicles():
     name="total number electrified vehicles",
     units="vehicles",
     subscripts=["REGIONS 35 I", "TRANSPORT POWER TRAIN I", "TRANSPORT MODE I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "private_passenger_vehicle_fleet": 6,
@@ -5935,7 +5984,7 @@ def total_number_electrified_vehicles():
     name="total number EV vehicles",
     units="vehicles",
     subscripts=["REGIONS 35 I", "TRANSPORT POWER TRAIN I", "BATTERY VEHICLES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "public_passenger_vehicle_fleet": 1,
@@ -6079,9 +6128,15 @@ def total_passenger_transport_demand_by_region():
     depends_on={
         "switch_nrg_hh_transport_disaggregated": 1,
         "passenger_transport_demand_corrected_by_gdppc": 1,
+<<<<<<< HEAD
         "exo_total_transport_demand_by_region_and_type_of_hh": 1,
         "switch_energy": 1,
         "desired_transport_demand": 1,
+=======
+        "desired_transport_demand": 1,
+        "exo_total_transport_demand_by_region_and_type_of_hh": 1,
+        "switch_energy": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def total_passenger_transport_demand_by_region_and_type_of_household():

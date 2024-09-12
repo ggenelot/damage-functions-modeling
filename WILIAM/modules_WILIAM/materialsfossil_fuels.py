@@ -313,9 +313,15 @@ def coal_price_historical_t():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_coal_price": 1,
+<<<<<<< HEAD
         "estimated_coal_price_with_tax": 1,
         "price_transformation": 1,
         "coal_base_price_2015": 1,
+=======
+        "coal_base_price_2015": 1,
+        "price_transformation": 1,
+        "estimated_coal_price_with_tax": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def coal_price_index_economy():
@@ -1350,6 +1356,7 @@ def estimated_coal_price_with_tax():
         "estimated_gas_price_variation": 1,
         "switch_gas_price_growth_limit": 1,
         "delayed_estimated_gas_price": 1,
+        "switch_gas_price_growth_limit": 1,
     },
 )
 def estimated_gas_price():
@@ -1418,8 +1425,8 @@ def estimated_gas_price_variation():
         "time": 1,
         "initial_year_tax_rate_on_extraction_of_resources_sp": 1,
         "switch_tax_rate_on_extraction_of_resources_sp": 1,
-        "estimated_gas_price": 3,
         "tax_rate_on_extraction_of_resources_sp": 1,
+        "estimated_gas_price": 3,
     },
 )
 def estimated_gas_price_with_tax():
@@ -1450,9 +1457,15 @@ def estimated_gas_price_with_tax():
     depends_on={
         "time": 1,
         "first_estimated_oil_price": 2,
+<<<<<<< HEAD
         "switch_oil_price_growth_limit": 1,
         "delayed_estimated_oil_price": 1,
         "estimated_oil_price_variation": 1,
+=======
+        "estimated_oil_price_variation": 1,
+        "delayed_estimated_oil_price": 1,
+        "switch_oil_price_growth_limit": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def estimated_oil_price():
@@ -1517,8 +1530,8 @@ def estimated_oil_price_variation():
         "time": 1,
         "initial_year_tax_rate_on_extraction_of_resources_sp": 1,
         "switch_tax_rate_on_extraction_of_resources_sp": 1,
-        "estimated_oil_price": 3,
         "tax_rate_on_extraction_of_resources_sp": 1,
+        "estimated_oil_price": 3,
     },
 )
 def estimated_oil_price_with_tax():
@@ -1699,9 +1712,15 @@ def extraction_of_oil():
     depends_on={
         "select_gas_price_oil_link_sp": 1,
         "time": 1,
+<<<<<<< HEAD
         "estimated_oil_price": 1,
         "coefficients_estimated_price_gas": 3,
         "gas_extraction_capacity_excluding_spare_capacity": 2,
+=======
+        "gas_extraction_capacity_excluding_spare_capacity": 2,
+        "coefficients_estimated_price_gas": 3,
+        "estimated_oil_price": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "coefficients_estimated_price_gas_after_2020": 2,
     },
 )
@@ -1934,6 +1953,7 @@ _ext_data_gas_price_historical = ExtData(
     depends_on={
         "switch_mat2eco_gas_price": 1,
         "gas_base_price_2015": 1,
+        "price_transformation": 1,
         "estimated_gas_price_with_tax": 1,
         "price_transformation": 1,
     },
@@ -2746,10 +2766,17 @@ _ext_constant_initial_coal_reserves = ExtConstant(
         "select_hard_coal_resource_estimation_sp": 3,
         "hard_coal_resource_estimation_low_sp": 1,
         "hard_coal_resource_estimation_med_sp": 1,
+<<<<<<< HEAD
         "hard_coal_resource_estimation_high_sp": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "brown_coal_resource_estimation_low_sp": 1,
         "brown_coal_resource_estimation_med_sp": 1,
         "brown_coal_resource_estimation_high_sp": 1,
+<<<<<<< HEAD
+=======
+        "brown_coal_resource_estimation_med_sp": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "select_brown_coal_resource_estimation_sp": 3,
     },
 )
@@ -2849,9 +2876,13 @@ _ext_constant_initial_gas_reserves = ExtConstant(
     depends_on={
         "select_gas_resource_estimation_sp": 3,
         "gas_resource_estimation_low_sp": 1,
+<<<<<<< HEAD
         "gas_resource_estimation_med_sp": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "gas_resource_estimation_high_sp": 1,
         "gas_resource_estimation_user_defined_sp": 1,
+        "gas_resource_estimation_med_sp": 1,
     },
 )
 def initial_gas_resource():
@@ -3011,11 +3042,15 @@ _ext_constant_initial_oil_reserves_2005 = ExtConstant(
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_oil_resource": 1,
-        "oil_resource_estimation_med_sp": 1,
         "oil_resource_estimation_user_defined_sp": 1,
+<<<<<<< HEAD
         "oil_resource_estimation_high_sp": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "select_oil_resource_estimation_sp": 3,
         "oil_resource_estimation_low_sp": 1,
+        "oil_resource_estimation_high_sp": 1,
+        "oil_resource_estimation_med_sp": 1,
     },
 )
 def initial_oil_resources():
@@ -4048,6 +4083,7 @@ def oil_demand_per_day():
         "time": 1,
         "initial_spare_capacity": 1,
         "oil_available_daily_without_opec_spare_cap": 1,
+        "oil_demand_per_day": 1,
         "coefficient_maximum_oil_price": 1,
         "oil_demand_per_day": 1,
     },
@@ -4509,8 +4545,8 @@ _ext_data_oil_price_historical_bbl = ExtData(
         "switch_mat2eco_oil_price": 1,
         "oil_price_jump_look_up": 1,
         "oil_base_price_2006": 1,
-        "estimated_oil_price_with_tax": 1,
         "price_transformation": 1,
+        "estimated_oil_price_with_tax": 1,
     },
 )
 def oil_price_index_economy():
@@ -4834,6 +4870,7 @@ _ext_constant_oil_well_investment_cap = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "select_opec_scenario_fossil_fuel_paper_sp": 1,
+<<<<<<< HEAD
         "oil_demand_per_day": 4,
         "delayed_estimated_oil_price": 2,
         "oil_max_daily": 4,
@@ -4842,6 +4879,16 @@ _ext_constant_oil_well_investment_cap = ExtConstant(
         "select_opec_target_price": 6,
         "coeffiecients_opec_spare_cap": 12,
         "time": 5,
+=======
+        "select_opec_target_price": 6,
+        "time": 5,
+        "coeffiecients_opec_spare_cap": 12,
+        "set_opec_spare_capacity_before_and_after_scenario_sp": 2,
+        "delayed_estimated_oil_price": 2,
+        "set_opec_spare_capacity_sp": 1,
+        "oil_max_daily": 4,
+        "oil_demand_per_day": 4,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def opec_spare_cap():
@@ -5563,6 +5610,7 @@ _ext_constant_tax_rate_on_extraction_of_resources_sp = ExtConstant(
         "estimated_oil_price": 1,
         "estimated_oil_price_with_tax": 1,
         "unit_conversion_dollars_mdollars": 2,
+<<<<<<< HEAD
         "total_gas_extracted": 1,
         "estimated_gas_price_with_tax": 1,
         "estimated_gas_price": 1,
@@ -5571,6 +5619,16 @@ _ext_constant_tax_rate_on_extraction_of_resources_sp = ExtConstant(
         "unit_conversion_mdollarmt_dollart": 1,
         "coal_extraction_in_mt": 1,
         "estimated_coal_price": 1,
+=======
+        "unit_conversion_mmbtu_ej": 1,
+        "total_gas_extracted": 1,
+        "estimated_gas_price_with_tax": 1,
+        "estimated_gas_price": 1,
+        "estimated_coal_price": 1,
+        "unit_conversion_mdollarmt_dollart": 1,
+        "coal_extraction_in_mt": 1,
+        "estimated_coal_price_with_tax": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def tax_revenue_from_hydrocarbons():
@@ -5614,8 +5672,12 @@ def tax_revenue_from_hydrocarbons():
         "cu_market_sales": 1,
         "cu_price_economy": 1,
         "estimated_price_with_tax_metals": 4,
-        "al_price_economy": 1,
         "al_market_sales": 1,
+<<<<<<< HEAD
+=======
+        "al_price_economy": 1,
+        "fe_price_economy": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "fe_market_sales": 1,
         "fe_price_economy": 1,
         "ni_market_sales": 1,

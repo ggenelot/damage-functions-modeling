@@ -8,6 +8,7 @@ import numpy as np
 import xarray as xr
 
 from pysd.py_backend.functions import (
+<<<<<<< HEAD
     active_initial,
     vector_sort_order,
     vector_select,
@@ -36,6 +37,36 @@ from pysd.py_backend.statefuls import (
 )
 from pysd.py_backend.external import ExtLookup, ExtConstant, ExtData
 from pysd.py_backend.utils import load_modules, load_model_data
+=======
+    vector_sort_order,
+    modulo,
+    step,
+    prod,
+    vector_select,
+    ramp,
+    xidz,
+    sum,
+    integer,
+    vmax,
+    vector_reorder,
+    get_time_value,
+    invert_matrix,
+    if_then_else,
+    active_initial,
+    zidz,
+    vmin,
+)
+from pysd.py_backend.statefuls import (
+    Smooth,
+    SampleIfTrue,
+    Delay,
+    DelayFixed,
+    Initial,
+    Integ,
+)
+from pysd.py_backend.external import ExtConstant, ExtData, ExtLookup
+from pysd.py_backend.utils import load_model_data, load_modules
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
 from pysd.py_backend.allocation import allocate_available, allocate_by_priority
 from pysd import Component
 
@@ -733,11 +764,11 @@ _ext_constant_initial_passenger_transport_demand_share_exogenous.add(
         "time": 4,
         "initial_year_model_explorer": 7,
         "initial_passenger_transport_demand_share_exogenous": 7,
-        "select_passenger_transport_demand_modal_share_me": 3,
+        "final_year_model_explorer": 6,
         "scenario_passenger_transport_demand_modal_share_option_1_me": 1,
+        "select_passenger_transport_demand_modal_share_me": 3,
         "scenario_passenger_transport_demand_modal_share_option_2_me": 1,
         "scenario_passenger_transport_demand_modal_share_option_3_me": 1,
-        "final_year_model_explorer": 6,
     },
 )
 def model_explorer_passenger_transport_demand_modal_share():
@@ -818,11 +849,19 @@ def model_explorer_passenger_transport_demand_modal_share():
     depends_on={
         "time": 4,
         "initial_year_model_explorer": 7,
+<<<<<<< HEAD
         "scenario_passenger_transport_demand_option_1_me": 1,
         "scenario_passenger_transport_demand_option_3_me": 1,
         "select_reduction_passenger_transport_demand_me": 3,
         "final_year_model_explorer": 6,
         "scenario_passenger_transport_demand_option_2_me": 1,
+=======
+        "final_year_model_explorer": 6,
+        "scenario_passenger_transport_demand_option_1_me": 1,
+        "select_reduction_passenger_transport_demand_me": 3,
+        "scenario_passenger_transport_demand_option_2_me": 1,
+        "scenario_passenger_transport_demand_option_3_me": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def model_explorer_reduction_passenger_transport_demand():

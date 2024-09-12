@@ -7,13 +7,17 @@ Translated using PySD version 3.14.0
     name="change technical coefficients",
     units="DMNL",
     subscripts=["REGIONS 36 I", "SECTORS I", "SECTORS MAP I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "time": 5,
+<<<<<<< HEAD
         "switch_nrg2eco_a_matrix_energy_intensities": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "switch_economy": 5,
         "energy_intensities_variation_economic_module_classification": 1,
+        "switch_nrg2eco_a_matrix_energy_intensities": 1,
         "switch_mat2eco_a_matrix_material_intensity": 4,
         "material_intensities_variation": 4,
     },
@@ -172,7 +176,11 @@ _delayfixed_delayed_ts_2_final_energy_intensities_by_sector_and_fe = DelayFixed(
     units="TJ/million$/Year",
     subscripts=["REGIONS 35 I", "SECTORS I", "NRG FE I"],
     comp_type="Stateful, Constant",
+<<<<<<< HEAD
     comp_subtype="Normal, DelayFixed",
+=======
+    comp_subtype="DelayFixed, Normal",
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     depends_on={"_delayfixed_delayed_ts_final_energy_intensities_by_sector_and_fe": 1},
     other_deps={
         "_delayfixed_delayed_ts_final_energy_intensities_by_sector_and_fe": {
@@ -336,7 +344,7 @@ _delayfixed_delayed_ts_total_intermediate_exports_real = DelayFixed(
     name="energy intensities variation economic module classification",
     units="DMNL",
     subscripts=["REGIONS 35 I", "SECTORS FINAL ENERGY I", "SECTORS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"energy_intensity_variation": 6},
 )

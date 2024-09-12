@@ -23,9 +23,15 @@ def initial_water_available_hm3():
     comp_subtype="Normal",
     depends_on={
         "switch_landwater": 1,
+<<<<<<< HEAD
         "first_factor_water_equation": 2,
         "second_factor_water_equation": 2,
         "global_temperature_change_2015": 1,
+=======
+        "global_temperature_change_2015": 1,
+        "second_factor_water_equation": 2,
+        "first_factor_water_equation": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "temperature_change": 1,
     },
 )

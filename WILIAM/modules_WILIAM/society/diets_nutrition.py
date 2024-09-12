@@ -31,8 +31,13 @@ def daily_nutritional_energy_intake():
     comp_subtype="Normal",
     depends_on={
         "diet_after_food_losses": 1,
+<<<<<<< HEAD
         "unit_conversion_days_year": 1,
         "unit_conversion_g_kg": 1,
+=======
+        "unit_conversion_g_kg": 1,
+        "unit_conversion_days_year": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "kcal_in_edible_portion_by_100_g": 1,
         "food_composition_table_energy": 1,
     },
@@ -60,8 +65,13 @@ def daily_nutritional_intake_energy_by_food_product():
     comp_subtype="Normal",
     depends_on={
         "diet_after_food_losses": 1,
+<<<<<<< HEAD
         "unit_conversion_days_year": 1,
         "unit_conversion_g_kg": 1,
+=======
+        "unit_conversion_g_kg": 1,
+        "unit_conversion_days_year": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "edible_portion_by_100_g": 1,
         "food_composition_table_mass": 1,
     },

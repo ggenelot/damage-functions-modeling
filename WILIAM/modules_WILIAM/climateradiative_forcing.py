@@ -10,9 +10,14 @@ Translated using PySD version 3.14.0
     comp_subtype="Normal",
     depends_on={
         "other_forcings": 1,
+<<<<<<< HEAD
         "last_historical_rf_year": 1,
         "mineral_aerosols_and_land_rf": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "time": 1,
+        "last_historical_rf_year": 1,
+        "mineral_aerosols_and_land_rf": 1,
     },
 )
 def adjusted_other_forcings():
@@ -34,12 +39,21 @@ def adjusted_other_forcings():
     depends_on={
         "ch4_n2o_interaction_coeffient": 1,
         "ch4_n2o_inter_coef_3": 1,
+<<<<<<< HEAD
         "ch4_n20_inter_exp": 1,
         "ch4_atm_conc": 3,
         "n2o_reference_conc": 2,
         "ch4_n2o_unit_adj": 5,
         "ch4_n20_inter_exp_2": 1,
         "ch4_n2o_inter_coef_2": 1,
+=======
+        "ch4_atm_conc": 3,
+        "ch4_n2o_inter_coef_2": 1,
+        "ch4_n2o_unit_adj": 5,
+        "ch4_n20_inter_exp_2": 1,
+        "ch4_n20_inter_exp": 1,
+        "n2o_reference_conc": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def adjustment_for_ch4_and_n2o_ref():
@@ -76,6 +90,7 @@ def adjustment_for_ch4_and_n2o_ref():
     comp_subtype="Normal",
     depends_on={
         "ch4_n2o_interaction_coeffient": 1,
+<<<<<<< HEAD
         "ch4_n2o_inter_coef_3": 1,
         "ch4_reference_conc": 3,
         "ch4_n20_inter_exp": 1,
@@ -83,6 +98,15 @@ def adjustment_for_ch4_and_n2o_ref():
         "n2o_atm_conc": 2,
         "ch4_n20_inter_exp_2": 1,
         "ch4_n2o_inter_coef_2": 1,
+=======
+        "n2o_atm_conc": 2,
+        "ch4_n2o_inter_coef_3": 1,
+        "ch4_n2o_inter_coef_2": 1,
+        "ch4_n2o_unit_adj": 5,
+        "ch4_n20_inter_exp_2": 1,
+        "ch4_n20_inter_exp": 1,
+        "ch4_reference_conc": 3,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def adjustment_for_ch4_ref_and_n2o():
@@ -120,12 +144,21 @@ def adjustment_for_ch4_ref_and_n2o():
     depends_on={
         "ch4_n2o_interaction_coeffient": 1,
         "ch4_n2o_inter_coef_3": 1,
+<<<<<<< HEAD
         "ch4_reference_conc": 3,
         "ch4_n20_inter_exp": 1,
         "n2o_reference_conc": 2,
         "ch4_n2o_unit_adj": 5,
         "ch4_n20_inter_exp_2": 1,
         "ch4_n2o_inter_coef_2": 1,
+=======
+        "ch4_n2o_inter_coef_2": 1,
+        "ch4_n2o_unit_adj": 5,
+        "ch4_n20_inter_exp_2": 1,
+        "ch4_n20_inter_exp": 1,
+        "ch4_reference_conc": 3,
+        "n2o_reference_conc": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def adjustment_for_ch4ref_and_n2oref():
@@ -178,9 +211,13 @@ def ch4_and_n2o_radiative_forcing():
         "ch4_radiative_efficiency_coefficient": 1,
         "ch4_atm_conc": 1,
         "ch4_n2o_unit_adj": 2,
+<<<<<<< HEAD
         "ch4_reference_conc": 1,
         "adjustment_for_ch4_and_n2o_ref": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "adjustment_for_ch4ref_and_n2oref": 1,
+        "adjustment_for_ch4_and_n2o_ref": 1,
     },
 )
 def ch4_radiative_forcing():
@@ -292,9 +329,15 @@ def hfc_rf_total():
         "n2o_radiative_efficiency_coefficient": 1,
         "ch4_n2o_unit_adj": 2,
         "n2o_atm_conc": 1,
+<<<<<<< HEAD
         "n2o_reference_conc": 1,
         "adjustment_for_ch4_ref_and_n2o": 1,
+=======
+        "ch4_n2o_unit_adj": 2,
+        "n2o_reference_conc": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "adjustment_for_ch4ref_and_n2oref": 1,
+        "adjustment_for_ch4_ref_and_n2o": 1,
     },
 )
 def n2o_radiative_forcing():

@@ -139,10 +139,17 @@ def change_capital_productivity():
         "switch_climate_change_damage": 1,
         "switch_eco_climate_change_damage_capital": 1,
         "switch_eco_investment": 1,
+<<<<<<< HEAD
         "real_capital_stock": 1,
         "climate_change_incremental_damage_rate_to_capital_stock_extrapolations_included": 1,
         "select_climate_change_impacts_sensitivity_sp": 1,
         "climate_change_incremental_damage_rate_to_capital_stock": 1,
+=======
+        "climate_change_incremental_damage_rate_to_capital_stock_extrapolations_included": 1,
+        "climate_change_incremental_damage_rate_to_capital_stock": 1,
+        "select_climate_change_impacts_sensitivity_sp": 1,
+        "real_capital_stock": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def climate_change_damage_on_capital_stock():
@@ -226,8 +233,13 @@ def climate_change_incremental_damage_rate_to_capital_stock_extrapolations_inclu
     depends_on={
         "switch_eco_investment": 1,
         "consumption_fixed_capital_real": 2,
+<<<<<<< HEAD
         "price_transformation": 2,
         "initial_price_gfcf": 1,
+=======
+        "initial_price_gfcf": 1,
+        "price_transformation": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "mdollars_per_mdollars_2015": 2,
         "price_gfcf": 1,
     },
@@ -449,11 +461,19 @@ _sampleiftrue_government_gross_fixed_capital_formation_real_until_2015 = SampleI
     comp_subtype="Normal",
     depends_on={
         "switch_eco_investment": 1,
+<<<<<<< HEAD
         "initial_price_of_output": 1,
         "mdollars_per_mdollars_2015": 2,
         "price_transformation": 2,
         "gross_fixed_capital_formation_real": 2,
         "gross_fixed_capital_formation_structure": 2,
+=======
+        "gross_fixed_capital_formation_structure": 2,
+        "price_transformation": 2,
+        "gross_fixed_capital_formation_real": 2,
+        "initial_price_of_output": 1,
+        "mdollars_per_mdollars_2015": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "price_output": 1,
     },
 )
@@ -493,10 +513,16 @@ def gross_fixed_capital_formation_by_good():
     depends_on={
         "switch_eco_investment": 2,
         "capital_depreciation": 3,
+<<<<<<< HEAD
         "private_gfcf_to_replace_climate_damage": 3,
         "government_gross_fixed_capital_formation_real_until_2015": 1,
         "inital_private_gfcf_to_total_gfcf": 3,
+=======
+        "government_gross_fixed_capital_formation_real_until_2015": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "desired_private_net_fixed_capital_formation_real": 3,
+        "private_gfcf_to_replace_climate_damage": 3,
+        "inital_private_gfcf_to_total_gfcf": 3,
         "government_gross_fixed_capital_formation_real": 2,
         "switch_economy": 1,
         "switch_nrg2eco_investment_costs": 1,
@@ -656,9 +682,15 @@ _ext_constant_initial_year_capital_productivity_variation_sp = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "time": 1,
+<<<<<<< HEAD
         "initial_capital_stock": 3,
         "initial_total_gross_fixed_capital_formation_real": 3,
         "initial_consumption_fixed_capital_real": 3,
+=======
+        "initial_consumption_fixed_capital_real": 3,
+        "initial_capital_stock": 3,
+        "initial_total_gross_fixed_capital_formation_real": 3,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def net_fixed_capital_formation_to_desired_real_capital():
@@ -700,7 +732,7 @@ def net_fixed_capital_formation_to_desired_real_capital():
     name="private GFCF to replace climate damage",
     units="Mdollars 2015/Year",
     subscripts=["REGIONS 35 I", "SECTORS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"climate_change_damage_on_capital_stock": 1},
 )
@@ -734,8 +766,13 @@ def private_gfcf_to_replace_climate_damage():
     depends_on={
         "switch_eco_investment": 1,
         "climate_change_damage_on_capital_stock": 2,
+<<<<<<< HEAD
         "price_transformation": 2,
         "initial_price_gfcf": 1,
+=======
+        "initial_price_gfcf": 1,
+        "price_transformation": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "mdollars_per_mdollars_2015": 2,
         "price_gfcf": 1,
     },

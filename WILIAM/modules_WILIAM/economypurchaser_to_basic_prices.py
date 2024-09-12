@@ -147,6 +147,12 @@ def final_demand_domestic_basic_prices():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
+<<<<<<< HEAD
+=======
+        "final_demand_domestic_basic_prices": 2,
+        "price_transformation": 2,
+        "mdollars_per_mdollars_2015": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "initial_price_of_output": 1,
         "price_transformation": 2,
         "mdollars_per_mdollars_2015": 2,
@@ -260,8 +266,8 @@ def final_demand_imports_basic_prices():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
-        "final_demand_imports_in_purchaser_prices": 2,
         "initial_import_shares_origin_final_demand": 1,
+        "final_demand_imports_in_purchaser_prices": 2,
         "import_shares_origin_final_demand": 1,
     },
 )
@@ -290,10 +296,17 @@ def final_demand_imports_by_origin_in_purchaser_prices():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_trade": 1,
+<<<<<<< HEAD
         "initial_price_of_output": 1,
         "final_demand_imports_basic_prices": 2,
         "price_transformation": 2,
         "mdollars_per_mdollars_2015": 2,
+=======
+        "price_transformation": 2,
+        "final_demand_imports_basic_prices": 2,
+        "mdollars_per_mdollars_2015": 2,
+        "initial_price_of_output": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "price_output": 1,
     },
 )
@@ -404,8 +417,12 @@ def final_demand_total_in_basic_prices_real():
         "initial_final_demand_at_purchaser_prices_total": 4,
         "delayed_ts_gross_domestic_product_growth": 1,
         "delayed_ts_final_demand_total_in_purchaser_prices": 1,
+<<<<<<< HEAD
         "government_consumption_purchaser_prices": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "switch_eco_government": 1,
+        "government_consumption_purchaser_prices": 1,
         "gross_fixed_capital_formation_by_good": 1,
         "switch_eco_investment": 1,
         "switch_eco_households": 1,
@@ -507,8 +524,13 @@ def final_demand_total_in_purchaser_prices():
     comp_subtype="Normal",
     depends_on={
         "final_demand_total_in_purchaser_prices": 2,
+<<<<<<< HEAD
         "co2_tax_rate_households": 1,
         "consumption_structure_coicop": 1,
+=======
+        "consumption_structure_coicop": 1,
+        "co2_tax_rate_households": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "ghg_emissions_households_coicop_35_r": 1,
     },
 )

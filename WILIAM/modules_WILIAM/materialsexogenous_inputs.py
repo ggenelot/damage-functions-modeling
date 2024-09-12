@@ -3930,7 +3930,11 @@ _ext_data_prosto_capacity_expansion_calculator.add(
     units="TW/Year",
     subscripts=["REGIONS 9 I", "NRG PROTRA I"],
     comp_type="Data, Constant",
+<<<<<<< HEAD
     comp_subtype="Normal, External",
+=======
+    comp_subtype="External, Normal",
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     depends_on={
         "__external__": "_ext_data_protra_capacity_expansion_calculator",
         "__data__": "_ext_data_protra_capacity_expansion_calculator",

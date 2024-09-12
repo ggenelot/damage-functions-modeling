@@ -177,8 +177,8 @@ def deaths():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "historical_shares_migration": 2,
         "emigrations": 3,
+        "historical_shares_migration": 2,
         "shares_emigration_sp": 1,
         "switch_migration_sp": 1,
         "start_year_migrations_sp": 1,
@@ -220,9 +220,13 @@ def emigration_distribution():
     comp_subtype="Normal",
     depends_on={
         "time": 2,
-        "population_by_cohorts": 2,
         "historic_emigrations_rate": 1,
+<<<<<<< HEAD
+=======
+        "population_by_cohorts": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "switch_migration_sp": 1,
+        "percentage_emigrations_sp": 1,
         "start_year_migrations_sp": 1,
         "percentage_emigrations_sp": 1,
     },
@@ -291,9 +295,9 @@ def european_births():
     depends_on={
         "time": 3,
         "historical_fertility_rates_2005_2010": 1,
+        "ramp_scenario_fertility_rates": 1,
         "historical_fertility_rates_2010_2015": 1,
         "historical_fertility_rates_2015_2020": 2,
-        "ramp_scenario_fertility_rates": 1,
     },
 )
 def fertility_rates():
@@ -713,6 +717,11 @@ def population_variation():
     comp_subtype="Normal",
     depends_on={
         "switch_model_explorer": 1,
+<<<<<<< HEAD
+=======
+        "target_year_fertility_rates_sp": 2,
+        "time": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "slope_scenario_fertility_rates": 2,
         "target_year_fertility_rates_sp": 2,
         "time": 2,
@@ -772,9 +781,13 @@ def retired_population():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_fertility_rates": 1,
+<<<<<<< HEAD
         "historical_fertility_rates_2015_2020": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "target_year_fertility_rates_sp": 1,
         "target_scenario_fertility_rates": 1,
+        "historical_fertility_rates_2015_2020": 1,
     },
 )
 def slope_scenario_fertility_rates():
@@ -832,8 +845,8 @@ _ext_constant_switch_migration_sp = ExtConstant(
     depends_on={
         "objective_fertility_rates_sp": 2,
         "scenario_fertility_rate_minimum_sp": 1,
-        "scenario_fertility_rate_maximum_sp": 1,
         "scenario_fertility_rate_average_sp": 1,
+        "scenario_fertility_rate_maximum_sp": 1,
     },
 )
 def target_scenario_fertility_rates():

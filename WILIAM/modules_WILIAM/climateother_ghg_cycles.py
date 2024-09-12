@@ -53,8 +53,8 @@ def ch4_emissions_from_permafrost_and_clathrate():
     depends_on={
         "reference_ch4_time_constant": 1,
         "preindustrial_ch4": 1,
-        "stratospheric_ch4_path_share": 2,
         "tropospheric_ch4_path_share": 2,
+        "stratospheric_ch4_path_share": 2,
         "ch4_in_atm": 1,
     },
 )

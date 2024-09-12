@@ -66,10 +66,17 @@ def decrease_remaining_mineral_resources():
         "demand_projection_materials_roe": 2,
         "one_year": 2,
         "mineral_recycled_roe": 2,
+<<<<<<< HEAD
         "over_recycling_bu_techs": 1,
         "total_global_materials_required_bu_techs": 2,
         "mineral_mined_roe": 1,
         "mineral_recycled_bu_techs": 2,
+=======
+        "mineral_recycled_bu_techs": 2,
+        "total_global_materials_required_bu_techs": 2,
+        "mineral_mined_roe": 1,
+        "over_recycling_bu_techs": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "mineral_mined_bu_techs": 1,
         "over_recycling_roe": 1,
     },
@@ -138,11 +145,19 @@ def increase_remaining_mineral_resources():
     comp_subtype="Normal",
     depends_on={
         "remaining_minerals_reserves": 1,
+<<<<<<< HEAD
         "global_mineral_reserves_2015": 2,
         "global_mineral_resources_2015": 2,
         "mineral_recycled_bu_techs": 2,
         "remaining_mineral_resources": 2,
         "mineral_recycled_roe": 2,
+=======
+        "mineral_recycled_bu_techs": 2,
+        "mineral_recycled_roe": 2,
+        "global_mineral_resources_2015": 2,
+        "remaining_mineral_resources": 2,
+        "global_mineral_reserves_2015": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def indicator_of_mineral_scarcity():
@@ -186,9 +201,15 @@ def indicator_of_mineral_scarcity():
     comp_subtype="Normal",
     depends_on={
         "mineral_of_decom_batteries_9r": 1,
+<<<<<<< HEAD
         "protra_capacity_decommissioning_selected": 4,
         "material_intensity_weighted_average_new_pv": 1,
         "material_intensity_new_capacity_wind_offshore": 1,
+=======
+        "material_intensity_new_capacity_wind_offshore": 1,
+        "protra_capacity_decommissioning_selected": 4,
+        "material_intensity_weighted_average_new_pv": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "material_intensity_new_capacity_csp": 1,
         "unit_conversion_mw_tw": 1,
         "material_intensity_new_capacity_wind_onshore": 1,

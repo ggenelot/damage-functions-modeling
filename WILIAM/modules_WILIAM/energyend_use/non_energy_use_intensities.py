@@ -118,8 +118,12 @@ def final_non_energy_demand_by_fe_eu27():
     comp_subtype="Normal",
     depends_on={
         "switch_energy": 1,
-        "base_output_real": 2,
         "non_energy_use_intensities_by_sector_and_fe": 3,
+<<<<<<< HEAD
+=======
+        "base_output_real": 2,
+        "switch_eco2nrg_output_real": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "output_real": 1,
         "switch_eco2nrg_output_real": 1,
     },
@@ -242,10 +246,17 @@ _ext_constant_switch_nrg_hydrogen_industrial_demand = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "select_non_energy_use_intensities_sector": 1,
+<<<<<<< HEAD
         "non_energy_use_intensities_by_sector_and_fe": 1,
         "historical_non_energy_use_intensities_by_sector_and_fe": 1,
         "historical_growth_non_energy_use_intensity_by_fe": 3,
         "time": 1,
+=======
+        "time": 1,
+        "historical_growth_non_energy_use_intensity_by_fe": 3,
+        "non_energy_use_intensities_by_sector_and_fe": 1,
+        "historical_non_energy_use_intensities_by_sector_and_fe": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def variation_non_energy_use_intensity():

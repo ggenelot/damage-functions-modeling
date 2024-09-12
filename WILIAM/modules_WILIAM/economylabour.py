@@ -11,8 +11,8 @@ Translated using PySD version 3.14.0
     comp_subtype="Normal",
     depends_on={
         "time": 3,
-        "aux_growth_labour_productivity": 1,
         "annual_labour_productivity_variation": 1,
+        "aux_growth_labour_productivity": 1,
     },
 )
 def annual_growth_labour_productivity():
@@ -61,8 +61,8 @@ def annual_labour_productivity():
     comp_subtype="Normal",
     depends_on={
         "select_labour_productivity_variation_sp": 1,
-        "initial_year_labour_productivity_variation_sp": 1,
         "time": 1,
+        "initial_year_labour_productivity_variation_sp": 1,
         "labour_productivity_variation_sp": 1,
         "labour_productivity_variation_default": 1,
     },
@@ -130,11 +130,11 @@ def annual_variation_hours_per_worker():
     comp_subtype="Normal",
     depends_on={
         "select_limit_annual_growth_wages_sp": 1,
-        "initial_limit_annual_growth_wages_sp": 1,
         "time": 1,
-        "limit_upper_bound_annual_growth_wages_sp": 1,
-        "annual_wage_hour_variation_index": 2,
+        "initial_limit_annual_growth_wages_sp": 1,
         "limit_lower_bound_annual_growth_wages_sp": 1,
+        "annual_wage_hour_variation_index": 2,
+        "limit_upper_bound_annual_growth_wages_sp": 1,
     },
 )
 def annual_wage_hour_variation():
@@ -165,6 +165,7 @@ def annual_wage_hour_variation():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_labour": 1,
+<<<<<<< HEAD
         "constant_wage": 2,
         "epsilon_wage_hour": 2,
         "non_accelerating_wage_inflation_rate_of_unemployment": 4,
@@ -175,6 +176,18 @@ def annual_wage_hour_variation():
         "initial_delayed_2_consumer_price_index": 1,
         "gamma_wage_hour": 2,
         "delayed_ts_labour_productivity": 4,
+=======
+        "labour_productivity": 2,
+        "non_accelerating_wage_inflation_rate_of_unemployment": 4,
+        "epsilon_wage_hour": 2,
+        "initial_delayed_consumer_price_index": 2,
+        "gamma_wage_hour": 2,
+        "initial_delayed_2_consumer_price_index": 1,
+        "unemployment_rate": 4,
+        "delayed_ts_labour_productivity": 4,
+        "alpha_wage_hour": 2,
+        "constant_wage": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "delayed_2_consumer_price_index": 1,
         "delayed_consumer_price_index": 2,
     },
@@ -453,9 +466,15 @@ _ext_constant_base_working_age_population = ExtConstant(
         "switch_climate_change_damage": 1,
         "switch_eco_climate_change_damage_labour_productivity": 1,
         "switch_eco_labour": 1,
+<<<<<<< HEAD
         "vector_borne_diseases_incremental_damage_function": 1,
         "heat_stress_incremental_damage_function": 1,
         "labour_productivity": 1,
+=======
+        "labour_productivity": 1,
+        "heat_stress_incremental_damage_function": 1,
+        "vector_borne_diseases_incremental_damage_function": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def climate_change_impact_in_labour_productivity():
@@ -877,8 +896,8 @@ _ext_constant_final_year_working_time_variation_sp = ExtConstant(
         "time": 1,
         "initial_year_working_time_variation_sp": 1,
         "initial_hours_per_worker": 1,
-        "switch_model_explorer": 1,
         "stock_hours_per_worker": 1,
+        "switch_model_explorer": 1,
         "model_explorer_working_time_variation": 1,
     },
 )
@@ -905,8 +924,8 @@ def hours_per_worker():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_labour": 1,
-        "base_output_real": 1,
         "labour_productivity": 2,
+        "base_output_real": 1,
         "output_real": 1,
     },
 )
@@ -1284,9 +1303,13 @@ _ext_constant_limit_upper_bound_annual_growth_wages_sp = ExtConstant(
         "beta_participation_rate": 1,
         "delayed_ts_unemployment_rate": 1,
         "delayed_ts_wage_hour_total": 1,
+<<<<<<< HEAD
         "delayed_ts_consumer_price_index": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "epsilon_participation_rate": 1,
         "price_transformation": 1,
+        "delayed_ts_consumer_price_index": 1,
     },
 )
 def participation_rate():
@@ -1635,8 +1658,8 @@ def wage_hour_variation():
         "switch_eco_labour": 1,
         "switch_dem2eco_working_age_population": 1,
         "base_working_age_population": 1,
-        "unit_conversion_kpeople_people": 1,
         "total_population_over_15": 1,
+        "unit_conversion_kpeople_people": 1,
     },
 )
 def working_age_population():

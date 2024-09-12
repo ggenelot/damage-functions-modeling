@@ -46,6 +46,7 @@ _ext_constant_animals_distribution_regions = ExtConstant(
         "dairy_milk_cattle_distribution": 1,
         "yield_of_cattle_milk": 1,
         "meat_ruminant_cattle_distribution": 1,
+<<<<<<< HEAD
         "yield_of_meat_cattle": 1,
         "yield_of_buffalo_milk": 1,
         "dairy_milk_buffalo_distribution": 1,
@@ -60,7 +61,22 @@ _ext_constant_animals_distribution_regions = ExtConstant(
         "dairy_milk_sheep_distribution": 1,
         "yield_of_meat_sheep": 1,
         "yield_of_meat_chickens": 1,
+=======
+        "yield_of_meat_buffalo": 1,
+        "yield_of_buffalo_milk": 1,
+        "meat_ruminant_buffalo_distribution": 1,
+        "dairy_milk_buffalo_distribution": 1,
+        "dairy_milk_goats_distribution": 1,
+        "yield_of_goats_milk": 1,
+        "yield_of_meat_goat": 1,
+        "meat_ruminant_goat_distribution": 1,
+        "dairy_milk_sheep_distribution": 1,
+        "yield_of_sheep_milk": 1,
+        "yield_of_meat_sheep": 1,
+        "meat_ruminant_sheep_distribution": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "meat_monogastric_chickens_distribution": 1,
+        "yield_of_meat_chickens": 1,
         "yield_of_hen_eggs": 1,
         "yield_of_meat_pig": 1,
         "meat_monogastric_swine_distribution": 1,
@@ -133,10 +149,17 @@ def animals_producing():
         "switch_law_emissions_irrigated_crop_area": 1,
         "switch_law_emissions": 1,
         "exo_area_irrigated_rice_t": 1,
+<<<<<<< HEAD
         "switch_separate_irrigated_rainfed": 1,
         "share_rainfed_rice": 1,
         "area_of_irrigated_crops": 1,
         "area_of_crops_all_managements": 1,
+=======
+        "area_of_crops_all_managements": 1,
+        "share_rainfed_rice": 1,
+        "switch_separate_irrigated_rainfed": 1,
+        "area_of_irrigated_crops": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def area_of_irrigated_rice():
@@ -169,10 +192,17 @@ def area_of_irrigated_rice():
         "switch_law_emissions_irrigated_crop_area": 1,
         "switch_law_emissions": 1,
         "exo_area_rainfed_rice_t": 1,
+<<<<<<< HEAD
         "switch_separate_irrigated_rainfed": 1,
         "area_of_rainfed_crops": 1,
         "share_rainfed_rice": 1,
         "area_of_crops_all_managements": 1,
+=======
+        "area_of_crops_all_managements": 1,
+        "area_of_rainfed_crops": 1,
+        "share_rainfed_rice": 1,
+        "switch_separate_irrigated_rainfed": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def area_of_rainfed_rice():
@@ -271,11 +301,11 @@ _delayfixed_aux_diet_available_2020 = DelayFixed(
     comp_subtype="Normal",
     depends_on={
         "switch_livestock_manure_management_sp": 1,
-        "year_initial_manure_management_system_sp": 1,
         "time": 2,
+        "year_initial_manure_management_system_sp": 1,
         "year_final_manure_management_system_sp": 1,
-        "methane_conversion_factor_by_system": 2,
         "objetive_buffalo_manure_system_sp": 1,
+        "methane_conversion_factor_by_system": 2,
         "buffalo_manure_system": 1,
     },
 )
@@ -360,8 +390,8 @@ def ch4_emissions_agriculture():
     depends_on={
         "factor_emissions_enteric_fermentation": 1,
         "number_animals_by_region": 1,
-        "unit_conversion_mt_t": 1,
         "unit_conversion_t_kg": 1,
+        "unit_conversion_mt_t": 1,
     },
 )
 def ch4_emissions_enteric_fermentation():
@@ -549,6 +579,7 @@ def ch4_emissions_manure_management_total():
     comp_subtype="Normal",
     depends_on={
         "area_of_irrigated_rice": 1,
+<<<<<<< HEAD
         "scaling_factor_organic_amendment": 2,
         "unit_conversion_km2_ha": 2,
         "cultivation_period_rice": 2,
@@ -557,6 +588,18 @@ def ch4_emissions_manure_management_total():
         "scaling_factor_water_regime_preseason": 2,
         "factor_emissions_baseline_rice": 2,
         "scaling_factor_water_regime_rice_irrigated": 1,
+=======
+        "unit_conversion_t_kg": 2,
+        "scaling_factor_water_regime_preseason": 2,
+        "unit_conversion_mt_t": 2,
+        "scaling_factor_organic_amendment": 2,
+        "factor_emissions_baseline_rice": 2,
+        "scaling_factor_water_regime_rice_irrigated": 1,
+        "cultivation_period_rice": 2,
+        "unit_conversion_km2_ha": 2,
+        "scaling_factor_water_regime_rice_rainfed": 1,
+        "share_upland_rice_by_region": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "area_of_rainfed_rice": 1,
         "scaling_factor_water_regime_rice_rainfed": 1,
         "share_upland_rice_by_region": 1,
@@ -662,11 +705,11 @@ _ext_constant_cultivation_period_rice = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "switch_livestock_manure_management_sp": 1,
-        "year_initial_manure_management_system_sp": 1,
         "time": 2,
+        "year_initial_manure_management_system_sp": 1,
         "year_final_manure_management_system_sp": 1,
-        "methane_conversion_factor_by_system": 2,
         "objetive_dairy_cattle_manure_system_sp": 1,
+        "methane_conversion_factor_by_system": 2,
         "dairy_cattle_manure_system": 1,
     },
 )
@@ -1953,11 +1996,11 @@ _ext_constant_objetive_swine_manure_system_sp = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "switch_livestock_manure_management_sp": 1,
-        "year_initial_manure_management_system_sp": 1,
         "time": 2,
+        "year_initial_manure_management_system_sp": 1,
         "year_final_manure_management_system_sp": 1,
-        "methane_conversion_factor_by_system": 2,
         "objetive_other_cattle_manure_system_sp": 1,
+        "methane_conversion_factor_by_system": 2,
         "other_cattle_manure_system": 1,
     },
 )
@@ -2529,8 +2572,8 @@ _ext_constant_share_upland_rice_by_region = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "switch_livestock_manure_management_sp": 1,
-        "year_initial_manure_management_system_sp": 1,
         "time": 2,
+        "year_initial_manure_management_system_sp": 1,
         "year_final_manure_management_system_sp": 1,
         "methane_conversion_factor_by_system": 2,
         "objetive_swine_manure_system_sp": 1,

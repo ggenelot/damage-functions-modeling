@@ -4690,7 +4690,7 @@ def mining_cost_ni_ton():
     name="mining technology improvements for NI",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"coefficients_mining_technology_improvements": 9, "time": 3},
 )
@@ -4821,7 +4821,7 @@ def ni_base_price_2000():
     name="Ni change grade",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"coefficients_ni_change_grade": 12, "ni_price": 4},
 )
@@ -5058,7 +5058,7 @@ _ext_constant_ni_energy_secondary = ExtConstant(
     name="Ni energy use",
     units="MJ/kg*Mt/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"coefficients_ni_energy_use": 5, "ni_mining": 5},
 )
@@ -5214,7 +5214,7 @@ def ni_fe_demand():
     name="Ni find",
     units="Mt/Year",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "ni_hidden_resources": 5,
@@ -5725,7 +5725,7 @@ def ni_market_supply():
     name="Ni Mining",
     units="Mt/Year",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "ni_known_reserves": 5,
@@ -6174,6 +6174,11 @@ def ni_price_effect_on_demand():
     comp_subtype="Normal",
     depends_on={
         "switch_mat2eco_ni_price": 1,
+<<<<<<< HEAD
+=======
+        "estimated_price_with_tax_metals": 1,
+        "price_transformation": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "ni_base_price_2000": 1,
         "estimated_price_with_tax_metals": 1,
         "price_transformation": 1,
@@ -6465,9 +6470,15 @@ def ni_share_of_secondary_material():
         "ni_plating": 1,
         "ni_other_use": 1,
         "ni_market": 1,
+<<<<<<< HEAD
         "imv_ss_fast_in_use": 1,
         "imv_ss_slow_in_use": 1,
         "ni_content_in_ss_steel": 1,
+=======
+        "ni_content_in_ss_steel": 1,
+        "imv_ss_fast_in_use": 1,
+        "imv_ss_slow_in_use": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def ni_stock_in_use():
@@ -6579,7 +6590,7 @@ _ext_constant_promotion_of_prospecting = ExtConstant(
     name="prospecting for Ni from all",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "coefficients_prospecting_from_all": 21,
@@ -6702,7 +6713,7 @@ def prospecting_for_ni_from_all():
     name="prospecting for Ni from grades",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "ni_known_reserves": 6,
@@ -6929,7 +6940,7 @@ def prospecting_for_ni_from_grades():
     name="prospecting technology improvements for NI",
     units="DMNL",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"coefficients_prospecting_technology_improvements": 15, "time": 5},
 )
@@ -7182,7 +7193,7 @@ def water_ni_extraction():
     name="water per Ni",
     units="Mt/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"coefficients_water_per_ni": 5},
 )
@@ -7258,7 +7269,7 @@ _ext_constant_water_per_ni_secondary = ExtConstant(
     name="water use Ni",
     units="Mt/Years",
     subscripts=["ORE GRADES I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"ni_mining": 5, "water_per_ni": 5},
 )

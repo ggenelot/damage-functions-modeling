@@ -16,8 +16,13 @@ Translated using PySD version 3.14.0
         "urban_land_dispersion_trends": 1,
         "objective_urban_land_density_sp": 1,
         "switch_urban_land_density_sp": 1,
+<<<<<<< HEAD
         "year_initial_urban_land_density_sp": 2,
         "year_final_urban_land_density_sp": 2,
+=======
+        "year_final_urban_land_density_sp": 2,
+        "year_initial_urban_land_density_sp": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def change_of_urban_land_dispersion():
@@ -142,9 +147,12 @@ def historical_data_of_urban_land_with_time():
     depends_on={
         "switch_landwater": 1,
         "initial_time": 3,
-        "unit_conversion_m2_km2": 2,
         "historical_land_use_by_region": 2,
+<<<<<<< HEAD
         "exogenous_population_9r": 1,
+=======
+        "unit_conversion_m2_km2": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "population_9_regions": 1,
     },
 )

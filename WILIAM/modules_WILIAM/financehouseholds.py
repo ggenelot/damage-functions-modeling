@@ -7,7 +7,7 @@ Translated using PySD version 3.14.0
     name="AUX BASIC INCOME TAX PAYERS SP",
     units="DMNL",
     subscripts=["HOUSEHOLDS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={"basic_income_tax_payers_sp": 1},
 )
@@ -72,11 +72,19 @@ def average_households_real_net_wealth_9r():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
+<<<<<<< HEAD
         "number_of_households_by_income_and_type": 3,
         "consumer_price_index": 2,
         "households_net_wealth": 2,
         "dollars_per_dollars_2015": 2,
         "base_number_of_households": 1,
+=======
+        "base_number_of_households": 1,
+        "consumer_price_index": 2,
+        "dollars_per_dollars_2015": 2,
+        "households_net_wealth": 2,
+        "number_of_households_by_income_and_type": 3,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def average_households_real_net_wealth_eu27():
@@ -376,6 +384,10 @@ _delayfixed_delayed_ts_households_net_wealth = DelayFixed(
             },
             "step": {
                 "time": 1,
+<<<<<<< HEAD
+=======
+                "increase_in_households_capital_stock_due_to_investments": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
                 "variation_in_households_capital_stock_due_to_revalorizations": 1,
                 "decrease_in_households_capital_stock_due_to_depreciation": 1,
                 "increase_in_households_capital_stock_due_to_investments": 1,
@@ -641,6 +653,7 @@ def implicit_tax_rate_to_finance_basic_income():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
+<<<<<<< HEAD
         "unit_conversion_dollars_mdollars": 2,
         "households_financial_assets": 4,
         "mdollars_per_mdollars_2015": 2,
@@ -648,6 +661,15 @@ def implicit_tax_rate_to_finance_basic_income():
         "gross_fixed_capital_formation_real": 2,
         "base_number_of_households": 3,
         "price_gfcf": 2,
+=======
+        "price_gfcf": 2,
+        "price_transformation": 2,
+        "base_number_of_households": 3,
+        "households_financial_assets": 4,
+        "gross_fixed_capital_formation_real": 2,
+        "unit_conversion_dollars_mdollars": 2,
+        "mdollars_per_mdollars_2015": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "number_of_households_by_income_and_type": 3,
     },
 )
@@ -942,9 +964,15 @@ _ext_constant_switch_finance = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "switch_policy_basic_income_sp": 1,
+<<<<<<< HEAD
         "select_policy_finance_basic_income_sp": 2,
         "ghg_tax_revenues_used_to_finance_basic_income": 1,
         "government_basic_income_expenditure": 2,
+=======
+        "government_basic_income_expenditure": 2,
+        "ghg_tax_revenues_used_to_finance_basic_income": 1,
+        "select_policy_finance_basic_income_sp": 2,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def taxes_on_assets_to_finance_basic_income():
@@ -1065,6 +1093,7 @@ def total_financial_assets_households_paying_taxes_finance_basic_income():
         "delayed_ts_price_gfcf": 1,
         "households_capital_stock": 1,
         "price_gfcf": 1,
+        "households_capital_stock": 1,
     },
 )
 def variation_in_households_capital_stock_due_to_revalorizations():

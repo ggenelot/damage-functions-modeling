@@ -169,9 +169,15 @@ def area_loss_of_forest_m_and_p():
             "initial": {
                 "initial_time": 1,
                 "historical_forest_volume_stock_all_forests": 1,
+<<<<<<< HEAD
                 "initial_land_use_by_region": 1,
                 "maximum_forest_stock_per_area": 1,
                 "coefficient_max_stock_primary": 1,
+=======
+                "coefficient_max_stock_primary": 1,
+                "initial_land_use_by_region": 1,
+                "maximum_forest_stock_per_area": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
             },
             "step": {"change_of_stock_forest_m_and_p": 1},
         }
@@ -277,8 +283,8 @@ _smooth_change_of_stock_forest_m_and_p = Smooth(
     depends_on={
         "roundwood_available_world": 1,
         "roundwood_demanded_world": 1,
-        "initial_time": 1,
         "historical_roundwood_harvested": 1,
+        "initial_time": 1,
     },
 )
 def global_availability_of_biomass():
@@ -561,11 +567,19 @@ def historical_wood_extracted():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_forestry_self_sufficiency": 1,
+<<<<<<< HEAD
         "year_final_forestry_self_sufficiency_sp": 2,
         "objective_forestry_self_sufficiency_sp": 1,
         "year_initial_forestry_self_sufficiency_sp": 2,
         "switch_forestry_self_sufficiency_sp": 1,
         "time": 2,
+=======
+        "switch_forestry_self_sufficiency_sp": 1,
+        "year_initial_forestry_self_sufficiency_sp": 2,
+        "time": 2,
+        "year_final_forestry_self_sufficiency_sp": 2,
+        "objective_forestry_self_sufficiency_sp": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def increase_of_self_suficiency_forestry():
@@ -831,6 +845,11 @@ def roundwood_available_world():
         "time": 1,
         "time_historical_data_land_module": 1,
         "historical_wood_extracted": 1,
+<<<<<<< HEAD
+=======
+        "biomass_stock_of_managed_forest_and_plantations": 1,
+        "global_roundwood_demand_distributed_to_regions": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "initial_volume_stock_of_forest_m_and_p": 1,
         "biomass_stock_of_managed_forest_and_plantations": 1,
         "global_roundwood_demand_distributed_to_regions": 1,
@@ -999,9 +1018,15 @@ _integ_share_of_self_suficiency_of_forestry_products = Integ(
         "year_initial_forest_loss_limit_sp": 1,
         "time": 2,
         "year_final_forest_loss_limit_sp": 1,
+<<<<<<< HEAD
         "time_historical_data_land_module": 1,
         "historical_forest_volume_stock_all_forests": 1,
         "objective_forest_loss_limit_sp": 1,
+=======
+        "historical_forest_volume_stock_all_forests": 1,
+        "objective_forest_loss_limit_sp": 1,
+        "time_historical_data_land_module": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def stock_of_forest_volume_protected():
@@ -1083,10 +1108,17 @@ def volume_stock_change_net_afforestation_m_and_p():
         "time": 1,
         "time_historical_data_land_module": 1,
         "historical_vol_stock_change_forest_m_and_p": 1,
+<<<<<<< HEAD
         "roundwood_volumme_extracted_from_forest_m_and_p": 1,
         "natural_disturbance_forests_m_and_p": 1,
         "growth_forest_m_and_p": 1,
         "volume_stock_change_net_afforestation_m_and_p": 1,
+=======
+        "volume_stock_change_net_afforestation_m_and_p": 1,
+        "roundwood_volumme_extracted_from_forest_m_and_p": 1,
+        "natural_disturbance_forests_m_and_p": 1,
+        "growth_forest_m_and_p": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def volume_stock_changes_forest_m_and_p():

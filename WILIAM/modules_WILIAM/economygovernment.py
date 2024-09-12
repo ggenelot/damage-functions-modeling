@@ -42,8 +42,12 @@ _ext_constant_annual_growth_government_expenditure_default = ExtConstant(
         "people_per_household_by_income_and_type": 2,
         "households_disposable_income_until_2015": 1,
         "number_of_households_by_income_and_type_until_2015": 2,
+<<<<<<< HEAD
         "number_of_households_by_income_and_type": 2,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "households_disposable_income": 1,
+        "number_of_households_by_income_and_type": 2,
     },
 )
 def average_disposable_income_per_capita():
@@ -145,10 +149,11 @@ def base_delayed_gdp():
     name="basic income per capita",
     units="dollars/(Year*person)",
     subscripts=["REGIONS 35 I", "HOUSEHOLDS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "switch_eco_government": 1,
+<<<<<<< HEAD
         "delayed_ts_average_disposable_income_per_capita": 2,
         "ratio_basic_income_to_average_disposable_income_sp": 2,
         "switch_policy_basic_income_sp": 4,
@@ -157,6 +162,17 @@ def base_delayed_gdp():
         "initial_delayed_2_consumer_price_index": 1,
         "delayed_ts_basic_income_per_capita": 2,
         "time": 4,
+=======
+        "initial_year_basic_income_sp": 4,
+        "initial_delayed_consumer_price_index": 1,
+        "delayed_ts_basic_income_per_capita": 2,
+        "time": 4,
+        "ratio_basic_income_to_average_disposable_income_sp": 2,
+        "delayed_ts_average_disposable_income_per_capita": 2,
+        "switch_policy_basic_income_sp": 4,
+        "initial_delayed_2_consumer_price_index": 1,
+        "delayed_2_ts_consumer_price_index": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "delayed_ts_consumer_price_index": 1,
         "delayed_2_ts_consumer_price_index": 1,
     },
@@ -323,8 +339,13 @@ def basic_income_per_capita():
     depends_on={
         "time": 1,
         "government_budget_balance": 2,
+<<<<<<< HEAD
         "statistical_difference_government_debt": 1,
         "initial_government_assets_net_adquisition": 1,
+=======
+        "initial_government_assets_net_adquisition": 1,
+        "statistical_difference_government_debt": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "ghg_tax_revenues_to_reduce_government_debt": 1,
     },
 )
@@ -366,9 +387,15 @@ def debt_interest():
     depends_on={
         "switch_model_explorer": 1,
         "model_explorer_debt_interest_rate_target": 1,
+<<<<<<< HEAD
         "initial_year_debt_interest_rate_sp": 1,
         "select_debt_interest_rate_sp": 1,
         "debt_interest_rate_sp": 1,
+=======
+        "select_debt_interest_rate_sp": 1,
+        "debt_interest_rate_sp": 1,
+        "initial_year_debt_interest_rate_sp": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "debt_interest_rate_default": 1,
         "time": 1,
     },
@@ -960,7 +987,10 @@ _delayfixed_delayed_ts_taxes_products_final_demand = DelayFixed(
     depends_on={
         "switch_eco_government": 1,
         "base_delayed_gdp": 1,
+<<<<<<< HEAD
         "initial_initial_delayed_gdp_growth": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "delayed_gross_domestic_product_nominal": 1,
         "delayed_gdp_growth": 1,
     },
@@ -1129,12 +1159,21 @@ def government_budget_balance_to_gdp():
     depends_on={
         "time": 2,
         "initial_government_budget_balance_to_gdp_objective": 1,
+<<<<<<< HEAD
         "model_explorer_government_to_gdp_objetive": 1,
         "government_budget_balance_to_gdp_objective_sp": 2,
         "select_government_budget_balance_to_gdp_objective_sp": 1,
         "government_budget_balance_to_gdp_objective_default_sp": 1,
         "switch_model_explorer": 1,
         "initial_year_government_budget_balance_to_gdp_objective_sp": 1,
+=======
+        "initial_year_government_budget_balance_to_gdp_objective_sp": 1,
+        "government_budget_balance_to_gdp_objective_sp": 2,
+        "switch_model_explorer": 1,
+        "model_explorer_government_to_gdp_objetive": 1,
+        "government_budget_balance_to_gdp_objective_default_sp": 1,
+        "select_government_budget_balance_to_gdp_objective_sp": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def government_budget_balance_to_gdp_objective():
@@ -1399,8 +1438,13 @@ def government_expenditure_objective():
     depends_on={
         "time": 1,
         "non_adjusted_government_expenditure_objective_rest": 1,
+<<<<<<< HEAD
         "delayed_ts_government_expenditure_rest": 2,
+=======
+        "limit_annual_growth_government_expenditure_sp": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "maximun_growth_government_expenditure_rest": 2,
+        "delayed_ts_government_expenditure_rest": 2,
         "growth_government_expenditure_objective_rest": 2,
         "limit_annual_growth_government_expenditure_sp": 1,
     },
@@ -1625,9 +1669,15 @@ def government_revenue_objective():
         "government_basic_income_expenditure": 1,
         "ghg_tax_revenues_to_reduce_government_debt": 1,
         "ghg_tax_revenues_used_to_increase_social_benefits": 1,
+<<<<<<< HEAD
         "switch_eco_government": 1,
         "initial_gross_domestic_product": 1,
         "gross_domestic_product_nominal": 1,
+=======
+        "gross_domestic_product_nominal": 1,
+        "switch_eco_government": 1,
+        "initial_gross_domestic_product": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def government_revenue_to_gdp():
@@ -2057,8 +2107,12 @@ def maximun_growth_government_expenditure_rest():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_government": 1,
-        "public_gfcf_to_replace_climate_change_until_2015": 1,
         "debt_interest": 2,
+        "public_gfcf_to_replace_climate_change_until_2015": 1,
+<<<<<<< HEAD
+        "debt_interest": 2,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "government_expenditure_objective": 2,
         "public_gfcf_to_replace_climate_damage": 1,
     },
@@ -2123,8 +2177,8 @@ _sampleiftrue_number_of_households_by_income_and_type_until_2015 = SampleIfTrue(
     depends_on={
         "switch_economy": 2,
         "switch_eco_government": 1,
-        "eu_persons_by_household_2015": 1,
         "households_correspondance_12_to_60": 2,
+        "eu_persons_by_household_2015": 1,
         "eu_persons_by_household": 1,
         "average_people_per_household_noneu_regions_until_2015": 1,
         "average_people_per_household_noneu_regions": 1,
@@ -2588,10 +2642,15 @@ def social_benefits():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_government": 1,
-        "tax_rate_social_security_default": 1,
         "initial_labour_compensation": 1,
+<<<<<<< HEAD
         "unit_conversion_dollars_mdollars": 1,
         "households_social_security": 1,
+=======
+        "tax_rate_social_security_default": 1,
+        "households_social_security": 1,
+        "unit_conversion_dollars_mdollars": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "number_of_households_by_income_and_type": 1,
     },
 )
@@ -2626,8 +2685,8 @@ def social_security():
     depends_on={
         "time": 2,
         "structure_government_consumption_default": 2,
-        "select_structure_government_consumption_sp": 1,
         "structure_government_consumption_sp": 1,
+        "select_structure_government_consumption_sp": 1,
         "initial_year_structure_government_consumption_sp": 1,
     },
 )
@@ -3059,10 +3118,16 @@ _sampleiftrue_tax_ghg_sectors_until_2015 = SampleIfTrue(
     depends_on={
         "switch_eco_government": 1,
         "tax_rate_on_profits_default": 1,
+<<<<<<< HEAD
         "initial_delayed_net_operating_surplus": 1,
         "select_policy_finance_basic_income_sp": 1,
         "tax_income_corportations_to_finance_basic_income": 1,
         "delayed_ts_net_operating_surplus_total": 2,
+=======
+        "delayed_ts_net_operating_surplus_total": 2,
+        "tax_income_corportations_to_finance_basic_income": 1,
+        "select_policy_finance_basic_income_sp": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "tax_rate_on_profits": 2,
     },
 )
@@ -3110,8 +3175,13 @@ def tax_income_corportations_to_finance_basic_income():
     depends_on={
         "time": 2,
         "tax_rate_on_profits_default": 2,
+<<<<<<< HEAD
         "select_tax_rate_profits_sp": 1,
         "tax_rate_profits_sp": 1,
+=======
+        "tax_rate_profits_sp": 1,
+        "select_tax_rate_profits_sp": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "initial_year_tax_rate_profits_sp": 1,
     },
 )
@@ -3168,8 +3238,13 @@ _ext_constant_tax_rate_profits_sp = ExtConstant(
     depends_on={
         "switch_eco_government": 1,
         "initial_taxes_on_income_hh": 1,
+<<<<<<< HEAD
         "unit_conversion_dollars_mdollars": 1,
         "households_income_tax": 1,
+=======
+        "households_income_tax": 1,
+        "unit_conversion_dollars_mdollars": 1,
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "number_of_households_by_income_and_type": 1,
     },
 )
@@ -3219,8 +3294,8 @@ def taxes_on_income_and_wealth():
     depends_on={
         "time": 1,
         "switch_eco_government": 1,
-        "statistical_difference_net_taxes_production": 1,
         "initial_taxes_production": 1,
+        "statistical_difference_net_taxes_production": 1,
         "delayed_ts_taxes_production": 1,
     },
 )
@@ -3246,7 +3321,7 @@ def taxes_on_production():
     name="taxes on resources paid by extraction sectors",
     units="Mdollars/Year",
     subscripts=["REGIONS 35 I", "SECTORS I"],
-    comp_type="Constant, Auxiliary",
+    comp_type="Auxiliary, Constant",
     comp_subtype="Normal",
     depends_on={
         "switch_eco_government": 7,
@@ -3486,9 +3561,14 @@ def taxes_on_resources_paid_by_extraction_sectors():
     depends_on={
         "switch_eco_government": 1,
         "initial_taxes_on_wealth": 1,
+<<<<<<< HEAD
         "unit_conversion_dollars_mdollars": 1,
         "number_of_households_by_income_and_type": 1,
+=======
+>>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "households_wealth_tax": 1,
+        "unit_conversion_dollars_mdollars": 1,
+        "number_of_households_by_income_and_type": 1,
     },
 )
 def taxes_on_wealth():
@@ -3521,6 +3601,7 @@ def taxes_on_wealth():
         "initial_taxes_products_final_demand": 1,
         "initial_taxes_products_by_sector": 1,
         "statistical_difference_net_taxes_products": 2,
+        "initial_taxes_products_by_sector": 1,
         "delayed_ts_taxes_products_final_demand": 1,
         "delayed_ts_taxes_products_by_sector": 1,
     },
