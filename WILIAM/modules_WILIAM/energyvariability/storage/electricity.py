@@ -740,8 +740,8 @@ def max_power_for_elec_storage_of_the_ev_vehicles():
     comp_subtype="Normal",
     depends_on={
         "switch_nrg_limited_res_potentials": 1,
-        "unit_conversion_tw_per_ej_per_year": 1,
         "unlimited_protra_res_parameter": 1,
+        "unit_conversion_tw_per_ej_per_year": 1,
         "phs_potential_sp": 1,
         "stationary_batteries_maximum_sp": 1,
     },
@@ -998,7 +998,6 @@ def prosto_dedicated_capacity_decomissioning():
         "switch_nrg_proflex_capacity_expansion_endogenous": 2,
         "prosto_dedicated_capacity_decomissioning": 2,
         "prosup_flexopt_elec_capacity_expansion": 2,
-        "prosto_dedicated_capacity_decomissioning": 2,
         "historic_capacity_expansion_stationary_bateries": 1,
     },
 )
@@ -1169,19 +1168,11 @@ def roundtrip_and_transmission_losses_by_prosto():
     comp_subtype="Normal",
     depends_on={
         "v2g_share_ev_vehicles": 1,
-<<<<<<< HEAD
-        "objective_sc_sp": 2,
         "year_initial_sc_sp": 3,
-        "year_final_sc_sp": 2,
         "initial_sc_sp": 4,
         "time": 4,
-=======
         "year_final_sc_sp": 2,
-        "time": 4,
         "objective_sc_sp": 2,
-        "initial_sc_sp": 4,
-        "year_initial_sc_sp": 3,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "switch_sc_sp": 1,
     },
 )

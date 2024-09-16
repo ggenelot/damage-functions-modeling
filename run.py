@@ -208,16 +208,16 @@ for index, run in runs.iterrows():
                 except:
                         print(f'FAILED to add variable {run_result.columns.to_list()[i]}')
 
-# Add a message to a text file
+        # Add a message to a text file
 
-current_datetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-message = f"\n Executed run {index} at {current_datetime}"
-file_path = "log.txt"
+        current_datetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        message = f"\n Executed run {index} at {current_datetime}"
+        file_path = "log.txt"
 
-with open(file_path, "w") as file:
-        file.write(message)
+        with open(file_path, "w") as file:
+                file.write(message)
 
-print("Message saved to", file_path)
+        print("Message saved to", file_path)
 
 ds.to_netcdf(output_ds_path)
 ds.close()

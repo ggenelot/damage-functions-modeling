@@ -419,24 +419,14 @@ def materials_share_of_secondary_material():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-<<<<<<< HEAD
-        "rc_rate_mineral": 2,
         "scrap_rate": 2,
-        "material_intensity_pv_cells": 2,
-        "protra_capacity_expansion_selected": 2,
-        "share_new_pv_subtechn_land": 1,
-        "unit_conversion_mw_tw": 1,
-        "share_new_pv_subtechn_urban": 1,
-=======
-        "share_new_pv_subtechn_land": 1,
-        "scrap_rate": 2,
-        "unit_conversion_mw_tw": 1,
-        "share_new_pv_subtechn_urban": 1,
-        "protra_capacity_expansion_selected": 2,
         "rc_rate_mineral": 2,
-        "material_intensity_pv_cells": 2,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
+        "protra_capacity_expansion_selected": 2,
         "unit_conversion_kg_mt": 1,
+        "share_new_pv_subtechn_land": 1,
+        "share_new_pv_subtechn_urban": 1,
+        "material_intensity_pv_cells": 2,
+        "unit_conversion_mw_tw": 1,
     },
 )
 def new_material_extract_for_the_pv_cells():
@@ -489,18 +479,11 @@ def new_material_extract_for_the_pv_cells():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "rc_rate_mineral": 2,
         "scrap_rate": 2,
-<<<<<<< HEAD
-        "protra_capacity_expansion_selected": 2,
-        "material_intensity_pv_transformer_land": 1,
-        "material_intensity_pv_inverter": 2,
-=======
-        "material_intensity_pv_transformer_land": 1,
-        "material_intensity_pv_inverter": 2,
-        "protra_capacity_expansion_selected": 2,
         "rc_rate_mineral": 2,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
+        "protra_capacity_expansion_selected": 2,
+        "material_intensity_pv_transformer_land": 1,
+        "material_intensity_pv_inverter": 2,
         "unit_conversion_mw_tw": 1,
         "unit_conversion_kg_mt": 1,
     },
@@ -553,24 +536,14 @@ def new_material_extract_pv_inverters_and_transformers():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-<<<<<<< HEAD
-        "rc_rate_mineral": 2,
         "scrap_rate": 2,
-        "material_intensity_pv_panel_frame": 2,
-        "protra_capacity_expansion_selected": 2,
-        "share_new_pv_subtechn_land": 1,
-        "unit_conversion_mw_tw": 1,
-        "share_new_pv_subtechn_urban": 1,
-=======
-        "material_intensity_pv_panel_frame": 2,
-        "share_new_pv_subtechn_land": 1,
-        "scrap_rate": 2,
-        "share_new_pv_subtechn_urban": 1,
-        "protra_capacity_expansion_selected": 2,
         "rc_rate_mineral": 2,
-        "unit_conversion_mw_tw": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
+        "protra_capacity_expansion_selected": 2,
         "unit_conversion_kg_mt": 1,
+        "share_new_pv_subtechn_land": 1,
+        "share_new_pv_subtechn_urban": 1,
+        "unit_conversion_mw_tw": 1,
+        "material_intensity_pv_panel_frame": 2,
     },
 )
 def new_material_extract_pv_panel_frames():
@@ -628,19 +601,12 @@ def new_material_extract_pv_panel_frames():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-<<<<<<< HEAD
-        "rc_rate_mineral": 1,
         "scrap_rate": 1,
-        "protra_capacity_expansion_selected": 1,
-        "share_new_pv_subtechn_land": 1,
-=======
-        "share_new_pv_subtechn_land": 1,
-        "scrap_rate": 1,
-        "protra_capacity_expansion_selected": 1,
         "rc_rate_mineral": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
-        "unit_conversion_mw_tw": 1,
+        "protra_capacity_expansion_selected": 1,
         "unit_conversion_kg_mt": 1,
+        "share_new_pv_subtechn_land": 1,
+        "unit_conversion_mw_tw": 1,
         "material_intensity_pv_panels_mounting_structures": 1,
     },
 )
@@ -697,26 +663,15 @@ def new_material_extract_pv_panels_mounting_structures():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-<<<<<<< HEAD
+        "scrap_rate": 2,
         "rc_rate_mineral": 2,
-        "pv_wiring_urban_total_intensity": 1,
-        "scrap_rate": 2,
-        "pv_wiring_land_total_intensity": 1,
         "protra_capacity_expansion_selected": 2,
-        "share_new_pv_subtechn_land": 1,
-        "unit_conversion_mw_tw": 1,
-        "share_new_pv_subtechn_urban": 1,
-=======
-        "share_new_pv_subtechn_land": 1,
-        "scrap_rate": 2,
         "pv_wiring_urban_total_intensity": 1,
         "pv_wiring_land_total_intensity": 1,
-        "share_new_pv_subtechn_urban": 1,
-        "protra_capacity_expansion_selected": 2,
-        "rc_rate_mineral": 2,
-        "unit_conversion_mw_tw": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "unit_conversion_kg_mt": 1,
+        "share_new_pv_subtechn_land": 1,
+        "share_new_pv_subtechn_urban": 1,
+        "unit_conversion_mw_tw": 1,
     },
 )
 def new_material_extract_pv_wiring():

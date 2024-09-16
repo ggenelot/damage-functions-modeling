@@ -56,14 +56,9 @@ def esoist_initial_phs():
     depends_on={
         "cf_prosto": 1,
         "prosto_dedicated_lifetime": 1,
+        "unit_conversion_j_wh": 1,
         "unit_conversion_wh_we": 1,
-<<<<<<< HEAD
-        "unit_conversion_j_wh": 1,
         "matrix_unit_prefixes": 1,
-=======
-        "matrix_unit_prefixes": 1,
-        "unit_conversion_j_wh": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "fenust_intensity_phs_exogenous": 1,
     },
 )
@@ -91,14 +86,9 @@ def esoist_phs():
     depends_on={
         "cf_prosto": 1,
         "prosto_dedicated_lifetime": 1,
+        "unit_conversion_j_wh": 1,
         "unit_conversion_wh_we": 1,
-<<<<<<< HEAD
-        "unit_conversion_j_wh": 1,
         "matrix_unit_prefixes": 1,
-=======
-        "matrix_unit_prefixes": 1,
-        "unit_conversion_j_wh": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "esoist_initial_phs": 1,
     },
 )
@@ -127,8 +117,8 @@ def fenust_intensity_phs_exogenous():
     depends_on={
         "materials_per_new_capacity_installed_ev_batteries_lfp": 1,
         "embodied_fe_intensity_materials_36r": 1,
-        "unit_conversion_mw_tw": 1,
         "unit_conversion_mj_ej": 1,
+        "unit_conversion_mw_tw": 1,
     },
 )
 def fenust_intensity_stationary_batteries():

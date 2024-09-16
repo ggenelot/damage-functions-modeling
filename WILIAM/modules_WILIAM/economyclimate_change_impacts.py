@@ -942,19 +942,11 @@ _ext_constant_c_heat_stress_damage_function = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "switch_economy": 1,
-<<<<<<< HEAD
-        "correspondence_matrix_damage_function": 14,
         "a_capital_stock_damage_function": 10,
-        "b_capital_stock_damage_function": 8,
-        "c_capital_stock_damage_function": 2,
-        "temperature_change_2015": 5,
-=======
-        "a_capital_stock_damage_function": 10,
-        "temperature_change_2015": 5,
-        "b_capital_stock_damage_function": 8,
         "c_capital_stock_damage_function": 2,
         "correspondence_matrix_damage_function": 14,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
+        "b_capital_stock_damage_function": 8,
+        "temperature_change_2015": 5,
         "temperature_change_in_35regions": 5,
     },
 )
@@ -1279,8 +1271,8 @@ def capital_stock_damage_function_drought():
     comp_subtype="Normal",
     depends_on={
         "select_climate_change_impacts_remove_extrapolations_sp": 1,
-        "capital_stock_damage_function": 4,
         "auxiliar_variable_to_remove_extrapolations_of_heatwaves": 1,
+        "capital_stock_damage_function": 4,
     },
 )
 def capital_stock_damage_function_heat():
@@ -1353,8 +1345,8 @@ def capital_stock_damage_function_heat():
     comp_subtype="Normal",
     depends_on={
         "select_climate_change_impacts_remove_extrapolations_sp": 1,
-        "auxiliar_variable_to_remove_extrapolations_of_wildfires": 1,
         "capital_stock_damage_function": 4,
+        "auxiliar_variable_to_remove_extrapolations_of_wildfires": 1,
     },
 )
 def capital_stock_damage_function_wildfire():
@@ -1425,8 +1417,8 @@ def capital_stock_damage_function_wildfire():
         "select_climate_hazards_sp": 4,
         "total_hazards_capital_stock_damage_function": 1,
         "capital_stock_damage_function_heat": 1,
-        "capital_stock_damage_function_drought": 1,
         "capital_stock_damage_function_wildfire": 1,
+        "capital_stock_damage_function_drought": 1,
     },
 )
 def capital_stock_damage_rate_for_all_the_uncertainty_scenarios():
@@ -1600,12 +1592,8 @@ def global_temperature_change_2015():
     comp_subtype="Normal",
     depends_on={
         "switch_economy": 1,
-        "c_heat_stress_damage_function": 2,
         "a_heat_stress_damage_function": 2,
-<<<<<<< HEAD
-        "b_heat_stress_damage_function": 2,
-=======
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
+        "c_heat_stress_damage_function": 2,
         "global_temperature_change_2015": 2,
         "b_heat_stress_damage_function": 2,
         "temperature_change": 2,
@@ -1657,8 +1645,8 @@ def heat_stress_damage_function_until_2015():
     comp_subtype="Normal",
     depends_on={
         "time": 1,
-        "heat_stress_damage_function": 1,
         "heat_stress_damage_function_until_2015": 1,
+        "heat_stress_damage_function": 1,
     },
 )
 def heat_stress_incremental_damage_function():

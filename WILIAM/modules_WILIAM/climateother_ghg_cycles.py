@@ -52,10 +52,10 @@ def ch4_emissions_from_permafrost_and_clathrate():
     comp_subtype="Normal",
     depends_on={
         "reference_ch4_time_constant": 1,
-        "preindustrial_ch4": 1,
+        "ch4_in_atm": 1,
         "tropospheric_ch4_path_share": 2,
         "stratospheric_ch4_path_share": 2,
-        "ch4_in_atm": 1,
+        "preindustrial_ch4": 1,
     },
 )
 def ch4_fractional_uptake():
@@ -970,9 +970,9 @@ def time_const_for_ch4():
             "initial": {},
             "step": {
                 "flux_c_from_permafrost_release": 1,
-                "unit_conversion_mt_gt": 1,
-                "ch4_emissions_from_permafrost_and_clathrate": 1,
                 "unit_conversion_ch4_c": 1,
+                "ch4_emissions_from_permafrost_and_clathrate": 1,
+                "unit_conversion_mt_gt": 1,
             },
         }
     },

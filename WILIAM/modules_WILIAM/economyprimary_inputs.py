@@ -44,9 +44,9 @@ _delayfixed_delayed_ts_net_operating_surplus = DelayFixed(
     depends_on={
         "time": 1,
         "initial_delayed_net_operating_surplus": 1,
-        "delayed_ts_net_operating_surplus_to_output_real": 1,
         "delayed_ts_output_real": 1,
         "delayed_ts_net_operating_surplus": 1,
+        "delayed_ts_net_operating_surplus_to_output_real": 1,
         "initial_delayed_net_operating_surplus_to_output_real": 2,
     },
 )
@@ -350,12 +350,12 @@ def gross_value_added():
     depends_on={
         "switch_eco_primary_inputs": 1,
         "initial_intermediates_domestic_real": 1,
-        "base_output_real": 1,
         "initial_intermediate_imports_and_exports_real": 1,
+        "base_output_real": 1,
         "taxes_products_by_sector_real": 2,
-        "output_real": 1,
-        "intermediate_imports_and_exports_real": 1,
         "intermediates_domestic_real": 1,
+        "intermediate_imports_and_exports_real": 1,
+        "output_real": 1,
     },
 )
 def gross_value_added_real():
@@ -649,15 +649,9 @@ def net_operating_surplus_real():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_primary_inputs": 1,
-<<<<<<< HEAD
+        "initial_labour_compensation": 1,
         "net_operating_surplus": 2,
         "initial_taxes_production": 1,
-        "initial_labour_compensation": 1,
-=======
-        "initial_labour_compensation": 1,
-        "initial_taxes_production": 1,
-        "net_operating_surplus": 2,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "labour_compensation": 1,
         "taxes_production": 1,
     },
@@ -719,9 +713,9 @@ def net_value_added_real():
     comp_subtype="Normal",
     depends_on={
         "delayed_ts_total_net_operating_surplus_distributed_to_households": 1,
+        "number_of_households_by_income_and_type": 1,
         "unit_conversion_dollars_mdollars": 1,
         "households_net_operating_surplus": 1,
-        "number_of_households_by_income_and_type": 1,
         "scarcity_rents": 1,
     },
 )
@@ -853,20 +847,11 @@ _ext_constant_switch_eco_primary_inputs = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "switch_eco_primary_inputs": 1,
-<<<<<<< HEAD
-        "initial_price_of_output": 1,
-        "base_output_real": 1,
         "mdollars_per_mdollars_2015": 2,
         "price_transformation": 2,
-        "tax_rate_production": 2,
-=======
-        "tax_rate_production": 2,
         "base_output_real": 1,
-        "price_transformation": 2,
+        "tax_rate_production": 2,
         "initial_price_of_output": 1,
-        "mdollars_per_mdollars_2015": 2,
-        "output_real": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "price_output": 1,
         "output_real": 1,
     },
@@ -896,9 +881,9 @@ def taxes_production():
     comp_subtype="Normal",
     depends_on={
         "tax_rate_output_default_default": 1,
-        "output_real": 1,
-        "base_output_real": 1,
         "switch_eco_primary_inputs": 1,
+        "base_output_real": 1,
+        "output_real": 1,
     },
 )
 def taxes_production_real():
@@ -970,23 +955,14 @@ def taxes_products_by_sector_real():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_primary_inputs": 1,
-<<<<<<< HEAD
-        "tax_rate_products_domestic_by_sectors_default": 2,
-        "initial_intermediates_domestic_real": 1,
-        "initial_price_of_output": 1,
         "mdollars_per_mdollars_2015": 2,
         "price_transformation": 2,
-        "trade_and_transportation_margins_paid_for_domestic_products_by_sectors": 2,
-=======
-        "price_transformation": 2,
-        "initial_price_of_output": 1,
-        "trade_and_transportation_margins_paid_for_domestic_products_by_sectors": 2,
-        "mdollars_per_mdollars_2015": 2,
         "initial_intermediates_domestic_real": 1,
+        "initial_price_of_output": 1,
         "tax_rate_products_domestic_by_sectors_default": 2,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
-        "price_output": 1,
+        "trade_and_transportation_margins_paid_for_domestic_products_by_sectors": 2,
         "intermediates_domestic_real": 1,
+        "price_output": 1,
     },
 )
 def taxes_products_domestic_by_sector():
@@ -1043,9 +1019,9 @@ def taxes_products_domestic_by_sector():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_primary_inputs": 1,
+        "tax_rate_products_domestic_by_sectors_default": 2,
         "initial_intermediates_domestic_real": 1,
         "trade_and_transportation_margins_paid_for_domestic_products_by_sectors": 2,
-        "tax_rate_products_domestic_by_sectors_default": 2,
         "intermediates_domestic_real": 1,
     },
 )
@@ -1187,23 +1163,14 @@ def taxes_products_final_demand_real():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_primary_inputs": 1,
-<<<<<<< HEAD
-        "tax_rate_products_imports_by_sectors_default": 2,
-        "initial_intermediate_imports_and_exports_real": 1,
-        "initial_price_of_output": 1,
         "mdollars_per_mdollars_2015": 2,
         "price_transformation": 2,
-        "trade_and_transportation_margins_paid_for_imported_products_by_sectors": 2,
-=======
-        "price_transformation": 2,
+        "initial_intermediate_imports_and_exports_real": 1,
         "trade_and_transportation_margins_paid_for_imported_products_by_sectors": 2,
         "initial_price_of_output": 1,
-        "initial_intermediate_imports_and_exports_real": 1,
-        "mdollars_per_mdollars_2015": 2,
         "tax_rate_products_imports_by_sectors_default": 2,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
-        "price_output": 1,
         "intermediate_imports_and_exports_real": 1,
+        "price_output": 1,
     },
 )
 def taxes_products_imports_by_sector():
@@ -1260,15 +1227,9 @@ def taxes_products_imports_by_sector():
     comp_subtype="Normal",
     depends_on={
         "switch_eco_primary_inputs": 1,
-<<<<<<< HEAD
         "tax_rate_products_imports_by_sectors_default": 2,
-        "initial_intermediate_imports_and_exports_real": 1,
         "trade_and_transportation_margins_paid_for_imported_products_by_sectors": 2,
-=======
-        "trade_and_transportation_margins_paid_for_imported_products_by_sectors": 2,
-        "tax_rate_products_imports_by_sectors_default": 2,
         "initial_intermediate_imports_and_exports_real": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "intermediate_imports_and_exports_real": 1,
     },
 )

@@ -415,17 +415,11 @@ _ext_constant_potential_wind_onshore_by_eroi_min = ExtConstant(
     depends_on={
         "select_protra_res_potentials_sp": 2,
         "unlimited_protra_res_parameter": 1,
-        "protra_operative_capacity_stock_selected": 1,
+        "exogenous_protra_res_potentials_sp": 1,
+        "switch_law2nrg_solarland": 1,
         "switch_energy": 1,
-<<<<<<< HEAD
         "unit_conversion_tw_per_ej_per_year": 1,
-        "exogenous_protra_res_potentials_sp": 1,
-        "switch_law2nrg_solarland": 1,
-=======
-        "switch_law2nrg_solarland": 1,
-        "exogenous_protra_res_potentials_sp": 1,
-        "unit_conversion_tw_per_ej_per_year": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
+        "protra_operative_capacity_stock_selected": 1,
         "protra_max_full_load_hours": 1,
     },
 )
@@ -477,17 +471,10 @@ def remaining_exogenous_potential_solar_pv_open_space():
     depends_on={
         "select_protra_res_potentials_sp": 1,
         "unlimited_protra_res_parameter": 1,
-<<<<<<< HEAD
+        "exogenous_protra_res_potentials_sp": 1,
+        "protra_max_full_load_hours": 1,
         "unit_conversion_tw_per_ej_per_year": 1,
         "protra_operative_capacity_stock_selected": 1,
-        "protra_max_full_load_hours": 1,
-        "exogenous_protra_res_potentials_sp": 1,
-=======
-        "protra_operative_capacity_stock_selected": 1,
-        "protra_max_full_load_hours": 1,
-        "exogenous_protra_res_potentials_sp": 1,
-        "unit_conversion_tw_per_ej_per_year": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def remaining_potential_protra_res_chp_hp():
@@ -527,17 +514,10 @@ def remaining_potential_protra_res_chp_hp():
     depends_on={
         "remaining_potential_wind": 1,
         "remaining_exogenous_potential_solar_pv_open_space": 1,
-<<<<<<< HEAD
+        "exogenous_protra_res_potentials_sp": 2,
+        "protra_max_full_load_hours": 2,
         "unit_conversion_tw_per_ej_per_year": 2,
         "protra_operative_capacity_stock_selected": 2,
-        "protra_max_full_load_hours": 2,
-        "exogenous_protra_res_potentials_sp": 2,
-=======
-        "protra_operative_capacity_stock_selected": 2,
-        "protra_max_full_load_hours": 2,
-        "exogenous_protra_res_potentials_sp": 2,
-        "unit_conversion_tw_per_ej_per_year": 2,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "remaining_solar_pv_rooftop_potential": 1,
         "select_availability_unmature_energy_technologies_sp": 2,
     },
@@ -635,23 +615,14 @@ def remaining_potential_protra_res_pp():
     depends_on={
         "select_protra_res_potentials_sp": 4,
         "unlimited_protra_res_parameter": 2,
+        "exogenous_protra_res_potentials_sp": 2,
+        "unit_conversion_tw_per_ej_per_year": 5,
         "protra_operative_capacity_stock_selected": 5,
-        "exogenous_protra_res_potentials_sp": 2,
-        "unit_conversion_tw_per_ej_per_year": 5,
+        "protra_max_full_load_hours": 5,
         "potential_wind_onshore": 1,
-<<<<<<< HEAD
-        "unit_conversion_tw_per_ej_per_year": 5,
-        "exogenous_protra_res_potentials_sp": 2,
-        "protra_max_full_load_hours": 5,
-        "potential_wind_offshore_floating": 1,
         "potential_wind_offshore_fixed": 2,
-        "select_availability_unmature_energy_technologies_sp": 2,
-=======
-        "protra_max_full_load_hours": 5,
-        "select_availability_unmature_energy_technologies_sp": 2,
         "potential_wind_offshore_floating": 1,
-        "potential_wind_offshore_fixed": 2,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
+        "select_availability_unmature_energy_technologies_sp": 2,
     },
 )
 def remaining_potential_wind():
@@ -772,8 +743,8 @@ def remaining_potential_wind():
     depends_on={
         "select_protra_res_potentials_sp": 1,
         "unlimited_protra_res_parameter": 1,
-        "actual_rooftop_use_solar_technologies": 1,
         "solar_pv_rooftop_potential_c_si_mono": 1,
+        "actual_rooftop_use_solar_technologies": 1,
     },
 )
 def remaining_solar_pv_rooftop_potential():
@@ -908,22 +879,13 @@ _ext_constant_select_rooftop_use_solar_technologies_sp = ExtConstant(
     comp_subtype="Normal",
     depends_on={
         "select_rooftop_use_solar_technologies_sp": 5,
-        "solar_pv_rooftop_potential_c_si_mono_0pv_100th_sp": 1,
         "efficiences_pv_technology_panels": 6,
-<<<<<<< HEAD
+        "solar_pv_rooftop_potential_c_si_mono_0pv_100th_sp": 1,
+        "solar_pv_rooftop_potential_c_si_mono_50pv_50th_sp": 1,
         "solar_pv_rooftop_potential_c_si_mono_user_defined_sp": 1,
         "solar_pv_rooftop_potential_c_si_mono_100pv_0th_sp": 1,
         "solar_pv_rooftop_potential_c_si_mono_25pv_75th_sp": 1,
-        "solar_pv_rooftop_potential_c_si_mono_50pv_50th_sp": 1,
         "solar_pv_rooftop_potential_c_si_mono_75pv_25th_sp": 1,
-        "switch_energy": 1,
-=======
-        "solar_pv_rooftop_potential_c_si_mono_75pv_25th_sp": 1,
-        "solar_pv_rooftop_potential_c_si_mono_50pv_50th_sp": 1,
-        "solar_pv_rooftop_potential_c_si_mono_25pv_75th_sp": 1,
-        "solar_pv_rooftop_potential_c_si_mono_100pv_0th_sp": 1,
-        "solar_pv_rooftop_potential_c_si_mono_user_defined_sp": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "growth_land_uses_vs_2015": 1,
         "switch_energy": 1,
         "unit_conversion_pj_ej": 1,
@@ -1187,20 +1149,11 @@ _ext_lookup_solar_pv_rooftop_potential_c_si_mono_user_defined_sp = ExtLookup(
     depends_on={
         "select_rooftop_use_solar_technologies_sp": 5,
         "solar_thermal_rooftop_potential_0pv_100th_sp": 1,
-<<<<<<< HEAD
         "solar_thermal_rooftop_potential_50pv_50th_sp": 1,
-        "solar_thermal_rooftop_potential_75pv_25th_sp": 1,
+        "solar_thermal_rooftop_potential_25pv_75th_sp": 1,
         "solar_thermal_rooftop_potential_100pv_0th_sp": 1,
         "solar_thermal_rooftop_potential_user_defined_sp": 1,
-        "solar_thermal_rooftop_potential_25pv_75th_sp": 1,
-        "switch_energy": 1,
-=======
         "solar_thermal_rooftop_potential_75pv_25th_sp": 1,
-        "solar_thermal_rooftop_potential_50pv_50th_sp": 1,
-        "solar_thermal_rooftop_potential_100pv_0th_sp": 1,
-        "solar_thermal_rooftop_potential_user_defined_sp": 1,
-        "solar_thermal_rooftop_potential_25pv_75th_sp": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "growth_land_uses_vs_2015": 1,
         "switch_energy": 1,
         "unit_conversion_pj_ej": 1,

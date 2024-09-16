@@ -57,14 +57,9 @@ _initial_biostimulation_coeff = Initial(
             "initial": {"ref_buffer_factor": 1},
             "step": {
                 "ref_buffer_factor": 1,
-<<<<<<< HEAD
-                "buff_c_coeff": 1,
-                "c_in_mixed_layer": 1,
-=======
-                "c_in_mixed_layer": 1,
-                "buff_c_coeff": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
                 "preind_c_in_mixed_layer": 1,
+                "buff_c_coeff": 1,
+                "c_in_mixed_layer": 1,
             },
         }
     },
@@ -462,14 +457,9 @@ def effect_of_warming_on_ch4_release_from_biological_activity():
     depends_on={
         "preind_c_in_mixed_layer": 1,
         "effect_of_temp_on_dic_p_co2": 1,
-<<<<<<< HEAD
-=======
-        "c_in_atmosphere": 1,
         "preindustrial_c": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "buffer_factor": 1,
         "c_in_atmosphere": 1,
-        "preindustrial_c": 1,
     },
 )
 def equil_c_in_mixed_layer():
@@ -504,14 +494,9 @@ def equilibrium_c_per_meter_in_mixed_layer():
     comp_subtype="Normal",
     depends_on={
         "init_npp": 1,
-<<<<<<< HEAD
-        "biostimulation_coeff": 1,
-        "c_in_atmosphere": 1,
-=======
-        "c_in_atmosphere": 1,
-        "biostimulation_coeff": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "preindustrial_c": 1,
+        "c_in_atmosphere": 1,
+        "biostimulation_coeff": 1,
         "effect_of_warming_on_c_flux_to_biomass": 1,
     },
 )

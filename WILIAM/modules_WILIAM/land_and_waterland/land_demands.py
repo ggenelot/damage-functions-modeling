@@ -41,8 +41,8 @@ _integ_accumulated_error_in_solar_land = Integ(
     comp_subtype="Normal",
     depends_on={
         "switch_afforestation_sp": 1,
-        "year_initial_afforestation_sp": 2,
         "time": 2,
+        "year_initial_afforestation_sp": 2,
         "year_final_afforestation_sp": 2,
         "initial_land_use_by_region": 1,
         "objective_afforestation_sp": 1,
@@ -168,10 +168,6 @@ def difference_solar_land():
         "switch_landwater": 9,
         "deaths": 9,
         "births": 9,
-<<<<<<< HEAD
-        "imv_exogenous_population_variation": 9,
-=======
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "time": 9,
         "imv_exogenous_population_variation": 9,
     },
@@ -364,8 +360,8 @@ def exo_population_variation_exogenous():
         "time": 2,
         "year_initial_forest_plantations_sp": 2,
         "year_final_forest_plantations_sp": 2,
-        "initial_land_use_by_region": 1,
         "objective_forest_plantations_sp": 1,
+        "initial_land_use_by_region": 1,
     },
 )
 def forest_plantations_growth_due_to_policies():
@@ -397,23 +393,17 @@ def forest_plantations_growth_due_to_policies():
     name="increment of cropland and solar demanded",
     units="km2/Year",
     subscripts=["REGIONS 9 I", "LANDS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "gap_global_availability_of_crops": 2,
         "priorities_of_land_use_change_sp": 2,
         "initial_land_use_by_region": 2,
         "control_parameter_of_land_use_changes": 2,
-<<<<<<< HEAD
-        "accumulated_error_in_solar_land": 1,
-        "difference_solar_land": 1,
         "ki_solar_feedback": 1,
-=======
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
+        "difference_solar_land": 1,
+        "accumulated_error_in_solar_land": 1,
         "kp_solar_feedback": 1,
-        "difference_solar_land": 1,
-        "accumulated_error_in_solar_land": 1,
-        "ki_solar_feedback": 1,
     },
 )
 def increment_of_cropland_and_solar_demanded():
@@ -583,15 +573,9 @@ _smooth_increment_of_urban_land_demanded = Smooth(
     depends_on={
         "time": 2,
         "time_historical_data_land_module": 1,
-<<<<<<< HEAD
-        "exo_land_for_solar_demanded": 1,
-        "land_use_by_protra": 1,
-        "switch_landwater": 1,
-=======
         "switch_landwater": 1,
         "land_use_by_protra": 1,
         "exo_land_for_solar_demanded": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
     },
 )
 def land_for_solar_demanded():
@@ -623,9 +607,9 @@ def land_for_solar_demanded():
         "time": 1,
         "time_historical_data_land_module": 1,
         "trends_of_land_use_changes": 1,
+        "switch_law_exogenous_land_use_demands": 2,
         "land_use_changes_demanded_before_exogenous": 1,
         "check_exogenous_land_use_demands": 1,
-        "switch_law_exogenous_land_use_demands": 2,
     },
 )
 def land_use_changes_demanded():
@@ -646,7 +630,7 @@ def land_use_changes_demanded():
     name="land use changes demanded before exogenous",
     units="km2/Year",
     subscripts=["REGIONS 9 I", "LANDS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "trends_of_land_use_changes": 6,
@@ -752,7 +736,7 @@ def land_use_changes_demanded_before_exogenous():
     name="land use changes driven by demands",
     units="km2/Year",
     subscripts=["REGIONS 9 I", "LANDS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "time": 6,
@@ -1021,12 +1005,8 @@ def matrix_of_land_use_change_demands():
         "time": 9,
         "time_historical_data_land_module": 9,
         "historical_share_of_land_use_changes_from_others": 9,
-        "initial_share_of_land_use_changes_from_others_down": 9,
         "land_use_changes_demanded": 9,
-<<<<<<< HEAD
         "initial_share_of_land_use_changes_from_others_down": 9,
-=======
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "share_of_land_use_changes_from_others_up": 9,
     },
 )
@@ -1297,15 +1277,10 @@ def share_of_land_use_change_from_others():
     comp_subtype="Normal",
     depends_on={
         "initial_share_of_land_use_changes_from_others_up": 12,
-<<<<<<< HEAD
-=======
-        "year_initial_solar_land_from_others_sp": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
-        "switch_solar_land_from_others_sp": 1,
         "time": 1,
+        "year_initial_solar_land_from_others_sp": 1,
         "objective_solar_land_from_others_sp": 1,
-        "year_initial_solar_land_from_others_sp": 1,
-        "time": 1,
+        "switch_solar_land_from_others_sp": 1,
     },
 )
 def share_of_land_use_changes_from_others_up():
@@ -1540,7 +1515,7 @@ _ext_constant_switch_law_exogenous_land_use_demands = ExtConstant(
     name="trends of land use changes",
     units="km2/Year",
     subscripts=["REGIONS 9 I", "LANDS I"],
-    comp_type="Auxiliary, Constant",
+    comp_type="Constant, Auxiliary",
     comp_subtype="Normal",
     depends_on={
         "time": 8,

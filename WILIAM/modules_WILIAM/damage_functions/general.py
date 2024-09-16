@@ -113,14 +113,9 @@ def fund_extra_eq_switch_deaths():
     comp_subtype="Normal",
     depends_on={
         "fund_tot_eq_monetary_impact": 1,
-<<<<<<< HEAD
-=======
-        "fund_mm1_eq_value_of_a_statistical_life": 1,
         "fund_tot_eq_total_deaths": 1,
->>>>>>> parent of 9b91d70 (Executed runs that were interrupted + change run.py)
         "fund_extra_eq_switch_deaths": 1,
         "fund_mm1_eq_value_of_a_statistical_life": 1,
-        "fund_tot_eq_total_deaths": 1,
     },
 )
 def fund_tot_eq_fund_total_impact():
